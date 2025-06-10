@@ -52,7 +52,7 @@ const About3 = ({bgImg,MainImg,SubTitle,Title,Content,listTitle1,listTitle2,BoxT
                                     </ul>
                                 </div>
                                 <div className="solutek-btn">
-                                    <Link href="/about">EXPLORE MORE
+                                    <Link href="/about">EXPLORE HOW WE WORK
                                         <div className="solutek-hover-btn hover-bx"></div>
                                         <div className="solutek-hover-btn hover-bx2"></div>
                                         <div className="solutek-hover-btn hover-bx3"></div>

@@ -21,8 +21,8 @@ const Process2 = () => {
                                 <ProcessCard2
                                     mainImage="/assets/images/home-3/process-1.png"
                                     Number="01"
-                                    Title="PLAN AND RESEARCH"
-                                    Content="Solution is a long established proces reada content a looking at layout point."
+                                    Title="Discover What Really Matters"
+                                    Content="We don’t jump into code. First, we dig deep—into your business model, bottlenecks, and user needs—to identify the real problem worth solving."
                                 ></ProcessCard2>
                             </div>
                         </div>	
@@ -31,8 +31,8 @@ const Process2 = () => {
                                 <ProcessCard2
                                     mainImage="/assets/images/home-3/process-2.png"
                                     Number="02"
-                                    Title="Design & Prototyping"
-                                    Content="Solution is a long established proces reada content a looking at layout point."
+                                    Title="Craft the Right Solution"
+                                    Content="Together, we co-create the ideal flow—clear interfaces, clean logic, and smart functionality. Every screen, every click, with purpose."
                                 ></ProcessCard2>
                             </div>
                         </div>	
@@ -41,8 +41,8 @@ const Process2 = () => {
                                 <ProcessCard2
                                     mainImage="/assets/images/home-3/process-3.png"
                                     Number="03"
-                                    Title="Finial Solution"
-                                    Content="Solution is a long established proces reada content a looking at layout point."
+                                    Title="Build It Right. Launch It Fast."
+                                    Content="We develop with precision, test with obsession, and launch with your team fully prepped. Then we stay to support and scale."
                                 ></ProcessCard2>
                             </div>
                         </div>			

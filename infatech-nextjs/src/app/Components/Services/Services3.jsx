@@ -20,7 +20,7 @@ const Services3 = () => {
                         <div className="section-title text-center">
                             <SectionTitle
                                     SubTitle="OUR SERVICES"
-                                    Title="EXCLUSIVE IT SERVICES"
+                                    Title="End-to-End Tech Solutions That Move Your Business Forward"
                             ></SectionTitle>
                         </div>
                     </div>

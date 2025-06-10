@@ -14,8 +14,8 @@ const Testimonial3 = () => {
     const TestimonialContent = {
         bgImg:'/assets/img/faq_img_1.jpg',
         SubTitle:'client review',
-        Title:'Customized Solutions to<br> Meet Client <span>Needs.</span>',
-        Content:'Solution is a long established fact that a reader will be distracted the reada content of a page when looking at layout the point.',
+        Title:' What Our Clients Say<br>About <span>Working</span> With Us.',
+        Content:'We believe the best proof of our work is what our clients say. Here are a few words from those who’ve trusted us to bring their ideas to life through tech.',
         AuthorImage:'/assets/images/home-3/test-thumb.png',
         AuthorName:'Brandon A. Vela',
         AuthorDesignation:'ui Designer'        
@@ -72,7 +72,7 @@ const Testimonial3 = () => {
                                                             <div className="testi-quote-icon">
                                                                 <Image src="/assets/images/home-3/testi-quote.png" alt="img" width={38} height={28}   />
                                                             </div>
-                                                            <h3>From <span>200+</span> reviews</h3>
+                                                            <h3><span> {item.from}</span></h3>
                                                         </div>
                                                     </div>
                                                 </div>

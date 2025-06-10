@@ -30,14 +30,14 @@ const Hero3 = () => {
                                     <h1>{parse(item.title)}</h1>
                                     <p>{item.desc}</p>
                                     <div className="solutek-btn">
-                                        <Link href="/about" className="btn-2">Get Started</Link>
+                                        <Link href="/about" className="btn-2">Start Building with Infatech </Link>
                                     </div>
-                                    <div className="hero-btn-3">
+                                    {/* <div className="hero-btn-3">
                                         <div className="hero-btn-profile">
                                             <Image src="/assets/images/home-3/hero-pro.png" alt="img" width={56} height={56}   />
                                             <Link href="/about"><span>MEET</span>Our Experts</Link>
                                         </div>
-                                    </div>
+                                    </div> */}
                                     <div className="hero-left-shape">
                                         <Image src="/assets/images/home-3/hero-geo.png" alt="img" width={680} height={680}   />
                                     </div>

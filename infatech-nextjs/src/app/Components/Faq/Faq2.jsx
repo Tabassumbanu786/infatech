@@ -37,7 +37,7 @@ const Faq2 = () => {
                         <div className="section-title text-left">
                             <SectionTitle
                                 SubTitle="client review"
-                                Title="Most Common <span> Question?</span>"
+                                Title="Frequently Asked <span> Question?</span>"
                             ></SectionTitle>
                         </div>
                         <div className="tab_container">

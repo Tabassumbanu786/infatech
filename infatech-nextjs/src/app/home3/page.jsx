@@ -17,16 +17,16 @@ const page = () => {
             <About3
                 bgImg="/assets/images/home-3/about3-bg.png"
                 MainImg="/assets/images/home-3/about-thu3.png"
-                SubTitle="about company"
-                Title="Customized Solutions to Meet Client <span>Needs.</span>"
-                Content="Solution is a long established fact that a reader will be distracted the reada content of a page when looking at layout the point."
-                BoxTitle1="Cloud Based Solution"
-                BoxTitle2="Best Services"  
-                listTitle1="Sed non odio non elit porttitor tinc"
-                listTitle2="Sed non odio non elit porttitor tincidunt donec"                         
+                SubTitle="ABOUT INFATECH"
+                Title="Tech Solutions Tailored to Your Business <span>Goals</span>"          
+                Content="We help businesses go digital the smart way—by building systems aligned with your goals, budget, and future growth. No fluff. Just practical, reliable tech that gets the job done."
+                BoxTitle1="Cloud-Ready,Scalable Architecture"
+                BoxTitle2="Long-Term Tech Support & Upgrades"  
+                listTitle1="From internal operations to customer-facing platforms, we create tech that fits your business—not the other way around."
+                listTitle2="Whether you're starting fresh or modernizing legacy systems, we make it seamless."                         
            ></About3>
            <Counter></Counter>
-           <CaseStudy></CaseStudy>
+           {/* <CaseStudy></CaseStudy> */}
            <Testimonial3></Testimonial3>
            <Process2></Process2>
            <Faq2></Faq2>

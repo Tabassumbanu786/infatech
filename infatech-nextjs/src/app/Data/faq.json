@@ -1,14 +1,23 @@
 [
   {  
-    "title": "What Medical Services Do You Provide?",
-    "desc": "Appropriately promote enterprise-wide vortals throuh innovative information evolve go forward markets whereas synergistic applications power full sound quality vectors without equity invested best practices revolutionize enterprise-wide vortals through innovative."
+    "title": "What technologies do you use?",
+    "desc": "We choose the tech based on what’s best for your project—whether it’s a website, mobile app, or internal system. We work with trusted tools like React, Node.js, Python, PHP, and others—but don’t worry, we won’t drown you in tech speak. You’ll only hear what matters for your business."
   },
   {
-    "title": "What is your customer geography?",
-    "desc": "Appropriately promote enterprise-wide vortals throuh innovative information evolve go forward markets whereas synergistic applications power full sound quality vectors without equity invested best practices revolutionize enterprise-wide vortals through innovative."
+    "title": "Will I have to choose the tech stack myself?",
+    "desc": "Not at all. Our job is to guide you. Once we understand your goals, we recommend the most reliable and scalable technologies for your needs."
   },
   {
-     "title": "What are the main industries we serve?",
-    "desc": "Appropriately promote enterprise-wide vortals throuh innovative information evolve go forward markets whereas synergistic applications power full sound quality vectors without equity invested best practices revolutionize enterprise-wide vortals through innovative."
+     "title": "Can you work with our existing tech or team?",
+    "desc": "Yes. If you already have something built or an in-house team, we’re happy to integrate, collaborate, or upgrade based on what’s already there."
+  },
+  {
+     "title": "Do you offer cloud-based or on-premise solutions?",
+    "desc": "Most of our projects are cloud-based for better security, flexibility, and ease of access—but we can build for your specific setup if needed."
+  },
+  {
+    "title": "Is the tech you use secure and future-ready?",
+    "desc": "Absolutely. We follow the latest security practices and build systems designed to scale—so you won’t need to rebuild things six months down the line."
   }
 ]
+
