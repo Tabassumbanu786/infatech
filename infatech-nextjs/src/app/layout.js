@@ -19,16 +19,34 @@ const poppins = Poppins({
 export const metadata = {
   title: {
     absolute: '',
-    default: 'Solutek - Technology & IT Solution NextJS Template',
-    template: '%s | Solutek - Technology & IT Solution NextJS Template',
+    default: 'Infatech Innovations | Innovating the Future, Intelligently',
+    template: '%s | Infatech Innovations',
   },
-  description: 'Solutek - Technology & IT Solution NextJS Template',
+  description: 'We help startups and businesses turn ideas into scalable digital products—custom websites, apps, platforms, and more.',
   openGraph: {
-    title: 'Solutek - Technology & IT Solution NextJS Template',
-    description: 'Solutek - Technology & IT Solution NextJS Template',
-    image: '/openGraphImage.jpg',
+    title: 'Infatech Innovations',
+    description: 'Turn your idea into a digital product with Infatech. We build apps, portals, and platforms that scale.',
+    url: 'https://www.infatech.in',
+    siteName: 'Infatech Innovations',
+    images: [
+      {
+        url: 'https://www.infatech.in/assets/images/og-image.jpg', // ✅ Replace with real OG image path
+        width: 1200,
+        height: 630,
+        alt: 'Infatech - Digital Product Development',
+      },
+    ],
+    locale: 'en_US',
+    type: 'website',
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Infatech Innovations',
+    description: 'Turn your idea into a digital product with Infatech.',
+    images: ['https://www.infatech.in/assets/images/og-image.jpg'],
   },
 };
+
 
 export default function RootLayout({ children }) {
   return (
