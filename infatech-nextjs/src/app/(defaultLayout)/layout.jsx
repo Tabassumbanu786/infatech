@@ -1,15 +1,15 @@
 import React from 'react';
-import HeaderStyle2 from '../Components/Header/HeaderStyle2';
+import HeaderStyle3 from '../Components/Header/HeaderStyle3';
 import Footer from '../Components/Footer/Footer';
 
-const DefalultLayout = ({ children }) => {
+const layout = ({ children }) => {
     return (
-        <div className='main-page-area'>
-            <HeaderStyle2></HeaderStyle2>
+        <div className='main-page-area3'>
+            <HeaderStyle3></HeaderStyle3>
             {children}
             <Footer></Footer>
         </div>
     );
 };
 
-export default DefalultLayout;
+export default layout;

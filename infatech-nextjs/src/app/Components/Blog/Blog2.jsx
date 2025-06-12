@@ -29,7 +29,7 @@ const Blog2 = () => {
                             </div>
                             <div className="blog-box-content">
                             <div className="meta-blog">
-                                <Link href="/blog/blog-details"><span><i className="bi bi-person"></i>HOSSAIN ASIF</span></Link>
+                                <Link href="/blog/blog-details"><span><i className="bi bi-person"></i>HOSSAIN </span></Link>
                                 <p><span>
                                 <Image src="/assets/images/home-two/mesage-icon.png" alt="img" width={17} height={15}   />
                                     </span>COMMENTS</p>

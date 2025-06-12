@@ -41,7 +41,7 @@ export default function Header({ variant }) {
         <div className="container-fluid">
           <div className="cs_main_header_in">
             <div className="cs_main_header_left">
-              <Link className="cs_site_branding" href="/">
+              <Link className="cs_site_branding" href="/home3">
                   <Image src="/assets/images/logo.png" alt="Logo" width={161} height={42}   />
               </Link>
               </div>

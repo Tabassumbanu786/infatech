@@ -46,11 +46,11 @@ const Hero3 = () => {
                             <div className="col-lg-7 col-md-5">
                                 <div className="hero-thumb-3">
                                     <div className="hero-img hero_image_3">
-                                         <Image src={item.image} alt="img" width={1065} height={800}   />
+                                         <Image src={item.image} alt="img" width={950} height={800}   />
                                     </div>
-                                    <div className="hero-thumb-shape">
+                                    {/* <div className="hero-thumb-shape">
                                         <Image src="/assets/images/home-3/hero-rs.png" alt="img" width={439} height={800}   />
-                                    </div>
+                                    </div> */}
                                 </div>
                             </div>
                         </div>

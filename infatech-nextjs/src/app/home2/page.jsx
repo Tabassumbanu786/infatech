@@ -35,7 +35,7 @@ const home2 = () => {
                 Number="12 345 6732 5894"
             ></About2>
             <Team1></Team1>
-            <Project2></Project2>
+            {/* <Project2></Project2> */}
             <Testimonial2></Testimonial2>
             <Process></Process>
             <Blog2></Blog2>

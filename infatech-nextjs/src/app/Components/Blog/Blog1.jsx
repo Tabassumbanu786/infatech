@@ -11,7 +11,7 @@ const Blog1 = () => {
                     <div className="col-lg-6">
                         <div className="section-title text-left">
                             <SectionTitle
-                                    SubTitle="OUR LATEST BLOG"
+                                    SubTitle="OUR LATEST BLOGshhdhdhdh"
                                     Title="Exploring Its Potential in<br> Various <span>Industries.</span>"
                             ></SectionTitle>
                         </div>

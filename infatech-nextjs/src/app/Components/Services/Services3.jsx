@@ -40,9 +40,9 @@ const Services3 = () => {
                                     <p className="service-desc">{item.desc}</p>
                                 </div>
                             </div>
-                            <div className="service-thumb">
+                            {/* <div className="service-thumb">
                                 <Image src={item.image} alt="img" width={361} height={200}   />
-                            </div>
+                            </div> */}
                         </div>
                     </div>
                 ))}

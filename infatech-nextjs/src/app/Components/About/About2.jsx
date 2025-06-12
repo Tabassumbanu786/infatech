@@ -41,7 +41,7 @@ const About2 = ({bgImg,MainImg,SubTitle,Title,Content,listTitle1,listTitle2,Cont
                                 </ul>
                             </div>
                             <div className="solutek-btn">
-                                 <Link href="/about" className="btn-2">dddddd</Link>
+                                 <Link href="/about" className="btn-2">EXPLORE MORE</Link>
                             </div>
                             <div className="about-contact-box">
                                 <div className="call-box">

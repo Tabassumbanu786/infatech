@@ -37,7 +37,7 @@ export default function HeaderStyle3({ variant }) {
         mobileToggle ? 'cs_mobile_toggle_active' : ''
       } ${isSticky ? isSticky : ''}`}
     >
-      <div className="cs_top_header">
+      {/* <div className="cs_top_header">
         <div className="container-fluid">
           <div className="cs_top_header_in">
             <div className="cs_top_header_left header-info">
@@ -61,13 +61,13 @@ export default function HeaderStyle3({ variant }) {
             </div>
           </div>
         </div>
-      </div>
+      </div> */}
       <div className="cs_main_header cs_accent_bg">
         <div className="container-fluid">
           <div className="cs_main_header_in">
 
             <div className="cs_main_header_left">
-              <Link className="cs_site_branding" href="/">
+              <Link className="cs_site_branding" href="/home3">
                 <Image src="/assets/images/logo.png" alt="Logo" width={161} height={42}   />
               </Link>
               </div>

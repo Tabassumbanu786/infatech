@@ -1,0 +1,58 @@
+[
+    {
+      "img": "/assets/images/inner/team-anu.png",
+      "name": "Dr. Anu Khanchandani",
+      "designation": "Mentor",
+      "description": "With 25+ years in the digital product industry across India, USA, and Singapore, Anu is an ISB alumna and advisory board member for multiple startups. She brings deep experience in product strategy and leadership.",
+      "social": {
+        "facebook": "#",
+        "twitter": "#",
+        "linkedin": "#"
+      }
+    },
+    {
+      "img": "/assets/images/inner/team-uiux.png",
+      "name": "Rahul Mehta",
+      "designation": "Lead UI/UX Designer",
+      "description": "Rahul leads our design team with 8+ years of experience crafting intuitive user experiences for fintech, healthcare, and SaaS platforms. He is known for design systems and interaction logic.",
+      "social": {
+        "facebook": "#",
+        "twitter": "#",
+        "linkedin": "#"
+      }
+    },
+    {
+      "img": "/assets/images/inner/team-qa.png",
+      "name": "Sneha Kapoor",
+      "designation": "Head of QA",
+      "description": "ISTQB-certified QA leader with 10+ years in automation, functional, and performance testing. Sneha ensures each product release is reliable, secure, and efficient.",
+      "social": {
+        "facebook": "#",
+        "twitter": "#",
+        "linkedin": "#"
+      }
+    },
+    {
+      "img": "/assets/images/inner/team-dev.png",
+      "name": "Vikram Rao",
+      "designation": "Full Stack Developer",
+      "description": "Vikram is a skilled developer proficient in React, Node.js, and Python. He builds scalable web apps and APIs, and mentors junior developers in clean code and best practices.",
+      "social": {
+        "facebook": "#",
+        "twitter": "#",
+        "linkedin": "#"
+      }
+    },
+    {
+      "img": "/assets/images/inner/team-pm.png",
+      "name": "Nisha Arora",
+      "designation": "Technical Project Manager",
+      "description": "Nisha ensures project delivery with agility and accountability. Certified in Scrum and PMP, she bridges clients and tech teams while managing timelines, risks, and execution.",
+      "social": {
+        "facebook": "#",
+        "twitter": "#",
+        "linkedin": "#"
+      }
+    }
+  ]
+  

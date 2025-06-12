@@ -8,7 +8,7 @@ const page = () => {
         <div className='contact-page'>
             <BreadCumb Title="Contact"></BreadCumb>
             <Contact1></Contact1>
-            <MapForm></MapForm>
+            {/* <MapForm></MapForm> */}
         </div>
     );
 };

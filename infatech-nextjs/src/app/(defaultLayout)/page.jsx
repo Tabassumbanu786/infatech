@@ -1,54 +1,38 @@
 import React from 'react';
-import Hero1 from '../Components/Banner/Hero1';
-import Features from '../Components/Features/Features';
-import About1 from '../Components/About/About1';
-import Services1 from '../Components/Services/Services1';
-import Project1 from '../Components/Project/Project1';
-import Brand from '../Components/Brand/Brand';
-import Pricing from '../Components/Pricing/Pricing';
-import Faq from '../Components/Faq/Faq';
-import Testimonial1 from '../Components/Testimonial/Testimonial1';
-import Contact1 from '../Components/Contact/Contact1';
-import Blog1 from '../Components/Blog/Blog1';
+import Hero3 from '../Components/Banner/Hero3';
+import Services3 from '../Components/Services/Services3';
+import About3 from '../Components/About/About3';
+import Counter from '../Components/Counter/Counter';
+import CaseStudy from '../Components/CaseStudy/CaseStudy';
+import Testimonial3 from '../Components/Testimonial/Testimonial3';
+import Process2 from '../Components/Process/Process2';
+import Faq2 from '../Components/Faq/Faq2';
+import Blog2 from '../Components/Blog/Blog2';
 
-const Home = () => {
+const page = () => {
     return (
-        <div className='home-page'>
-            <Hero1
-                bgImg="/assets/images/hero-bg.png"
-                SubTitle="SOLUTEK IT SERVICES"
-                Title="The Beauty Behind<br>IT Services."
-                Content="Where your interests international networks intersect provid custom software solutions for any value software."
-                BtnText="EXPLORE MORE"
-                BtnLink="/about"
-                mainImage="/assets/images/hero-thumb.png"
-                VideoText="WATCH VIDEO"
-            ></Hero1> 
-            <Features></Features>
-            <About1
-                MainImg="/assets/images/about-thumb.png"
-                ImgTitle="BEST IT SOLUTION"
-                SubTitle="SOLUTEK COMPANY"
-                Title="Essential IT Solutions For<br> Modern <span>Businesses.</span>"
-                Content="Monotonectally repurpose maintainable infrastruct whereas solutek in fermentum quis tempo sapien maximus design."
-                listTitle="Cloud Based Solution"
-                BottomText="Monotonectally repurpose maintainable infrastruct whereas solutek in fermentum quis tempo sapien maximus design."
-                BtnUrl="/about"
-                BtnText="EXPLORE MORE"
-            ></About1>
-            <Services1></Services1>
-            <Project1 
-                bgImage="/assets/images/project-bg.png"
-                ClassAdd="project-area"
-            ></Project1>
-            <Brand></Brand>
-            <Pricing></Pricing>
-            <Faq></Faq>
-            <Testimonial1></Testimonial1>
-            <Contact1></Contact1>
-            <Blog1></Blog1>
+        <div className='home-page3'>
+            <Hero3></Hero3>
+            <Services3></Services3>
+            <About3
+                bgImg="/assets/images/home-3/about3-bg.png"
+                MainImg="/assets/images/home-3/about-thu3.png"
+                SubTitle="ABOUT INFATECH"
+                Title="Tech Solutions Tailored to Your Business <span>Goals</span>"          
+                Content="We help businesses go digital the smart way—by building systems aligned with your goals, budget, and future growth. No fluff. Just practical, reliable tech that gets the job done."
+                BoxTitle1="Cloud-Ready,Scalable Architecture"
+                BoxTitle2="Long-Term Tech Support & Upgrades"  
+                listTitle1="From internal operations to customer-facing platforms, we create tech that fits your business—not the other way around."
+                listTitle2="Whether you're starting fresh or modernizing legacy systems, we make it seamless."                         
+           ></About3>
+           <Counter></Counter>
+           {/* <CaseStudy></CaseStudy> */}
+           <Testimonial3></Testimonial3>
+           <Process2></Process2>
+           <Faq2></Faq2>
+           <Blog2></Blog2>
         </div>
     );
 };
 
-export default Home;
+export default page;

@@ -1,4 +1,5 @@
 import Image from "next/image";
+import data from '../../Data/teamdetails.json';
 
 const TeamDetail = () => {
     return (

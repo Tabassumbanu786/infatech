@@ -1,59 +1,44 @@
-"use client"
-import { useEffect, useState } from "react";
-import SectionTitle from "../Common/SectionTitle";
-import Form from "../Form/Form";
-import loadBackgroudImages from "../Common/loadBackgroudImages";
-import VideoModal from "../VideoModal/VideoModal";
+"use client";
+import Image from "next/image";
 
+export default function Contact1() {
+  return (
+    <div className="bg-white py-16 px-4 flex flex-col items-center">
+      {/* <h4 className="text-lg font-semibold text-[#0A0A23] mb-2">Contact Us</h4> */}
+      <h1 className="text-4xl font-bold text-center text-[#0A0A23] mb-10">
+        Let’s Connect With <span className="text-[#FF3B00]">Our Team</span>
+      </h1>
 
-const Contact1 = () => {
+      {/* CARD START */}
+      <div className="bg-white rounded-2xl shadow-xl max-w-md w-full px-8 py-10 flex flex-col items-center text-center space-y-4">
+        <div className="w-28 h-28 rounded-full overflow-hidden">
+          <Image
+            src="/assets/images/inner/process-2.png"
+            alt="Tabassum Sheliya"
+            width={112}
+            height={112}
+            className="object-cover w-full h-full"
+          />
+        </div>
 
-    useEffect(() => {
-        loadBackgroudImages();
-      }, []);
+        <h2 className="text-2xl font-bold text-[#0A0A23]">Tabassum Sheliya</h2>
+        <p className="text-sm text-[#FF3B00] font-medium">Product Consultant</p>
 
-      const [iframeSrc, setIframeSrc] = useState('about:blank');
-	  const [toggle, setToggle] = useState(false);
-	
-	  const handelClick = () => {
-		setIframeSrc("https://www.youtube.com/embed/rRid6GCJtgc");
-		setToggle(!toggle);
-	  };
-	  const handelClose = () => {
-		setIframeSrc('about:blank');
-		setToggle(!toggle);
-	  };
-      
-    return (
-        <div className="contact-area" data-background="/assets/images/contact-bg2.png">
-                <div className="container">
-                    <div className="row">
-                        <div className="col-lg-6 col-md-7">
-                            <div className="section-title text-left">
-                            <SectionTitle
-                                    SubTitle="CONTACT US"
-                                    Title="Make an Online Appoinemnt Booking<br> For Business Planing."
-                            ></SectionTitle>
-                            </div>
-                            <Form></Form>
-                        </div>
-                        <div className="col-lg-6 col-md-5">
-                            <div className="contact-box">
-                                <div className="contact-video-icon">	
-                                    <span onClick={handelClick} className="video-vemo-icon venobox vbox-item" data-vbtype="youtube" data-autoplay="true">Play</span>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <VideoModal
-                    isTrue={toggle}
-                    iframeSrc={iframeSrc}
-                    handelClose={handelClose}        
-                ></VideoModal>
-            </div>
+        <div className="text-[#0A0A23] text-sm space-y-1 mt-2">
+          <p>📧 tabassumbanumusa@gmail.com</p>
+          <p>📞 +91 7021710954</p>
+        </div>
 
-    );
-};
-
-export default Contact1;
+        <a
+          href="https://www.linkedin.com/in/your-profile"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="text-[#FF3B00] mt-3 inline-flex items-center gap-1 text-sm underline"
+        >
+          🔗 Connect on LinkedIn
+        </a>
+      </div>
+      {/* CARD END */}
+    </div>
+  );
+}
