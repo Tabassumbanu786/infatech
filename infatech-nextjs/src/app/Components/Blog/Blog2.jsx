@@ -23,20 +23,22 @@ const Blog2 = () => {
                         <div className="single-blog-box">
                             <div className="single-blog-thumb">
                                  <Image src={item.img} alt="img" width={416} height={283}   />
-                                <div className="blog-meta-top">
-                                    <Link href="/blog/blog-details">{item.category}</Link>
+                                 <div className="blog-meta-top">
+                                    <Link href={`/blog/${item.id}`}>{Array.isArray(item.category) ? item.category.join(", ") : item.category}
+                                    </Link>
                                 </div>
                             </div>
                             <div className="blog-box-content">
                             <div className="meta-blog">
-                                <Link href="/blog/blog-details"><span><i className="bi bi-person"></i>HOSSAIN </span></Link>
+                                <Link href="/blog/${item.id}"><span><i className="bi bi-person"></i>HOSSAIN </span></Link>
                                 <p><span>
                                 <Image src="/assets/images/home-two/mesage-icon.png" alt="img" width={17} height={15}   />
                                     </span>COMMENTS</p>
                                 </div>
-                                <h3><Link href="/blog/blog-details">{item.title}</Link></h3>
+                                {/* <h3><Link href={`/blog/${item.id}`}>{item.title}</Link></h3> */}
+                                <h3><Link href={`/blog/${item.id}`}><h3>{item.title}</h3></Link></h3>
                                 <div className="blog-button">
-                                    <Link href="/blog/blog-details" className="btn-2">read post</Link>
+                                    <Link href={`/blog/${item.id}`} className="btn-2">read post</Link>
                                 </div>
                             </div>
                         </div>
