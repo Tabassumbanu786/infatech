@@ -1,0 +1,63 @@
+[
+    {
+      "id": "digital-product",
+      "image":"/assets/images/services/service1.png",
+      "title": "Turn Your Idea Into a Digital Product",
+      "content": "Every successful digital product starts with clarity—on the idea, the users, and the outcome. At Infatech, we help businesses and founders move from rough concepts to fully functional products that are scalable, user-friendly, and tech-ready from day one.\n\nWhether you need a custom website, mobile app, internal portal, or SaaS platform—we choose the right tech stack based on your goals, not trends. We work with React, Next.js, Flutter, Node.js, Django, and Laravel, hosted on platforms like AWS, Azure, or Vercel, to ensure fast, secure, and future-ready solutions.\n\nFrom MVPs for early-stage startups to complete systems for established businesses, we build with clean architecture, scalable code, and intuitive UI/UX design.",
+      "faqs": [
+        {
+          "question": "Will you help me define what to build?",
+          "answer": "Yes. We begin with a discovery phase to understand your users and goals, and then map out the right tech approach, wireframes, and priorities."
+        },
+        {
+          "question": "What platforms do you build for?",
+          "answer": "We build responsive web apps, cross-platform mobile apps (Flutter/React Native), and custom admin dashboards—depending on what fits your business best."
+        },
+        {
+          "question": "Where will my product be hosted?",
+          "answer": "Most of our products are cloud-hosted using AWS (EC2, S3, Lambda), Azure, or Vercel for reliability, scalability, and ease of deployment."
+        }
+      ]
+    },
+    {
+      "id": "automate-operations",
+      "image":"/assets/images/services/service2.png",
+      "title": "Streamline & Automate Your Operations",
+      "content": "Manual processes and disconnected tools cost you time, accuracy, and growth. We help automate your business operations using smart, custom-built systems that are designed to scale.\n\nWhether it's order processing, client onboarding, reporting, or team workflows—we build secure, lightweight solutions that fit your existing tools. Using Node.js, Python, MongoDB, PostgreSQL, and platforms like Zapier, Make, or custom API connectors, we connect systems and automate what slows you down.\n\nWe also build role-based dashboards and internal tools, hosted on secure cloud environments (AWS, Azure) with real-time data sync, access controls, and alerts—so your team can stop firefighting and focus on scaling.",
+      "faqs": [
+        {
+          "question": "Can you automate processes in my current tools?",
+          "answer": "Yes. We create custom integrations with tools like Google Sheets, CRMs, ERPs, email services, and internal databases—or build new ones if needed."
+        },
+        {
+          "question": "Will my team be able to use these tools easily?",
+          "answer": "Absolutely. Every tool is built with a clean interface and role-specific access—so no training manuals needed."
+        },
+        {
+          "question": "How secure is the automation system?",
+          "answer": "We follow industry best practices for access control, data encryption, and cloud security (IAM, firewalls, backups)."
+        }
+      ]
+    },{
+        "id": "scale-seamlessly",
+        "image":"/assets/images/services/service3.png",
+        "title": "Scale Seamlessly as You Grow",
+        "content": "Growth should never be limited by your tech. At Infatech, we help future-proof your software infrastructure so it performs reliably—even as user loads, data volume, and feature complexity increase.\n\nWe design systems using microservice architecture, containerization (Docker, Kubernetes), and modern databases like PostgreSQL, MongoDB, and Redis—ensuring high availability, speed, and modular growth.\n\nOur apps are hosted using auto-scalable cloud infrastructure (AWS EC2 with load balancers, S3 for assets, CloudFront for CDN). We monitor performance using tools like New Relic, Grafana, and help you roll out new features without downtime.\n\nWhether it’s traffic spikes, analytics dashboards, or API integrations—you’ll grow without worrying about your stack falling apart.",
+        "faqs": [
+          {
+            "question": "What makes your solutions scalable?",
+            "answer": "We use clean, modular code, horizontal scaling, cloud hosting with autoscaling, and optimized database queries. It’s built to grow."
+          },
+          {
+            "question": "Can you help us move from monolith to microservices?",
+            "answer": "Yes. We evaluate your current architecture and help you transition to a service-based model without disrupting existing users."
+          },
+          {
+            "question": "Will I get analytics to track performance?",
+            "answer": "Yes. We build in custom dashboards or integrate tools like Grafana, Google Analytics, or Mixpanel to give you clear visibility."
+          }
+        ]
+      }
+      
+  ]
+  

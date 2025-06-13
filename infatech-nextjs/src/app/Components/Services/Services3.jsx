@@ -35,7 +35,8 @@ const Services3 = () => {
                                 </div>
                                 <div className="service-box-content">
                                     <h4 className="service-title">
-                                        <Link href="/service/service-details">{item.title}</Link>
+                                        {/* <Link href ={`/service/${item.id}`}>{item.title}</Link> */}
+                                        <Link href={`/service/${item.id}`}>{item.title}</Link>
                                         </h4>
                                     <p className="service-desc">{item.desc}</p>
                                 </div>

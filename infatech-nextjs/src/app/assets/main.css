@@ -3150,7 +3150,7 @@ ul.testi-rating li {
   background-position: center;
   background-size: cover;
   margin: 0;
-  padding: 110px 0 75px;
+  padding: 70px 0 7px;
 }
 
 .testimonial-area.style-four h4.testi-user-name {
@@ -5174,7 +5174,7 @@ ul.list-style-one li a:hover {
 
 .hero-area.style-three .hero-contant {
   position: relative;
-  padding-top: 0px;
+  padding-top: 130px;
 }
 
 .hero-area.style-three .hero-contant h6 {
@@ -5353,7 +5353,7 @@ ul.list-style-one li a:hover {
   <!-- Start solutek our service section  -->
 =========================================================---*/
 .our-service-section {
-  padding: 110px 0 170px;
+  padding: 20px 0 0px;
   background-repeat: no-repeat;
   background-position: center center;
   background-size: cover;
@@ -5426,7 +5426,7 @@ ul.list-style-one li a:hover {
   <!-- start solutek about section -->
 =========================================================---*/
 .about-section {
-  padding: 120px 0 125px;
+  padding: 50px 0 25px;
   background-repeat: no-repeat;
   background-position: center center;
   background-size: cover;
@@ -5704,7 +5704,7 @@ ul.list-style-one li a:hover {
    <!--start solutek working proces area -->
 =========================================================---*/
 .working-proces-area {
-  padding: 110px 0 90px;
+  padding: 50px 0 20px;
 }
 
 .working-proces-area .section-title.text-center {

@@ -1,17 +1,20 @@
 [
   {
+    "id": "digital-product",
     "icon": "/assets/images/home-3/ser-icon.png",  
     "title": "Turn Idea Into a Digital Product",
     "desc": "Whether you're starting from scratch or upgrading an existing setup—we help you build custom websites, apps, portals, or platforms that bring your vision to life.",
     "image": "/assets/images/home-3/ser-thumb.png"
   },
   {
+    "id": "automate-operations",
     "icon": "/assets/images/home-3/ser-icon2.png",  
     "title": "Simplify & Automate",
     "desc": "Tired of spreadsheets and manual work? We build smart systems that automate your workflows, connect your tools, and save you hours every week.",
     "image": "/assets/images/home-3/ser-thumb2.png"
   },
   {
+    "id": "scale-seamlessly",
     "icon": "/assets/images/home-3/ser-icon3.png",  
     "title": "Scale Seamlessly as You Grow",
     "desc": "From backend integrations to dashboards and performance upgrades, we ensure your tech keeps pace with your business—no bottlenecks, no breakdowns.",
