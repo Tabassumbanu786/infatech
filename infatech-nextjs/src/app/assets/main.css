@@ -5165,7 +5165,7 @@ ul.list-style-one li a:hover {
 =========================================================---*/
 .hero-area.style-three {
   height: 800px;
-  background: #050a1e;
+  background: #fdfdfd;
   margin: 0;
   padding-bottom: 12px;
   position: relative;
@@ -5174,7 +5174,7 @@ ul.list-style-one li a:hover {
 
 .hero-area.style-three .hero-contant {
   position: relative;
-  padding-top: 130px;
+  padding-top: 0px;
 }
 
 .hero-area.style-three .hero-contant h6 {
@@ -5214,7 +5214,7 @@ ul.list-style-one li a:hover {
   margin: 0;
   font-size: 65px;
   line-height: 80px;
-  color: #ffffff;
+  color: #050a1e;
   font-weight: 700;
   display: inline;
 }

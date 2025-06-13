@@ -73,10 +73,13 @@
 }
 
 .hero-area.style-three .hero-contant {
-    padding-top: 130px;
+    padding-top: 0px;
     padding-left: 50px;
 }
-
+.hero_image_3 img {
+    object-position: top;
+    clip-path: inset(0px 0px 40px 0px); /* hides the bottom */
+}
 .about-section .about-contact {
     margin-left: 0px;
 }
