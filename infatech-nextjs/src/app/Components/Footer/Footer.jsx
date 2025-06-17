@@ -4,19 +4,17 @@ import Link from "next/link";
 const Footer = () => {
 
     const Services = [
-        'IT Management',
-        'Digital Marketing',
-        'Web Development',
-        'App Development',
-        'Digital Marketing',
+        'Turn Your Idea Into a Digital Produc',
+        'Streamline & Automate Your Operations',
+        'Scale Seamlessly as You Grow',
       ];
 
       const UsefulLinks = [
         {title:'About Company', link:'/about'},
-        {title:'Meet Our Team', link:'/team'},
+        // {title:'Meet Our Team', link:'/team'},
         {title:'Latest Blog', link:'/blog'},
-        {title:'Contact Us', link:'/contact'},
-        {title:'Testimonials', link:'/testimonial'}
+        {title:'Contact Us', link:'/contact'}
+        // {title:'Testimonials', link:'/testimonial'}
       ];  
 
       const LogoContent = {
@@ -112,7 +110,7 @@ const Footer = () => {
                                 </ul>
                             </div>
                         </div>
-                        <div className="col-lg-3 col-md-6 col-sm-6">
+                        {/* <div className="col-lg-3 col-md-6 col-sm-6">
                             <div className="footer-widget-newsletter">
                                 <div className="widget-title">
                                     <h2>Newsletter</h2>
@@ -127,20 +125,20 @@ const Footer = () => {
                                     </form>
                                 </div>
                             </div>
-                        </div>
+                        </div> */}
                     </div>
                     <div className="row copyright">
                         <div className="col-lg-6 col-md-6 col-sm-6">
                             <div className="-copyright-text">
-                                <p>© Copyright 2024 By Solutek</p>
+                                <p>© Copyright 2024 By Infatech</p>
                             </div>
                         </div>
                         <div className="col-lg-6 col-md-6 col-sm-6">
                             <div className="copyright-list">
-                                <ul>
+                                {/* <ul>
                                     <li><Link href="/">Privacy Policy</Link></li>
                                     <li><Link href="/">Supports</Link></li>
-                                </ul>
+                                </ul> */}
                             </div>
                         </div>
                     </div>
