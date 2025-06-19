@@ -26,6 +26,7 @@ const About3 = ({bgImg,MainImg,SubTitle,Title,Content,listTitle1,listTitle2,BoxT
                                     <h6 className="section-sub-title">{SubTitle}</h6>
                                     <h1 className="section-main-title">{parse(Title)}</h1>
                                     <p className="section-title-descr">{Content}</p>
+                                    
                                 </div>
                                 <div className="about-box-item">
                                     <div className="about-box d-flex align-items-center">

@@ -11,7 +11,7 @@ const Team2 = () => {
                     <div className="section-title text-center">
                     <SectionTitle
                             SubTitle="OUR TEAM MEMBER"
-                            Title="Dedicated Team Members"
+                            Title="Meet Our Core Team"
                         ></SectionTitle>
                     </div>
                 </div>
@@ -23,16 +23,18 @@ const Team2 = () => {
                         <div className="single-team-thumb">
                             <div className="team-content">
                                 <div className="team-inner-title">
-                                    <h4><a href="team-details.html">{item.title}</a></h4>
+                                    <h4><a href={`/team/team-details/${item.slug}`}>{item.title}</a></h4>
+                                    {/* <a href={`/team/team-details/${item.slug}`}>{item.title}</a> */}
+
                                     <p>{item.desc}</p>
                                 </div>
-                                <div className="team-social-icon">
+                                {/* <div className="team-social-icon">
                                     <ul>
                                         <li><a href="#">facebook</a></li>
                                         <li className="list-line"><a href="#">twitter</a></li>
                                         <li><a href="#">behance</a></li>
                                     </ul>
-                                </div>
+                                </div> */}
                             </div>
                             <Image src={item.img} alt="img"  width={223} height={235}   />
                         </div>

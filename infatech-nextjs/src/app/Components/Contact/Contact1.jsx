@@ -13,7 +13,7 @@ export default function Contact1() {
       <div className="bg-white rounded-2xl shadow-xl max-w-md w-full px-8 py-10 flex flex-col items-center text-center space-y-4">
         <div className="w-28 h-28 rounded-full overflow-hidden">
           <Image
-            src="/assets/images/inner/process-2.png"
+            src="/assets/images/inner/tabassum-circular.png"
             alt="Tabassum Sheliya"
             width={112}
             height={112}

@@ -22,8 +22,10 @@ const page = () => {
                 Content="We help businesses go digital the smart way—by building systems aligned with your goals, budget, and future growth. No fluff. Just practical, reliable tech that gets the job done."
                 BoxTitle1="Cloud-Ready,Scalable Architecture"
                 BoxTitle2="Long-Term Tech Support & Upgrades"  
-                listTitle1="From internal operations to customer-facing platforms, we create tech that fits your business—not the other way around."
-                listTitle2="Whether you're starting fresh or modernizing legacy systems, we make it seamless."                         
+                listTitle1="✅ Clear Process — From discovery to launch, we break down complexity and keep you in the loop."
+                listTitle2="✅ Business Aligned, Tech Strong — We speak business and write robust code that stands the test of time."    
+                listTitle3="✅ Cloud-Native & Scalable — We build on trusted stacks: React, Node.js, Python, Django, AWS, Azure — ensuring security and growth readiness."
+                listTitle4="✅ Long-Term Partnership — We don’t disappear after delivery; we support, upgrade, and scale with you."                          
            ></About3>
            <Counter></Counter>
            {/* <CaseStudy></CaseStudy> */}

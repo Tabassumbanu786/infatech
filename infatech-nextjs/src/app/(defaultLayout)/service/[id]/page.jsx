@@ -9,7 +9,7 @@ export default function Page({ params }) {
 
   return (
     <div className="service-details">
-      <BreadCumb Title={service.title} />
+      {/* <BreadCumb Title={service.title} /> */}
       <ServiceDetail service={service} />
     </div>
   );

@@ -7,7 +7,7 @@ import React from 'react';
 const page = () => {
     return (
         <div className='service-page'>
-            <BreadCumb Title="Services"></BreadCumb>
+            {/* <BreadCumb Title="Services"></BreadCumb> */}
             <Services4></Services4>
             <Team1></Team1>
             <Blog1></Blog1>

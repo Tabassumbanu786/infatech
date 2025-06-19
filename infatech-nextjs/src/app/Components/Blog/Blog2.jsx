@@ -23,10 +23,10 @@ const Blog2 = () => {
                         <div className="single-blog-box">
                             <div className="single-blog-thumb">
                                  <Image src={item.img} alt="img" width={416} height={283}   />
-                                 <div className="blog-meta-top">
+                                 {/* <div className="blog-meta-top">
                                     <Link href={`/blog/${item.id}`}>{Array.isArray(item.category) ? item.category.join(", ") : item.category}
                                     </Link>
-                                </div>
+                                </div> */}
                             </div>
                             <div className="blog-box-content">
                             <div className="meta-blog">

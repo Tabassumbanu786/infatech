@@ -4194,7 +4194,7 @@ h3.blog-title-two a {
 }
 
 .working-process-box {
-    padding: 0;
+    /* padding: 0; */
 }
 
 .process-thumb:before {
@@ -4545,6 +4545,3 @@ h3.blog-details-title.two {
         height: inherit;
     }
   }
-
-
-

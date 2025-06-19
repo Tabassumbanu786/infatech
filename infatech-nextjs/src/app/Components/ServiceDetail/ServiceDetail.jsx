@@ -2,6 +2,7 @@
 import { useEffect, useRef, useState } from "react";
 import Link from "next/link";
 import Image from "next/image";
+import data from '../../Data/services3.json';
 
 const ServiceDetail = ({ service }) => {
   const Services = [
@@ -60,7 +61,7 @@ const ServiceDetail = ({ service }) => {
                   <div className="col-lg-6 col-md-6">
                     <div className="service-detalis-text-box">
                       <div className="service-details-content">
-                        <h4>Why Choose Us</h4>
+                        <h4>Why Choose Infatech</h4>
                         <p>
                         At Infatech, we don’t just deliver software—we engineer long-term success.
                         Our team combines deep technical expertise with a 
@@ -70,13 +71,16 @@ const ServiceDetail = ({ service }) => {
                       <div className="service-details-list">
                         <ul>
                           <li>
-                            <i className="bi bi-arrow-right"></i>Success Stories
+                            <i className="bi bi-arrow-right"></i>Clear Process 
                           </li>
                           <li>
-                            <i className="bi bi-arrow-right"></i>Custom Tech Services
+                            <i className="bi bi-arrow-right"></i>Business Aligned, Tech Strong 
                           </li>
                           <li>
-                            <i className="bi bi-arrow-right"></i>Client-Driven Innovations
+                            <i className="bi bi-arrow-right"></i>Cloud-Native & Scalable 
+                          </li>
+                          <li>
+                            <i className="bi bi-arrow-right"></i>Long-Term Partnership 
                           </li>
                         </ul>
                       </div>
@@ -150,16 +154,16 @@ const ServiceDetail = ({ service }) => {
                   </div>
                   <div className="widget-category">
                     <ul>
-                      {Services.map((item, i) => (
+                      {data.map((item, i) => (
                         <li key={i}>
-                          <Link href="/service/service-details">
+                          <Link href={`/service/${item.id}`}>
                             <Image
                               src="/assets/images/inner/category-icon.png"
                               alt="img"
                               width={19}
                               height={14}
                             />
-                            {item}
+                            {item.title}
                             <i className="bi bi-arrow-right"></i>
                           </Link>
                         </li>
@@ -168,25 +172,25 @@ const ServiceDetail = ({ service }) => {
                   </div>
                 </div>
 
-                <div className="widget-sidber">
-                  <div className="widget-sidber-content">
-                    <h4>Downloads</h4>
-                  </div>
-                  <div className="widget-sidber-download-button">
-                    <a href="#">
-                      <i className="bi bi-file-earmark-pdf"></i>Service Report
-                      <span>
-                        <i className="bi bi-download"></i>
-                      </span>
-                    </a>
-                    <a className="active" href="#">
-                      <i className="bi bi-file-earmark-pdf"></i>Download Lists
-                      <span>
-                        <i className="bi bi-download"></i>
-                      </span>
-                    </a>
-                  </div>
-                </div>
+                  {/* <div className="widget-sidber">
+                    <div className="widget-sidber-content">
+                      <h4>Downloads</h4>
+                    </div>
+                    <div className="widget-sidber-download-button">
+                      <a href="#">
+                        <i className="bi bi-file-earmark-pdf"></i>Service Report
+                        <span>
+                          <i className="bi bi-download"></i>
+                        </span>
+                      </a>
+                      <a className="active" href="#">
+                        <i className="bi bi-file-earmark-pdf"></i>Download Lists
+                        <span>
+                          <i className="bi bi-download"></i>
+                        </span>
+                      </a>
+                    </div>
+                  </div> */}
 
                 <div className="widget-sidber-contact-box">
                   <p className="widget-sidber-contact-text">Call Us Anytime</p>
@@ -194,7 +198,7 @@ const ServiceDetail = ({ service }) => {
                     +91 7021710954
                   </h3>
                   <span className="widget-sidber-contact-gmail">
-                    <i className="bi bi-envelope-fill"></i>tabassumbanumusa@gmail.com
+                    <i className="bi bi-envelope-fill"></i>tabassum@infatech.in
                   </span>
                   <div className="widget-sidber-contact-btn">
                     <Link href="/contact">

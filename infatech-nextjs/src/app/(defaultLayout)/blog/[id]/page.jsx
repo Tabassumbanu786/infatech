@@ -13,7 +13,7 @@ export default function Page({ params }) {
 
   return (
     <div className='blog-detail'>
-      <BreadCumb Title="Blog Details" />
+      {/* <BreadCumb Title="Blog Details" /> */}
       <BlogDetail blog={blog} />
     </div>
   );

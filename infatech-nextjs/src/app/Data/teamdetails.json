@@ -1,58 +1,86 @@
 [
-    {
-      "img": "/assets/images/inner/team-anu.png",
-      "name": "Dr. Anu Khanchandani",
-      "designation": "Mentor",
-      "description": "With 25+ years in the digital product industry across India, USA, and Singapore, Anu is an ISB alumna and advisory board member for multiple startups. She brings deep experience in product strategy and leadership.",
-      "social": {
-        "facebook": "#",
-        "twitter": "#",
-        "linkedin": "#"
-      }
-    },
-    {
-      "img": "/assets/images/inner/team-uiux.png",
-      "name": "Rahul Mehta",
-      "designation": "Lead UI/UX Designer",
-      "description": "Rahul leads our design team with 8+ years of experience crafting intuitive user experiences for fintech, healthcare, and SaaS platforms. He is known for design systems and interaction logic.",
-      "social": {
-        "facebook": "#",
-        "twitter": "#",
-        "linkedin": "#"
-      }
-    },
-    {
-      "img": "/assets/images/inner/team-qa.png",
-      "name": "Sneha Kapoor",
-      "designation": "Head of QA",
-      "description": "ISTQB-certified QA leader with 10+ years in automation, functional, and performance testing. Sneha ensures each product release is reliable, secure, and efficient.",
-      "social": {
-        "facebook": "#",
-        "twitter": "#",
-        "linkedin": "#"
-      }
-    },
-    {
-      "img": "/assets/images/inner/team-dev.png",
-      "name": "Vikram Rao",
-      "designation": "Full Stack Developer",
-      "description": "Vikram is a skilled developer proficient in React, Node.js, and Python. He builds scalable web apps and APIs, and mentors junior developers in clean code and best practices.",
-      "social": {
-        "facebook": "#",
-        "twitter": "#",
-        "linkedin": "#"
-      }
-    },
-    {
-      "img": "/assets/images/inner/team-pm.png",
-      "name": "Nisha Arora",
-      "designation": "Technical Project Manager",
-      "description": "Nisha ensures project delivery with agility and accountability. Certified in Scrum and PMP, she bridges clients and tech teams while managing timelines, risks, and execution.",
-      "social": {
-        "facebook": "#",
-        "twitter": "#",
-        "linkedin": "#"
-      }
+  {
+    "img": "/assets/images/inner/tabassum.png",
+    "name": "Tabassum Sheliya",
+    "slug": "tabassum",
+    "designation": "Founder",
+    "description": "With over 15 years of experience as a Technical Product Manager, Tabassum has overseen the development and delivery of complex digital products across multiple industries. Her strength lies in bridging the gap between business goals and technical execution — ensuring that every product is practical, scalable, and aligned with what end-users truly need.",
+    "social": {
+      "facebook": "#",
+      "twitter": "#",
+      "linkedin": "#"
     }
-  ]
-  
+  },
+  {
+    "img": "/assets/images/inner/tabassum.png",
+    "name": "Mehdi Musa",
+    "slug": "mehdi",
+    "designation": "Co-Founder",
+    "description": "As Co-Founder and a skilled Full Stack Developer & Team Leader, Mehdi brings over 5 years of hands-on experience in building modern, performance-focused applications using React, Node.js, and Python. He leads Infatech’s development team with a sharp eye for clean architecture, smooth integrations, and user-centric design.",
+    "social": {
+      "facebook": "#",
+      "twitter": "#",
+      "linkedin": "#"
+    }
+  },
+  {
+    "img": "/assets/images/inner/Anu.png",
+    "name": "Dr. Anu Khanchandani",
+    "slug": "anu",
+    "designation": "Mentor",
+    "description": "A trusted name in the industry, Dr. Anu Khanchandani brings 25+ years of expertise in product strategy and business growth consulting. As a mentor at Infatech, she ensures that every solution we build is rooted in sound strategy and positioned for long-term success — not just quick fixes.",
+    "social": {
+      "facebook": "#",
+      "twitter": "#",
+      "linkedin": "#"
+    }
+  },
+  {
+    "img": "/assets/images/inner/team-uiux.png",
+    "name": "Rahul Mehta",
+    "slug": "rahul",
+    "designation": "Lead UI/UX Designer",
+    "description": "Rahul leads our design team with 8+ years of experience crafting intuitive user experiences for fintech, healthcare, and SaaS platforms. He is known for design systems and interaction logic.",
+    "social": {
+      "facebook": "#",
+      "twitter": "#",
+      "linkedin": "#"
+    }
+  },
+  {
+    "img": "/assets/images/inner/team-qa.png",
+    "name": "Sneha Kapoor",
+    "slug": "sneha",
+    "designation": "Head of QA",
+    "description": "ISTQB-certified QA leader with 10+ years in automation, functional, and performance testing. Sneha ensures each product release is reliable, secure, and efficient.",
+    "social": {
+      "facebook": "#",
+      "twitter": "#",
+      "linkedin": "#"
+    }
+  },
+  {
+    "img": "/assets/images/inner/team-dev.png",
+    "name": "Vikram Rao",
+    "slug": "vikram",
+    "designation": "Full Stack Developer",
+    "description": "Vikram is a skilled developer proficient in React, Node.js, and Python. He builds scalable web apps and APIs, and mentors junior developers in clean code and best practices.",
+    "social": {
+      "facebook": "#",
+      "twitter": "#",
+      "linkedin": "#"
+    }
+  },
+  {
+    "img": "/assets/images/inner/team-pm.png",
+    "name": "Nisha Arora",
+    "slug": "nisha",
+    "designation": "Technical Project Manager",
+    "description": "Nisha ensures project delivery with agility and accountability. Certified in Scrum and PMP, she bridges clients and tech teams while managing timelines, risks, and execution.",
+    "social": {
+      "facebook": "#",
+      "twitter": "#",
+      "linkedin": "#"
+    }
+  }
+]

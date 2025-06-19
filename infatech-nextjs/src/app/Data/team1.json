@@ -1,22 +1,19 @@
 [
   {
-    "img": "/assets/images/home-two/team-thu.png",  
-    "title": "dgdggdgdg",
-    "desc": "UI/UX DESIGNER"
+    "img": "/assets/images/inner/tabassum.png", 
+    "title": "Tabassum Sheliya",
+    "desc": "Founder"
   },
   {
-    "img": "/assets/images/home-two/team-thu2.png",  
-    "title": "Kathryn Murphy",
-    "desc": "UI/UX DESIGNER"
+    "img": "/assets/images/inner/tabassum.png",  
+    "title": "Mehdi Musa — Co-Founder",
+    "desc": "Co-Founder"
   },
   {
-    "img": "/assets/images/home-two/team-thu3.png",  
-    "title": "Darlene Robertson",
-    "desc": "UI/UX DESIGNER"
-  },  
-  {
-    "img": "/assets/images/home-two/team-thu4.png",  
-    "title": "Cameron William",
-    "desc": "UI/UX DESIGNER"
+    "img": "/assets/images/inner/Anu.png", 
+    "title": "Dr. Anu Khanchandani",
+    "desc": "Mentor"
   }
 ]
+
+

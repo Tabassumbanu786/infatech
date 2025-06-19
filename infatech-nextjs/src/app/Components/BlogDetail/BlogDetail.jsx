@@ -2,6 +2,7 @@
 'use client';
 import Image from 'next/image';
 import Link from 'next/link';
+import data from '../../Data/services3.json';
 
 const BlogDetail = ({ blog }) => {
     const Services = [
@@ -67,15 +68,15 @@ const BlogDetail = ({ blog }) => {
                                     </div>
                                     <div className="widget-category">
                                         <ul>
-                                        {Services.map((item, i) => (
-                                            <li key={i}><Link href="/service/service-details">
+                                        {data.map((item, i) => (
+                                            <li key={i}><Link href={`/service/${item.id}`}>
                                                 <Image src="/assets/images/inner/category-icon.png" alt="img" width={19} height={14}   />
-                                                {item}<i className="bi bi-arrow-right"></i></Link></li>
+                                                {item.title}<i className="bi bi-arrow-right"></i></Link></li>
                                         ))}
                                         </ul>
                                     </div>
                                 </div>
-                                <div className="widget-sidber">
+                                {/* <div className="widget-sidber">
                                     <div className="widget-sidber-content">
                                         <h4>Popular Post</h4>
                                     </div>
@@ -107,15 +108,15 @@ const BlogDetail = ({ blog }) => {
                                             <p> april, 10 2024</p>							
                                         </div>
                                     </div>
-                                </div>						
+                                </div>						 */}
                                 <div className="widget-sidber">
                                     <div className="widget-sidber-content">
                                         <h4>Tags</h4>
                                     </div>	
                                     <div className="widget-catefories-tags">
-                                    {BlogTag.map((item, i) => (
-                                        <a href="#" key={i}>{item}</a>
-                                    ))}
+                                    {blog.category.map((cat, i) => (
+                                    <span key={i}><Link href="#">{cat}</Link>
+                                    </span>))}
                                     </div>											
                                 </div>
                             </div>

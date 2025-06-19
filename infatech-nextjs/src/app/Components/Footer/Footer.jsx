@@ -1,5 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
+import data from '../../Data/services3.json';
 
 const Footer = () => {
 
@@ -19,7 +20,7 @@ const Footer = () => {
 
       const LogoContent = {
         img1:'/assets/images/footer-logo.png',
-        Content:'Globally monetize plug-and-play data it solu monotonectally disseminate oriented busine multifunctional mind design.'
+        Content:'Smart, secure, and scalable software solutions built around your business goals'
       }
 
       const NewsletterContent = {
@@ -76,14 +77,14 @@ const Footer = () => {
                                 </Link>
                                 </div>
                                 <p className="footer-widget-text">{LogoContent.Content}</p>
-                                <div className="footer-social">
+                                {/* <div className="footer-social">
                                     <div className="footer-widget-social">
                                         <a href="#"><i className="bi bi-facebook"></i></a>
                                         <a href="#"><i className="bi bi-twitter"></i></a>
                                         <a href="#"><i className="bi bi-linkedin"></i></a>
                                         <a href="#"><i className="bi bi-instagram"></i></a>                                        
                                     </div>
-                                </div>
+                                </div> */}
                             </div>
                         </div>
                         <div className="col-lg-2 col-md-6 col-sm-6">
@@ -104,8 +105,10 @@ const Footer = () => {
                                     <h2>Services.</h2>
                                 </div>
                                 <ul>
-                                {Services.map((item, i) => ( 
-                                    <li key={i}><Link href="/service/service-details">{item}</Link></li>
+                                {data.map((item, i) => ( 
+                                    <li key={i}><Link href={`/service/${item.id}`}>{item.title}</Link></li>
+                                    // <Link href={'/service/{item.id}'}>{item.title}</Link>
+                                    
                                 ))}
                                 </ul>
                             </div>

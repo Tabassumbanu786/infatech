@@ -5,7 +5,7 @@ import VideoModal from '../VideoModal/VideoModal';
 import Link from 'next/link';
 import Image from 'next/image';
 
-const About4 = ({MainImg,SubTitle,Title,Content,listTitle1,listTitle2,BoxTitle1,BoxTitle2}) => {
+const About4 = ({MainImg,SubTitle,Title,Content,listTitle1,listTitle2,listTitle3,listTitle4,BoxTitle1,BoxTitle2}) => {
 
 
 	  const [iframeSrc, setIframeSrc] = useState('about:blank');
@@ -30,23 +30,29 @@ const About4 = ({MainImg,SubTitle,Title,Content,listTitle1,listTitle2,BoxTitle1,
 								<h1 className="section-main-title">{parse(Title)}</h1>
 								<p className="section-title-descr">{Content}
 								</p>
+								<p className="section-title-descr">Our strength lies in combining decades of real-world experience in product strategy, technical product management, and hands-on development with a clear understanding of what businesses actually need. Whether you’re turning an idea into a product, automating manual processes, or scaling to thousands of users — we deliver robust, future-ready solutions backed by thoughtful architecture and clean code.
+								</p>
+								<p className="section-title-descr">Every line we write, every system we design, and every process we automate is driven by one goal: to be the tech partner you can rely on, year after year.
+								</p>
 							</div>
 							<div className="about-us-content">
 								<div className="about-us-list">
 									<ul>
 										<li><span>{listTitle1}</span></li>
 										<li><span>{listTitle2}</span></li>
+										<li><span>{listTitle3}</span></li>
+										<li><span>{listTitle4}</span></li>
 									</ul>
 								</div>
-								<div className="solutek-btn">
+								{/* <div className="solutek-btn">
 									<Link href="/contact">EXPLORE MORE
 										<div className="solutek-hover-btn hover-bx"></div>
 										<div className="solutek-hover-btn hover-bx2"></div>
 										<div className="solutek-hover-btn hover-bx3"></div>
 										<div className="solutek-hover-btn hover-bx4"></div>
 									</Link>
-								</div>
-								<div className="col-lg-3 col-md-6 col-sm-6">
+								</div> */}
+								{/* <div className="col-lg-3 col-md-6 col-sm-6">
 									<div className="single-counter-box">
 										<div className="counter-icon">
 											<Image src="/assets/images/inner/counter-icon.png"  alt="img" width={70} height={72}   />
@@ -57,7 +63,7 @@ const About4 = ({MainImg,SubTitle,Title,Content,listTitle1,listTitle2,BoxTitle1,
 											<p>{BoxTitle2}</p>
 										</div>
 									</div>
-								</div>
+								</div> */}
 							</div>
 						</div>
 						<div className="col-lg-6">
@@ -65,12 +71,12 @@ const About4 = ({MainImg,SubTitle,Title,Content,listTitle1,listTitle2,BoxTitle1,
 								<div className="about-us-img">
 									<Image src={MainImg} alt="img" width={635} height={520}   />
 								</div>
-								<div className="about-us-video-icon" onClick={handelClick}>	
+								{/* <div className="about-us-video-icon" onClick={handelClick}>	
 									<span className="video-vemo-icon venobox vbox-item" data-vbtype="youtube" data-autoplay="true"><i className="bi bi-play"></i><span>WATCH VIDEO</span></span>
 								</div>
 								<div className="about-us-shape">
 								<Image src="/assets/images/inner/us-shape.png" alt="img" width={103} height={22}   />
-								</div>
+								</div> */}
 							</div>
 						</div>
 					</div>
