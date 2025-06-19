@@ -5,39 +5,53 @@ import Link from 'next/link';
 import Image from 'next/image';
 export default function HeaderStyle3({ variant }) {
   const [mobileToggle, setMobileToggle] = useState(false);
-  const [isSticky, setIsSticky] = useState();
+  const [isSticky, setIsSticky] = useState(false);
+  const [hasScrolled, setHasScrolled] = useState(false); 
   const [prevScrollPos, setPrevScrollPos] = useState(0);
 
   useEffect(() => {
     const handleScroll = () => {
       const currentScrollPos = window.scrollY;
-      if (currentScrollPos > prevScrollPos) {
-        setIsSticky('cs-gescout_sticky'); // Scrolling down
-      } else if (currentScrollPos !== 0) {
-        setIsSticky('cs-gescout_show cs-gescout_sticky'); // Scrolling up
+
+      if (currentScrollPos > 80) {
+        setIsSticky(true);
+        if (!hasScrolled) setHasScrolled(true);
       } else {
-        setIsSticky();
+        setIsSticky(false);
+        setHasScrolled(false); 
       }
-      setPrevScrollPos(currentScrollPos); // Update previous scroll position
+
+      setPrevScrollPos(currentScrollPos);
     };
 
-    window.addEventListener('scroll', handleScroll);
-
-    return () => {
-      window.removeEventListener('scroll', handleScroll); // Cleanup the event listener
+    let ticking = false;
+    const onScroll = () => {
+      if (!ticking) {
+        window.requestAnimationFrame(() => {
+          handleScroll();
+          ticking = false;
+        });
+        ticking = true;
+      }
     };
+
+    window.addEventListener('scroll', onScroll);
+    return () => window.removeEventListener('scroll', onScroll);
   }, [prevScrollPos]);
+
 
   return (
     <div className='header-area2 header_nav_03'>
-    <header
-      className={`cs_site_header cs_style_1 ${
-        variant ? variant : ''
-      } cs_sticky_header cs_site_header_full_width ${
-        mobileToggle ? 'cs_mobile_toggle_active' : ''
-      } ${isSticky ? isSticky : ''}`}
-    >
-      {/* <div className="cs_top_header">
+     <header
+        className={`cs_site_header cs_style_1 ${variant || ""}
+          cs_sticky_header cs_site_header_full_width
+          ${mobileToggle ? "cs_mobile_toggle_active" : ""}
+          ${isSticky ? "cs-gescout_sticky" : ""}
+          ${hasScrolled ? "cs_slide_in" : ""}
+        `}
+      >
+
+        {/* <div className="cs_top_header">
         <div className="container-fluid">
           <div className="cs_top_header_in">
             <div className="cs_top_header_left header-info">
@@ -62,14 +76,17 @@ export default function HeaderStyle3({ variant }) {
           </div>
         </div>
       </div> */}
-      <div className="cs_main_header cs_accent_bg">
-        <div className="container-fluid">
-          <div className="cs_main_header_in">
+        <div className="cs_main_header cs_accent_bg">
+          <div className="container-fluid">
+            <div className="cs_main_header_in">
 
-            <div className="cs_main_header_left">
-              <Link className="cs_site_branding" href="/home3">
-                <Image src="/assets/images/logo.png" alt="Logo" width={161} height={42}   />
-              </Link>
+              <div className="cs_main_header_left">
+                <Link className="cs_site_branding" href="/home3">
+                  {
+                    isSticky ? <Image src="/assets/images/logo.png" alt="Logo_1" width={161} height={42} /> : <Image src="/assets/images/logo.png" alt="Logo" width={161} height={42} />
+                  }
+
+                </Link>
               </div>
 
               <div className="cs_main_header_center">
@@ -86,18 +103,18 @@ export default function HeaderStyle3({ variant }) {
                   </span>
                   <Nav setMobileToggle={setMobileToggle} />
                 </div>
-            </div>
-            <div className="cs_main_header_right">
-            <div className="solutek-btn2">
-						<Link href="/contact">Get A Quote Now</Link>
-					  </div>
+              </div>
+              <div className="cs_main_header_right">
+                <div className="solutek-btn2">
+                  <Link href="/contact">Get A Quote Now</Link>
+                </div>
+              </div>
             </div>
           </div>
         </div>
-      </div>
-    </header>
-    <div className="cs_site_header_spacing_140"></div>
+      </header>
+      <div className="cs_site_header_spacing_140"></div>
     </div>
-    
+
   );
 }
