@@ -34,7 +34,10 @@ const FaqIfa = ({ faqs }) => {
         <div className="row">
           <div className="col-lg-6 col-md-12">
             <div className="section-title text-left">
-              <SectionTitle SubTitle="FAQs" Title="Common <span>Questions</span>" />
+              <SectionTitle
+                SubTitle="client review"
+                Title="Frequently Asked <span> Question?</span>"
+              />
             </div>
             <div className="tab_container">
               <div id="tab1" className="tab_content">
