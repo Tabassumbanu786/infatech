@@ -21,6 +21,7 @@ const Blog4 = () => {
         'Marketing',
         'Technology',
       ]; 
+      
 
     return (
         <div className="blog-area style-grid">
