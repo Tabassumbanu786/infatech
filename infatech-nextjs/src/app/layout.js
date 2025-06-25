@@ -51,10 +51,17 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      <head>
+     <head>
   <meta name="author" content="Themeservices" />
-  <link rel="icon" href="/favicon.ico" sizes="any" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta charSet="UTF-8" />
 
+  {/* Favicon */}
+  <link rel="icon" href="/favicon.ico" sizes="any" />
+  <link rel="apple-touch-icon" href="/favicon.ico" />
+  <link rel="shortcut icon" href="/favicon.ico" />
+
+  {/* Schema.org JSON-LD */}
   <script
     type="application/ld+json"
     dangerouslySetInnerHTML={{
@@ -67,11 +74,13 @@ export default function RootLayout({ children }) {
         "sameAs": [
           "https://www.linkedin.com/company/infatechinnovations"
         ],
-        "description": "Infatech Innovations offers AI-driven automation, web development, and digital solutions for growing businesses."
+        "description":
+          "Infatech Innovations offers AI-driven automation, web development, and digital solutions for growing businesses.",
       }),
     }}
   />
 </head>
+
 
       <body className={`${fira_sans.variable} ${poppins.variable}`}>
         {children}
