@@ -52,9 +52,27 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <head>
-        <meta name="author" content="Themeservices" />
-        <link rel="icon" href="/favicon.ico" sizes="any" />
-      </head>
+  <meta name="author" content="Themeservices" />
+  <link rel="icon" href="/favicon.ico" sizes="any" />
+
+  <script
+    type="application/ld+json"
+    dangerouslySetInnerHTML={{
+      __html: JSON.stringify({
+        "@context": "https://schema.org",
+        "@type": "Organization",
+        "name": "Infatech Innovations",
+        "url": "https://www.infatech.in",
+        "logo": "https://www.infatech.in/assets/images/logo.png",
+        "sameAs": [
+          "https://www.linkedin.com/company/infatechinnovations"
+        ],
+        "description": "Infatech Innovations offers AI-driven automation, web development, and digital solutions for growing businesses."
+      }),
+    }}
+  />
+</head>
+
       <body className={`${fira_sans.variable} ${poppins.variable}`}>
         {children}
       </body>
