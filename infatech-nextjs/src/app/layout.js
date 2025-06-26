@@ -57,10 +57,10 @@ export default function RootLayout({ children }) {
   <meta charSet="UTF-8" />
 
   {/* Favicon */}
-  <link rel="icon" href="/favicon.ico" sizes="any" />
-  <link rel="apple-touch-icon" href="/favicon.ico" />
-  <link rel="shortcut icon" href="/favicon.ico" />
-
+  
+  <link rel="icon" href="/assets/images/favicon.ico" sizes="any" />
+  <link rel="apple-touch-icon" href="/assets/images/favicon.ico" />
+  <link rel="shortcut icon" href="/assets/images/favicon.ico" />
   {/* Schema.org JSON-LD */}
   <script
     type="application/ld+json"
