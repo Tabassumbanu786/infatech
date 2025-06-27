@@ -11,19 +11,22 @@ export default function HeaderStyle3({ variant }) {
 
   useEffect(() => {
     const handleScroll = () => {
-      const currentScrollPos = window.scrollY;
-
-      if (currentScrollPos > 80) {
+      const y = window.scrollY;
+  
+      if (y > 80) {
         setIsSticky(true);
-        if (!hasScrolled) setHasScrolled(true);
+        setHasScrolled(true);      // trigger slide‑in (only matters first time)
       } else {
         setIsSticky(false);
-        setHasScrolled(false); 
+        setHasScrolled(false);
       }
-
-      setPrevScrollPos(currentScrollPos);
+  
+      setPrevScrollPos(y);
     };
-
+  
+    /* 🔑  Run once on mount so page-refresh at mid‑scroll works */
+    handleScroll();
+  
     let ticking = false;
     const onScroll = () => {
       if (!ticking) {
@@ -34,10 +37,11 @@ export default function HeaderStyle3({ variant }) {
         ticking = true;
       }
     };
-
-    window.addEventListener('scroll', onScroll);
-    return () => window.removeEventListener('scroll', onScroll);
-  }, [prevScrollPos]);
+  
+    window.addEventListener("scroll", onScroll, { passive: true });
+    return () => window.removeEventListener("scroll", onScroll);
+  }, []);
+  
 
 
   return (
