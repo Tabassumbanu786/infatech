@@ -761,9 +761,16 @@ a,i, cite, em, var, address, dfn,ol,li,ul{
   .cs-munu_toggle, .cs-munu_dropdown_toggle {
     display: none;
  }
- .cs-gescout_sticky .cs_nav .cs_nav_list  li  a{
-  color:#fff;
-  }
+/* White color for top-level menu items */
+.cs-gescout_sticky .cs_nav .cs_nav_list > li > a {
+  color: #fff;
+}
+
+/* Black color for dropdown menu items */
+.cs-gescout_sticky .cs_nav .cs_nav_list li.menu-item-has-children ul li a {
+  color: #000 !important;
+}
+
   .cs-gescout_sticky .cs_main_header{
     padding-top: 0;
   }
@@ -896,6 +903,9 @@ a,i, cite, em, var, address, dfn,ol,li,ul{
     right: 0px;
     margin-top: -13px;
     color:#000
+ }
+ .cs-gescout_sticky.cs_style_1 .cs-munu_toggle{
+  color: #fff;
  }
   .cs-toggle_active span {
     background-color: rgba(0, 0, 0, 0);
@@ -1123,9 +1133,9 @@ a,i, cite, em, var, address, dfn,ol,li,ul{
 .main-page-area {
   padding: 0;
 }
-.cs_site_header.cs_style_1 {
+/* .cs_site_header.cs_style_1 {
   background: #fdfdfd;
-}
+} */
 .cs_nav .cs_nav_list li a{
   color: #fff;
 }

@@ -26,7 +26,7 @@ export default function Nav({ setMobileToggle }) {
             </li>            
           </ul>
         </DropDown> */}
-      </li>   
+      </li>
       {/* <li>
         <Link href="/project" onClick={() => setMobileToggle(false)}>
         Portfolio  
@@ -49,17 +49,17 @@ export default function Nav({ setMobileToggle }) {
               </Link>
             </li> */}
             {serviceData.map((service) => (
-    <li key={service.id}>
-      <Link href={`/service/${service.id}`} onClick={() => setMobileToggle(false)}>
-        {service.title}
-      </Link>
-    </li>
-  ))}
+              <li key={service.id}>
+                <Link href={`/service/${service.id}`} onClick={() => setMobileToggle(false)}>
+                  {service.title}
+                </Link>
+              </li>
+            ))}
           </ul>
         </DropDown>
 
-      </li>   
-         
+      </li>
+
       <li className="cs_nav_list fw-medium">
         <Link href="/blog" onClick={() => setMobileToggle(false)}>
           Blog
@@ -89,7 +89,7 @@ export default function Nav({ setMobileToggle }) {
       </li>
       <li className="cs_nav_list fw-mediumn">
         <Link href="/about">About Us</Link>
-      </li>   
+      </li>
       <li>
         <Link href="/contact" onClick={() => setMobileToggle(false)}>
           Contact

@@ -49,7 +49,7 @@ export default function HeaderStyle3({ variant }) {
      <header
         className={`cs_site_header cs_style_1 ${variant || ""}
           cs_sticky_header cs_site_header_full_width
-          ${mobileToggle ? "cs_mobile_toggle_active" : ""}
+          ${mobileToggle ? "cs_mobile_toggle_active" : ""}n
           ${isSticky ? "cs-gescout_sticky" : ""}
           ${hasScrolled ? "cs_slide_in" : ""}
         `}
