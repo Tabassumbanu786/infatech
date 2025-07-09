@@ -1,4 +1,6 @@
-import Blog4 from '@/app/components/Blog/Blog4';
+
+import Blog4 from '../../components/Blog/Blog4';
+
 import BreadCumb from '@/app/components/Common/BreadCumb';
 import React from 'react';
 
