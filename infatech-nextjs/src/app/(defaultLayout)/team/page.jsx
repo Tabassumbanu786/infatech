@@ -1,6 +1,5 @@
 import Blog1 from '@/app/components/Blog/Blog1';
-import BreadCumb from '@/app/components/Common/BreadCumb';
-import Team2 from '@/app/components/Team/Team2';
+import BreadCumb from '../../components/Common/BreadCumbimport Team2 from '@/app/components/Team/Team2';
 import Testimonial2 from '@/app/components/Testimonial/Testimonial2';
 import React from 'react';
 

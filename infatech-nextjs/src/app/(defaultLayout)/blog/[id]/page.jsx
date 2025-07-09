@@ -1,7 +1,7 @@
 // app/blog/[id]/page.js
-import BlogDetail from '@/app/components/BlogDetail/BlogDetail';
-import BreadCumb from '@/app/components/Common/BreadCumb';
-import data from '@/app/Data/blog.json';
+import BlogDetail from '../../../components/BlogDetail/BlogDetail';
+// import data from '@/app/Data/blog.json';
+import data from '../../../Data/blog.json';
 
 
 

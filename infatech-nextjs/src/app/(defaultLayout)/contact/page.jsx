@@ -1,5 +1,4 @@
-import BreadCumb from '@/app/components/Common/BreadCumb';
-import Contact1 from '@/app/components/Contact/Contact1';
+import BreadCumb from '../../components/Common/BreadCumbimport Contact1 from '@/app/components/Contact/Contact1';
 import MapForm from '@/app/components/Map/Mapform';
 import React from 'react';
 
