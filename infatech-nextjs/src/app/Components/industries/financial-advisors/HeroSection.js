@@ -28,7 +28,7 @@ const HeroSection = () => (
           Hi, I’m Ravi Shah , an AMFI-registered Mutual Fund Distributor with 12 years of experience in guiding families and professionals toward their financial goals.
         </p>
         <button className="bg-yellow-400 text-black font-semibold px-6 py-3 rounded hover:bg-yellow-300 transition">
-          Book a Free Consultation
+          Book a Free Consultations
         </button>
       </div>
 
