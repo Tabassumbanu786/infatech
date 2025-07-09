@@ -1,7 +1,7 @@
 
 import Blog4 from '../../components/Blog/Blog4';
 
-import BreadCumb from '../../components/Common/BreadCumbimport BreadCumb from '../../components/Common/BreadCumb';
+import BreadCumb from '../../components/Common/BreadCumb';
 
 import React from 'react';
 

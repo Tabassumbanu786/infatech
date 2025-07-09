@@ -1,4 +1,4 @@
-// src/app/Components/industries/financial-advisors/layout.js
+// src/app/components/industries/financial-advisors/layout.js
 
 
 import Link from "next/link";

@@ -1,4 +1,6 @@
-import BreadCumb from '../../components/Common/BreadCumbimport Projecr3 from '@/app/components/Project/Projecr3';
+import BreadCumb from '../../components/Common/BreadCumb';
+import Projecr3 from '../../components/Project/Projecr3';
+
 import React from 'react';
 
 const page = () => {

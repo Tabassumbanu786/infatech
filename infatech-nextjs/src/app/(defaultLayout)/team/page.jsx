@@ -1,12 +1,13 @@
-import Blog1 from '@/app/components/Blog/Blog1';
-import BreadCumb from '../../components/Common/BreadCumbimport Team2 from '@/app/components/Team/Team2';
-import Testimonial2 from '@/app/components/Testimonial/Testimonial2';
+import Blog1 from '../../components/Blog/Blog1';
+
+import Team2 from '../../components/Team/Team2';
+import Testimonial2 from '../../components/Testimonial/Testimonial2';
 import React from 'react';
 
 const page = () => {
     return (
         <div className='team-page'>
-            <BreadCumb Title="Team"></BreadCumb>
+            {/* <BreadCumb Title="Team"></BreadCumb> */}
             <Team2></Team2>
             <Testimonial2></Testimonial2>
             <Blog1></Blog1>
