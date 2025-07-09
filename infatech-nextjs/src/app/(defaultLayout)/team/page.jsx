@@ -1,7 +1,7 @@
-import Blog1 from '@/app/Components/Blog/Blog1';
-import BreadCumb from '@/app/Components/Common/BreadCumb';
-import Team2 from '@/app/Components/Team/Team2';
-import Testimonial2 from '@/app/Components/Testimonial/Testimonial2';
+import Blog1 from '@/app/components/Blog/Blog1';
+import BreadCumb from '@/app/components/Common/BreadCumb';
+import Team2 from '@/app/components/Team/Team2';
+import Testimonial2 from '@/app/components/Testimonial/Testimonial2';
 import React from 'react';
 
 const page = () => {

@@ -1,13 +1,13 @@
 import React from 'react';
-import Hero2 from '../Components/Banner/Hero2';
-import Brand from '../Components/Brand/Brand';
-import Services2 from '../Components/Services/Services2';
-import About2 from '../Components/About/About2';
-import Team1 from '../Components/Team/Team1';
-import Project2 from '../Components/Project/Project2';
-import Testimonial2 from '../Components/Testimonial/Testimonial2';
-import Process from '../Components/Process/Process';
-import Blog2 from '../Components/Blog/Blog2';
+import Hero2 from '../components/Banner/Hero2';
+import Brand from '../components/Brand/Brand';
+import Services2 from '../components/Services/Services2';
+import About2 from '../components/About/About2';
+import Team1 from '../components/Team/Team1';
+import Project2 from '../components/Project/Project2';
+import Testimonial2 from '../components/Testimonial/Testimonial2';
+import Process from '../components/Process/Process';
+import Blog2 from '../components/Blog/Blog2';
 
 const home2 = () => {
     return (

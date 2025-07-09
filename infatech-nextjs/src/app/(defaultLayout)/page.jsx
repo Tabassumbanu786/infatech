@@ -1,13 +1,13 @@
 import React from 'react';
-import Hero3 from '../Components/Banner/Hero3';
-import Services3 from '../Components/Services/Services3';
-import About3 from '../Components/About/About3';
-import Counter from '../Components/Counter/Counter';
-import CaseStudy from '../Components/CaseStudy/CaseStudy';
-import Testimonial3 from '../Components/Testimonial/Testimonial3';
-import Process2 from '../Components/Process/Process2';
-import Faq2 from '../Components/Faq/Faq2';
-import Blog2 from '../Components/Blog/Blog2';
+import Hero3 from '../components/Banner/Hero3';
+import Services3 from '../components/Services/Services3';
+import About3 from '../components/About/About3';
+import Counter from '../components/Counter/Counter';
+import CaseStudy from '../components/CaseStudy/CaseStudy';
+import Testimonial3 from '../components/Testimonial/Testimonial3';
+import Process2 from '../components/Process/Process2';
+import Faq2 from '../components/Faq/Faq2';
+import Blog2 from '../components/Blog/Blog2';
 
 const page = () => {
     return (

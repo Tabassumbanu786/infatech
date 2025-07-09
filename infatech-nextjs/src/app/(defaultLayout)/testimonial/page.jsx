@@ -1,6 +1,6 @@
-import Blog1 from '@/app/Components/Blog/Blog1';
-import BreadCumb from '@/app/Components/Common/BreadCumb';
-import Testimonial4 from '@/app/Components/Testimonial/Testimonial4';
+import Blog1 from '@/app/components/Blog/Blog1';
+import BreadCumb from '@/app/components/Common/BreadCumb';
+import Testimonial4 from '@/app/components/Testimonial/Testimonial4';
 import React from 'react';
 
 const page = () => {

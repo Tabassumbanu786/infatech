@@ -1,7 +1,7 @@
 'use client'
 import React from 'react';
 import data from '../Data/hero.json';
-import IFAfaq from '../Components/Faq/IFAfaq';
+import IFAfaq from '../components/Faq/IFAfaq';
 import Slider from "react-slick";
 import parse from 'html-react-parser';
 import Link from "next/link";

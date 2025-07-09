@@ -1,7 +1,7 @@
 // src/app/(defaultLayout)/team/team-details/[slug]/page.jsx
 
-import BreadCumb from '@/app/Components/Common/BreadCumb';
-import TeamDetail from '@/app/Components/TeamDetail/TeamDetail';
+import BreadCumb from '@/app/components/Common/BreadCumb';
+import TeamDetail from '@/app/components/TeamDetail/TeamDetail';
 import React from 'react';
 
 const Page = ({ params }) => {

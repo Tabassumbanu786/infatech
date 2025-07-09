@@ -1,6 +1,6 @@
-import BreadCumb from '@/app/Components/Common/BreadCumb';
-import Contact1 from '@/app/Components/Contact/Contact1';
-import MapForm from '@/app/Components/Map/Mapform';
+import BreadCumb from '@/app/components/Common/BreadCumb';
+import Contact1 from '@/app/components/Contact/Contact1';
+import MapForm from '@/app/components/Map/Mapform';
 import React from 'react';
 
 const page = () => {
