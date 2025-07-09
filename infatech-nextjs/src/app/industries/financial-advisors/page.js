@@ -3,12 +3,12 @@
 'use client';
 
 import React from "react";
-import Layout from "@/app/components/industries/financial-advisors/Layout";
+import Layout from "../../components/industries/financial-advisors/Layout";
 
-import HeroSection from "@/app/components/industries/financial-advisors/HeroSection";
-import ServicesSection from "@/app/components/industries/financial-advisors/ServicesList";
-import AboutSection from "@/app/components/industries/financial-advisors/AboutSection";
-import ContactSection from "@/app/components/industries/financial-advisors/ContactSection";
+import HeroSection from "../../components/industries/financial-advisors/HeroSection";
+import ServicesSection from "../../components/industries/financial-advisors/ServicesList";
+import AboutSection from "../../components/industries/financial-advisors/AboutSection";
+import ContactSection from "../../components/industries/financial-advisors/ContactSection";
 
 const ifaData = {
   name: "Ravi Shah",
