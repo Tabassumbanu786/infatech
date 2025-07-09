@@ -1,6 +1,6 @@
 import Link from 'next/link';
 import DropDown from './DropDown';
-import serviceData from '@/app/Data/service-detail.json';
+import serviceData from '../../Data/service-detail.json';
 
 export default function Nav({ setMobileToggle }) {
   return (

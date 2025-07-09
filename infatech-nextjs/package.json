@@ -22,6 +22,7 @@
   },
   "devDependencies": {
     "@tailwindcss/postcss": "^4.1.8",
+    "@types/node": "24.0.10",
     "autoprefixer": "^10.4.21",
     "eslint": "^8",
     "eslint-config-next": "^15.3.3",

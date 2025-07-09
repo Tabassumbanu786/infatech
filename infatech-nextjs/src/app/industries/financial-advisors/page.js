@@ -1,0 +1,33 @@
+// src/app/industries/financial-advisors/page.js
+
+'use client';
+
+import React from "react";
+import Layout from "@/app/components/industries/financial-advisors/Layout";
+
+import HeroSection from "@/app/components/industries/financial-advisors/HeroSection";
+import ServicesSection from "@/app/components/industries/financial-advisors/ServicesList";
+import AboutSection from "@/app/components/industries/financial-advisors/AboutSection";
+import ContactSection from "@/app/components/industries/financial-advisors/ContactSection";
+
+const ifaData = {
+  name: "Ravi Shah",
+  experience: 12,
+};
+
+export default function FinancialAdvisorsPage() {
+  return (
+    <Layout>
+      <HeroSection ifaData={ifaData} />
+      <ServicesSection ifaData={ifaData} />
+      <AboutSection ifaData={ifaData} />
+      <ContactSection
+        ifaData={{
+          phone: "9876543210",
+          email: "abc@example.com",
+          location: "Mumbai",
+        }}
+      />
+    </Layout>
+  );
+}

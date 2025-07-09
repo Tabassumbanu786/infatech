@@ -1,15 +1,17 @@
 'use client'
 import React from 'react';
+import data from '../Data/hero.json';
 import IFAfaq from '../Components/Faq/IFAfaq';
 import Slider from "react-slick";
 import parse from 'html-react-parser';
 import Link from "next/link";
 import Image from "next/image";
-import data from '@/app/Data/hero.json';
 
-// Optional: if not globally imported, import these styles here
-import "slick-carousel/slick/slick.css";
-import "slick-carousel/slick/slick-theme.css";
+
+
+
+
+
 
 const LandingPage = () => {
   const settings = {

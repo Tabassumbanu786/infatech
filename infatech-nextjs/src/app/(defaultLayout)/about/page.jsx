@@ -1,8 +1,7 @@
-import About4 from '@/app/Components/About/About4';
-import Blog2 from '@/app/Components/Blog/Blog2';
-import Brand from '@/app/Components/Brand/Brand';
-import BreadCumb from '@/app/Components/Common/BreadCumb';
-import Team2 from '@/app/Components/Team/Team2';
+// import About4 from '@/app/components/About/About4';
+import About4 from '../../components/About/About4';
+import Blog2 from '../../Components/Blog/Blog2';
+import Team2 from '../../components/Team/Team2';
 
 
 import React from 'react';
@@ -31,7 +30,7 @@ const page = () => {
                 ClassAdd="project-area style-two"
             ></Project1> */}
             {/* <Brand></Brand> */}
-            <Blog2></Blog2>
+            <Blog2/>
         </div>
     );
 };
