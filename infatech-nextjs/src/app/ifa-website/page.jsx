@@ -7,7 +7,15 @@ import parse from 'html-react-parser';
 import Link from "next/link";
 import Image from "next/image";
 
+import Services2 from '../components/Services/Services2';
+import IfaServices from './ifaServices';
+import MustHavePages from './MustHavePages';
+import PricingTimeline from './PricingTimeline';
+import EverythingYouNeed from './EverythingYouNeed';
+import GoLiveTimeline from './GoLiveTimeline';
+import FAQSection from './faq';
 
+import { ArrowRight, Clock, Shield, Star, Globe } from 'lucide-react';
 
 
 
@@ -25,82 +33,139 @@ const LandingPage = () => {
 
   return (
     <main className="ifa-landing-page">
-      {/* Offer Section */}
-      <section className="py-5 bg-light text-center">
-        <div className="container">
-          <h1 className="display-5 fw-bold mb-4">Your Own Professional Advisor Website — Live in Just 7 Days</h1>
-          <p className="lead">We handle everything for Indian IFAs: domain, hosting, design, stock ticker, calculators, WhatsApp chat, and more — all done for you at a transparent price.</p>
-        </div>
-      </section>
-
       {/* Hero Slider Section */}
-      <div className="hero-active owl-carousel">
-        <Slider {...settings}>
-          {data.map((item, i) => (
-            <div key={i} className="hero-area style-three d-flex align-items-center">
-              <div className="container">
-                <div className="row hero align-items-center">
-                  <div className="col-lg-5 col-md-7">
-                    <div className="hero-contant">
-                      <h6>{item.subTitle}</h6>
-                      <h1>Your Own Professional Advisor Website — Live in Just 7 Days</h1>
-                      <p>We handle everything for Indian IFAs: domain, hosting, design, stock ticker, calculators, WhatsApp chat, and more — all done for you at a transparent price.</p>
-                      <div className="solutek-btn">
-                        <Link href="/about" className="btn-2">Start Building with Infatech</Link>
-                      </div>
-                      <div className="hero-left-shape">
-                        <Image src="/assets/images/home-3/hero-geo.png" alt="img" width={680} height={680} />
-                      </div>
-                    </div>
-                  </div>
-                  <div className="col-lg-7 col-md-5">
-                    <div className="hero-thumb-3">
-                      <div className="hero-img hero_image_3">
-                        <Image src={item.image} alt="img" width={1065} height={800}
-                          style={{
-                            width: '100%',
-                            height: 'auto',
-                            objectFit: 'contain'
-                          }} />
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          ))}
-        </Slider>
+      <section className="position-relative overflow-hidden py-5 text-center" style={{
+      background: 'linear-gradient(to bottom right, #fff7ed, #ffeef0, #ffe9f3)',
+    }}>
+      <div className="position-absolute top-0 start-0 w-100 h-100" style={{
+        backgroundImage: 'repeating-linear-gradient(45deg, rgba(0,0,0,0.05) 0, rgba(0,0,0,0.05) 1px, transparent 1px, transparent 16px)',
+        zIndex: 0,
+        opacity: 0.05
+      }}></div>
+
+      <div className="container position-relative" style={{ zIndex: 1 }}>
+        <div className="d-flex justify-content-center mb-4">
+          <div className="p-4 rounded-4 shadow-lg" style={{
+            background: 'linear-gradient(to right, #ea580c, #dc2626)'
+          }}>
+            <i className="bi bi-globe fs-2 text-white"></i>
+          </div>
+        </div>
+
+        <h1 className="display-4 fw-bold text-dark mb-4 lh-tight">
+          INFATECH IFA<br />
+          <span style={{
+            background: 'linear-gradient(to right, #ea580c, #dc2626)',
+            WebkitBackgroundClip: 'text',
+            WebkitTextFillColor: 'transparent'
+          }}>
+            Website Starter Pack
+          </span>
+        </h1>
+
+        <p className="lead text-secondary mb-5 mx-auto" style={{ maxWidth: '720px' }}>
+          Complete, branded, trust-building website for Independent Financial Advisors.
+          Look professional, attract clients, and showcase your expertise online.
+        </p>
+
+        <div className="d-flex flex-column flex-sm-row justify-content-center align-items-center gap-3 mb-4">
+          <div className="px-4 py-2 rounded-pill border border-success bg-white shadow-sm d-flex align-items-center text-success">
+            <i className="bi bi-check-circle-fill me-2"></i>
+            <span className="fw-semibold">7-Day Delivery</span>
+          </div>
+          <div className="px-4 py-2 rounded-pill border border-warning bg-white shadow-sm d-flex align-items-center text-warning">
+            <i className="bi bi-shield-fill-check me-2"></i>
+            <span className="fw-semibold">Zero Hassle Setup</span>
+          </div>
+          <div className="px-4 py-2 rounded-pill border border-danger bg-white shadow-sm d-flex align-items-center text-danger">
+            <i className="bi bi-award-fill me-2"></i>
+            <span className="fw-semibold">Professional Design</span>
+          </div>
+        </div>
+
+        <div className="d-flex flex-column flex-sm-row justify-content-center gap-3">
+          <button className="btn btn-lg px-4 py-3 text-white fw-semibold shadow-lg"
+            style={{
+              background: 'linear-gradient(to right, #ea580c, #dc2626)',
+              transition: 'all 0.2s ease-in-out'
+            }}>
+            Get Started Now
+            <i className="bi bi-arrow-right ms-2"></i>
+          </button>
+          <button className="btn btn-lg px-4 py-3 fw-semibold text-dark bg-white border shadow-sm">
+            View Examples
+          </button>
+        </div>
       </div>
+    </section>
+    <EverythingYouNeed />
+    <MustHavePages/>
+    <PricingTimeline />
+    <GoLiveTimeline />
+    <FAQSection/>
 
-      {/* What's Included */}
-      <section className="py-5">
-        <div className="container">
-          <h2 className="mb-4">What&apos;s Included</h2>
-          <ul className="list-unstyled">
-            <li className="mb-2">✔️ Custom Domain &amp; Hosting — no extra billing.</li>
-            <li className="mb-2">✔️ 5 Professional Designs to choose from.</li>
-            <li className="mb-2">✔️ 5 Must-Have Pages: Home, About, Services, Resources, Contact.</li>
-            <li className="mb-2">✔️ Resources page with live stock ticker, finance news, SIP/EMI calculators and downloads.</li>
-            <li className="mb-2">✔️ WhatsApp &amp; Email Integration.</li>
-            <li className="mb-2">✔️ Free SSL Security Certificate.</li>
-            <li className="mb-2">✔️ Basic SEO Setup.</li>
-            <li className="mb-2">✔️ Fully Managed Setup &amp; Maintenance.</li>
-          </ul>
-        </div>
-      </section>
+    {/* CTA Section */}
+<section className="py-5 text-center text-white" style={{ background: 'linear-gradient(to bottom right, #ea580c, #dc2626)' }}>
+  <div className="container">
+    <div className="mb-4">
+      <h2 className="fw-bold display-6 mb-3 text-white">Ready to Build Your Professional Online Presence?</h2>
+      <p className="lead text-white mb-4">
+        Join hundreds of IFAs who have transformed their business with a professional website. <br />
+        Get started today and be online in just 7 days.
+      </p>
+    </div>
 
-      {/* FAQ Section */}
-      <IFAfaq />
+    <div className="d-flex flex-column flex-sm-row justify-content-center gap-3 mb-4">
+    <button
+  className="btn fw-semibold px-4 py-2 shadow rounded-pill"
+  style={{
+    backgroundColor: '#fff',
+    color: '#ea580c',
+    border: '2px solid #fff',
+  }}
+>
+  Start Your Website Now <ArrowRight size={18} className="ms-2" />
+</button>
 
-      {/* Pricing & CTA */}
-      <section className="py-5 text-center">
-        <div className="container">
-          <h2 className="mb-3">One Simple Price, No Surprises</h2>
-          <p className="fs-4 mb-2">One-Time Setup Fee: ₹7,000</p>
-          <p className="fs-5 mb-4">Annual Renewal: ₹1,500/year</p>
-          <Link href="https://wa.me/" className="btn btn-primary btn-lg">Chat with Us on WhatsApp</Link>
-        </div>
-      </section>
+
+<button
+  className="btn fw-semibold px-4 py-2 rounded-pill"
+  style={{
+    backgroundColor: 'transparent',
+    color: '#fff',
+    border: '2px solid #fff',
+  }}
+  onMouseOver={(e) => {
+    e.currentTarget.style.backgroundColor = '#fff';
+    e.currentTarget.style.color = '#ea580c';
+  }}
+  onMouseOut={(e) => {
+    e.currentTarget.style.backgroundColor = 'transparent';
+    e.currentTarget.style.color = '#fff';
+  }}
+>
+  Schedule a Call
+</button>
+
+    </div>
+
+    <div className="d-flex justify-content-center gap-4 text-white small mt-4 flex-wrap">
+      <div className="d-flex align-items-center">
+        <Clock size={16} className="me-2" />
+        <span>7-Day Delivery</span>
+      </div>
+      <div className="d-flex align-items-center">
+        <Shield size={16} className="me-2" />
+        <span>Secure & Professional</span>
+      </div>
+      <div className="d-flex align-items-center">
+        <Star size={16} className="me-2" />
+        <span>Expert Support</span>
+      </div>
+    </div>
+  </div>
+</section>
+
     </main>
   );
 };

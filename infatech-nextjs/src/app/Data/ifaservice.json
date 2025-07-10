@@ -1,0 +1,33 @@
+[
+    {
+      "img": "/assets/images/icons/domain-hosting.png",
+      "title": "Domain Registration & Hosting",
+      "desc": "We purchase and manage your domain name and provide secure hosting — all included, no separate bill."
+    },
+    {
+      "img": "/assets/images/icons/templates.png",
+      "title": "Choose From 5 Modern Templates",
+      "desc": "Handpicked, mobile-friendly layouts designed for IFAs. Clean, simple, and professional."
+    },
+    {
+      "img": "/assets/images/icons/branding.png",
+      "title": "Branding",
+      "desc": "Your logo, colors, and photo integrated for a personalised look."
+    },
+    {
+      "img": "/assets/images/icons/seo.png",
+      "title": "Basic SEO",
+      "desc": "We set up proper page titles & descriptions to help Google index your site."
+    },
+    {
+      "img": "/assets/images/icons/security.png",
+      "title": "Security",
+      "desc": "Free SSL certificate for safe browsing."
+    },
+    {
+      "img": "/assets/images/icons/support.png",
+      "title": "Zero Hassle",
+      "desc": "No technical work needed from your side — just provide your content, and we handle the rest."
+    }
+  ]
+  
