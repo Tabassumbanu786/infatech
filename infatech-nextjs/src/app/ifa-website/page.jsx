@@ -44,13 +44,11 @@ const LandingPage = () => {
       }}></div>
 
       <div className="container position-relative" style={{ zIndex: 1 }}>
-        <div className="d-flex justify-content-center mb-4">
-          <div className="p-4 rounded-4 shadow-lg" style={{
-            background: 'linear-gradient(to right, #ea580c, #dc2626)'
-          }}>
-            <i className="bi bi-globe fs-2 text-white"></i>
-          </div>
-        </div>
+      <div className="d-flex justify-content-center mb-4">
+  <img src="/assets/images/logo_small_r.png" alt="Infatech Logo" style={{ height: '100px', objectFit: 'contain' }} />
+</div>
+
+
 
         <h1 className="display-4 fw-bold text-dark mb-4 lh-tight">
           INFATECH IFA<br />
