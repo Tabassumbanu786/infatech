@@ -15,6 +15,7 @@ import EverythingYouNeed from './EverythingYouNeed';
 import GoLiveTimeline from './GoLiveTimeline';
 import FAQSection from './faq';
 
+
 import { ArrowRight, Clock, Shield, Star, Globe } from 'lucide-react';
 
 
@@ -90,9 +91,17 @@ const LandingPage = () => {
             Get Started Now
             <i className="bi bi-arrow-right ms-2"></i>
           </button>
-          <button className="btn btn-lg px-4 py-3 fw-semibold text-dark bg-white border shadow-sm">
-            View Examples
-          </button>
+          {/* <button className="btn btn-lg px-4 py-3 fw-semibold text-dark bg-white border shadow-sm"> */}
+          <a
+  href="https://ifa.infatech.in/"
+  target="_blank"
+  rel="noopener noreferrer"
+  className="btn btn-lg px-4 py-3 fw-semibold text-dark bg-white border shadow-sm"
+>
+  View Examples
+</a>
+
+          {/* </button> */}
         </div>
       </div>
     </section>
@@ -127,11 +136,10 @@ const LandingPage = () => {
 
 
 <button
-  className="btn fw-semibold px-4 py-2 rounded-pill"
+  className="btn fw-semibold px-4 py-2 rounded-pill border border-white text-white"
   style={{
     backgroundColor: 'transparent',
-    color: '#fff',
-    border: '2px solid #fff',
+    transition: 'all 0.3s ease-in-out'
   }}
   onMouseOver={(e) => {
     e.currentTarget.style.backgroundColor = '#fff';
@@ -140,6 +148,15 @@ const LandingPage = () => {
   onMouseOut={(e) => {
     e.currentTarget.style.backgroundColor = 'transparent';
     e.currentTarget.style.color = '#fff';
+  }}
+  onClick={() => {
+    if (typeof window !== 'undefined' && window.Calendly) {
+      window.Calendly.initPopupWidget({
+        url: 'https://calendly.com/tabassumbanumusa/website-strategy-call',
+      });
+    } else {
+      alert('Calendly is not loaded yet. Please try again.');
+    }
   }}
 >
   Schedule a Call

@@ -1,9 +1,13 @@
-import '../../../styles/globals.css'; // ✅ Tailwind only
+import Script from 'next/script';
 
 export default function Layout({ children }) {
   return (
     <html lang="en">
-      <body>{children}</body>
+      <head>
+        
+      </head>
+      <body>{children}
+</body>
     </html>
   );
 }

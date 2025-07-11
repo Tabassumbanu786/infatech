@@ -4,6 +4,8 @@ import 'bootstrap-icons/font/bootstrap-icons.css';
 import "slick-carousel/slick/slick.css";
 import "./assets/main.css";
 import './assets/responsive.css';
+import Script from 'next/script';
+
 
 const fira_sans = Fira_Sans({
   subsets: ['latin'],
@@ -52,6 +54,7 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
      <head>
+      
   <meta name="author" content="Themeservices" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta charSet="UTF-8" />
@@ -82,9 +85,17 @@ export default function RootLayout({ children }) {
 </head>
 
 
-      <body className={`${fira_sans.variable} ${poppins.variable}`}>
-        {children}
-      </body>
+<body className={`${fira_sans.variable} ${poppins.variable}`}>
+  {children}
+
+  {/* Calendly Script */}
+  <script
+  src="https://assets.calendly.com/assets/external/widget.js"
+  type="text/javascript"
+  async
+></script>
+</body>
+
     </html>
   );
 }
