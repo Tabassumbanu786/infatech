@@ -87,7 +87,7 @@ export default function HeaderStyle3({ variant }) {
               <div className="cs_main_header_left">
                 <Link className="cs_site_branding" href="/home3">
                   {
-                    isSticky ? <Image src="/assets/images/footer-logo.png" alt="Logo_1" width={161} height={42} /> : <Image src="/assets/images/logo.png" alt="Logo" width={161} height={42} />
+                    isSticky ? <Image src="/assets/images/footer-logo.png" alt="Logo_1" width={161} height={42} /> : <Image src="/assets/images/logo_small_r.png" alt="Logo" width={161} height={42} />
                   }
 
                 </Link>
