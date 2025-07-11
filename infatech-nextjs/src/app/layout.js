@@ -53,48 +53,48 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-     <head>
-      
-  <meta name="author" content="Themeservices" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <meta charSet="UTF-8" />
+      <head>
 
-  {/* Favicon */}
-  <link rel="icon" href="/favicon.ico" sizes="any" />
-<link rel="apple-touch-icon" href="/favicon.ico" />
-<link rel="shortcut icon" href="/favicon.ico" />
+        <meta name="author" content="Themeservices" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <meta charSet="UTF-8" />
 
-  {/* Schema.org JSON-LD */}
-  <script
-    type="application/ld+json"
-    dangerouslySetInnerHTML={{
-      __html: JSON.stringify({
-        "@context": "https://schema.org",
-        "@type": "Organization",
-        "name": "Infatech Innovations",
-        "url": "https://www.infatech.in",
-        "logo": "https://www.infatech.in/assets/images/logo.png",
-        "sameAs": [
-          "https://www.linkedin.com/company/infatechinnovations"
-        ],
-        "description":
-          "Infatech Innovations offers AI-driven automation, web development, and digital solutions for growing businesses.",
-      }),
-    }}
-  />
-</head>
+        {/* Favicon */}
+        <link rel="icon" href="/favicon.ico" sizes="any" />
+        <link rel="apple-touch-icon" href="/favicon.ico" />
+        <link rel="shortcut icon" href="/favicon.ico" />
+
+        {/* Schema.org JSON-LD */}
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              "@context": "https://schema.org",
+              "@type": "Organization",
+              "name": "Infatech Innovations",
+              "url": "https://www.infatech.in",
+              "logo": "https://www.infatech.in/assets/images/logo.png",
+              "sameAs": [
+                "https://www.linkedin.com/company/infatechinnovations"
+              ],
+              "description":
+                "Infatech Innovations offers AI-driven automation, web development, and digital solutions for growing businesses.",
+            }),
+          }}
+        />
+      </head>
 
 
-<body className={`${fira_sans.variable} ${poppins.variable}`}>
-  {children}
+      <body className={`${fira_sans.variable} ${poppins.variable}`}>
+        {children}
 
-  {/* Calendly Script */}
-  <script
-  src="https://assets.calendly.com/assets/external/widget.js"
-  type="text/javascript"
-  async
-></script>
-</body>
+        {/* Calendly Script */}
+        <script
+          src="https://assets.calendly.com/assets/external/widget.js"
+          type="text/javascript"
+          async
+        ></script>
+      </body>
 
     </html>
   );

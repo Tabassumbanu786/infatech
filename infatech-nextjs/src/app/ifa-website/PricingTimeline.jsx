@@ -17,12 +17,12 @@ const PricingTimeline = () => {
           <div className="row g-4 justify-content-center">
             {/* Setup Cost */}
             <div className="col-lg-4 col-md-6">
-            <div className="p-4 rounded-4 border border-warning bg-light shadow-sm h-100">
+              <div className="p-4 rounded-4 border border-warning bg-light shadow-sm h-100">
                 <div className="text-center mb-4">
-                <div className="rounded-circle d-inline-flex align-items-center justify-content-center p-3 mb-3 shadow-sm"
-     style={{ backgroundColor: '#f97316' }}>
-  <i className="bi bi-lightning-fill text-white fs-4"></i>
-</div>
+                  <div className="rounded-circle d-inline-flex align-items-center justify-content-center p-3 mb-3 shadow-sm"
+                    style={{ backgroundColor: '#f97316' }}>
+                    <i className="bi bi-lightning-fill text-white fs-4"></i>
+                  </div>
                   <h3 className="fw-bold mb-2">One-Time Setup</h3>
                   {/* <div className="fs-2 fw-bold text-warning mb-2">₹7,000</div> */}
                   <div className="h2 fw-bold mb-1" style={{ color: '#f97316' }}>₹7,000</div>
@@ -47,17 +47,17 @@ const PricingTimeline = () => {
                   </li>
                 </ul>
                 <div className="text-center">
-                <span className="badge text-white px-3 py-2 rounded-pill fw-semibold shadow-sm"
-      style={{ backgroundColor: '#f97316' }}>
-  7-Day Delivery
-</span>
+                  <span className="badge text-white px-3 py-2 rounded-pill fw-semibold shadow-sm"
+                    style={{ backgroundColor: '#f97316' }}>
+                    7-Day Delivery
+                  </span>
                 </div>
               </div>
             </div>
 
             {/* Annual Renewal */}
             <div className="col-lg-4 col-md-6">
-                <div className="p-4 rounded-4 border border-success bg-light shadow-sm h-100">
+              <div className="p-4 rounded-4 border border-success bg-light shadow-sm h-100">
                 <div className="text-center mb-4">
                   <div className="bg-success text-white rounded-4 p-3 mx-auto mb-3 d-inline-block">
                     <i className="bi bi-shield-lock-fill fs-3"></i>
@@ -92,7 +92,7 @@ const PricingTimeline = () => {
         </div>
       </section>
 
-     
+
     </>
   );
 };
