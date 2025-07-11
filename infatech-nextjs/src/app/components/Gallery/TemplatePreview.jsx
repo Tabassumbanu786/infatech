@@ -111,7 +111,95 @@ const TemplatePreview = ({ templateId, templateName }) => {
             </footer>
           </div>
         );
-
+      case 2: // Fresh Market Pro
+      return (
+        <div className="bg-white">
+          {/* Header */}
+          <header className="bg-light border-bottom border-success">
+            <div className="container py-3">
+              <div className="d-flex justify-content-between align-items-center">
+                <div className="d-flex align-items-center">
+                  <div className="rounded-circle bg-success d-flex justify-content-center align-items-center text-white me-3" style={{ width: '40px', height: '40px' }}>
+                    FM
+                  </div>
+                  <span className="h5 fw-bold text-success">Fresh Market Pro</span>
+                </div>
+                <nav className="d-none d-md-flex gap-3">
+                  <a href="#" className="text-success text-decoration-none">Home</a>
+                  <a href="#" className="text-success text-decoration-none">Products</a>
+                  <a href="#" className="text-success text-decoration-none">Delivery</a>
+                  <a href="#" className="text-success text-decoration-none">About</a>
+                  <a href="#" className="text-success text-decoration-none">Contact</a>
+                </nav>
+                <button className="btn btn-success">Order Online</button>
+              </div>
+            </div>
+          </header>
+      
+          {/* Hero */}
+          <section className="position-relative bg-success bg-opacity-10 py-5">
+            <div className="container text-center">
+              <h1 className="display-5 fw-bold text-success mb-3">Your Neighborhood Fresh Market</h1>
+              <p className="lead text-success mb-4">Fresh groceries, local produce, and daily essentials delivered to your door</p>
+              <div className="d-flex justify-content-center gap-3">
+                <button className="btn btn-success px-4">Shop Now</button>
+                <button className="btn btn-outline-success px-4">Schedule Delivery</button>
+              </div>
+            </div>
+          </section>
+      
+          {/* Product Categories */}
+          <section className="py-5">
+            <div className="container">
+              <h2 className="text-center fw-bold mb-5">Shop by Category</h2>
+              <div className="row g-4">
+                {['Fresh Produce', 'Dairy & Eggs', 'Pantry Staples', 'Household'].map((item, idx) => (
+                  <div key={idx} className="col-md-3">
+                    <div className="text-center p-4 bg-light rounded shadow-sm h-100">
+                      <div className="rounded-circle bg-success bg-opacity-25 mx-auto mb-3" style={{ width: '64px', height: '64px' }}></div>
+                      <h5 className="fw-semibold text-success">{item}</h5>
+                      <p className="text-muted small">
+                        {item === 'Fresh Produce' ? 'Fruits &amp; Vegetables' :
+                         item === 'Dairy & Eggs' ? 'Fresh Daily' :
+                         item === 'Pantry Staples' ? 'Rice, Flour, Spices' :
+                         'Cleaning &amp; Personal Care'}
+                      </p>
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </div>
+          </section>
+      
+          {/* Footer */}
+          <footer className="bg-success text-white py-5">
+            <div className="container">
+              <div className="row g-4">
+                <div className="col-md-4">
+                  <h5 className="fw-bold">Fresh Market Pro</h5>
+                  <p className="small">Your trusted neighborhood grocery store since 2010</p>
+                </div>
+                <div className="col-md-4">
+                  <h6 className="fw-bold">Contact</h6>
+                  <ul className="list-unstyled small">
+                    <li>📞 (555) 987-6543</li>
+                    <li>✉️ info@freshmarketpro.com</li>
+                    <li>📍 456 Market Street</li>
+                  </ul>
+                </div>
+                <div className="col-md-4">
+                  <h6 className="fw-bold">Follow Us</h6>
+                  <div className="d-flex gap-3">
+                    <i className="bi bi-facebook fs-5"></i>
+                    <i className="bi bi-instagram fs-5"></i>
+                    <i className="bi bi-twitter fs-5"></i>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </footer>
+        </div>
+      );      
       default:
         return (
           <div className="bg-light d-flex align-items-center justify-content-center" style={{ height: '400px' }}>
