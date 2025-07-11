@@ -77,14 +77,14 @@ const Footer = () => {
                                 </Link>
                                 </div>
                                 <p className="footer-widget-text">{LogoContent.Content}</p>
-                                {/* <div className="footer-social">
+                                <div className="footer-social">
                                     <div className="footer-widget-social">
-                                        <a href="#"><i className="bi bi-facebook"></i></a>
-                                        <a href="#"><i className="bi bi-twitter"></i></a>
-                                        <a href="#"><i className="bi bi-linkedin"></i></a>
-                                        <a href="#"><i className="bi bi-instagram"></i></a>                                        
+                                        {/* <a href="#"><i className="bi bi-facebook"></i></a>
+                                        <a href="#"><i className="bi bi-twitter"></i></a> */}
+                                        <a href="https://www.linkedin.com/company/infatech-innovation/"><i className="bi bi-linkedin"></i></a>
+                                        <a href="https://www.instagram.com/infatech_innovation/"><i className="bi bi-instagram"></i></a>                                        
                                     </div>
-                                </div> */}
+                                </div>
                             </div>
                         </div>
                         <div className="col-lg-2 col-md-6 col-sm-6">
