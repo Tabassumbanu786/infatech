@@ -69,9 +69,9 @@ const EverythingYouNeed = () => {
     <section className="py-5 bg-white">
       <div className="container">
         <div className="text-center mb-5">
-          <h2 className="fw-bold display-6 text-dark mb-3">What's Included</h2>
+          <h2 className="fw-bold display-6 text-dark mb-3">What&apos;s Included</h2>
           <p className="lead text-muted mx-auto" style={{ maxWidth: '700px' }}>
-          We don't just design a website. We set up your digital office — fully managed and customized for you.
+            We don&apos;t just design a website. We set up your digital office — fully managed and customized for you.
           </p>
         </div>
 
@@ -82,9 +82,6 @@ const EverythingYouNeed = () => {
                 className={`p-4 rounded-4 shadow-sm h-100 ${card.border}`}
                 style={{ background: card.gradient }}
               >
-                {/* <div className={`rounded-3 p-3 mb-3 d-inline-flex align-items-center justify-content-center ${card.iconBg}`}>
-                  <i className={`${card.icon} text-white fs-5`}></i>
-                </div> */}
                 <h4 className="fw-semibold text-dark mb-2">{card.title}</h4>
                 <p className="text-muted mb-3">{card.description}</p>
                 <div className={`d-flex align-items-center small fw-medium ${card.tagColor}`}>
@@ -96,23 +93,24 @@ const EverythingYouNeed = () => {
           ))}
         </div>
       </div>
-          {/* Clients Expect Instant Info Section */}
-      <div className="pt-5"> 
-      <div className="bg-white rounded-4 shadow p-4 p-md-5 mx-auto" style={{ maxWidth: '768px' }}>
-      <div className="text-center">
-        <h3 className="fs-2 fw-bold text-dark mb-4">Clients Expect Instant Info — Give It to Them</h3>
-        <p className="fs-5 text-dark mb-3">
-          Even when you're unavailable, your website can respond.
-        </p>
-        <p className="fs-5 text-dark mb-3">
-          Our WhatsApp-style chatbot provides instant answers to common client queries — saving you time and creating a great first impression.
-        </p>
-        <p className="text-dark">
-          Want it turned off? You can. Want to add more answers later? We'll help.
-        </p>
+
+      {/* Clients Expect Instant Info Section */}
+      <div className="pt-5">
+        <div className="bg-white rounded-4 shadow p-4 p-md-5 mx-auto" style={{ maxWidth: '768px' }}>
+          <div className="text-center">
+            <h3 className="fs-2 fw-bold text-dark mb-4">Clients Expect Instant Info — Give It to Them</h3>
+            <p className="fs-5 text-dark mb-3">
+              Even when you&apos;re unavailable, your website can respond.
+            </p>
+            <p className="fs-5 text-dark mb-3">
+              Our WhatsApp-style chatbot provides instant answers to common client queries — saving you time and creating a great first impression.
+            </p>
+            <p className="text-dark">
+              Want it turned off? You can. Want to add more answers later? We&apos;ll help.
+            </p>
+          </div>
+        </div>
       </div>
-    </div>
-    </div>
     </section>
   );
 };

@@ -14,7 +14,7 @@ const WhyItMatters = () => {
                 When a potential client hears about you, the first thing they do? <strong>Google you.</strong>
               </p>
               <p className="text-center fs-5 mb-4">
-                If they can't find a clean, trustworthy website that shows what you do — they may move on.
+                If they can&apos;t find a clean, trustworthy website that shows what you do — they may move on.
               </p>
               <p className="text-center fs-5 fw-semibold mb-5">
                 Our IFA Website Starter Pack helps you:

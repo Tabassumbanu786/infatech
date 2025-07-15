@@ -18,7 +18,7 @@ const FeatureGrid = () => {
   return (
     <div className="container py-4">
          <div className="text-center mb-12">
-            <h2 className="text-4xl font-bold text-dark-navy mb-4 leading-tight">What's Inside the Package</h2>
+            <h2 className="text-4xl font-bold text-dark-navy mb-4 leading-tight">What&apos;s Inside the Package</h2>
           </div>
       <div className="row gy-3">
         {packageFeatures.map((feature, index) => (
