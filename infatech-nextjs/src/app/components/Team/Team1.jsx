@@ -10,7 +10,7 @@ const Team1 = () => {
                         <div className="col-lg-12">
                             <div className="section-title text-center">
                                <SectionTitle
-                                    SubTitle="OUR TEAM MEMBER"
+                                    SubTitle="OUR TEAM MEMBERS"
                                     Title="Meet Our Core Team"
                                 ></SectionTitle>
                             </div>

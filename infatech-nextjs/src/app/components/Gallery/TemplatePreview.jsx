@@ -199,7 +199,88 @@ const TemplatePreview = ({ templateId, templateName }) => {
             </div>
           </footer>
         </div>
-      );      
+      );  
+      case 3:
+  return (
+    <div className="bg-white">
+      {/* Header */}
+      <header className="bg-primary-subtle border-bottom border-primary">
+        <div className="container py-3">
+          <div className="d-flex justify-content-between align-items-center">
+            <div className="d-flex align-items-center">
+              <div
+                className="rounded-circle bg-primary text-white d-flex justify-content-center align-items-center me-3"
+                style={{ width: '40px', height: '40px' }}
+              >
+                <span className="fw-bold">CP</span>
+              </div>
+              <h5 className="text-primary m-0">Creative Portfolio</h5>
+            </div>
+            <nav className="d-none d-md-flex gap-3">
+              <a href="#" className="text-primary text-decoration-none">Home</a>
+              <a href="#" className="text-primary text-decoration-none">Projects</a>
+              <a href="#" className="text-primary text-decoration-none">Skills</a>
+              <a href="#" className="text-primary text-decoration-none">Contact</a>
+            </nav>
+          </div>
+        </div>
+      </header>
+
+      {/* Hero */}
+      <section className="position-relative text-center bg-primary-subtle py-5">
+        <h1 className="display-4 text-primary fw-bold">Bringing Ideas to Life</h1>
+        <p className="lead text-primary">Showcasing creative work that blends design and technology</p>
+        <div className="d-flex justify-content-center gap-3 mt-4">
+          <button className="btn btn-primary text-white">View Projects</button>
+          <button className="btn btn-outline-primary">Contact Me</button>
+        </div>
+      </section>
+
+      {/* Project Highlights */}
+      <section className="py-5">
+        <div className="container text-center">
+          <h2 className="fw-bold mb-4">Featured Projects</h2>
+          <div className="row g-4">
+            {['Website Design', 'App UI/UX', 'Brand Identity'].map((title, idx) => (
+              <div key={idx} className="col-md-4">
+                <div className="bg-primary-subtle rounded p-4 h-100">
+                  <div
+                    className="rounded-circle bg-primary mx-auto mb-3"
+                    style={{ width: '80px', height: '80px' }}
+                  ></div>
+                  <h5 className="text-primary">{title}</h5>
+                  <p className="text-primary">
+                    Innovative design work focused on clean layouts and user experience
+                  </p>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Footer */}
+      <footer className="bg-primary text-white py-5">
+        <div className="container">
+          <div className="row">
+            <div className="col-md-6">
+              <h5 className="fw-bold">Creative Portfolio</h5>
+              <p>Crafting beautiful and functional digital experiences.</p>
+            </div>
+            <div className="col-md-6 text-md-end">
+              <p>📧 hello@creativeportfolio.com</p>
+              <p>📍 Based in Mumbai, India</p>
+              <div className="d-flex justify-content-md-end gap-3">
+                <i className="bi bi-linkedin fs-5"></i>
+                <i className="bi bi-behance fs-5"></i>
+                <i className="bi bi-dribbble fs-5"></i>
+              </div>
+            </div>
+          </div>
+        </div>
+      </footer>
+    </div>
+  );    
       default:
         return (
           <div className="bg-light d-flex align-items-center justify-content-center" style={{ height: '400px' }}>

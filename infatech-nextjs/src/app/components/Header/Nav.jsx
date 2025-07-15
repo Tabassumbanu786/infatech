@@ -35,26 +35,31 @@ export default function Nav({ setMobileToggle }) {
         <Link href="#">Portfolio</Link>
       </li> */}
       <li className="menu-item-has-children">
-        <Link href="#">Industries we serve</Link>
+        <Link href="/ifa-website">For Financial Advisors</Link>
         <DropDown>
         <ul className="dropdown-menu show shadow-sm p-2 rounded-3" style={{ width: '260px' }}>
-          <li className="px-3 py-2">
-          <a href="/ifa-website" className="text-decoration-none">
+          <li>
+
+          {/* <a href="/ifa-website" className="text-decoration-none">
             <span className="d-block fw-semibold text-dark">For Financial Advisors</span>
             <small className="text-muted">IFA Initiative</small>
-            </a>
+            </a> */}
+            <Link href="/ifa-website">For Financial Advisors</Link>
           </li>
-          <li className="px-3 py-2">
-            <span className="d-block fw-semibold text-dark">For Bakers</span>
-            <small className="text-muted">Coming Soon</small>
+          <li>
+            {/* <span className="d-block fw-semibold text-dark">For Bakers</span> */}
+            <Link href="#">For Bakers</Link>
+            {/* <small className="text-muted">Coming Soon</small> */}
           </li>
-          <li className="px-3 py-2">
-            <span className="d-block fw-semibold text-dark">For Kirana Stores</span>
-            <small className="text-muted">Coming Soon</small>
+          <li>
+          <Link href="#">For Kirana Stores</Link>
+            {/* <span className="d-block fw-semibold text-dark">For Kirana Stores</span> */}
+            {/* <small className="text-muted">Coming Soon</small> */}
           </li>
-          <li className="px-3 py-2">
-            <span className="d-block fw-semibold text-dark">For Coaches</span>
-            <small className="text-muted">Future-ready placeholder</small>
+          <li>
+          <Link href="#">For Coaches</Link>
+            {/* <span className="d-block fw-semibold text-dark">For Coaches</span> */}
+            {/* <small className="text-muted">Future-ready placeholder</small> */}
           </li>
         </ul>
 

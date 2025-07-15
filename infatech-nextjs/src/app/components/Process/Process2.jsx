@@ -9,8 +9,8 @@ const Process2 = () => {
                         <div className="col-lg-12">
                             <div className="section-title text-center">
                                 <SectionTitle
-                                    SubTitle="work process"
-                                    Title="WORKS IN 3 EASY STEPS"
+                                    SubTitle="How It Works"
+                                    Title="Get your platform live in just 3 simple steps."
                                 ></SectionTitle>
                             </div>
                         </div>
