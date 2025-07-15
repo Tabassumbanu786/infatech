@@ -4,7 +4,7 @@ import React from 'react';
 const PricingTimeline = () => {
   return (
     <>
-      {/* Pricing Section */}
+      {/* Pricing Section */} 
       <section className="py-5 bg-white">
         <div className="container">
           <div className="text-center mb-5">
@@ -17,7 +17,7 @@ const PricingTimeline = () => {
           <div className="row g-4 justify-content-center">
             {/* Setup Cost */}
             <div className="col-lg-4 col-md-6">
-              <div className="p-4 rounded-4 border border-warning bg-light shadow-sm h-100">
+            <div className="p-4 rounded-4 bg-light shadow-sm h-100" style={{ border: '1px solid #f97316' }}>
                 <div className="text-center mb-4">
                   <div className="rounded-circle d-inline-flex align-items-center justify-content-center p-3 mb-3 shadow-sm"
                     style={{ backgroundColor: '#f97316' }}>
@@ -57,13 +57,20 @@ const PricingTimeline = () => {
 
             {/* Annual Renewal */}
             <div className="col-lg-4 col-md-6">
-              <div className="p-4 rounded-4 border border-success bg-light shadow-sm h-100">
+            <div
+  className="p-4 rounded-4 bg-light shadow-sm h-100"
+  style={{ border: '1px solid #050a1e' }}
+>
                 <div className="text-center mb-4">
-                  <div className="bg-success text-white rounded-4 p-3 mx-auto mb-3 d-inline-block">
-                    <i className="bi bi-shield-lock-fill fs-3"></i>
-                  </div>
+                <div
+  className="text-white rounded-4 p-3 mx-auto mb-3 d-inline-block"
+  style={{ backgroundColor: '#050a1e' }}
+>
+  <i className="bi bi-shield-lock-fill fs-3"></i>
+</div>
+
                   <h3 className="fw-bold mb-2">Annual Renewal</h3>
-                  <div className="fs-2 fw-bold text-success mb-2">₹1,500</div>
+                  <div className="fs-2 fw-bold mb-2" style={{ color: '#050a1e' }}>₹1,500</div>
                   <p className="text-muted">Per year</p>
                 </div>
                 <ul className="list-unstyled mb-4">
@@ -74,18 +81,24 @@ const PricingTimeline = () => {
                     <i className="bi bi-check-circle-fill text-success me-2"></i> Hosting maintenance
                   </li>
                   <li className="d-flex align-items-center mb-2">
-                    <i className="bi bi-check-circle-fill text-success me-2"></i> SSL renewal
+                    <i className="bi bi-check-circle-fill text-success me-2"></i> Chatbot Support
                   </li>
                   <li className="d-flex align-items-center mb-2">
-                    <i className="bi bi-check-circle-fill text-success me-2"></i> Security checks
+                    <i className="bi bi-check-circle-fill text-success me-2"></i> Up to 2 content updates
                   </li>
-                  <li className="d-flex align-items-center">
+                  {/* <li className="d-flex align-items-center">
                     <i className="bi bi-check-circle-fill text-success me-2"></i> 2 minor text edits
-                  </li>
+                  </li> */}
                 </ul>
                 <div className="text-center">
-                  <span className="badge bg-success text-white fw-semibold px-3 py-2 rounded-pill">Ongoing Support</span>
-                </div>
+  <span
+    className="badge text-white fw-semibold px-3 py-2 rounded-pill"
+    style={{ backgroundColor: '#050a1e' }}
+  >
+    Ongoing Support
+  </span>
+</div>
+
               </div>
             </div>
           </div>

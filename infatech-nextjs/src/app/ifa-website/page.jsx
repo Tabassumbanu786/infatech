@@ -12,6 +12,8 @@ import IfaServices from './ifaServices';
 import MustHavePages from './MustHavePages';
 import PricingTimeline from './PricingTimeline';
 import EverythingYouNeed from './EverythingYouNeed';
+import WhyItMatters from './WhyItMatters';
+import FeatureGrid from './FeatureGrid'
 
 import GoLiveTimeline from './GoLiveTimeline';
 import FAQSection from './faq';
@@ -78,19 +80,18 @@ const LandingPage = () => {
 
 
             <h1 className="display-4 fw-bold text-dark mb-4 lh-tight">
-              INFATECH IFA<br />
+              {/* INFATECH IFA<br />
               <span style={{
                 background: 'linear-gradient(to right, #ea580c, #dc2626)',
                 WebkitBackgroundClip: 'text',
                 WebkitTextFillColor: 'transparent'
-              }}>
-                Website Starter Pack
-              </span>
+              }}> */}
+                Your Own IFA Website
+              {/* </span> */}
             </h1>
 
             <p className="lead text-secondary mb-5 mx-auto" style={{ maxWidth: '720px' }}>
-              Complete, branded, trust-building website for Independent Financial Advisors.
-              Look professional, attract clients, and showcase your expertise online.
+            Your clients are online — your practice should be too.
             </p>
 
             <div className="d-flex flex-column flex-sm-row justify-content-center align-items-center gap-3 mb-4">
@@ -109,15 +110,18 @@ const LandingPage = () => {
             </div>
 
             <div className="d-flex flex-column flex-sm-row justify-content-center gap-3">
-              <button className="btn btn-lg px-4 py-3 text-white fw-semibold shadow-lg"
-                style={{
-                  background: 'linear-gradient(to right, #ea580c, #dc2626)',
-                  transition: 'all 0.2s ease-in-out'
-                }}>
-                Get Started Now
-                <i className="bi bi-arrow-right ms-2"></i>
-              </button>
-              {/* <button className="btn btn-lg px-4 py-3 fw-semibold text-dark bg-white border shadow-sm"> */}
+            <button
+  className="btn btn-lg px-4 py-3 text-white fw-semibold shadow-lg"
+  style={{
+    background: 'linear-gradient(to right, #ea580c, #dc2626)',
+    transition: 'all 0.2s ease-in-out'
+  }}
+  onClick={() => window.open('https://ifa.infatech.in/', '_blank')}
+>
+  GET A FIRST HAND FEEL
+</button>
+
+              {/* <button className="btn btn-lg px-4 py-3 fw-semibold text-dark bg-white border shadow-sm">
               <a
                 href="https://ifa.infatech.in/"
                 target="_blank"
@@ -127,15 +131,17 @@ const LandingPage = () => {
                 View Examples
               </a>
 
-              {/* </button> */}
+              </button> */}
             </div>
           </div>
         </section>
+        <WhyItMatters/>
         <EverythingYouNeed />
-        <MustHavePages />
+        {/* <MustHavePages /> */}
+        <FeatureGrid/>
         <PricingTimeline />
         <GoLiveTimeline />
-        <FAQSection />
+        {/* <FAQSection /> */}
 
         {/* CTA Section */}
         <section  ref={ctaRef} className="py-5 text-center text-white" style={{ background: 'linear-gradient(to bottom right, #ea580c, #dc2626)' }}>
@@ -143,13 +149,12 @@ const LandingPage = () => {
             <div className="mb-4">
               <h2 className="fw-bold display-6 mb-3 text-white">Ready to Build Your Professional Online Presence?</h2>
               <p className="lead text-white mb-4">
-                Join hundreds of IFAs who have transformed their business with a professional website. <br />
-                Get started today and be online in just 7 days.
+              Let your website do the work while you focus on advising clients.
               </p>
             </div>
 
             <div className="d-flex flex-column flex-sm-row justify-content-center gap-3 mb-4">
-              <button
+              {/* <button
                 className="btn fw-semibold px-4 py-2 shadow rounded-pill"
                 style={{
                   backgroundColor: '#fff',
@@ -158,11 +163,12 @@ const LandingPage = () => {
                 }}
               >
                 Start Your Website Now <ArrowRight size={18} className="ms-2" />
-              </button>
+              </button> */}
 
               <CalendlyPopupButton
                 url="https://calendly.com/tabassumbanumusa/website-strategy-call"
-                buttonText="Schedule a Call"
+                buttonText="Click here to get started"
+                
               />
             </div>
 

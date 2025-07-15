@@ -30,7 +30,7 @@ const GoLiveTimeline = () => {
     <section className="py-5 bg-light">
       <div className="container">
         <div className="text-center mb-5">
-          <h2 className="fw-bold display-6 text-dark mb-3">Go Live in Just 7 Days</h2>
+          <h2 className="fw-bold display-6 text-dark mb-3">Get Started in 3 Simple Steps</h2>
           <p className="lead text-muted mx-auto" style={{ maxWidth: '600px' }}>
             Simple process, professional results. We handle everything while you focus on your business.
           </p>
