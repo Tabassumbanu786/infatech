@@ -86,7 +86,7 @@ const LandingPage = () => {
                 WebkitBackgroundClip: 'text',
                 WebkitTextFillColor: 'transparent'
               }}> */}
-                Your Own IFA Website
+                Your Own Independent Financial Advisor Website
               {/* </span> */}
             </h1>
 
