@@ -119,7 +119,7 @@ const TemplatePreview = ({ templateId, templateName }) => {
             <div className="d-flex justify-content-center mb-3">
               {[...Array(5)].map((_, i) => <Star key={i} className="text-warning" size={20} />)}
             </div>
-            <p className="text-muted mb-3">"The best bakery in town! Their sourdough is incredible and the custom cake for my daughter&apos;s birthday was absolutely perfect."</p>
+            <p className="text-muted mb-3">&quot;The best bakery in town! Their sourdough is incredible and the custom cake for my daughter&apos;s birthday was absolutely perfect.&quot;</p>
             <p className="fw-semibold text-warning mb-0">- Sarah Johnson</p>
           </div>
         </div>
