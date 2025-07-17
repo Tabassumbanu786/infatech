@@ -35,7 +35,7 @@ export default function Nav({ setMobileToggle }) {
         <Link href="#">Portfolio</Link>
       </li> */}
       <li className="menu-item-has-children">
-        <Link href="/ifa-website">For Financial Advisors</Link>
+        <Link href="/ifa-website">Industries We Serve</Link>
         <DropDown>
         <ul className="dropdown-menu show shadow-sm p-2 rounded-3" style={{ width: '260px' }}>
           <li>
@@ -44,20 +44,22 @@ export default function Nav({ setMobileToggle }) {
             <span className="d-block fw-semibold text-dark">For Financial Advisors</span>
             <small className="text-muted">IFA Initiative</small>
             </a> */}
-            <Link href="/ifa-website">For Financial Advisors</Link>
+            <Link href="/ifa-website" target="_blank" rel="noopener noreferrer">
+  For Financial Advisors
+</Link>
           </li>
           <li>
             {/* <span className="d-block fw-semibold text-dark">For Bakers</span> */}
-            <Link href="#">For Bakers</Link>
+            <Link href="/industries/bakers">For Bakers</Link>
             {/* <small className="text-muted">Coming Soon</small> */}
           </li>
           <li>
-          <Link href="#">For Kirana Stores</Link>
+          <Link href="/industries/kirana">For Kirana Stores</Link>
             {/* <span className="d-block fw-semibold text-dark">For Kirana Stores</span> */}
             {/* <small className="text-muted">Coming Soon</small> */}
           </li>
           <li>
-          <Link href="#">For Coaches</Link>
+          <Link href="/industries/coaches">For Coaches</Link>
             {/* <span className="d-block fw-semibold text-dark">For Coaches</span> */}
             {/* <small className="text-muted">Future-ready placeholder</small> */}
           </li>

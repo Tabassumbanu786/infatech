@@ -1,41 +1,23 @@
 
 const Form = () => {
     return (
-        <div className="contact_from_box">
-        <form  id="dreamit-form">
-            <div className="row">
-                <div className="col-lg-6">
-                    <div className="form_box">
-                        <input type="text" name="name" placeholder="Your Name *" />
-                    </div>
-                </div>
-                <div className="col-lg-6">
-                    <div className="form_box">
-                        <input type="email" name="email" placeholder="Your E-Mail *" />
-                    </div>
-                </div>
-                <div className="col-lg-6">
-                    <div className="form_box">
-                        <input type="text" name="subject" placeholder="Subject *" />
-                    </div>
-                </div>
-                <div className="col-lg-6">
-                    <div className="form_box">
-                        <input type="text" name="phone" placeholder="Phone *" />
-                    </div>
-                </div>
-                <div className="col-lg-12">
-                    <div className="form_box">
-                        <textarea name="message" id="message" cols="30" rows="10" placeholder="Message"></textarea>
-                    </div>
-                    <div className="quote_button">
-                        <button className="btn" type="submit">SENS NOW <i className="bi bi-arrow-right"></i></button>
-                    </div>
-                </div>
-            </div>
-        </form>
-    <div id="status" className="error"></div>
-</div>
+            // <div className="col-md-6">
+            <div className="contact_from_box">
+                <iframe
+                  src="https://zcsub-cmpzourl.maillist-manage.com/ua/Optin?od=11287ecd0b7d76&zx=112b29489&sD=114de58d5989d4f75"
+                  width="100%"
+                  height="650"
+                  frameBorder="0"
+                  style={{
+                    border: 'none',
+                    borderRadius: '1rem',
+                    backgroundColor: '#0b0b27', // same as form color
+                  }}
+                  title="Zoho Contact Form"
+                  allowFullScreen
+                ></iframe>
+              </div>
+            // </div>
     );
 };
 

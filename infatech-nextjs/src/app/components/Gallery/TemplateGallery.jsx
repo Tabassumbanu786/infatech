@@ -1,4 +1,5 @@
-"use client";
+// Bootstrap version of TemplateGallery (JSX only)
+'use client'
 import React, { useState } from 'react';
 import { Eye, ArrowLeft, ArrowRight } from 'lucide-react';
 import TemplatePreview from './TemplatePreview';
@@ -7,45 +8,100 @@ const TemplateGallery = ({ industry, templates }) => {
   const [selectedTemplate, setSelectedTemplate] = useState(null);
   const [currentIndex, setCurrentIndex] = useState(0);
 
+  const updatedTemplates = [
+    {
+      id: 1,
+      name: "Sugar & Script",
+      subtitle: "Bakehouse Elegance",
+      description: "Warm, elegant design for bakeries that want to look as good as they taste.",
+      image: "https://images.pexels.com/photos/1721932/pexels-photo-1721932.jpeg?auto=compress&cs=tinysrgb&w=800",
+      features: ["Custom Cake Forms", "Seasonal Specials", "Recipe Journal"],
+      style: "Elegant"
+    },
+    {
+      id: 2,
+      name: "HarvestCart",
+      subtitle: "Grocery Go Digital",
+      description: "Clean, local, and built for modern kirana stores and grocery businesses.",
+      image: "https://images.pexels.com/photos/264537/pexels-photo-264537.jpeg?auto=compress&cs=tinysrgb&w=800",
+      features: ["Inventory Dashboard", "Daily Stock Updates", "Local Delivery Tracker"],
+      style: "Modern"
+    },
+    {
+      id: 3,
+      name: "Canvas Grid",
+      subtitle: "Creative Portfolio",
+      description: "Bold visuals. Smart structure. Perfect for designers, photographers & creators.",
+      image: "https://images.pexels.com/photos/1779487/pexels-photo-1779487.jpeg?auto=compress&cs=tinysrgb&w=800",
+      features: ["Interactive Galleries", "Video Reels", "Project Case Studies"],
+      style: "Creative"
+    },
+    {
+      id: 4,
+      name: "ShopStack",
+      subtitle: "Ecom Ready",
+      description: "A powerful, minimal e-commerce template that sells your products — fast.",
+      image: "https://images.pexels.com/photos/3769747/pexels-photo-3769747.jpeg?auto=compress&cs=tinysrgb&w=800",
+      features: ["Product Display + Cart", "Secure Payments", "Mobile Optimized"],
+      style: "E-commerce"
+    },
+    {
+      id: 5,
+      name: "ZenSpace",
+      subtitle: "Wellness & More",
+      description: "Peaceful, polished design for coaches, clinics, and fitness professionals.",
+      image: "https://images.pexels.com/photos/3822621/pexels-photo-3822621.jpeg?auto=compress&cs=tinysrgb&w=800",
+      features: ["Service Blocks", "Calendar Integration", "Team Profiles"],
+      style: "Wellness"
+    }
+  ];
+
+  const displayTemplates = industry === "All Industries" ? updatedTemplates : templates;
+
   const nextTemplate = () => {
-    setCurrentIndex((prev) => (prev + 1) % templates.length);
+    setCurrentIndex((prev) => (prev + 1) % displayTemplates.length);
   };
 
   const prevTemplate = () => {
-    setCurrentIndex((prev) => (prev - 1 + templates.length) % templates.length);
+    setCurrentIndex((prev) => (prev - 1 + displayTemplates.length) % displayTemplates.length);
   };
 
   return (
     <section className="py-5 bg-white">
       <div className="container">
-        <h2 className="text-center mb-3 display-5 fw-bold">
-          Website Template Options for {industry}
-        </h2>
-        <p className="text-center mb-5 lead text-muted">
-          Choose from our professionally designed templates for {industry.toLowerCase()}. All templates are customizable.
-        </p>
+        <div className="text-center mb-5">
+          <h2 className="fw-bold">
+            {industry === "All Industries"
+              ? 'Ready-Made Business Platforms for Every Industry'
+              : `Website Template Options for ${industry}`}
+          </h2>
+          <p className="text-muted">
+            {industry === "All Industries"
+              ? 'Customizable. Launch-ready. Delivered in just 7 days.'
+              : `Choose from our professionally designed templates, each crafted specifically for ${industry.toLowerCase()}. All templates are fully customizable to match your brand and business needs.`}
+          </p>
+        </div>
 
-        {/* Template Grid */}
-        <div className="row g-4 mb-5">
-          {templates.map((template) => (
-            <div className="col-md-6 col-lg-4" key={template.id}>
-              <div className="card h-100 shadow-sm border-0" onClick={() => setSelectedTemplate(template)} style={{ cursor: 'pointer' }}>
+        <div className="row g-4 mb-4">
+          {displayTemplates.map((template) => (
+            <div className="col-md-4" key={template.id}>
+              <div className="card h-100 shadow-sm" onClick={() => setSelectedTemplate(template)}>
                 <div className="position-relative">
-                  <img src={template.image} alt={template.name} className="card-img-top" style={{ height: '200px', objectFit: 'cover' }} />
-                  <div className="position-absolute top-0 end-0 m-2 bg-light px-2 py-1 rounded text-muted small">
+                  <img src={template.image} className="card-img-top" alt={template.name} style={{ height: '220px', objectFit: 'cover' }} />
+                  <span className="position-absolute top-0 end-0 bg-primary text-white px-2 py-1 rounded-start small">
                     {template.style}
-                  </div>
-                  <div className="position-absolute top-50 start-50 translate-middle bg-dark bg-opacity-50 rounded-circle p-2">
-                    <Eye className="text-white" />
-                  </div>
+                  </span>
                 </div>
                 <div className="card-body">
-                  <h5 className="card-title">{template.name}</h5>
-                  <p className="card-text text-muted small">{template.description}</p>
-                  <ul className="list-unstyled small text-muted">
+                  <h5 className="card-title fw-bold text-dark">{template.name}</h5>
+                  {industry === "All Industries" && template.subtitle && (
+                    <p className="text-primary small fw-semibold mb-1">{template.subtitle}</p>
+                  )}
+                  <p className="text-muted small">{template.description}</p>
+                  <ul className="list-unstyled small">
                     {template.features.slice(0, 3).map((feature, idx) => (
-                      <li key={idx} className="d-flex align-items-center">
-                        <span className="badge bg-primary rounded-circle me-2" style={{ width: '6px', height: '6px' }}></span>
+                      <li key={idx} className="d-flex align-items-center mb-1">
+                        <span className="bg-success rounded-circle me-2" style={{ width: 8, height: 8, display: 'inline-block' }}></span>
                         {feature}
                       </li>
                     ))}
@@ -56,99 +112,70 @@ const TemplateGallery = ({ industry, templates }) => {
           ))}
         </div>
 
-        {/* Carousel Navigation */}
-        <div className="d-flex justify-content-center align-items-center mb-4">
-          <button className="btn btn-outline-secondary me-2" onClick={prevTemplate}>
-            <ArrowLeft size={18} />
-          </button>
+        <div className="d-flex justify-content-center align-items-center gap-3 mb-5">
+          <button className="btn btn-outline-secondary rounded-circle p-2" onClick={prevTemplate}><ArrowLeft size={16} /></button>
           <div className="d-flex gap-2">
-            {templates.map((_, index) => (
-              <div
-                key={index}
-                onClick={() => setCurrentIndex(index)}
-                className={`rounded-circle ${index === currentIndex ? 'bg-primary' : 'bg-secondary'} `}
-                style={{
-                    width: '12px',
-                    height: '12px',
-                    backgroundColor: index === currentIndex ? '#ff3b00' : '#ddd',
-                    transition: 'background-color 0.3s',
-                    margin: '0 4px',
-                  }}
-              />
+            {displayTemplates.map((_, i) => (
+              <span key={i} className={`rounded-circle d-inline-block`} style={{ width: 10, height: 10, backgroundColor: i === currentIndex ? '#0d6efd' : '#ccc' }}></span>
             ))}
           </div>
-          <button className="btn btn-outline-secondary ms-2" onClick={nextTemplate}>
-            <ArrowRight size={18} />
-          </button>
+          <button className="btn btn-outline-secondary rounded-circle p-2" onClick={nextTemplate}><ArrowRight size={16} /></button>
         </div>
 
-        {/* Featured Template Block */}
-        <div className="p-4 rounded bg-light text-center">
-          <h3 className="fw-bold mb-3">{templates[currentIndex].name}</h3>
-          <p className="text-muted">{templates[currentIndex].description}</p>
-          <div className="row g-3 my-4">
-            {templates[currentIndex].features.map((feature, idx) => (
-              <div key={idx} className="col-sm-6 col-md-3">
-                <div className="bg-white rounded shadow-sm p-2 small fw-medium">{feature}</div>
+        <div className="text-center bg-light p-5 rounded">
+          <h3 className="fw-bold mb-2">{displayTemplates[currentIndex].name}</h3>
+          {industry === "All Industries" && displayTemplates[currentIndex].subtitle && (
+            <p className="text-primary fw-semibold">{displayTemplates[currentIndex].subtitle}</p>
+          )}
+          <p className="text-muted mb-4">{displayTemplates[currentIndex].description}</p>
+          <div className="row g-3 justify-content-center mb-4">
+            {displayTemplates[currentIndex].features.map((feature, i) => (
+              <div key={i} className="col-6 col-md-4">
+                <div className="bg-white p-3 border rounded h-100 small fw-semibold">
+                  {feature}
+                </div>
               </div>
             ))}
           </div>
-          <button className="btn btn-primary" onClick={() => setSelectedTemplate(templates[currentIndex])}>
-            <Eye size={16} className="me-2" />
-            Preview This Template
+          <button className="btn btn-primary d-inline-flex align-items-center gap-2" onClick={() => setSelectedTemplate(displayTemplates[currentIndex])}>
+            <Eye size={16} /> Preview This Template
           </button>
         </div>
 
-        {/* Modal for Preview */}
         {selectedTemplate && (
-          <div className="modal fade show d-block" tabIndex="-1" style={{ backgroundColor: 'rgba(0,0,0,0.6)' }}>
-            <div className="modal-dialog modal-xl modal-dialog-centered">
-              <div className="modal-content">
-                <div className="modal-body d-flex p-0" style={{ height: '90vh' }}>
-                  {/* Left: Preview */}
-                  <div className="flex-grow-1 border-end overflow-auto">
-                    <TemplatePreview
-                      templateId={selectedTemplate.id}
-                      templateName={selectedTemplate.name}
-                    />
-                  </div>
-                  {/* Right: Info */}
-                  <div className="w-25 p-4 overflow-auto">
-                    <div className="d-flex justify-content-between align-items-start mb-3">
-                      <h5 className="fw-bold">{selectedTemplate.name}</h5>
-                      <button
-                        className="btn-close"
-                        onClick={() => setSelectedTemplate(null)}
-                      ></button>
-                    </div>
-                    <p className="text-muted small">{selectedTemplate.description}</p>
-                    <h6 className="fw-semibold">Features</h6>
-                    <ul className="small text-muted">
-                      {selectedTemplate.features.map((f, idx) => (
-                        <li key={idx}>{f}</li>
-                      ))}
-                    </ul>
-                    <div className="mt-4">
-                      <button
-                        className="btn btn-success w-100 mb-2"
-                        onClick={() => window.open('https://calendly.com/your-calendar', '_blank')}
-                      >
-                        Choose This Template
-                      </button>
-                      <button
-                        className="btn btn-outline-secondary w-100"
-                        onClick={() => setSelectedTemplate(null)}
-                      >
-                        Continue Browsing
-                      </button>
-                    </div>
+          <div className="position-fixed top-0 start-0 w-100 h-100 bg-dark bg-opacity-50 d-flex align-items-center justify-content-center p-4 z-3" onClick={() => setSelectedTemplate(null)}>
+            <div className="bg-white rounded shadow-lg w-100" style={{ maxWidth: '1200px', maxHeight: '90vh', overflow: 'auto' }} onClick={(e) => e.stopPropagation()}>
+              <div className="d-flex border-bottom p-3 justify-content-between align-items-center">
+                <h5 className="mb-0 fw-bold">{selectedTemplate.name}</h5>
+                <button className="btn-close" onClick={() => setSelectedTemplate(null)}></button>
+              </div>
+              <div className="d-flex">
+                <div className="flex-grow-1 border-end">
+                  <TemplatePreview templateId={selectedTemplate.id} templateName={selectedTemplate.name} />
+                </div>
+                <div className="p-4" style={{ width: '300px' }}>
+                  {industry === "All Industries" && selectedTemplate.subtitle && (
+                    <p className="fw-semibold text-primary">{selectedTemplate.subtitle}</p>
+                  )}
+                  <p className="text-muted small">{selectedTemplate.description}</p>
+                  <h6 className="fw-bold mt-4 mb-2">Features</h6>
+                  <ul className="list-unstyled small">
+                    {selectedTemplate.features.map((feature, i) => (
+                      <li key={i} className="d-flex align-items-center mb-2">
+                        <span className="bg-success rounded-circle me-2" style={{ width: 8, height: 8, display: 'inline-block' }}></span>
+                        {feature}
+                      </li>
+                    ))}
+                  </ul>
+                  <div className="mt-4">
+                    <button className="btn btn-primary w-100 mb-2" onClick={() => window.open('https://calendly.com/your-calendar', '_blank')}>Choose This Template</button>
+                    <button className="btn btn-outline-secondary w-100" onClick={() => setSelectedTemplate(null)}>Continue Browsing</button>
                   </div>
                 </div>
               </div>
             </div>
           </div>
         )}
-
       </div>
     </section>
   );
