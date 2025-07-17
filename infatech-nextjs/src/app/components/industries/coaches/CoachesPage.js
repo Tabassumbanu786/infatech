@@ -77,7 +77,7 @@ const CoachesPage = () => {
       {/* Features Section */}
       <section className="py-5 bg-white">
         <div className="container">
-          <h2 className="text-center fw-bold mb-5">What We're Planning for Coaches</h2>
+          <h2 className="text-center fw-bold mb-5">What We&apos;re Planning for Coaches</h2>
           <div className="row g-4">
             {[
               'Client Management Portal',

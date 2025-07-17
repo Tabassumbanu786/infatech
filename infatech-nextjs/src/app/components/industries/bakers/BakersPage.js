@@ -74,7 +74,7 @@ const BakersPage = () => {
             <p className="lead text-muted">Specialized website and technology solutions designed specifically for bakeries, patisseries, and confectionery businesses.</p>
             <div className="rounded p-3 d-inline-flex align-items-center gap-2" style={{ backgroundColor: 'rgba(255, 59, 0, 0.25)' }}>
               <i className="bi bi-clock-history" style={{ color: '#ff3b00' }}></i>
-              <span className="fw-semibold" style={{ color: '#ff3b00' }}>Coming Soon - We're Baking Something Special!</span>
+              <span className="fw-semibold" style={{ color: '#ff3b00' }}>Coming Soon - We&apos;re Baking Something Special!</span>
             </div>
           </div>
         </div>
@@ -83,7 +83,7 @@ const BakersPage = () => {
       {/* What We're Preparing */}
       <section className="py-5 bg-white">
         <div className="container">
-          <h2 className="text-center fw-bold mb-5">What We're Preparing for Bakers</h2>
+          <h2 className="text-center fw-bold mb-5">What We&apos;re Preparing for Bakers</h2>
           <div className="row g-4">
             {["Online Ordering System", "Inventory Management", "Social Media Integration", "Customer Loyalty Program"].map((title, idx) => (
               <div className="col-md-6" key={idx}>

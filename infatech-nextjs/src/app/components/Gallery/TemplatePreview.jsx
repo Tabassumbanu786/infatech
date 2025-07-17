@@ -46,7 +46,7 @@ const TemplatePreview = ({ templateId, templateName }) => {
       {/* Featured Products */}
       <section className="py-5 bg-white">
         <div className="container">
-          <h2 className="text-center fw-bold mb-5">Today's Fresh Selections</h2>
+          <h2 className="text-center fw-bold mb-5">Today&apos;s Fresh Selections</h2>
           <div className="row g-4">
             {[{
               title: 'Artisan Breads',
@@ -119,7 +119,7 @@ const TemplatePreview = ({ templateId, templateName }) => {
             <div className="d-flex justify-content-center mb-3">
               {[...Array(5)].map((_, i) => <Star key={i} className="text-warning" size={20} />)}
             </div>
-            <p className="text-muted mb-3">"The best bakery in town! Their sourdough is incredible and the custom cake for my daughter's birthday was absolutely perfect."</p>
+            <p className="text-muted mb-3">"The best bakery in town! Their sourdough is incredible and the custom cake for my daughter&apos;s birthday was absolutely perfect."</p>
             <p className="fw-semibold text-warning mb-0">- Sarah Johnson</p>
           </div>
         </div>
