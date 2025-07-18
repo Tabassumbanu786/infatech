@@ -17,7 +17,7 @@ const homepageTemplates = [
     name: "Sugar & Script",
     subtitle: "Bakehouse Elegance",
     description: "Warm, elegant design for bakeries that want to look as good as they taste.",
-    image: "https://images.pexels.com/photos/1070850/pexels-photo-1070850.jpeg?auto=compress&cs=tinysrgb&w=800",
+    image: "https://images.pexels.com/photos/1721932/pexels-photo-1721932.jpeg?auto=compress&cs=tinysrgb&w=800",
     features: ["Custom Cake Forms", "Seasonal Specials", "Recipe Journal"],
     style: "Elegant"
   },
@@ -35,7 +35,7 @@ const homepageTemplates = [
     name: "Canvas Grid",
     subtitle: "Creative Portfolio",
     description: "Bold visuals. Smart structure. Perfect for designers, photographers & creators.",
-    image: "https://images.pexels.com/photos/265087/pexels-photo-265087.jpg?auto=compress&cs=tinysrgb&w=800",
+    image: "https://images.pexels.com/photos/1779487/pexels-photo-1779487.jpeg?auto=compress&cs=tinysrgb&w=800",
     features: ["Interactive Galleries", "Video Reels", "Project Case Studies"],
     style: "Creative"
   },
@@ -44,7 +44,7 @@ const homepageTemplates = [
     name: "ShopStack",
     subtitle: "Ecom Ready",
     description: "A powerful, minimal e-commerce template that sells your products — fast.",
-    image: "https://images.pexels.com/photos/267350/pexels-photo-267350.jpg?auto=compress&cs=tinysrgb&w=800",
+    image: "https://images.pexels.com/photos/3769747/pexels-photo-3769747.jpeg?auto=compress&cs=tinysrgb&w=800",
     features: ["Product Display + Cart", "Secure Payments", "Mobile Optimized"],
     style: "E-commerce"
   },
@@ -53,7 +53,7 @@ const homepageTemplates = [
     name: "ZenSpace",
     subtitle: "Wellness & More",
     description: "Peaceful, polished design for coaches, clinics, and fitness professionals.",
-    image: "https://images.pexels.com/photos/270632/pexels-photo-270632.jpg?auto=compress&cs=tinysrgb&w=800",
+    image: "https://images.pexels.com/photos/3822621/pexels-photo-3822621.jpeg?auto=compress&cs=tinysrgb&w=800",
     features: ["Service Blocks", "Calendar Integration", "Team Profiles"],
     style: "Wellness"
   }

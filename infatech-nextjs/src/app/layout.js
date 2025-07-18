@@ -60,7 +60,20 @@ export default function RootLayout({ children }) {
         <meta charSet="UTF-8" />
 
         {/* Favicon */}
-        <link rel="icon" href="/favicon.ico" sizes="any" />
+        {/* <link rel="icon" href="/favicon.ico" sizes="any" /> */}
+        {/* Light Theme Favicon */}
+<link
+  rel="icon"
+  href="/favicon-light.ico"
+  media="(prefers-color-scheme: light)"
+/>
+
+{/* Dark Theme Favicon */}
+<link
+  rel="icon"
+  href="/favicon-dark.ico"
+  media="(prefers-color-scheme: dark)"
+/>
         <link rel="apple-touch-icon" href="/favicon.ico" />
         <link rel="shortcut icon" href="/favicon.ico" />
 

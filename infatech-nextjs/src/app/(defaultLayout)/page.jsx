@@ -12,50 +12,45 @@ import TemplateGallery from '../components/Gallery/TemplateGallery';
 const homepageTemplates = [
     {
       id: 1,
-      name: "Sugar & Script",
-      subtitle: "Bakehouse Elegance",
-      description: "Warm, elegant design for bakeries that want to look as good as they taste.",
-      image: "https://images.pexels.com/photos/1070850/pexels-photo-1070850.jpeg?auto=compress&cs=tinysrgb&w=800",
-      features: ["Custom Cake Forms", "Seasonal Specials", "Recipe Journal"],
-      style: "Elegant"
+      name: "Artisan Bakehouse",
+      description: "Elegant, warm design showcasing handcrafted baked goods with online ordering and custom cake requests.",
+      image: "https://images.pexels.com/photos/1721932/pexels-photo-1721932.jpeg?auto=compress&cs=tinysrgb&w=800",
+      features: ["Custom Cake Orders", "Daily Specials Display", "Recipe Blog", "Photo Gallery", "Online Ordering", "Event Catering"],
+      style: "Artisan"
     },
     {
       id: 2,
-      name: "HarvestCart",
-      subtitle: "Grocery Go Digital",
-      description: "Clean, local, and built for modern kirana stores and grocery businesses.",
-      image: "https://images.pexels.com/photos/264636/pexels-photo-264636.jpeg?auto=compress&cs=tinysrgb&w=800",
-      features: ["Inventory Dashboard", "Daily Stock Updates", "Local Delivery Tracker"],
+      name: "Fresh Market Pro",
+      description: "Clean, modern design perfect for neighborhood grocery stores with online ordering capabilities.",
+      image: "https://images.pexels.com/photos/264537/pexels-photo-264537.jpeg?auto=compress&cs=tinysrgb&w=800",
+      features: ["Online Ordering System", "Inventory Management", "Local Delivery Tracking", "Customer Loyalty Program", "Mobile-First Design", "Payment Integration"],
       style: "Modern"
     },
     {
       id: 3,
-      name: "Canvas Grid",
-      subtitle: "Creative Portfolio",
-      description: "Bold visuals. Smart structure. Perfect for designers, photographers & creators.",
-      image: "https://images.pexels.com/photos/265087/pexels-photo-265087.jpg?auto=compress&cs=tinysrgb&w=800",
-      features: ["Interactive Galleries", "Video Reels", "Project Case Studies"],
+      name: "Creative Portfolio",
+      description: "An artistic and dynamic layout ideal for designers, photographers, artists, or creative agencies.",
+      image: "https://images.pexels.com/photos/1779487/pexels-photo-1779487.jpeg?auto=compress&cs=tinysrgb&w=800",
+      features: ["Image Galleries", "Video Integration", "Project Showcase", "Client Testimonials", "Social Media Links", "Custom Fonts"],
       style: "Creative"
     },
     {
       id: 4,
-      name: "ShopStack",
-      subtitle: "Ecom Ready",
-      description: "A powerful, minimal e-commerce template that sells your products — fast.",
-      image: "https://images.pexels.com/photos/267350/pexels-photo-267350.jpg?auto=compress&cs=tinysrgb&w=800",
-      features: ["Product Display + Cart", "Secure Payments", "Mobile Optimized"],
+      name: "E-commerce Hub",
+      description: "A robust and user-friendly design for online stores, featuring product listings and secure checkout.",
+      image: "https://images.pexels.com/photos/3769747/pexels-photo-3769747.jpeg?auto=compress&cs=tinysrgb&w=800",
+      features: ["Product Catalog", "Shopping Cart", "Payment Gateway", "User Accounts", "Order Tracking", "Promotional Banners"],
       style: "E-commerce"
     },
     {
       id: 5,
-      name: "ZenSpace",
-      subtitle: "Wellness & More",
-      description: "Peaceful, polished design for coaches, clinics, and fitness professionals.",
-      image: "https://images.pexels.com/photos/270632/pexels-photo-270632.jpg?auto=compress&cs=tinysrgb&w=800",
-      features: ["Service Blocks", "Calendar Integration", "Team Profiles"],
+      name: "Health & Wellness",
+      description: "A clean and calming design suitable for health clinics, fitness studios, or wellness coaches.",
+      image: "https://images.pexels.com/photos/3822621/pexels-photo-3822621.jpeg?auto=compress&cs=tinysrgb&w=800",
+      features: ["Service Descriptions", "Appointment Booking", "Team Bios", "FAQ Section", "Blog for Tips", "Testimonials"],
       style: "Wellness"
     }
-    ];
+  ];
   
 
 const page = () => {
