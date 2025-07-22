@@ -223,35 +223,67 @@ const TemplateGallery = ({
 };
 
 const TemplateCard = ({ template, disablePreviewModal, onTemplateClick }) => {
+  const [isSideModalOpen, setIsSideModalOpen] = useState(false);
   const [isHovered, setIsHovered] = useState(false);
   const [modalPosition, setModalPosition] = useState('right');
+  const [isMobile, setIsMobile] = useState(false);
   const cardRef = useRef(null);
 
- 
+
   useEffect(() => {
-    if (isHovered && cardRef.current) {
+    const checkMobile = () => setIsMobile(window.innerWidth < 768);
+    checkMobile();
+    window.addEventListener('resize', checkMobile);
+    return () => window.removeEventListener('resize', checkMobile);
+  }, []);
+
+  useEffect(() => {
+    if (isSideModalOpen && cardRef.current) {
       const cardRect = cardRef.current.getBoundingClientRect();
       const modalWidth = 320;
-      const screenWidth = window.innerWidth;
-
-      if (cardRect.right + modalWidth > screenWidth) {
+      if (cardRect.right + modalWidth > window.innerWidth) {
         setModalPosition('left');
       } else {
         setModalPosition('right');
       }
     }
-  }, [isHovered]);
+  }, [isSideModalOpen]);
 
+  useEffect(() => {
+    if (isSideModalOpen) {
+      const handleClickOutside = (event) => {
+        if (cardRef.current && !cardRef.current.contains(event.target)) {
+          setIsSideModalOpen(false);
+        }
+      };
+      document.addEventListener('mousedown', handleClickOutside);
+      return () => document.removeEventListener('mousedown', handleClickOutside);
+    }
+  }, [isSideModalOpen]);
+  const handleCardClick = () => {
+    if (disablePreviewModal) {
+      setIsSideModalOpen((prev) => !prev);
+    } else {
+      onTemplateClick(template);
+    }
+  };
+  const handleMouseEnter = () => {
+    if (disablePreviewModal && !isMobile) setIsSideModalOpen(true);
+  };
+
+  const handleMouseLeave = () => {
+    if (disablePreviewModal && !isMobile) setIsSideModalOpen(false);
+  };
   return (
-    <div
-      ref={cardRef}
-      className="position-relative"
-      onMouseEnter={() => setIsHovered(true)}
-      onMouseLeave={() => setIsHovered(false)}
-    >
+      <div
+        ref={cardRef}
+        className="position-relative"
+        onMouseEnter={!isMobile ? handleMouseEnter : undefined}
+        onMouseLeave={!isMobile ? handleMouseLeave : undefined}
+      >
       <div
         className={`card shadow-sm border overflow-hidden transition-template-card ${!disablePreviewModal ? 'cursor-pointer' : 'cursor-default'}`}
-        onClick={() => onTemplateClick(template)}
+        onClick={handleCardClick}
       >
         <div className="position-relative">
           <img
@@ -261,7 +293,12 @@ const TemplateCard = ({ template, disablePreviewModal, onTemplateClick }) => {
             style={{ height: '224px' }}
           />
           {!disablePreviewModal && (
-            <div className="position-absolute top-0 start-0 w-100 h-100 d-flex justify-content-center align-items-center template-hover-overlay">
+            // <div className="position-absolute top-0 start-0 w-100 h-100 d-flex justify-content-center align-items-center template-hover-overlay">
+               <div
+              className={`position-absolute top-0 start-0 w-100 h-100 d-flex justify-content-center align-items-center transition overlay-preview ${
+                !isMobile ? 'hover-overlay' : ''
+              }`}
+            >
               <div className="text-white text-center opacity-0 template-hover-content">
                 <Eye className="mb-2" size={32} />
                 <span className="fw-semibold">Preview</span>
@@ -287,7 +324,17 @@ const TemplateCard = ({ template, disablePreviewModal, onTemplateClick }) => {
               <div className="bg-bolt-primary bg-opacity-10 rounded-circle mx-auto d-flex justify-content-center align-items-center mb-2" style={{ width: '48px', height: '48px' }}>
                 <Eye className="text-bolt-primary" size={24} />
               </div>
-              <p className="text-muted small">Hover to preview features</p>
+              {/* <p className="text-muted small">Hover to preview features</p> */}
+              <p className="text-muted small fw-medium">
+                  {isMobile ? 'Tap to preview' : 'Click to preview full website'}
+                </p>
+                {isSideModalOpen && (
+                  <div className="mt-2">
+                    <span className="badge text-white fw-bold animate__pulse" style={{ backgroundColor: '#ff3b00' }}>
+                      Preview Open ↗
+                    </span>
+                  </div>
+                )}
             </div>
           ) : (
             <>
@@ -305,13 +352,30 @@ const TemplateCard = ({ template, disablePreviewModal, onTemplateClick }) => {
         </div>
       </div>
 
-      {isHovered && disablePreviewModal && (
+      {isSideModalOpen && disablePreviewModal && (
+        <>
+        {isMobile && (
+          <div
+            className="position-fixed top-0 start-0 w-100 h-100 bg-dark bg-opacity-50 z-1040"
+            onClick={() => setIsSideModalOpen(false)}
+          />
+        )}
         <div
-          className={`position-absolute top-0 bg-white bg-gradient rounded-4 border shadow-lg p-4 zindex-tooltip template-hover-preview transition-template-card ${
-            modalPosition === 'right' ? 'start-100 ms-3' : 'end-100 me-3'
+          className={`position-absolute top-0 bg-white bg-gradient rounded-4 border 
+            shadow-lg p-4 zindex-tooltip template-hover-preview transition-template-card 
+            ${isMobile
+              ? 'position-fixed top-50 start-50 translate-middle z-1050 w-100'
+              : `top-0 z-1050
+             ${modalPosition === 'right' ? 'start-100 ms-3' : 'end-100 me-3'}`
           }`}
           style={{ width: '320px' , zIndex: 9999}}
         >
+          {isMobile && (
+                <button
+                  className="btn-close position-absolute top-0 end-0 m-2"
+                  onClick={() => setIsSideModalOpen(false)}
+                ></button>
+              )}
           <div class="position-absolute top-6 end-0 translate-middle badge text-white fw-bold rounded-pill px-3 py-1 shadow" style={{ backgroundColor: '#ff3b00' }}>
   PREVIEW
 </div>
@@ -385,6 +449,7 @@ const TemplateCard = ({ template, disablePreviewModal, onTemplateClick }) => {
 
           </div>
         </div>
+        </>
       )}
     </div>
   );
