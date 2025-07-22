@@ -1,53 +1,90 @@
 // Bootstrap version of BakersPage (converted from Tailwind)
 
 import Head from 'next/head';
-// import CTASection from '../components/CTASection';
-// import TemplateGallery from '../components/TemplateGallery';
+import React, { useState } from 'react';
 import { Clock, EggFill } from 'react-bootstrap-icons';
+import TemplateGallery from '../../Gallery/TemplateGallery';
+
 
 const BakersPage = () => {
+  const [selectedTemplate, setSelectedTemplate] = useState(null);
   const templates = [
     {
-      id: 1,
-      name: "Fresh Market Pro",
-      description: "Clean, modern design perfect for neighborhood grocery stores with online ordering capabilities.",
-      image: "https://images.pexels.com/photos/264537/pexels-photo-264537.jpeg?auto=compress&cs=tinysrgb&w=800",
-      features: ["Online Ordering System", "Inventory Management", "Local Delivery Tracking", "Customer Loyalty Program", "Mobile-First Design", "Payment Integration"],
-      style: "Modern"
+        id: 1,
+        name: "Kirana SmartKart",
+        description: "Modern design for local Kirana stores with online ordering, digital payments, and delivery tracking.",
+        image: "https://images.pexels.com/photos/1132047/pexels-photo-1132047.jpeg",
+        features: [
+            "Online Ordering",
+            "UPI/Wallet Payments",
+            "Live Delivery Tracking",
+            "Daily Essentials Listing",
+            "Mobile-Optimized Layout",
+            "Multi-language Support"
+        ],
+        style: "Modern"
     },
     {
-      id: 2,
-      name: "Community Corner",
-      description: "Warm, community-focused design that emphasizes local connections and neighborhood service.",
-      image: "https://images.pexels.com/photos/1005638/pexels-photo-1005638.jpeg?auto=compress&cs=tinysrgb&w=800",
-      features: ["Community Board", "Local Events Calendar", "Neighborhood News", "Family-Friendly Layout", "Easy Navigation", "Social Media Integration"],
-      style: "Community"
+        id: 2,
+        name: "Ghar Ki Dukaan",
+        description: "Friendly, local-first design that builds trust and emphasizes personal customer service.",
+        image: "https://images.pexels.com/photos/7363163/pexels-photo-7363163.jpeg",
+        features: [
+            "Neighborhood Delivery Info",
+            "Personal Message from Store Owner",
+            "Cash on Delivery Option",
+            "Popular Products Section",
+            "Festive Offers Banner",
+            "WhatsApp Ordering"
+        ],
+        style: "Community"
     },
     {
-      id: 3,
-      name: "Express Convenience",
-      description: "Fast-loading, efficient design optimized for quick shopping and express checkout.",
-      image: "https://images.pexels.com/photos/2292837/pexels-photo-2292837.jpeg?auto=compress&cs=tinysrgb&w=800",
-      features: ["Quick Order System", "Express Checkout", "Real-time Stock Updates", "Speed-Optimized", "Minimal Design", "One-Click Reorder"],
-      style: "Minimal"
+        id: 3,
+        name: "QuickPick Kirana",
+        description: "Fast and lightweight template ideal for stores with high daily turnover and express checkout needs.",
+        image: "https://images.pexels.com/photos/9218663/pexels-photo-9218663.jpeg",
+        features: [
+            "Fast Checkout",
+            "Low Data Usage",
+            "Pincode-based Availability",
+            "Favorites & Reorder Option",
+            "Clean UI for Essentials",
+            "Cart Reminder"
+        ],
+        style: "Minimal"
     },
     {
-      id: 4,
-      name: "Traditional Bazaar",
-      description: "Rich, colorful design that celebrates traditional shopping culture with modern functionality.",
-      image: "https://images.pexels.com/photos/1435904/pexels-photo-1435904.jpeg?auto=compress&cs=tinysrgb&w=800",
-      features: ["Cultural Design Elements", "Multi-language Support", "Traditional Payment Methods", "Family Business Story", "Product Categories", "Seasonal Promotions"],
-      style: "Traditional"
+        id: 4,
+        name: "Bazaar Classic",
+        description: "Colorful, culturally-rooted design that blends traditional shopping vibes with digital convenience.",
+        image: "https://images.pexels.com/photos/6397651/pexels-photo-6397651.jpeg",
+        features: [
+            "Regional Language Toggle",
+            "Traditional Patterns & Fonts",
+            "Support for Phone Orders",
+            "Category-wise Listing",
+            "Seasonal Discounts Section",
+            "Family-run Story Page"
+        ],
+        style: "Traditional"
     },
     {
-      id: 5,
-      name: "Smart Store Hub",
-      description: "Tech-forward design with advanced features for the modern convenience store experience.",
-      image: "https://images.pexels.com/photos/230544/pexels-photo-230544.jpeg?auto=compress&cs=tinysrgb&w=800",
-      features: ["AI-Powered Recommendations", "Smart Inventory Alerts", "Advanced Analytics", "Customer Insights", "Automated Marketing", "Integration Hub"],
-      style: "Tech-Forward"
+        id: 5,
+        name: "NextGen Kirana",
+        description: "Advanced, tech-enabled store layout for modern Kirana stores that want full automation.",
+        image: "https://images.pexels.com/photos/12935094/pexels-photo-12935094.jpeg",
+        features: [
+            "AI Product Suggestions",
+            "Inventory Auto-Sync",
+            "Customer Dashboard",
+            "Subscription for Milk/Groceries",
+            "Sales Analytics",
+            "POS Integration"
+        ],
+        style: "Tech-Forward"
     }
-  ];
+];
 
   return (
     <div className="container-fluid px-0">
@@ -101,9 +138,13 @@ const BakersPage = () => {
           </div>
         </div>
       </section>
-
-      {/* <TemplateGallery industry="Bakers" templates={templates} /> */}
-
+      
+      <TemplateGallery 
+          industry="Fresh Market Pro" 
+          templates={templates} 
+          selectedTemplate={selectedTemplate}
+          setSelectedTemplate={setSelectedTemplate}
+        />
       {/* Interest Form */}
       {/* <section className="py-5 bg-light">
         <div className="container text-center">

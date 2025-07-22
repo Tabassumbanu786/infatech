@@ -1,8 +1,8 @@
 import React from 'react';
 
-import HeaderStyle3 from '../components/Header/HeaderStyle3';
+import HeaderStyle3 from '../../components/Header/HeaderStyle3';
 
-import Footer from '../components/Footer/Footer';
+import Footer from '../../components/Footer/Footer';
 
 const layout = ({ children }) => {
     return (

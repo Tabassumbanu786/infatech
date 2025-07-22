@@ -30,10 +30,20 @@ const CalendlyPopupButton = ({
       <button
         onClick={() => setOpen(true)}
         className="btn fw-semibold px-4 py-2 rounded-pill border border-white text-white"
+        // style={{
+        //   backgroundColor: 'transparent',
+        //   transition: 'all 0.3s ease-in-out'
+        // }}
         style={{
-          backgroundColor: 'transparent',
-          transition: 'all 0.3s ease-in-out'
+          backgroundColor: '#ff3b00',
+          color: '#ffffff',
+          fontWeight: 600,
+          padding: '0.75rem 1.5rem',
+          borderRadius: '0.5rem',
+          fontSize: '1rem',
+          border: 'none'
         }}
+        
       >
         {buttonText}
       </button>

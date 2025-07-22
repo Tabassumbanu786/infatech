@@ -14,16 +14,18 @@ const FloatingCalendlyButton = ({hide}) => {
                 zIndex: 999999,
             }}
         >
-            <CalendlyPopupButton
-                buttonText={
-                    <CalendarClock
-                        size={28}
-                        color="#042b62"
-                        strokeWidth={2}
-                        title="Book a Call"
-                    />
-                }
-            />
+          <CalendlyPopupButton
+  buttonText={
+    <CalendarClock
+      color="#ff3b00"
+      strokeWidth={2}
+      style={{ cursor: 'pointer' }}
+    />
+  }
+  // Add title directly to the Calendly button wrapper using wrapperProps (if supported)
+  wrapperProps={{ title: "Book a Call" }}
+/>
+
         </div>
     );
 };

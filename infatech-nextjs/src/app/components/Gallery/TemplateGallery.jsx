@@ -1,14 +1,33 @@
-
-"use client";
-import React, { useState } from 'react';
+// TemplateGallery.tsx
+'use client'
+import React, { useState, useRef, useEffect } from 'react';
 import { Eye, ArrowLeft, ArrowRight } from 'lucide-react';
 import TemplatePreview from './TemplatePreview';
 
-const TemplateGallery = ({
-  industry,
-  templates,
-  selectedTemplate: externalSelectedTemplate,
-  setSelectedTemplate: externalSetSelectedTemplate
+// interface Template {
+//   id: number;
+//   name: string;
+//   description: string;
+//   image: string;
+//   features: string[];
+//   style: string;
+//   path?: string;
+// }
+
+// interface TemplateGalleryProps {
+//   industry: string;
+//   templates: Template[];
+//   selectedTemplate?: Template | null;
+//   setSelectedTemplate?: (template: Template | null) => void;
+//   disablePreviewModal?: boolean;
+// }
+
+const TemplateGallery = ({ 
+  industry, 
+  templates, 
+  selectedTemplate: externalSelectedTemplate, 
+  setSelectedTemplate: externalSetSelectedTemplate,
+  disablePreviewModal = false
 }) => {
   const [internalSelectedTemplate, setInternalSelectedTemplate] = useState(null);
   const [currentIndex, setCurrentIndex] = useState(0);
@@ -16,56 +35,7 @@ const TemplateGallery = ({
   const selectedTemplate = externalSelectedTemplate !== undefined ? externalSelectedTemplate : internalSelectedTemplate;
   const setSelectedTemplate = externalSetSelectedTemplate || setInternalSelectedTemplate;
 
-  // Updated template data with new naming and descriptions
-  const updatedTemplates = [
-    {
-      id: 1,
-      name: "Sugar & Script",
-      subtitle: "Bakehouse Elegance",
-      description: "Warm, elegant design for bakeries that want to look as good as they taste.",
-      image: "https://images.pexels.com/photos/1721932/pexels-photo-1721932.jpeg?auto=compress&cs=tinysrgb&w=800",
-      features: ["Custom Cake Forms", "Seasonal Specials", "Recipe Journal"],
-      style: "Elegant"
-    },
-    {
-      id: 2,
-      name: "HarvestCart",
-      subtitle: "Grocery Go Digital",
-      description: "Clean, local, and built for modern kirana stores and grocery businesses.",
-      image: "https://images.pexels.com/photos/264537/pexels-photo-264537.jpeg?auto=compress&cs=tinysrgb&w=800",
-      features: ["Inventory Dashboard", "Daily Stock Updates", "Local Delivery Tracker"],
-      style: "Modern"
-    },
-    {
-      id: 3,
-      name: "Canvas Grid",
-      subtitle: "Creative Portfolio",
-      description: "Bold visuals. Smart structure. Perfect for designers, photographers & creators.",
-      image: "https://images.pexels.com/photos/1779487/pexels-photo-1779487.jpeg?auto=compress&cs=tinysrgb&w=800",
-      features: ["Interactive Galleries", "Video Reels", "Project Case Studies"],
-      style: "Creative"
-    },
-    {
-      id: 4,
-      name: "ShopStack",
-      subtitle: "Ecom Ready",
-      description: "A powerful, minimal e-commerce template that sells your products — fast.",
-      image: "https://images.pexels.com/photos/3769747/pexels-photo-3769747.jpeg?auto=compress&cs=tinysrgb&w=800",
-      features: ["Product Display + Cart", "Secure Payments", "Mobile Optimized"],
-      style: "E-commerce"
-    },
-    {
-      id: 5,
-      name: "ZenSpace",
-      subtitle: "Wellness & More",
-      description: "Peaceful, polished design for coaches, clinics, and fitness professionals.",
-      image: "https://images.pexels.com/photos/3822621/pexels-photo-3822621.jpeg?auto=compress&cs=tinysrgb&w=800",
-      features: ["Service Blocks", "Calendar Integration", "Team Profiles"],
-      style: "Wellness"
-    }
-  ];
-
-  const displayTemplates = industry === "All Industries" ? updatedTemplates : templates;
+  const displayTemplates = templates;
 
   const nextTemplate = () => {
     setCurrentIndex((prev) => (prev + 1) % displayTemplates.length);
@@ -75,138 +45,344 @@ const TemplateGallery = ({
     setCurrentIndex((prev) => (prev - 1 + displayTemplates.length) % displayTemplates.length);
   };
 
-  return (
-    <div className="container py-5">
-      <div className="text-center mb-5">
-        <h2 className="fw-bold">
-          {industry === "All Industries" ?
-            "Ready-Made Business Platforms for Every Industry" :
-            `Website Template Options for ${industry}`}
-        </h2>
-        <p className="text-muted">
-          {industry === "All Industries" ?
-            "Customizable. Launch-ready. Delivered in just 7 days." :
-            `Choose from professionally designed templates for ${industry.toLowerCase()}.`}
-        </p>
-      </div>
+  const handleTemplateClick = (template) => {
+    // if (!disablePreviewModal) {
+      setSelectedTemplate(template);
+    // }
+  };
 
-      <div className="row g-4">
-        {displayTemplates.map((template) => (
-          <div className="col-md-4" key={template.id}>
-            <div className="card h-100 shadow-sm border-0" onClick={() => setSelectedTemplate(template)}>
-              <div className="position-relative">
-                <img
-                  src={template.image}
-                  alt={template.name}
-                  className="card-img-top"
-                  style={{ height: '225px', objectFit: 'cover' }}
-                />
-                <div className="position-absolute top-0 end-0 m-2">
-                  <span className="badge bg-primary">{template.style}</span>
-                </div>
+  return (
+    <section className="py-5 bg-white position-relative">
+      <div className="container">
+        <h2 className="display-5 fw-bold text-center text-dark mb-3">
+          {industry === "All Industries" 
+            ? "Ready-Made Business Platforms for Every Industry"
+            : `Website Template Options for ${industry}`
+          }
+        </h2>
+        <p className="fs-5 text-muted text-center mb-5 mx-auto" style={{maxWidth: '768px'}}>
+          {industry === "All Industries" 
+            ? <span className="fw-semibold">Customizable. Launch-ready. Delivered in just 7 days.</span>
+            : `Choose from our professionally designed templates, each crafted specifically for ${industry.toLowerCase()}. All templates are fully customizable to match your brand and business needs.`
+          }
+        </p>
+
+        {/* Template Grid */}
+
+        <div className="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4 mb-5">
+        {/* <div className="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4 mb-5 position-relative" style={{ overflow: 'visible' }}> */}
+
+          {displayTemplates.map((template, index) => (
+            <TemplateCard 
+              key={template.id} 
+              template={template} 
+              disablePreviewModal={disablePreviewModal}
+              onTemplateClick={handleTemplateClick}
+            />
+          ))}
+        </div>
+
+        {/* Carousel Navigation */}
+        {/* <div className="d-flex justify-content-center align-items-center mb-5">
+          <button
+            onClick={prevTemplate}
+            className="btn btn-outline-secondary rounded-circle me-3"
+          >
+            <ArrowLeft size={20} />
+          </button>
+          <div className="d-flex gap-2">
+            {displayTemplates.map((_, index) => (
+              <button
+                key={index}
+                onClick={() => setCurrentIndex(index)}
+                className={`rounded-circle border-0 p-0`}
+                style={{
+                  width: '12px',
+                  height: '12px',
+                  backgroundColor: index === currentIndex ? '#0052FF' : '#d1d1d1'
+                }}
+              />
+            ))}
+          </div>
+          <button
+            onClick={nextTemplate}
+            className="btn btn-outline-secondary rounded-circle ms-3"
+          >
+            <ArrowRight size={20} />
+          </button>
+        </div> */}
+
+        {/* Featured Template Highlight */}
+        {/* <div className="bg-light rounded-4 p-5 text-center">
+          <h3 className="h2 fw-bold text-dark mb-3">
+            {displayTemplates[currentIndex].name}
+          </h3>
+          {displayTemplates[currentIndex]?.subtitle && (
+            <p className="text-primary fw-semibold fs-5 mb-3">
+              {displayTemplates[currentIndex]?.subtitle}
+            </p>
+          )}
+          <p className="fs-5 text-muted mb-4 mx-auto" style={{maxWidth: '600px'}}>
+            {displayTemplates[currentIndex].description}
+          </p>
+          <div className="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-3 mb-4">
+            {displayTemplates[currentIndex].features.map((feature, idx) => (
+              <div key={idx} className="bg-white rounded p-3 shadow-sm">
+                <span className="fw-semibold text-dark">{feature}</span>
               </div>
-              <div className="card-body">
-                <h5 className="card-title fw-bold">{template.name}</h5>
-                {template.subtitle && <p className="text-primary small mb-2">{template.subtitle}</p>}
-                <p className="card-text text-muted small">{template.description}</p>
-                <ul className="list-unstyled mt-3">
-                  {template.features.slice(0, 3).map((feature, i) => (
-                    <li key={i} className="d-flex align-items-center mb-1">
-                      <span className="me-2 bg-success rounded-circle" style={{ width: '8px', height: '8px' }}></span>
-                      <small className="text-muted">{feature}</small>
-                    </li>
-                  ))}
-                </ul>
+            ))}
+          </div>
+          {disablePreviewModal ? (
+            <button
+              onClick={() => window.location.href = '/financial-advisors'}
+              className="btn btn-primary btn-lg"
+            >
+              <ArrowRight className="me-2" size={20} />
+              Explore All Templates
+            </button>
+          ) : (
+            <button
+              onClick={() => setSelectedTemplate(displayTemplates[currentIndex])}
+              className="btn btn-primary btn-lg"
+            >
+              <Eye className="me-2" size={20} />
+              Preview This Template
+            </button>
+          )}
+        </div> */}
+
+        {/* Modal */}
+        {selectedTemplate && !disablePreviewModal && (
+          <div 
+            className="position-fixed top-0 start-0 w-100 h-100 bg-dark bg-opacity-50 d-flex align-items-center justify-content-center p-3 z-index-1050"
+            onClick={() => setSelectedTemplate(null)}
+          >
+            <div 
+              className="bg-white rounded-lg w-100 h-100 overflow-hidden d-flex flex-column flex-lg-row max-w-100"
+              onClick={(e) => e.stopPropagation()}
+              style={{ maxHeight: '90vh', maxWidth: '1280px' }}
+            >
+              <div className="flex-grow-1 border-end">
+                <TemplatePreview 
+                  templateId={selectedTemplate.id} 
+                  templateName={selectedTemplate.name}
+                />
+              </div>
+              <div className="p-4 overflow-auto" style={{ width: '320px' }}>
+                <div className="d-flex justify-content-between align-items-center mb-3">
+                  <h4 className="h5 fw-bold text-dark">{selectedTemplate.name}</h4>
+                  <button
+                    onClick={() => setSelectedTemplate(null)}
+                    className="btn-close"
+                  />
+                </div>
+                {selectedTemplate?.subtitle && (
+                  <p className="text-primary fw-semibold mb-3">{selectedTemplate?.subtitle}</p>
+                )}
+                <p className="text-muted mb-4">{selectedTemplate.description}</p>
+                <div className="mb-4">
+                  <h6 className="fw-bold text-dark mb-2">Features Included:</h6>
+                  <ul className="list-unstyled">
+                    {selectedTemplate.features.map((feature, idx) => (
+                      <li key={idx} className="d-flex align-items-center mb-2">
+                        <div className="bg-success rounded-circle me-2" style={{width: '8px', height: '8px'}}></div>
+                        <span className="text-muted">{feature}</span>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+                <div className="mb-4">
+                  <h6 className="fw-bold text-dark mb-2">Style:</h6>
+                  <span className="inline-block bg-bolt-primary/10 text-bolt-primary px-3 py-1 rounded-full text-sm font-medium">
+                      {selectedTemplate.style}
+                    </span>
+
+
+                </div>
+                <div className="d-grid gap-2 mt-4">
+                  <button
+                    onClick={() => window.open('https://calendly.com/your-calendar', '_blank')}
+                    className="btn btn-primary fw-semibold"
+                  >
+                    Choose This Template
+                  </button>
+                  <button
+                    onClick={() => setSelectedTemplate(null)}
+                    className="btn btn-light fw-semibold"
+                  >
+                    Continue Browsing
+                  </button>
+                </div>
               </div>
             </div>
           </div>
-        ))}
+        )}
       </div>
+    </section>
+  );
+};
 
-      {/* Modal Preview */}
-      {selectedTemplate && (
-        <div
-          className="modal fade show d-block"
-          tabIndex="-1"
-          role="dialog"
-          style={{ backgroundColor: 'rgba(0,0,0,0.5)' }}
-          onClick={() => setSelectedTemplate(null)}
-        >
-          <div
-  className="modal-dialog modal-dialog-centered"
-  role="document"
-  style={{ maxWidth: '90%', width: '100%' }}
-  onClick={(e) => e.stopPropagation()}
->
+const TemplateCard = ({ template, disablePreviewModal, onTemplateClick }) => {
+  const [isHovered, setIsHovered] = useState(false);
+  const [modalPosition, setModalPosition] = useState('right');
+  const cardRef = useRef(null);
 
-            <div className="modal-content">
-              <div className="modal-header">
-                <h5 className="modal-title">{selectedTemplate.name}</h5>
-                <button type="button" className="btn-close" onClick={() => setSelectedTemplate(null)}></button>
-              </div>
-              <div className="modal-body d-flex">
-                <div className="flex-fill border-end" style={{ height: '80vh', overflowY: 'auto' }}>
-                  <TemplatePreview templateId={selectedTemplate.id} templateName={selectedTemplate.name} />
-                </div>
-                {/* Right side - Template Details */}
-                <div className="col-md-4 p-4 overflow-auto" style={{ maxWidth: "20rem" }}>
-                  <div className="d-flex justify-content-between align-items-center mb-4">
-                    <h4 className="fw-bold text-dark mb-0">{selectedTemplate.name}</h4>
-                    <button
-                      onClick={() => setSelectedTemplate(null)}
-                      className="btn btn-link text-muted p-0"
-                    >
+ 
+  useEffect(() => {
+    if (isHovered && cardRef.current) {
+      const cardRect = cardRef.current.getBoundingClientRect();
+      const modalWidth = 320;
+      const screenWidth = window.innerWidth;
 
-                    </button>
-                  </div>
+      if (cardRect.right + modalWidth > screenWidth) {
+        setModalPosition('left');
+      } else {
+        setModalPosition('right');
+      }
+    }
+  }, [isHovered]);
 
-                  {industry === "All Industries" && (selectedTemplate).subtitle && (
-                    <p className="text-primary fw-semibold mb-3">
-                      {selectedTemplate.subtitle}
-                    </p>
-                  )}
-
-                  <p className="text-muted mb-4">{selectedTemplate.description}</p>
-
-                  <div className="mb-5">
-                    <h6 className="fw-semibold text-dark mb-2">Features Included:</h6>
-                    <ul className="list-unstyled">
-                      {selectedTemplate.features.map((feature, idx) => (
-                        <li key={idx} className="d-flex align-items-center mb-2">
-                          <div
-                            className="bg-success rounded-circle me-2"
-                            style={{ width: "8px", height: "8px" }}
-                          ></div>
-                          <span className="text-muted">{feature}</span>
-                        </li>
-                      ))}
-                    </ul>
-                  </div>
-
-                  <div className="mb-5">
-                    <h6 className="fw-semibold text-dark mb-2">Style:</h6>
-                    <span className="badge bg-primary bg-opacity-10 text-primary fw-medium">
-                      {selectedTemplate.style}
-                    </span>
-                  </div>
-
-                  <div className="d-grid gap-2">
-                    <button
-                      onClick={() => window.open('https://calendly.com/your-calendar', '_blank')}
-                      className="btn btn-primary fw-semibold"
-                    >
-                      Choose This Template
-                    </button>
-                    <button
-                      onClick={() => setSelectedTemplate(null)}
-                      className="btn btn-light fw-semibold text-dark"
-                    >
-                      Continue Browsing
-                    </button>
-                  </div>
-                </div>
+  return (
+    <div
+      ref={cardRef}
+      className="position-relative"
+      onMouseEnter={() => setIsHovered(true)}
+      onMouseLeave={() => setIsHovered(false)}
+    >
+      <div
+        className={`card shadow-sm border overflow-hidden transition-template-card ${!disablePreviewModal ? 'cursor-pointer' : 'cursor-default'}`}
+        onClick={() => onTemplateClick(template)}
+      >
+        <div className="position-relative">
+          <img
+            src={template.image}
+            alt={template.name}
+            className="card-img-top object-fit-cover"
+            style={{ height: '224px' }}
+          />
+          {!disablePreviewModal && (
+            <div className="position-absolute top-0 start-0 w-100 h-100 d-flex justify-content-center align-items-center template-hover-overlay">
+              <div className="text-white text-center opacity-0 template-hover-content">
+                <Eye className="mb-2" size={32} />
+                <span className="fw-semibold">Preview</span>
               </div>
             </div>
+          )}
+          <div className="position-absolute top-0 end-0 m-2">
+            {/* Style Badge */}
+          <span className="badge position-absolute top-0 end-0 m-2" style={{ backgroundColor: '#ff3b00' }}>
+            {template.style}
+          </span>
+          </div>
+        </div>
+        <div className="card-body">
+          <h5 className="fw-bold text-dark">{template.name}</h5>
+          {template?.subtitle && (
+            <p className="text-bolt-primary fw-semibold small mb-2">
+              {template?.subtitle}
+            </p>
+          )}
+          {disablePreviewModal ? (
+            <div className="text-center py-3">
+              <div className="bg-bolt-primary bg-opacity-10 rounded-circle mx-auto d-flex justify-content-center align-items-center mb-2" style={{ width: '48px', height: '48px' }}>
+                <Eye className="text-bolt-primary" size={24} />
+              </div>
+              <p className="text-muted small">Hover to preview features</p>
+            </div>
+          ) : (
+            <>
+              <p className="text-muted small mb-3">{template.description}</p>
+              <ul className="list-unstyled mb-0">
+                {template.features.slice(0, 3).map((feature, idx) => (
+                  <li key={idx} className="d-flex align-items-center mb-1">
+                    <div className="bg-success rounded-circle me-2" style={{ width: '8px', height: '8px' }}></div>
+                    <span className="text-muted small">{feature}</span>
+                  </li>
+                ))}
+              </ul>
+            </>
+          )}
+        </div>
+      </div>
+
+      {isHovered && disablePreviewModal && (
+        <div
+          className={`position-absolute top-0 bg-white bg-gradient rounded-4 border shadow-lg p-4 zindex-tooltip template-hover-preview transition-template-card ${
+            modalPosition === 'right' ? 'start-100 ms-3' : 'end-100 me-3'
+          }`}
+          style={{ width: '320px' , zIndex: 9999}}
+        >
+          <div class="position-absolute top-6 end-0 translate-middle badge text-white fw-bold rounded-pill px-3 py-1 shadow" style={{ backgroundColor: '#ff3b00' }}>
+  PREVIEW
+</div>
+
+
+          <div className="mb-3">
+            <img
+              src={template.innerimage}
+              alt={template.name}
+              className="w-100 rounded border border-bolt-primary"
+              style={{ height: '128px', objectFit: 'cover',objectPosition: 'top' }}
+            />
+          </div>
+
+          <h5 className="fw-bold text-dark">{template.name}</h5>
+          {template?.subtitle && (
+            <p className="text-bolt-primary fw-bold small mb-2 text-center bg-bolt-primary bg-opacity-10 rounded-pill px-3 py-1">
+              {template?.subtitle}
+            </p>
+          )}
+
+          <p className="text-muted small mb-3">{template.description}</p>
+
+          <div className="mb-3">
+            <h6 className="fw-bold small d-flex align-items-center text-dark">
+              <div className="bg-bolt-primary rounded-circle me-2" style={{ width: '8px', height: '8px' }}></div>
+              Premium Features:
+            </h6>
+            {template.features.slice(0, 4).map((feature, idx) => (
+              <div key={idx} className="d-flex align-items-center mb-1">
+                <div className="rounded-circle me-2" style={{ width: '10px', height: '10px', background: 'linear-gradient(to right, #34D399, #10B981)' }}></div>
+                <span className="text-muted small">{feature}</span>
+              </div>
+            ))}
+            {template.features.length > 4 && (
+              <div className="d-flex align-items-center">
+                <div className="rounded-circle me-2" style={{ width: '10px', height: '10px', background: 'linear-gradient(to right, #0052FF, #003FCC)' }}></div>
+                <span className="text-bolt-primary fw-bold small">+{template.features.length - 4} more features</span>
+              </div>
+            )}
+          </div>
+
+          <div className="text-center">
+            <div className="bg-bolt-primary bg-opacity-10 rounded p-2 mb-2">
+              <p className="text-bolt-primary small fw-bold mb-0">🚀 Ready in 7 days</p>
+              <p className="text-muted small mb-0">Fully customizable</p>
+            </div>
+            <button
+  className="btn w-100 fw-bold shadow-sm text-white"
+  style={{
+    backgroundColor: '#ff3b00',
+    transition: 'all 0.3s ease'
+  }}
+  onMouseOver={(e) => {
+    e.currentTarget.style.transform = 'translateY(-2px)';
+    e.currentTarget.style.boxShadow = '0 0.5rem 1rem rgba(0, 0, 0, 0.15)';
+  }}
+  onMouseOut={(e) => {
+    e.currentTarget.style.transform = '';
+    e.currentTarget.style.boxShadow = '';
+  }}
+  onClick={(e) => {
+    e.stopPropagation();
+    // onTemplateClick(template);
+    window.location.href = template.path || '/custom-solutions';
+  }}
+>
+  View Full Demo
+</button>
+
+
           </div>
         </div>
       )}
@@ -215,211 +391,3 @@ const TemplateGallery = ({
 };
 
 export default TemplateGallery;
-
-
-
-// Bootstrap version of TemplateGallery (JSX only)  working code for templates
-// 'use client'
-// import React, { useState } from 'react';
-// import { Eye, ArrowLeft, ArrowRight } from 'lucide-react';
-// import TemplatePreview from './TemplatePreview';
-
-// const TemplateGallery = ({ industry, templates }) => {
-//   const [selectedTemplate, setSelectedTemplate] = useState(null);
-//   const [currentIndex, setCurrentIndex] = useState(0);
-
-//   const updatedTemplates = [
-//     {
-//       id: 1,
-//       name: "Sugar & Script",
-//       subtitle: "Bakehouse Elegance",
-//       description: "Warm, elegant design for bakeries that want to look as good as they taste.",
-//       image: "https://images.pexels.com/photos/1721932/pexels-photo-1721932.jpeg?auto=compress&cs=tinysrgb&w=800",
-//       features: ["Custom Cake Forms", "Seasonal Specials", "Recipe Journal"],
-//       style: "Elegant"
-//     },
-//     {
-//       id: 2,
-//       name: "HarvestCart",
-//       subtitle: "Grocery Go Digital",
-//       description: "Clean, local, and built for modern kirana stores and grocery businesses.",
-//       image: "https://images.pexels.com/photos/264537/pexels-photo-264537.jpeg?auto=compress&cs=tinysrgb&w=800",
-//       features: ["Inventory Dashboard", "Daily Stock Updates", "Local Delivery Tracker"],
-//       style: "Modern"
-//     },
-//     {
-//       id: 3,
-//       name: "Canvas Grid",
-//       subtitle: "Creative Portfolio",
-//       description: "Bold visuals. Smart structure. Perfect for designers, photographers & creators.",
-//       image: "https://images.pexels.com/photos/1779487/pexels-photo-1779487.jpeg?auto=compress&cs=tinysrgb&w=800",
-//       features: ["Interactive Galleries", "Video Reels", "Project Case Studies"],
-//       style: "Creative"
-//     },
-//     {
-//       id: 4,
-//       name: "ShopStack",
-//       subtitle: "Ecom Ready",
-//       description: "A powerful, minimal e-commerce template that sells your products — fast.",
-//       image: "https://images.pexels.com/photos/3769747/pexels-photo-3769747.jpeg?auto=compress&cs=tinysrgb&w=800",
-//       features: ["Product Display + Cart", "Secure Payments", "Mobile Optimized"],
-//       style: "E-commerce"
-//     },
-//     {
-//       id: 5,
-//       name: "ZenSpace",
-//       subtitle: "Wellness & More",
-//       description: "Peaceful, polished design for coaches, clinics, and fitness professionals.",
-//       image: "https://images.pexels.com/photos/3822621/pexels-photo-3822621.jpeg?auto=compress&cs=tinysrgb&w=800",
-//       features: ["Service Blocks", "Calendar Integration", "Team Profiles"],
-//       style: "Wellness"
-//     }
-//   ];
-
-//   const displayTemplates = industry === "All Industries" ? updatedTemplates : templates;
-
-//   const nextTemplate = () => {
-//     setCurrentIndex((prev) => (prev + 1) % displayTemplates.length);
-//   };
-
-//   const prevTemplate = () => {
-//     setCurrentIndex((prev) => (prev - 1 + displayTemplates.length) % displayTemplates.length);
-//   };
-
-//   return (
-//     <section className="py-5 bg-white">
-//       <div className="container">
-//         <div className="text-center mb-4">
-//           <h2 className="h3 fw-bold">
-//             {industry === "All Industries"
-//               ? 'Ready-Made Business Platforms for Every Industry'
-//               : `Website Template Options for ${industry}`}
-//           </h2>
-//           <p className="lead text-muted">
-//             {industry === "All Industries"
-//               ? 'Customizable. Launch-ready. Delivered in just 7 days.'
-//               : `Choose from our professionally designed templates, each crafted specifically for ${industry.toLowerCase()}. All templates are fully customizable to match your brand and business needs.`}
-//           </p>
-//         </div>
-
-//         <div className="row g-4 mb-5">
-//           {displayTemplates.map((template) => (
-//             <div className="col-md-4" key={template.id}>
-//               <div className="card h-100 shadow-sm" onClick={() => setSelectedTemplate(template)}>
-//                 <div className="position-relative">
-//                   <img src={template.image} className="card-img-top" alt={template.name} style={{ height: '220px', objectFit: 'cover' }} />
-//                   <span className="position-absolute top-0 end-0 bg-primary text-white px-2 py-1 rounded-start small">
-//                     {template.style}
-//                   </span>
-//                 </div>
-//                 <div className="card-body">
-//                   <h5 className="card-title fw-bold text-dark">{template.name}</h5>
-//                   {industry === "All Industries" && template.subtitle && (
-//                     <p className="text-primary small fw-semibold mb-1">{template.subtitle}</p>
-//                   )}
-//                   <p className="text-muted small">{template.description}</p>
-//                   <ul className="list-unstyled small">
-//                     {template.features.slice(0, 3).map((feature, idx) => (
-//                       <li key={idx} className="d-flex align-items-center mb-1">
-//                         <span className="bg-success rounded-circle me-2" style={{ width: 8, height: 8, display: 'inline-block' }}></span>
-//                         {feature}
-//                       </li>
-//                     ))}
-//                   </ul>
-//                 </div>
-//               </div>
-//             </div>
-//           ))}
-//         </div>
-
-//         <div className="d-flex justify-content-center align-items-center gap-3 mb-5">
-//           <button className="btn btn-outline-secondary rounded-circle p-2" onClick={prevTemplate}><ArrowLeft size={16} /></button>
-//           <div className="d-flex gap-2">
-//             {displayTemplates.map((_, i) => (
-//               <span key={i} className={`rounded-circle d-inline-block`} style={{ width: 10, height: 10, backgroundColor: i === currentIndex ? '#0d6efd' : '#ccc' }}></span>
-//             ))}
-//           </div>
-//           <button className="btn btn-outline-secondary rounded-circle p-2" onClick={nextTemplate}><ArrowRight size={16} /></button>
-//         </div>
-
-//         {/* Carousel navigation */}
-
-//         <div className="d-flex justify-content-center align-items-center mb-5">
-
-//           <button className="btn btn-outline-secondary me-3" onClick={prevTemplate}><ArrowLeft size={20} /></button>
-
-//           {displayTemplates.map((_, index) => (
-
-//             <button
-
-//               key={index}
-
-//               onClick={() => setCurrentIndex(index)}
-
-//               className={`btn btn-sm rounded-circle mx-1 ${index === currentIndex ? 'btn-primary' : 'btn-secondary'}`}
-
-//               style={{ width: '10px', height: '10px', padding: 0 }}
-
-//             />
-
-//           ))}
-
-//           <button className="btn btn-outline-secondary ms-3" onClick={nextTemplate}><ArrowRight size={20} /></button>
-//         </div>
-
-//        {/* Modal */}
-//        {selectedTemplate && (
-//           <div className="modal fade show d-block" tabIndex="-1" style={{ backgroundColor: 'rgba(0, 0, 0, 0.5)' }} onClick={() => setSelectedTemplate(null)}>
-//             <div
-//               className="modal-dialog modal-xl modal-dialog-centered modal-dialog-scrollable"
-//               style={{ width: '95vw', height: '95vh', maxWidth: '95vw' }}
-//             >
-//               <div className="modal-content">
-//                 <div className="modal-body d-flex p-0">
-//                   <div className="flex-grow-1 border-end">
-//                     <TemplatePreview templateId={selectedTemplate.id} templateName={selectedTemplate.name} />
-//                   </div>
-//                   <div className="p-4" style={{ width: '30%', minWidth: '300px' }}>
-//                     <div className="d-flex justify-content-between align-items-center mb-4">
-//                       <h5 className="fw-bold mb-0">{selectedTemplate.name}</h5>
-//                       <button className="btn-close" onClick={() => setSelectedTemplate(null)}></button>
-//                     </div>
-//                     {industry === "All Industries" && selectedTemplate.subtitle && (
-//                       <p className="text-primary fw-semibold mb-3">{selectedTemplate.subtitle}</p>
-//                     )}
-//                     <p className="text-muted mb-4">{selectedTemplate.description}</p>
-//                     <div className="mb-4">
-//                       <h6 className="fw-bold mb-2">Features Included:</h6>
-//                       <ul className="list-unstyled">
-//                         {selectedTemplate.features.map((feature, idx) => (
-//                           <li key={idx} className="mb-2 d-flex align-items-center">
-//                             <span className="badge bg-success rounded-pill me-2" style={{ width: '6px', height: '6px' }}></span>
-//                             {feature}
-//                           </li>
-//                         ))}
-//                       </ul>
-//                     </div>
-//                     <div className="mb-4">
-//                       <h6 className="fw-bold mb-2">Style:</h6>
-//                       <span className="badge bg-primary bg-opacity-10 text-primary px-2 py-1">{selectedTemplate.style}</span>
-//                     </div>
-//                     <div className="d-grid gap-2">
-//                       <button className="btn btn-primary" onClick={() => window.open('https://calendly.com/your-calendar', '_blank')}>
-//                         Choose This Template
-//                       </button>
-//                       <button className="btn btn-outline-secondary" onClick={() => setSelectedTemplate(null)}>
-//                         Continue Browsing
-//                       </button>
-//                     </div>
-//                   </div>
-//                 </div>
-//               </div>
-//             </div>
-//           </div>
-//         )}
-//       </div>
-//     </section>
-//   );
-// };
-
-// export default TemplateGallery;

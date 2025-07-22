@@ -9,48 +9,59 @@ import Process2 from '../components/Process/Process2';
 import Faq2 from '../components/Faq/Faq2';
 import Blog2 from '../components/Blog/Blog2';
 import TemplateGallery from '../components/Gallery/TemplateGallery';
+
 const homepageTemplates = [
-    {
-      id: 1,
-      name: "Artisan Bakehouse",
-      description: "Elegant, warm design showcasing handcrafted baked goods with online ordering and custom cake requests.",
-      image: "https://images.pexels.com/photos/1721932/pexels-photo-1721932.jpeg?auto=compress&cs=tinysrgb&w=800",
-      features: ["Custom Cake Orders", "Daily Specials Display", "Recipe Blog", "Photo Gallery", "Online Ordering", "Event Catering"],
-      style: "Artisan"
-    },
-    {
-      id: 2,
-      name: "Fresh Market Pro",
-      description: "Clean, modern design perfect for neighborhood grocery stores with online ordering capabilities.",
-      image: "https://images.pexels.com/photos/264537/pexels-photo-264537.jpeg?auto=compress&cs=tinysrgb&w=800",
-      features: ["Online Ordering System", "Inventory Management", "Local Delivery Tracking", "Customer Loyalty Program", "Mobile-First Design", "Payment Integration"],
-      style: "Modern"
-    },
-    {
-      id: 3,
-      name: "Creative Portfolio",
-      description: "An artistic and dynamic layout ideal for designers, photographers, artists, or creative agencies.",
-      image: "https://images.pexels.com/photos/1779487/pexels-photo-1779487.jpeg?auto=compress&cs=tinysrgb&w=800",
-      features: ["Image Galleries", "Video Integration", "Project Showcase", "Client Testimonials", "Social Media Links", "Custom Fonts"],
-      style: "Creative"
-    },
-    {
-      id: 4,
-      name: "E-commerce Hub",
-      description: "A robust and user-friendly design for online stores, featuring product listings and secure checkout.",
-      image: "https://images.pexels.com/photos/3769747/pexels-photo-3769747.jpeg?auto=compress&cs=tinysrgb&w=800",
-      features: ["Product Catalog", "Shopping Cart", "Payment Gateway", "User Accounts", "Order Tracking", "Promotional Banners"],
-      style: "E-commerce"
-    },
-    {
-      id: 5,
-      name: "Health & Wellness",
-      description: "A clean and calming design suitable for health clinics, fitness studios, or wellness coaches.",
-      image: "https://images.pexels.com/photos/3822621/pexels-photo-3822621.jpeg?auto=compress&cs=tinysrgb&w=800",
-      features: ["Service Descriptions", "Appointment Booking", "Team Bios", "FAQ Section", "Blog for Tips", "Testimonials"],
-      style: "Wellness"
-    }
-  ];
+  {
+    id: 1,
+    name: "For Financial Advisors",
+    subtitle: "IFA Initiative",
+    description: "Tailored online presence for modern-day financial advisors and wealth planners.",
+    image: "https://images.pexels.com/photos/4386375/pexels-photo-4386375.jpeg?auto=compress&cs=tinysrgb&w=800",
+    features: ["Client Dashboard", "Service Pages", "Regulatory Disclaimers"],
+    style: "Professional",
+    path: "/ifa-website"
+  },
+  {
+    id: 2,
+    name: "For Bakers",
+    subtitle: "Coming Soon",
+    description: "Warm, elegant designs for bakeries that want to look as good as they taste.",
+    image: "https://images.pexels.com/photos/1721932/pexels-photo-1721932.jpeg?auto=compress&cs=tinysrgb&w=800",
+    features: ["Custom Cake Forms", "Seasonal Specials", "Recipe Journal"],
+    style: "Elegant",
+    path: "/bakers"
+  },
+  {
+    id: 3,
+    name: "For Kirana Stores",
+    subtitle: "Coming Soon",
+    description: "Clean, local, and built for modern kirana stores and grocery businesses.",
+    image: "https://images.pexels.com/photos/264537/pexels-photo-264537.jpeg?auto=compress&cs=tinysrgb&w=800",
+    features: ["Inventory Dashboard", "Daily Stock Updates", "Local Delivery Tracker"],
+    style: "Modern",
+    path: "/kirana-stores"
+  },
+  {
+    id: 4,
+    name: "For Coaches",
+    subtitle: "Future-ready placeholder",
+    description: "Peaceful, polished design for coaches, clinics, and fitness professionals.",
+    image: "https://images.pexels.com/photos/3822621/pexels-photo-3822621.jpeg?auto=compress&cs=tinysrgb&w=800",
+    features: ["Service Blocks", "Calendar Integration", "Team Profiles"],
+    style: "Wellness",
+    path: "/coaches"
+  },
+  {
+    id: 5,
+    name: "Custom Solutions",
+    subtitle: "Catch-all link back to core services",
+    description: "Bold, modern layouts for unique businesses and special requirements.",
+    image: "https://images.pexels.com/photos/1779487/pexels-photo-1779487.jpeg?auto=compress&cs=tinysrgb&w=800",
+    features: ["Custom Layouts", "E-commerce Support", "Flexible Blocks"],
+    style: "Creative",
+    path: "/custom-solutions"
+  }
+];
   
 
 const page = () => {
@@ -71,7 +82,8 @@ const page = () => {
                 listTitle3="✅ Cloud-Native & Scalable — We build on trusted stacks: React, Node.js, Python, Django, AWS, Azure — ensuring security and growth readiness."
                 listTitle4="✅ Long-Term Partnership — We don’t disappear after delivery; we support, upgrade, and scale with you."                          
            ></About3>
-           <TemplateGallery industry="All Industries" templates={homepageTemplates} />
+           {/* <TemplateGallery industry="All Industries" templates={homepageTemplates} /> */}
+           <TemplateGallery industry="All Industries" templates={homepageTemplates} disablePreviewModal={true} />
            <Counter></Counter>
            {/* <CaseStudy></CaseStudy> */}
            <Testimonial3></Testimonial3>

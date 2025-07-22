@@ -1,19 +1,11 @@
 'use client'
 import React, { useEffect, useRef, useState } from 'react';
-import data from '../Data/hero.json';
-import IFAfaq from '../components/Faq/IFAfaq';
-import Slider from "react-slick";
-import parse from 'html-react-parser';
-import Link from "next/link";
-import Image from "next/image";
-
-import Services2 from '../components/Services/Services2';
-import IfaServices from './ifaServices';
-import MustHavePages from './MustHavePages';
 import PricingTimeline from './PricingTimeline';
 import EverythingYouNeed from './EverythingYouNeed';
 import WhyItMatters from './WhyItMatters';
 import FeatureGrid from './FeatureGrid'
+import TemplateGallery from '../components/Gallery/TemplateGallery';
+
 
 import GoLiveTimeline from './GoLiveTimeline';
 import FAQSection from './faq';
@@ -25,14 +17,106 @@ const LandingPage = () => {
   const [showCalendly, setShowCalendly] = useState(false);
 
   const [ctaVisible, setCtaVisible] = useState(false);
+  const [selectedTemplate, setSelectedTemplate] = useState(null);
   const ctaRef = useRef(null);
-
+  const templates = [
+    {
+        id: 1,
+        name: "Kirana SmartKart",
+        description: "Modern design for local Kirana stores with online ordering, digital payments, and delivery tracking.",
+        image: "https://images.pexels.com/photos/1132047/pexels-photo-1132047.jpeg",
+        features: [
+            "Online Ordering",
+            "UPI/Wallet Payments",
+            "Live Delivery Tracking",
+            "Daily Essentials Listing",
+            "Mobile-Optimized Layout",
+            "Multi-language Support"
+        ],
+        style: "Modern"
+    },
+    {
+        id: 2,
+        name: "Ghar Ki Dukaan",
+        description: "Friendly, local-first design that builds trust and emphasizes personal customer service.",
+        image: "https://images.pexels.com/photos/7363163/pexels-photo-7363163.jpeg",
+        features: [
+            "Neighborhood Delivery Info",
+            "Personal Message from Store Owner",
+            "Cash on Delivery Option",
+            "Popular Products Section",
+            "Festive Offers Banner",
+            "WhatsApp Ordering"
+        ],
+        style: "Community"
+    },
+    {
+        id: 3,
+        name: "QuickPick Kirana",
+        description: "Fast and lightweight template ideal for stores with high daily turnover and express checkout needs.",
+        image: "https://images.pexels.com/photos/9218663/pexels-photo-9218663.jpeg",
+        features: [
+            "Fast Checkout",
+            "Low Data Usage",
+            "Pincode-based Availability",
+            "Favorites & Reorder Option",
+            "Clean UI for Essentials",
+            "Cart Reminder"
+        ],
+        style: "Minimal"
+    },
+    {
+        id: 4,
+        name: "Bazaar Classic",
+        description: "Colorful, culturally-rooted design that blends traditional shopping vibes with digital convenience.",
+        image: "https://images.pexels.com/photos/6397651/pexels-photo-6397651.jpeg",
+        features: [
+            "Regional Language Toggle",
+            "Traditional Patterns & Fonts",
+            "Support for Phone Orders",
+            "Category-wise Listing",
+            "Seasonal Discounts Section",
+            "Family-run Story Page"
+        ],
+        style: "Traditional"
+    },
+    {
+        id: 5,
+        name: "NextGen Kirana",
+        description: "Advanced, tech-enabled store layout for modern Kirana stores that want full automation.",
+        image: "https://images.pexels.com/photos/12935094/pexels-photo-12935094.jpeg",
+        features: [
+            "AI Product Suggestions",
+            "Inventory Auto-Sync",
+            "Customer Dashboard",
+            "Subscription for Milk/Groceries",
+            "Sales Analytics",
+            "POS Integration"
+        ],
+        style: "Tech-Forward"
+    },
+    {
+      id: 6,
+      name: "IFA Website",
+      description: "Modern design for local Kirana stores with online ordering, digital payments, and delivery tracking.",
+      image: "https://images.pexels.com/photos/1132047/pexels-photo-1132047.jpeg",
+      features: [
+          "Personalized planning for every life stage",
+          "Goal-based investment strategies",
+          "Regular portfolio reviews",
+          "Transparent, jargon-free advice",
+          "Hassle-free online service & updates"
+      ],
+      style: "Modern"
+  }
+];
   useEffect(() => {
     const observer = new IntersectionObserver(
       ([entry]) => {
         setCtaVisible(entry.isIntersecting);
       },
       {
+        
         root: null,
         threshold: 0.2, 
       }
@@ -72,7 +156,7 @@ const LandingPage = () => {
             opacity: 0.05
           }}></div>
 
-          <div className="container position-relative" style={{ zIndex: 1 }}>
+          <div className="container position-relative">
             <div className="d-flex justify-content-center mb-4">
               <img src="/assets/images/logo_small_r.png" alt="Infatech Logo" style={{ height: '100px', objectFit: 'contain' }} />
             </div>
@@ -116,22 +200,10 @@ const LandingPage = () => {
     background: 'linear-gradient(to right, #ea580c, #dc2626)',
     transition: 'all 0.2s ease-in-out'
   }}
-  onClick={() => window.open('https://ifa.infatech.in/', '_blank')}
+  onClick={() => setSelectedTemplate(templates[5])}
 >
   GET A FIRST HAND FEEL
 </button>
-
-              {/* <button className="btn btn-lg px-4 py-3 fw-semibold text-dark bg-white border shadow-sm">
-              <a
-                href="https://ifa.infatech.in/"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="btn btn-lg px-4 py-3 fw-semibold text-dark bg-white border shadow-sm"
-              >
-                View Examples
-              </a>
-
-              </button> */}
             </div>
           </div>
         </section>
@@ -141,19 +213,27 @@ const LandingPage = () => {
         <FeatureGrid/>
         <PricingTimeline />
         <GoLiveTimeline />
+        <div >
+        <TemplateGallery  
+          industry="Kirana Stores" 
+          templates={templates} 
+          selectedTemplate={selectedTemplate}
+          setSelectedTemplate={setSelectedTemplate}
+        />
+      </div>
         {/* <FAQSection /> */}
 
         {/* CTA Section */}
-        <section  ref={ctaRef} className="py-5 text-center text-white" style={{ background: 'linear-gradient(to bottom right, #ea580c, #dc2626)' }}>
+        <section  ref={ctaRef} className="py-5 text-center text-black" >
           <div className="container">
             <div className="mb-4">
-              <h2 className="fw-bold display-6 mb-3 text-white">Ready to Build Your Professional Online Presence?</h2>
-              <p className="lead text-white mb-4">
+              <h2 className="fw-bold display-6 mb-3 text-black">Ready to Build Your Professional Online Presence?</h2>
+              <p className="lead text-black mb-4">
               Let your website do the work while you focus on advising clients.
               </p>
             </div>
 
-            <div className="d-flex flex-column flex-sm-row justify-content-center gap-3 mb-4">
+            <div className="d-flex flex-column flex-sm-row text-black justify-content-center gap-3 mb-4">
               {/* <button
                 className="btn fw-semibold px-4 py-2 shadow rounded-pill"
                 style={{
@@ -168,11 +248,19 @@ const LandingPage = () => {
               <CalendlyPopupButton
                 url="https://calendly.com/tabassumbanumusa/website-strategy-call"
                 buttonText="Click here to get started"
-                
+                style={{
+                  backgroundColor: '#059669',
+                  color: '#ffffff',
+                  fontWeight: 600,
+                  padding: '0.75rem 1.5rem',
+                  borderRadius: '0.5rem',
+                  fontSize: '1rem',
+                  border: 'none'
+                }}
               />
             </div>
 
-            <div className="d-flex justify-content-center gap-4 text-white small mt-4 flex-wrap">
+            <div className="d-flex justify-content-center gap-4 text-black small mt-4 flex-wrap">
               <div className="d-flex align-items-center">
                 <Clock size={16} className="me-2" />
                 <span>7-Day Delivery</span>

@@ -50,42 +50,42 @@ const services = [
 ];
 
 const ServicesSection = () => (
-  <section id="services" className="relative py-10 bg-white overflow-hidden">
-    <div className="max-w-6xl mx-auto px-4 text-center relative z-10">
-      <h2 className="text-4xl font-extrabold text-gray-900 mb-4 uppercase">
-        Our <span className="text-yellow-500">Services</span>
+  <section id="services" className="position-relative py-5 bg-white overflow-hidden">
+    <div className="container text-center position-relative z-1">
+      <h2 className="h1 fw-bold text-dark mb-3 text-uppercase">
+        Our <span className="text-warning">Services</span>
       </h2>
-      <p className="text-md text-gray-500 max-w-2xl mx-auto mb-12">
-  Every individual and family is different — your goals, your income, and your dreams. That&rsquo;s why my approach is personal and flexible. Here&rsquo;s how I can support you on your financial journey:
-</p>
+      <p className="text-muted mx-auto mb-5" style={{ maxWidth: "650px" }}>
+        Every individual and family is different — your goals, your income, and your dreams.
+        That’s why my approach is personal and flexible. Here’s how I can support you on your financial journey:
+      </p>
 
-
-      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+      <div className="row g-4">
         {services.map((service, index) => (
-          <div
-            key={index}
-            className="bg-gray-50 rounded-xl border border-gray-200 p-6 shadow-md hover:shadow-lg transition duration-300"
-          >
-            <div className="w-16 h-16 mx-auto flex items-center justify-center bg-yellow-400 rounded-full mb-4 text-3xl">
-              {service.icon}
+          <div key={index} className="col-12 col-sm-6 col-lg-3">
+            <div className="bg-light rounded border p-4 shadow-sm hover-shadow transition-all h-100">
+              <div className="mx-auto mb-3 d-flex align-items-center justify-content-center rounded-circle bg-warning" style={{ width: "64px", height: "64px", fontSize: "1.75rem" }}>
+                {service.icon}
+              </div>
+              <h3 className="h6 fw-bold text-dark mb-2">
+                {service.title}
+              </h3>
+              <p className="text-muted small">
+                {service.description}
+              </p>
             </div>
-            <h3 className="text-md font-bold text-gray-800 mb-2">
-              {service.title}
-            </h3>
-            <p className="text-sm text-gray-600">
-              {service.description}
-            </p>
           </div>
         ))}
       </div>
 
-      <div className="mt-12">
-        <button className="bg-yellow-500 text-black px-6 py-3 rounded-xl text-base hover:bg-yellow-600 transition">
-          Not sure which plan fits you best? Let&rsquo;s talk and create a personalised roadmap for your goals
+      <div className="mt-5">
+        <button className="btn btn-warning text-dark px-4 py-3 rounded-pill">
+          Not sure which plan fits you best? Let’s talk and create a personalised roadmap for your goals
         </button>
       </div>
     </div>
   </section>
 );
+
 
 export default ServicesSection;

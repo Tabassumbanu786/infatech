@@ -12,7 +12,9 @@ const CTASection = ({
   };
 
   return (
-    <section className="py-5 bg-primary text-white text-center">
+    // <section className="py-5 bg-primary text-white text-center">
+          <section className="py-5 text-white text-center" style={{ backgroundColor: '#ff3b00' }}>
+
       <div className="container">
         <h2 className="display-5 fw-bold mb-3">
           {title}
@@ -28,10 +30,10 @@ const CTASection = ({
             <Calendar className="me-2" size={18} />
             {buttonText}
           </button>
-          <button className="btn btn-outline-light d-inline-flex align-items-center px-4 py-2">
+          {/* <button className="btn btn-outline-light d-inline-flex align-items-center px-4 py-2">
             Learn More
             <ArrowRight className="ms-2" size={18} />
-          </button>
+          </button> */}
         </div>
       </div>
     </section>

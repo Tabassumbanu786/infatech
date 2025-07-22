@@ -1,10 +1,17 @@
 import { Fira_Sans, Poppins } from "next/font/google";
+
 import 'bootstrap/dist/css/bootstrap.min.css';
 import 'bootstrap-icons/font/bootstrap-icons.css';
 import "slick-carousel/slick/slick.css";
 import "./assets/main.css";
 import './assets/responsive.css';
 import Script from 'next/script';
+// import '../styles/globals.css';
+// import '../../styles/globals.css';
+
+
+
+
 
 
 const fira_sans = Fira_Sans({

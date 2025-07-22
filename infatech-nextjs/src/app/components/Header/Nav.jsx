@@ -48,7 +48,11 @@ export default function Nav({ setMobileToggle }) {
           </li>
           <li>
           <Link href="/industries/coaches">For Coaches</Link>
+          
            
+          </li>
+          <li>
+          <Link href="/industries/custom-solution">Custom Solutions</Link>
           </li>
         </ul>
 

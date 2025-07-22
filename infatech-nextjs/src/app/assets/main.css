@@ -685,6 +685,7 @@ a,i, cite, em, var, address, dfn,ol,li,ul{
     height: inherit;
     align-items: center;
     color: var(--heading-color);
+    text-decoration: none;
  }
   .cs_nav .cs_nav_list > li > ul {
     left: 0;
@@ -698,6 +699,7 @@ a,i, cite, em, var, address, dfn,ol,li,ul{
  }
   .cs_nav .cs_nav_list > li.menu-item-has-children > a {
     position: relative;
+    text-decoration: none;
  }
   .cs_nav .cs_nav_list > li.menu-item-has-children > a::after {
     content: "\f282";
@@ -847,6 +849,7 @@ a,i, cite, em, var, address, dfn,ol,li,ul{
     overflow: auto;
     max-height: calc(100vh - 80px);
     line-height: 1.6em;
+    text-decoration: none;
  }
   .cs_nav .cs_nav_list ul {
     padding-left: 15px;
@@ -4546,7 +4549,7 @@ ul.list-style-one li a:hover {
 
 .team-area.style-two .team-social-icon ul li a:hover {
   color: #ff3b00;
-  text-decoration: underline;
+  /* text-decoration: underline; */
 }
 
 .team-area.style-two .team-content h4 a:hover {
@@ -8942,4 +8945,57 @@ z-index: 999;
 .menu-filtering li.active{
   background-color: #ff3b00;
   color: #fff;
+}
+/* bolt.css */
+
+.btn-bolt {
+  background-color: #ff3b00;
+  color: #fff;
+  border: none;
+}
+
+.btn-bolt:hover {
+  background-color: #cc2f00;
+}
+
+.badge-bolt {
+  background-color: rgba(255, 59, 0, 0.1);
+  color: #ff3b00;
+}
+
+.text-bolt {
+  color: #ff3b00;
+}
+
+.bg-bolt-dark {
+  background-color: #050a1e;
+  color: #fff;
+}
+
+.border-bolt {
+  border-color: #ff3b00;
+}
+/* main.css or bolt.css */
+
+.btn-gradient-demo {
+  width: 100%;
+  background-image: linear-gradient(to right, #ff3b00, #cc2f00); /* bolt-primary to dark */
+  color: white;
+  font-weight: bold;
+  padding: 0.75rem 1rem;
+  border-radius: 0.5rem;
+  font-size: 0.875rem;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+  transition: all 0.3s ease-in-out;
+  display: inline-block;
+  text-align: center;
+}
+
+.btn-gradient-demo:hover {
+  background-image: linear-gradient(to right, #cc2f00, #050a1e); /* dark hover */
+  transform: translateY(-3px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.25);
+}
+.text-bolt-primary {
+  color: #ff3b00;
 }

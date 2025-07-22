@@ -15,7 +15,7 @@ const page = () => {
                 MainImg="/assets/images/home-3/about-thu3.png"
                 SubTitle="ABOUT INFATECH"
                 Title="Tech Solutions Tailored to Your Business <span>Goals</span>"          
-                Content="We help businesses go digital the smart way—by building systems aligned with your goals, budget, and future growth. No fluff. Just practical, reliable tech that gets the job done."
+                Content="Infatech Software Technologies was founded with a simple mission: to help businesses build reliable, scalable, and user-friendly software that actually moves them forward. In an industry crowded with flashy promises and cookie-cutter solutions, we stand out for one reason — we build what works for you."
                 BoxTitle1="Cloud-Ready,Scalable Architecture"
                 BoxTitle2="Long-Term Tech Support & Upgrades"  
                 listTitle1="Clear Process — From discovery to launch, we break down complexity and keep you in the loop."

@@ -158,6 +158,14 @@
 
 
 import React from 'react';
+// import Calculators from "../industries/financial-advisors/Calculators";
+import HeroSection from "../industries/financial-advisors/HeroSection";
+import ServicesSection from "../industries/financial-advisors/ServicesList";
+import AboutSection from "../industries/financial-advisors/AboutSection";
+import ContactSection from "../industries/financial-advisors/ContactSection";
+import Resources from "../industries/financial-advisors/Resources";
+import Calculators from "../industries/financial-advisors/Calculators";
+import Layout from "../industries/financial-advisors/Layout";
 
 // interface TemplatePreviewProps {
 //   templateId: number;
@@ -260,6 +268,7 @@ const TemplatePreview = ({ templateId, templateName }) => {  const renderTemplat
                 </div>
               </div>
             </section>
+            
 
             {/* Featured Products */}
             <section style={{ padding: '4rem 2rem', width: '100%', boxSizing: 'border-box' }}>
@@ -680,7 +689,7 @@ const TemplatePreview = ({ templateId, templateName }) => {  const renderTemplat
                 borderRadius: '10px',
                 maxWidth: '600px'
               }}>
-                <h1 style={{ fontSize: '3rem', marginBottom: '1rem', fontWeight: 'bold' }}>Creative Excellence</h1>
+                <h1 style={{ fontSize: '3rem', marginBottom: '1rem', fontWeight: 'bold',color: 'white' }}>Creative Excellence</h1>
                 <p style={{ fontSize: '1.2rem', marginBottom: '2rem' }}>Bringing your vision to life through innovative design</p>
                 <button style={{ 
                   backgroundColor: '#1e40af', 
@@ -1217,7 +1226,102 @@ const TemplatePreview = ({ templateId, templateName }) => {  const renderTemplat
             </footer>
           </div>
         );
+      case 6: // ifa website
+        return (
+        <div style={{ 
+          fontFamily: 'Georgia, serif', 
+          backgroundColor: '#fef7ed', 
+          minHeight: '100vh',
+          width: '100%',
+          margin: 0,
+          padding: 0
+        }}>
+          {/* Header */}
+          {/* <header style={{ 
+            backgroundColor: '#f97316', 
+            color: 'white', 
+            padding: '1rem 2rem',
+            display: 'flex',
+            justifyContent: 'space-between',
+            alignItems: 'center',
+            width: '100%',
+            boxSizing: 'border-box'
+          }}>
+            <div style={{ display: 'flex', alignItems: 'center' }}>
+              <div style={{ 
+                width: '40px', 
+                height: '40px', 
+                backgroundColor: '#ea580c', 
+                borderRadius: '50%', 
+                display: 'flex', 
+                alignItems: 'center', 
+                justifyContent: 'center', 
+                marginRight: '12px',
+                fontWeight: 'bold'
+              }}>AB</div>
+              <span style={{ fontSize: '1.5rem', fontWeight: 'bold' }}>Artisan Bakehouse</span>
+            </div>
+            <nav style={{ display: 'flex', gap: '2rem', alignItems: 'center' }}>
+              <a href="#" style={{ color: 'white', textDecoration: 'none' }}>Home</a>
+              <a href="#" style={{ color: 'white', textDecoration: 'none' }}>Menu</a>
+              <a href="#" style={{ color: 'white', textDecoration: 'none' }}>Custom Cakes</a>
+              <a href="#" style={{ color: 'white', textDecoration: 'none' }}>About</a>
+              <a href="#" style={{ color: 'white', textDecoration: 'none' }}>Contact</a>
+              <div style={{ 
+                backgroundColor: '#ea580c', 
+                padding: '0.5rem 1rem', 
+                borderRadius: '20px',
+                fontSize: '0.9rem'
+              }}>Cart (3)</div>
+            </nav>
+          </header> */}
 
+         
+          <Layout>
+          <HeroSection />
+      <ServicesSection />
+      <Calculators/>
+      <Resources/>
+      <AboutSection />
+      <ContactSection
+        ifaData={{
+          phone: "9876543210",
+          email: "abc@example.com",
+          location: "Mumbai",
+        }}
+      />
+      </Layout>
+      
+        
+
+          {/* Footer */}
+          <footer style={{ backgroundColor: '#ffc107', color: 'black', padding: '3rem 2rem', width: '100%', boxSizing: 'border-box' }}>
+            <div style={{ maxWidth: '1200px', margin: '0 auto', display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(250px, 1fr))', gap: '2rem' }}>
+              <div>
+                <h3 style={{ marginBottom: '1rem' }}>Contact Us</h3>
+                <p>123 Baker Street</p>
+                <p>Sweet City, SC 12345</p>
+                <p>Phone: (555) 123-BAKE</p>
+                <p>Email: hello@artisanbakehouse.com</p>
+              </div>
+              <div>
+                <h3 style={{ marginBottom: '1rem' }}>Store Hours</h3>
+                <p>Monday - Friday: 6:00 AM - 8:00 PM</p>
+                <p>Saturday: 7:00 AM - 9:00 PM</p>
+                <p>Sunday: 8:00 AM - 6:00 PM</p>
+              </div>
+              <div>
+                <h3 style={{ marginBottom: '1rem' }}>Follow Us</h3>
+                <div style={{ display: 'flex', gap: '1rem' }}>
+                  <a href="#" style={{ color: 'black' }}>Facebook</a>
+                  <a href="#" style={{ color: 'black' }}>Instagram</a>
+                  <a href="#" style={{ color: 'black' }}>Twitter</a>
+                </div>
+              </div>
+            </div>
+          </footer>
+        </div>
+       );
       default:
         return <div>Template not found</div>;
     }

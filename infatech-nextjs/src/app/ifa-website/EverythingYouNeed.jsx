@@ -28,7 +28,7 @@ const EverythingYouNeed = () => {
       description: 'SIP calculator,EMI calculator,Live NSE/BSE ticker and Latest finance news (auto-updated)',
       icon: 'bi bi-bullseye',
       iconBg: 'bg-success',
-      gradient: 'linear-gradient(to bottom right, #ecfdf5, #d1fae5)',
+      gradient: 'linear-gradient(to bottom right, #f7a68d, #ed7f5f)',
       border: 'border border-success-subtle',
       tag: 'Fully Personalized',
       tagColor: 'text-success',

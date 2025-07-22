@@ -11,53 +11,118 @@ import Blog2 from '../components/Blog/Blog2';
 import TemplateGallery from '../components/Gallery/TemplateGallery';
 
 
+// const homepageTemplates = [
+//   {
+//     id: 1,
+//     name: "Sugar & Script",
+//     subtitle: "Bakehouse Elegance",
+//     description: "Warm, elegant design for bakeries that want to look as good as they taste.",
+//     image: "https://images.pexels.com/photos/1721932/pexels-photo-1721932.jpeg?auto=compress&cs=tinysrgb&w=800",
+//     features: ["Custom Cake Forms", "Seasonal Specials", "Recipe Journal"],
+//     style: "Elegant",
+//     path: "/bakers"
+//   },
+//   {
+//     id: 2,
+//     name: "HarvestCart",
+//     subtitle: "Grocery Go Digital",
+//     description: "Clean, local, and built for modern kirana stores and grocery businesses.",
+//     image: "https://images.pexels.com/photos/264537/pexels-photo-264537.jpeg?auto=compress&cs=tinysrgb&w=800",
+//     features: ["Inventory Dashboard", "Daily Stock Updates", "Local Delivery Tracker"],
+//     style: "Modern",
+//     path: "/kirana-stores"
+//   },
+//   {
+//     id: 3,
+//     name: "Canvas Grid",
+//     subtitle: "Creative Portfolio",
+//     description: "Bold visuals. Smart structure. Perfect for designers, photographers & creators.",
+//     image: "https://images.pexels.com/photos/1779487/pexels-photo-1779487.jpeg?auto=compress&cs=tinysrgb&w=800",
+//     features: ["Interactive Galleries", "Video Reels", "Project Case Studies"],
+//     style: "Creative",
+//     path: "/custom-solutions"
+//   },
+//   {
+//     id: 4,
+//     name: "ShopStack",
+//     subtitle: "Ecom Ready",
+//     description: "A powerful, minimal e-commerce template that sells your products — fast.",
+//     image: "https://images.pexels.com/photos/3769747/pexels-photo-3769747.jpeg?auto=compress&cs=tinysrgb&w=800",
+//     features: ["Product Display + Cart", "Secure Payments", "Mobile Optimized"],
+//     style: "E-commerce",
+//     path: "/custom-solutions"
+//   },
+//   {
+//     id: 5,
+//     name: "ZenSpace",
+//     subtitle: "Wellness & More",
+//     description: "Peaceful, polished design for coaches, clinics, and fitness professionals.",
+//     image: "https://images.pexels.com/photos/3822621/pexels-photo-3822621.jpeg?auto=compress&cs=tinysrgb&w=800",
+//     features: ["Service Blocks", "Calendar Integration", "Team Profiles"],
+//     style: "Wellness",
+//     path: "/coaches"
+//   }
+// ];
+
+
 const homepageTemplates = [
   {
     id: 1,
-    name: "Sugar & Script",
-    subtitle: "Bakehouse Elegance",
-    description: "Warm, elegant design for bakeries that want to look as good as they taste.",
-    image: "https://images.pexels.com/photos/1721932/pexels-photo-1721932.jpeg?auto=compress&cs=tinysrgb&w=800",
-    features: ["Custom Cake Forms", "Seasonal Specials", "Recipe Journal"],
-    style: "Elegant"
+    name: "For Financial Advisors",
+    subtitle: "IFA Initiative",
+    description: "Tailored online presence for modern-day financial advisors and wealth planners.",
+    image: "https://images.pexels.com/photos/4386375/pexels-photo-4386375.jpeg?auto=compress&cs=tinysrgb&w=800",
+    features: ["Client Dashboard", "Service Pages", "Regulatory Disclaimers"],
+    style: "Professional",
+    path: "/ifa-website",
+    innerimage:"ifa.png"
   },
   {
     id: 2,
-    name: "HarvestCart",
-    subtitle: "Grocery Go Digital",
-    description: "Clean, local, and built for modern kirana stores and grocery businesses.",
-    image: "https://images.pexels.com/photos/264636/pexels-photo-264636.jpeg?auto=compress&cs=tinysrgb&w=800",
-    features: ["Inventory Dashboard", "Daily Stock Updates", "Local Delivery Tracker"],
-    style: "Modern"
+    name: "For Bakers",
+    subtitle: "Coming Soon",
+    description: "Warm, elegant designs for bakeries that want to look as good as they taste.",
+    image: "https://images.pexels.com/photos/1721932/pexels-photo-1721932.jpeg?auto=compress&cs=tinysrgb&w=800",
+    features: ["Custom Cake Forms", "Seasonal Specials", "Recipe Journal"],
+    style: "Elegant",
+    path: "/industries/bakers",
+    innerimage:"bakers1.png"
   },
   {
     id: 3,
-    name: "Canvas Grid",
-    subtitle: "Creative Portfolio",
-    description: "Bold visuals. Smart structure. Perfect for designers, photographers & creators.",
-    image: "https://images.pexels.com/photos/1779487/pexels-photo-1779487.jpeg?auto=compress&cs=tinysrgb&w=800",
-    features: ["Interactive Galleries", "Video Reels", "Project Case Studies"],
-    style: "Creative"
+    name: "For Kirana Stores",
+    subtitle: "Coming Soon",
+    description: "Clean, local, and built for modern kirana stores and grocery businesses.",
+    image: "https://images.pexels.com/photos/264537/pexels-photo-264537.jpeg?auto=compress&cs=tinysrgb&w=800",
+    features: ["Inventory Dashboard", "Daily Stock Updates", "Local Delivery Tracker"],
+    style: "Modern",
+    path: "/industries/kirana",
+    innerimage:"kiranashop.png"
   },
   {
     id: 4,
-    name: "ShopStack",
-    subtitle: "Ecom Ready",
-    description: "A powerful, minimal e-commerce template that sells your products — fast.",
-    image: "https://images.pexels.com/photos/3769747/pexels-photo-3769747.jpeg?auto=compress&cs=tinysrgb&w=800",
-    features: ["Product Display + Cart", "Secure Payments", "Mobile Optimized"],
-    style: "E-commerce"
-  },
-  {
-    id: 5,
-    name: "ZenSpace",
-    subtitle: "Wellness & More",
+    name: "For Coaches",
+    subtitle: "Future-ready placeholder",
     description: "Peaceful, polished design for coaches, clinics, and fitness professionals.",
     image: "https://images.pexels.com/photos/3822621/pexels-photo-3822621.jpeg?auto=compress&cs=tinysrgb&w=800",
     features: ["Service Blocks", "Calendar Integration", "Team Profiles"],
-    style: "Wellness"
+    style: "Wellness",
+    path: "/industries/coaches",
+    innerimage:"coaches.png"
+
+  },
+  {
+    id: 5,
+    name: "Custom Solutions",
+    subtitle: "Catch-all link back to core services",
+    description: "Bold, modern layouts for unique businesses and special requirements.",
+    image: "https://images.pexels.com/photos/1779487/pexels-photo-1779487.jpeg?auto=compress&cs=tinysrgb&w=800",
+    features: ["Custom Layouts", "E-commerce Support", "Flexible Blocks"],
+    style: "Creative",
+    path: "/industries/custom-solution",
+    innerimage:"canvas.png"
   }
-  ];
+];
 
 
 const page = () => {
@@ -71,13 +136,14 @@ const page = () => {
                 MainImg="/assets/images/home-3/about-thu3.png"
                 SubTitle="ABOUT INFATECH"
                 Title="Tech Solutions Tailored to Your Business <span>Goals</span>"          
-                Content="We help businesses go digital the smart way—by building systems aligned with your goals, budget, and future growth. No fluff. Just practical, reliable tech that gets the job done."
+                Content="Infatech Software Technologies was founded with a simple mission: to help businesses build reliable, scalable, and user-friendly software that actually moves them forward. In an industry crowded with flashy promises and cookie-cutter solutions, we stand out for one reason — we build what works for you."
                 BoxTitle1="Cloud-Ready,Scalable Architecture"
                 BoxTitle2="Long-Term Tech Support & Upgrades"  
                 listTitle1="From internal operations to customer-facing platforms, we create tech that fits your business—not the other way around."
                 listTitle2="Whether you're starting fresh or modernizing legacy systems, we make it seamless."                         
            ></About3>
-            <TemplateGallery industry="All Industries" templates={homepageTemplates} />
+            {/* <TemplateGallery industry="All Industries" templates={homepageTemplates} /> */}
+            <TemplateGallery industry="All Industries" templates={homepageTemplates} disablePreviewModal={true} />
            <Counter></Counter>
            {/* <CaseStudy></CaseStudy> */}
            <Testimonial3></Testimonial3>
