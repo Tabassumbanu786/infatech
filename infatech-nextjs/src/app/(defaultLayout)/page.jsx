@@ -10,6 +10,59 @@ import Faq2 from '../components/Faq/Faq2';
 import Blog2 from '../components/Blog/Blog2';
 import TemplateGallery from '../components/Gallery/TemplateGallery';
 
+// const homepageTemplates = [
+//   {
+//     id: 1,
+//     name: "For Financial Advisors",
+//     subtitle: "IFA Initiative",
+//     description: "Tailored online presence for modern-day financial advisors and wealth planners.",
+//     image: "https://images.pexels.com/photos/4386375/pexels-photo-4386375.jpeg?auto=compress&cs=tinysrgb&w=800",
+//     features: ["Client Dashboard", "Service Pages", "Regulatory Disclaimers"],
+//     style: "Professional",
+//     path: "/ifa-website"
+//   },
+//   {
+//     id: 2,
+//     name: "For Bakers",
+//     subtitle: "Coming Soon",
+//     description: "Warm, elegant designs for bakeries that want to look as good as they taste.",
+//     image: "https://images.pexels.com/photos/1721932/pexels-photo-1721932.jpeg?auto=compress&cs=tinysrgb&w=800",
+//     features: ["Custom Cake Forms", "Seasonal Specials", "Recipe Journal"],
+//     style: "Elegant",
+//     path: "/bakers"
+//   },
+//   {
+//     id: 3,
+//     name: "For Kirana Stores",
+//     subtitle: "Coming Soon",
+//     description: "Clean, local, and built for modern kirana stores and grocery businesses.",
+//     image: "https://images.pexels.com/photos/264537/pexels-photo-264537.jpeg?auto=compress&cs=tinysrgb&w=800",
+//     features: ["Inventory Dashboard", "Daily Stock Updates", "Local Delivery Tracker"],
+//     style: "Modern",
+//     path: "/kirana-stores"
+//   },
+//   {
+//     id: 4,
+//     name: "For Coaches",
+//     subtitle: "Future-ready placeholder",
+//     description: "Peaceful, polished design for coaches, clinics, and fitness professionals.",
+//     image: "https://images.pexels.com/photos/3822621/pexels-photo-3822621.jpeg?auto=compress&cs=tinysrgb&w=800",
+//     features: ["Service Blocks", "Calendar Integration", "Team Profiles"],
+//     style: "Wellness",
+//     path: "/coaches"
+//   },
+//   {
+//     id: 5,
+//     name: "Custom Solutions",
+//     subtitle: "Catch-all link back to core services",
+//     description: "Bold, modern layouts for unique businesses and special requirements.",
+//     image: "https://images.pexels.com/photos/1779487/pexels-photo-1779487.jpeg?auto=compress&cs=tinysrgb&w=800",
+//     features: ["Custom Layouts", "E-commerce Support", "Flexible Blocks"],
+//     style: "Creative",
+//     path: "/custom-solutions"
+//   }
+// ];
+  
 const homepageTemplates = [
   {
     id: 1,
@@ -19,7 +72,8 @@ const homepageTemplates = [
     image: "https://images.pexels.com/photos/4386375/pexels-photo-4386375.jpeg?auto=compress&cs=tinysrgb&w=800",
     features: ["Client Dashboard", "Service Pages", "Regulatory Disclaimers"],
     style: "Professional",
-    path: "/ifa-website"
+    path: "/ifa-website",
+    innerimage:"ifa.png"
   },
   {
     id: 2,
@@ -29,7 +83,8 @@ const homepageTemplates = [
     image: "https://images.pexels.com/photos/1721932/pexels-photo-1721932.jpeg?auto=compress&cs=tinysrgb&w=800",
     features: ["Custom Cake Forms", "Seasonal Specials", "Recipe Journal"],
     style: "Elegant",
-    path: "/bakers"
+    path: "/industries/bakers",
+    innerimage:"bakers1.png"
   },
   {
     id: 3,
@@ -39,7 +94,8 @@ const homepageTemplates = [
     image: "https://images.pexels.com/photos/264537/pexels-photo-264537.jpeg?auto=compress&cs=tinysrgb&w=800",
     features: ["Inventory Dashboard", "Daily Stock Updates", "Local Delivery Tracker"],
     style: "Modern",
-    path: "/kirana-stores"
+    path: "/industries/kirana",
+    innerimage:"kiranashop.png"
   },
   {
     id: 4,
@@ -49,7 +105,9 @@ const homepageTemplates = [
     image: "https://images.pexels.com/photos/3822621/pexels-photo-3822621.jpeg?auto=compress&cs=tinysrgb&w=800",
     features: ["Service Blocks", "Calendar Integration", "Team Profiles"],
     style: "Wellness",
-    path: "/coaches"
+    path: "/industries/coaches",
+    innerimage:"coaches.png"
+
   },
   {
     id: 5,
@@ -59,11 +117,10 @@ const homepageTemplates = [
     image: "https://images.pexels.com/photos/1779487/pexels-photo-1779487.jpeg?auto=compress&cs=tinysrgb&w=800",
     features: ["Custom Layouts", "E-commerce Support", "Flexible Blocks"],
     style: "Creative",
-    path: "/custom-solutions"
+    path: "/industries/custom-solution",
+    innerimage:"canvas.png"
   }
 ];
-  
-
 const page = () => {
     return (
         <div className='home-page3'>
