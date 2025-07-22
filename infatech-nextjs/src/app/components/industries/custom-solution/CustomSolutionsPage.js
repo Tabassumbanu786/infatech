@@ -41,7 +41,7 @@ const CustomSolutionsPage = () => {
             <span className="d-block text-primary">Tailored to Your Business</span>
           </h1>
           <p className="lead text-secondary mx-auto mb-4" style={{ maxWidth: '700px' }}>
-            Don't see your industry listed? No problem. We create bespoke websites and technology 
+            Don&apos;t see your industry listed? No problem. We create bespoke websites and technology 
             solutions that perfectly match your unique business requirements.
           </p>
           <div className="d-flex flex-column flex-sm-row justify-content-center gap-3">

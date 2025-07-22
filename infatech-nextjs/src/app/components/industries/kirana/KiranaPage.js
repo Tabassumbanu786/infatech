@@ -380,7 +380,7 @@ return (
       <section style={{ padding: '4rem 0', backgroundColor: '#ffffff' }}>
         <div className="container text-center">
           <h2 style={{ fontSize: '2rem', fontWeight: 'bold', color: '#111827', marginBottom: '3rem' }}>
-            What We're Preparing for Kirana Stores
+            What We&apos;re Preparing for Kirana Stores
           </h2>
           <div className="row">
             {[
@@ -846,7 +846,7 @@ return (
               marginBottom: '2rem'
             }}
           >
-            Can't wait for our kirana store package? We can create a custom solution tailored to your grocery business needs.
+            Can&apos;t wait for our kirana store package? We can create a custom solution tailored to your grocery business needs.
           </p>
           <button
             onClick={() => window.open('https://calendly.com/your-calendar', '_blank')}

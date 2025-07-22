@@ -272,7 +272,7 @@ const TemplatePreview = ({ templateId, templateName }) => {  const renderTemplat
 
             {/* Featured Products */}
             <section style={{ padding: '4rem 2rem', width: '100%', boxSizing: 'border-box' }}>
-              <h2 style={{ textAlign: 'center', fontSize: '2.5rem', marginBottom: '3rem', color: '#7c2d12' }}>Today's Fresh Selections</h2>
+              <h2 style={{ textAlign: 'center', fontSize: '2.5rem', marginBottom: '3rem', color: '#7c2d12' }}>Today&apos;s Fresh Selections</h2>
               <div style={{ 
                 display: 'grid', 
                 gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))', 
@@ -359,7 +359,7 @@ const TemplatePreview = ({ templateId, templateName }) => {  const renderTemplat
                     <div style={{ color: '#f97316', marginBottom: '1rem' }}>
                       {'★'.repeat(testimonial.rating)}
                     </div>
-                    <p style={{ fontStyle: 'italic', marginBottom: '1rem', color: '#7c2d12' }}>"{testimonial.text}"</p>
+                    <p style={{ fontStyle: 'italic', marginBottom: '1rem', color: '#7c2d12' }}>&quot;{testimonial.text}&quot;</p>
                     <div style={{ fontWeight: 'bold', color: '#7c2d12' }}>- {testimonial.name}</div>
                   </div>
                 ))}
@@ -527,7 +527,7 @@ const TemplatePreview = ({ templateId, templateName }) => {  const renderTemplat
 
             {/* Fresh Deals */}
             <section style={{ backgroundColor: '#dcfce7', padding: '4rem 2rem', width: '100%', boxSizing: 'border-box' }}>
-              <h2 style={{ textAlign: 'center', fontSize: '2.5rem', marginBottom: '3rem', color: '#15803d' }}>Today's Fresh Deals</h2>
+              <h2 style={{ textAlign: 'center', fontSize: '2.5rem', marginBottom: '3rem', color: '#15803d' }}>Today&apos;s Fresh Deals</h2>
               <div style={{ 
                 display: 'grid', 
                 gridTemplateColumns: 'repeat(auto-fit, minmax(250px, 1fr))', 
@@ -780,7 +780,7 @@ const TemplatePreview = ({ templateId, templateName }) => {  const renderTemplat
             {/* Contact */}
             <section style={{ padding: '4rem 2rem', textAlign: 'center', width: '100%', boxSizing: 'border-box' }}>
               <h2 style={{ fontSize: '2.5rem', marginBottom: '2rem', color: '#1e40af' }}>Ready to Start Your Project?</h2>
-              <p style={{ fontSize: '1.2rem', marginBottom: '2rem', color: '#6b7280' }}>Let's create something amazing together</p>
+              <p style={{ fontSize: '1.2rem', marginBottom: '2rem', color: '#6b7280' }}>Let&apos;s create something amazing together</p>
               <button style={{ 
                 backgroundColor: '#1e40af', 
                 color: 'white', 
