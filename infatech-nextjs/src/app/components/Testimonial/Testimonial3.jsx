@@ -11,16 +11,26 @@ const Testimonial3 = () => {
         loadBackgroudImages();
       }, []);
 
-    const TestimonialContent = {
-        bgImg:'/assets/img/faq_img_1.jpg',
-        SubTitle:'client review',
-        Title:' What Our Clients Say<br>About <span>Working</span> With Us.',
-        Content:'We believe the best proof of our work is what our clients say. Here are a few words from those who’ve trusted us to bring their ideas to life through tech.',
-        AuthorImage:'/assets/images/home-3/test-thumb.png',
-        AuthorName:'Brandon A. Vela',
-        AuthorDesignation:'ui Designer'        
-      }
+    // const TestimonialContent = {
+    //     bgImg:'/assets/img/faq_img_1.jpg',
+    //     SubTitle:'client review',
+    //     Title:' What Our Clients Say<br>About <span>Working</span> With Us.',
+    //     Content:'We believe the best proof of our work is what our clients say. Here are a few words from those who’ve trusted us to bring their ideas to life through tech.',
+    //     AuthorImage:'/assets/images/home-3/test-thumb.png',
+    //     AuthorName:'Jaya Preamchandani',
+    //     AuthorDesignation:' From Bakers '        
+    //   }
 
+    const TestimonialContent = {
+        bgImg: '/assets/img/faq_img_1.jpg',
+        SubTitle: 'client review',
+        Title: 'What Our Clients Say<br>About <span>Working</span> With Us.',
+        Content: 'From personalized planning tools to compliant, trust-building websites — Infatech has helped financial advisors grow their online presence with confidence.',
+        AuthorImage: '/assets/images/home-3/test-thumb.png',
+        AuthorName: 'Amit R.',
+        AuthorDesignation: 'Co-Founder, EduGrow'
+      }
+      
     return (
         <div className="testimonial-area style-four" data-background="/assets/images/home-3/test-bg.png">
             <div className="container">

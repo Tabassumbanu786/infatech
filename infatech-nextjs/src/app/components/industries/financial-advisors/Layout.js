@@ -8,10 +8,10 @@ const Layout = ({ children }) => (
         <div className="fs-4 fw-bold">IFA Website</div>
 
         <nav className="d-flex gap-3 small fw-semibold">
-          <Link href="/" className="text-decoration-none link-dark hover-underline">Home</Link>
-          <Link href="/#services" scroll={false} className="text-decoration-none link-dark hover-underline">Services</Link>
-          <Link href="/#about" scroll={false} className="text-decoration-none link-dark hover-underline">About Us</Link>
-          <Link href="/resources" className="text-decoration-none link-dark hover-underline">Resources</Link>
+          <Link href="#" className="text-decoration-none link-dark hover-underline">Home</Link>
+          <Link href="#services" className="text-decoration-none link-dark hover-underline">Services</Link>
+          <Link href="#about" className="text-decoration-none link-dark hover-underline">About Us</Link>
+          <Link href="#resources" className="text-decoration-none link-dark hover-underline">Resources</Link>
           <Link href="#contact" className="text-decoration-none link-dark hover-underline">Contact Us</Link>
         </nav>
       </div>

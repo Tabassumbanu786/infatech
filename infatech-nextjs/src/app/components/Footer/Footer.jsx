@@ -12,10 +12,8 @@ const Footer = () => {
 
       const UsefulLinks = [
         {title:'About Company', link:'/about'},
-        // {title:'Meet Our Team', link:'/team'},
         {title:'Latest Blog', link:'/blog'},
         {title:'Contact Us', link:'/contact'}
-        // {title:'Testimonials', link:'/testimonial'}
       ];  
 
       const LogoContent = {
@@ -87,7 +85,7 @@ const Footer = () => {
                                 </div>
                             </div>
                         </div>
-                        <div className="col-lg-2 col-md-6 col-sm-6">
+                        <div className="col-lg-2 col-md-2 col-sm-2">
                             <div className="footer-widget left">
                                 <div className="widget-title">
                                     <h2>Useful Links</h2>

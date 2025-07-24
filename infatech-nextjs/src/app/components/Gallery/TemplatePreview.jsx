@@ -166,6 +166,8 @@ import ContactSection from "../industries/financial-advisors/ContactSection";
 import Resources from "../industries/financial-advisors/Resources";
 import Calculators from "../industries/financial-advisors/Calculators";
 import Layout from "../industries/financial-advisors/Layout";
+import Chatbot from "../industries/financial-advisors/Chatbot";
+
 
 // interface TemplatePreviewProps {
 //   templateId: number;
@@ -1290,6 +1292,7 @@ const TemplatePreview = ({ templateId, templateName }) => {  const renderTemplat
           location: "Mumbai",
         }}
       />
+        <Chatbot /> 
       </Layout>
       
         

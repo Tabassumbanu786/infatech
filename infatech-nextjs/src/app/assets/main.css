@@ -3428,16 +3428,17 @@ ul.testi-rating li {
 =======================================*/
 
 .footer-area {
-  background: url(/assets/images/footer-bg.png);
+  /* background: url(/assets/images/footer-bg.png); */
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
   padding: 0 0 20px;
   margin: 0 50px 35px;
+  background-color: #05091d;
 }
 
 .row.footer {
-  padding: 118px 0 101px;
+  padding: 33px 0 33px;
 }
 
 p.footer-widget-text {
@@ -3448,7 +3449,7 @@ p.footer-widget-text {
   font-weight: 400;
   font-family: var(--body-color-font);
   margin: 0;
-  padding: 38px 0 68px;
+  padding: 38px 0 38px;
 }
 
 .footer-widget-social a i {

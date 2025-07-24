@@ -47,13 +47,13 @@ const Process2 = () => {
                             </div>
                         </div>			
                     </div>
-                    <div className="row">
+                    {/* <div className="row">
                         <div className="col-lg-12">
                             <div className="working-process-bottom">
                                 <p>We are Delivering The Best Customer Experience <span> since 2016</span></p>
                             </div>
                         </div>
-                    </div>
+                    </div> */}
                 </div>
             </div>
     );

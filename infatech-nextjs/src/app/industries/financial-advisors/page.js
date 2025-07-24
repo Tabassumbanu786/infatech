@@ -3,7 +3,10 @@
 'use client';
 
 import React from "react";
+
+
 import Layout from "../../components/industries/financial-advisors/Layout";
+
 
 import HeroSection from "../../components/industries/financial-advisors/HeroSection";
 import ServicesSection from "../../components/industries/financial-advisors/ServicesList";
@@ -11,6 +14,7 @@ import AboutSection from "../../components/industries/financial-advisors/AboutSe
 import ContactSection from "../../components/industries/financial-advisors/ContactSection";
 import Resources from "../../components/industries/financial-advisors/Resources";
 import Calculators from "../../components/industries/financial-advisors/Calculators";
+import Chatbot from "../../components/industries/financial-advisors/Chatbot";
 const ifaData = {
   name: "Ravi Shah",
   experience: 12,
@@ -19,6 +23,7 @@ const ifaData = {
 export default function FinancialAdvisorsPage() {
   return (
     <Layout>
+      
       <HeroSection ifaData={ifaData} />
       <ServicesSection ifaData={ifaData} />
       <Calculators/>
@@ -31,6 +36,7 @@ export default function FinancialAdvisorsPage() {
           location: "Mumbai",
         }}
       />
+    
       
     </Layout>
   );

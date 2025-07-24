@@ -4,6 +4,7 @@ import Head from 'next/head';
 import React, { useState } from 'react';
 import { Clock, EggFill } from 'react-bootstrap-icons';
 import TemplateGallery from '../../Gallery/TemplateGallery';
+import CTASection from '../../Gallery/CTASection';
 
 
 const BakersPage = () => {
@@ -164,11 +165,11 @@ const BakersPage = () => {
         </div>
       </section> */}
 
-      {/* <CTASection 
+      <CTASection 
         title="Need a Custom Solution Now?"
         subtitle="Can't wait for our baker-specific package? We can create a custom solution tailored to your bakery's needs."
         buttonText="Schedule Custom Consultation"
-      /> */}
+      />
     </div>
   );
 };

@@ -54,9 +54,18 @@ const Faq2 = () => {
                         </div>
                     </div>
                     <div className="col-lg-6 col-md-12">
-                        <div className="faq-thumb faq_thumb_area mt -5">
-                            <Image src="/assets/images/home-3/faq-thumb.png" alt="img" width={700} height={782}   />
-                        </div>
+                    <div className="faq-thumb faq_thumb_area mt-n3">
+  <Image
+    src="/assets/images/home-3/faq-thumb.png"
+    alt="img"
+    width={700}
+    height={782}
+    className="img-fluid"
+    style={{ height: 'auto', width: '100%', objectFit: 'contain' }}
+  />
+</div>
+
+
                     </div>
                 </div>
             </div>
