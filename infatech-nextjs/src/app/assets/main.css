@@ -4910,7 +4910,7 @@ ul.list-style-one li a:hover {
 <!-- =========================================-->*/
 .blog-area.style-two {
   background: #fff;
-  padding: 120px 0 90px;
+  padding: 10px 0 10px;
 }
 
 .blog-area.style-two h5.section-sub-title {
@@ -5955,7 +5955,7 @@ li.list-arrow {
 /* <!--==================================================--> */
 .about-us-area {
   background: #fff;
-  padding: 144px 0 95px;
+  padding: 80px 0 0px;
   position: relative;
 }
 
@@ -6030,7 +6030,7 @@ li.list-arrow {
 
 .counter-content p {
   font-size: 17px;
-  text-transform: uppercase;
+  /* text-transform: uppercase; */
   color: #7a7a7a;
 }
 

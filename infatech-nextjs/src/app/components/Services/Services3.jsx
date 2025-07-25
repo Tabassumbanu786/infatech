@@ -39,6 +39,23 @@ const Services3 = () => {
                                         <Link href={`/service/${item.id}`}>{item.title}</Link>
                                         </h4>
                                     <p className="service-desc">{item.desc}</p>
+                                    <div>
+  <Link
+    href={`/service/${item.id}`}
+    style={{
+      backgroundColor: '#ff3b00',
+      color: 'white',
+      padding: '10px 16px',
+      borderRadius: '4px',
+      display: 'inline-flex',
+      alignItems: 'center',
+      textDecoration: 'none',
+    }}
+  >
+    READ MORE
+  </Link>
+</div>
+
                                 </div>
                             </div>
                             {/* <div className="service-thumb">

@@ -1,3 +1,4 @@
+import AboutUs from '@/app/components/About/aboutus';
 import Blog1 from '../../components/Blog/Blog1';
 
 import Team2 from '../../components/Team/Team2';
@@ -9,6 +10,7 @@ const page = () => {
         <div className='team-page'>
             {/* <BreadCumb Title="Team"></BreadCumb> */}
             <Team2></Team2>
+          
             <Testimonial2></Testimonial2>
             <Blog1></Blog1>
         </div>

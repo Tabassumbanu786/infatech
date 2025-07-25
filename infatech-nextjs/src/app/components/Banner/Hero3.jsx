@@ -29,9 +29,29 @@ const Hero3 = () => {
                                     <h6>{item.subTitle}</h6>
                                     <h1>{parse(item.title)}</h1>
                                     <p>{item.desc}</p>
-                                    <div className="solutek-btn">
+                                    {/* <div className="solutek-btn">
                                         <Link href="/about" className="btn-2">Start Building with Infatech </Link>
-                                    </div>
+                                        
+                                    </div> */}
+                                      {/* WhatsApp Button */}
+            <div className="solutek-btn">
+              {/* <a
+                href={`https://wa.me/${('7021710954' || '').replace(/\D/g, '')}`}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="btn btn-success px-4 py-3"
+              >
+                Start Building with Infatech
+              </a> */}
+              <a
+    href={`https://wa.me/${('7021710954' || '').replace(/\D/g, '')}?text=${encodeURIComponent("Hi, I’m interested in getting a quote for a website/app development project. Please guide me through the next steps.")}`}
+    target="_blank"
+    rel="noopener noreferrer"
+    className="btn btn-success px-4 py-3"
+  >
+    Start Building with Infatech
+  </a>
+            </div>
                                     {/* <div className="hero-btn-3">
                                         <div className="hero-btn-profile">
                                             <Image src="/assets/images/home-3/hero-pro.png" alt="img" width={56} height={56}   />

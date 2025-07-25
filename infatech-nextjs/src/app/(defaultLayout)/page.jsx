@@ -63,11 +63,70 @@ import TemplateGallery from '../components/Gallery/TemplateGallery';
 //   }
 // ];
   
+// const homepageTemplates = [
+//   {
+//     id: 1,
+//     name: "For Financial Advisors",
+//     subtitle: "IFA Initiative",
+//     description: "Tailored online presence for modern-day financial advisors and wealth planners.",
+//     image: "https://images.pexels.com/photos/4386375/pexels-photo-4386375.jpeg?auto=compress&cs=tinysrgb&w=800",
+//     features: ["Client Dashboard", "Service Pages", "Regulatory Disclaimers"],
+//     style: "Professional",
+//     path: "/ifa-website",
+//     innerimage:"ifa.png"
+//   },
+//   {
+//     id: 2,
+//     name: "For Bakers",
+//     subtitle: "Coming Soon",
+//     description: "Warm, elegant designs for bakeries that want to look as good as they taste.",
+//     image: "https://images.pexels.com/photos/1721932/pexels-photo-1721932.jpeg?auto=compress&cs=tinysrgb&w=800",
+//     features: ["Custom Cake Forms", "Seasonal Specials", "Recipe Journal"],
+//     style: "Elegant",
+//     path: "/industries/bakers",
+//     innerimage:"bakers1.png"
+//   },
+//   {
+//     id: 3,
+//     name: "For Kirana Stores",
+//     subtitle: "Coming Soon",
+//     description: "Clean, local, and built for modern kirana stores and grocery businesses.",
+//     image: "https://images.pexels.com/photos/264537/pexels-photo-264537.jpeg?auto=compress&cs=tinysrgb&w=800",
+//     features: ["Inventory Dashboard", "Daily Stock Updates", "Local Delivery Tracker"],
+//     style: "Modern",
+//     path: "/industries/kirana",
+//     innerimage:"kiranashop.png"
+//   },
+//   {
+//     id: 4,
+//     name: "For Coaches",
+//     subtitle: "Future-ready placeholder",
+//     description: "Peaceful, polished design for coaches, clinics, and fitness professionals.",
+//     image: "https://images.pexels.com/photos/3822621/pexels-photo-3822621.jpeg?auto=compress&cs=tinysrgb&w=800",
+//     features: ["Service Blocks", "Calendar Integration", "Team Profiles"],
+//     style: "Wellness",
+//     path: "/industries/coaches",
+//     innerimage:"coaches.png"
+
+//   },
+//   {
+//     id: 5,
+//     name: "Custom Solutions",
+//     subtitle: "Catch-all link back to core services",
+//     description: "Bold, modern layouts for unique businesses and special requirements.",
+//     image: "https://images.pexels.com/photos/1779487/pexels-photo-1779487.jpeg?auto=compress&cs=tinysrgb&w=800",
+//     features: ["Custom Layouts", "E-commerce Support", "Flexible Blocks"],
+//     style: "Creative",
+//     path: "/industries/custom-solution",
+//     innerimage:"canvas.png"
+//   }
+// ];
+
 const homepageTemplates = [
   {
     id: 1,
     name: "For Financial Advisors",
-    subtitle: "IFA Initiative",
+    subtitle: "Showcase your credentials, share market insights, and offer tools like SIP calculators to engage clients.",
     description: "Tailored online presence for modern-day financial advisors and wealth planners.",
     image: "https://images.pexels.com/photos/4386375/pexels-photo-4386375.jpeg?auto=compress&cs=tinysrgb&w=800",
     features: ["Client Dashboard", "Service Pages", "Regulatory Disclaimers"],
@@ -78,7 +137,7 @@ const homepageTemplates = [
   {
     id: 2,
     name: "For Bakers",
-    subtitle: "Coming Soon",
+    subtitle: "Display your menu, take custom cake orders, and share daily specials with an easy-to-manage platform.",
     description: "Warm, elegant designs for bakeries that want to look as good as they taste.",
     image: "https://images.pexels.com/photos/1721932/pexels-photo-1721932.jpeg?auto=compress&cs=tinysrgb&w=800",
     features: ["Custom Cake Forms", "Seasonal Specials", "Recipe Journal"],
@@ -88,8 +147,8 @@ const homepageTemplates = [
   },
   {
     id: 3,
-    name: "For Kirana Stores",
-    subtitle: "Coming Soon",
+    name: "For Grocery Stores",
+    subtitle: "Enable local customers to browse stock, place online orders, and track deliveries effortlessly.",
     description: "Clean, local, and built for modern kirana stores and grocery businesses.",
     image: "https://images.pexels.com/photos/264537/pexels-photo-264537.jpeg?auto=compress&cs=tinysrgb&w=800",
     features: ["Inventory Dashboard", "Daily Stock Updates", "Local Delivery Tracker"],
@@ -100,7 +159,7 @@ const homepageTemplates = [
   {
     id: 4,
     name: "For Coaches",
-    subtitle: "Future-ready placeholder",
+    subtitle: "Highlight your programs, manage bookings, and build authority with testimonials and resources.",
     description: "Peaceful, polished design for coaches, clinics, and fitness professionals.",
     image: "https://images.pexels.com/photos/3822621/pexels-photo-3822621.jpeg?auto=compress&cs=tinysrgb&w=800",
     features: ["Service Blocks", "Calendar Integration", "Team Profiles"],
@@ -112,7 +171,7 @@ const homepageTemplates = [
   {
     id: 5,
     name: "Custom Solutions",
-    subtitle: "Catch-all link back to core services",
+    subtitle: "From booking systems to niche marketplaces, we build platforms tailored to unique business models.",
     description: "Bold, modern layouts for unique businesses and special requirements.",
     image: "https://images.pexels.com/photos/1779487/pexels-photo-1779487.jpeg?auto=compress&cs=tinysrgb&w=800",
     features: ["Custom Layouts", "E-commerce Support", "Flexible Blocks"],

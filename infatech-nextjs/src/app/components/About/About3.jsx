@@ -53,12 +53,22 @@ const About3 = ({bgImg,MainImg,SubTitle,Title,Content,listTitle1,listTitle2,BoxT
                                     </ul>
                                 </div>
                                 <div className="solutek-btn">
-                                    <Link href="/about">EXPLORE HOW WE WORK
+                                    {/* <Link href="/about">EXPLORE HOW WE WORK
                                         <div className="solutek-hover-btn hover-bx"></div>
                                         <div className="solutek-hover-btn hover-bx2"></div>
                                         <div className="solutek-hover-btn hover-bx3"></div>
                                         <div className="solutek-hover-btn hover-bx4"></div>
-                                    </Link>
+                                    </Link> */}
+                                    <div className="solutek-btn">
+  <a
+    href={`https://wa.me/7021710954?text=${encodeURIComponent("Hi, I’m interested in getting a quote for a website/app development project. Please guide me through the next steps.")}`}
+    target="_blank"
+    rel="noopener noreferrer"
+    className="btn btn-success px-4 py-3"
+  >
+    Get A Quote Now
+  </a>
+</div>
                                 </div>
                             </div>
                         </div>

@@ -1,5 +1,6 @@
 // import About4 from '@/app/components/About/About4';
 import About4 from '../../components/About/About4';
+import AboutUs from '../../components/About/AboutUs';
 import Blog2 from '../../components/Blog/Blog2';
 import Team2 from '../../components/Team/Team2';
 
@@ -24,7 +25,8 @@ const page = () => {
                 listTitle4="Long-Term Partnership — We don’t disappear after delivery; we support, upgrade, and scale with you."
                                
            ></About4>
-            <Team2></Team2>
+            {/* <Team2></Team2> */}
+            <AboutUs/>
             {/* <Project1 
                 bgImage="/assets/images/inner/project-bg-3.png"
                 ClassAdd="project-area style-two"

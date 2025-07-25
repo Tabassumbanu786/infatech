@@ -153,16 +153,50 @@ const TemplateGallery = ({
 
         {/* Modal */}
         {selectedTemplate && !disablePreviewModal && (
-          <div 
-            className="position-fixed top-0 start-0 w-100 h-100 bg-dark bg-opacity-50 d-flex align-items-center justify-content-center p-3 z-index-1050"
-            onClick={() => setSelectedTemplate(null)}
+          // <div 
+          //   className="position-fixed top-0 start-0 w-100 h-100 bg-dark bg-opacity-50 d-flex align-items-center justify-content-center p-3 z-index-1050"
+          //   onClick={() => setSelectedTemplate(null)}
+            
+          // >
+          //   <div 
+          //     className="bg-white rounded-lg w-100 h-100 overflow-hidden d-flex flex-column flex-lg-row max-w-100"
+          //     onClick={(e) => e.stopPropagation()}
+          //     style={{ maxHeight: '90vh', maxWidth: '1280px' }}
+          //   >
+          <div
+          onClick={() => setSelectedTemplate(null)}
+          style={{
+            position: 'fixed',
+            inset: 0,
+            backgroundColor: 'rgba(0, 0, 0, 0.5)',
+            zIndex: 1050,
+            display: 'flex',
+            alignItems: 'center',
+            justifyContent: 'center',
+            padding: '1rem'
+          }}
+        >
+          <div
+            onClick={(e) => e.stopPropagation()}
+            style={{
+              backgroundColor: '#ffffff',
+              borderRadius: '0.75rem',
+              display: 'flex',
+              width: '100%',
+              height: '100%',
+              maxWidth: '75rem',
+              maxHeight: '90vh',
+              overflow: 'hidden'
+            }}
           >
-            <div 
-              className="bg-white rounded-lg w-100 h-100 overflow-hidden d-flex flex-column flex-lg-row max-w-100"
-              onClick={(e) => e.stopPropagation()}
-              style={{ maxHeight: '90vh', maxWidth: '1280px' }}
+               <div
+              style={{
+                flex: 1,
+                borderRight: '1px solid #e5e7eb',
+                overflowY: 'auto',
+                backgroundColor: '#f3f4f6'
+              }}
             >
-              <div className="flex-grow-1 border-end">
                 <TemplatePreview 
                   templateId={selectedTemplate.id} 
                   templateName={selectedTemplate.name}
@@ -177,7 +211,7 @@ const TemplateGallery = ({
                   />
                 </div>
                 {selectedTemplate?.subtitle && (
-                  <p className="text-primary fw-semibold mb-3">{selectedTemplate?.subtitle}</p>
+                  <p className="fw-semibold mb-3">{selectedTemplate?.subtitle}</p>
                 )}
                 <p className="text-muted mb-4">{selectedTemplate.description}</p>
                 <div className="mb-4">
@@ -199,19 +233,27 @@ const TemplateGallery = ({
 
 
                 </div>
-                <div className="d-grid gap-2 mt-4">
-                  <button
+                <div className="solutek-btn">
+  <a
+    href={`https://wa.me/7021710954?text=${encodeURIComponent("Hi, I’m interested in getting a quote for a website/app development project. Please guide me through the next steps.")}`}
+    target="_blank"
+    rel="noopener noreferrer"
+    className="btn px-4 py-3"
+  >
+    GET A QUOTE NOW
+  </a>
+                  {/* <button
                     onClick={() => window.open('https://calendly.com/your-calendar', '_blank')}
                     className="btn btn-primary fw-semibold"
                   >
                     Choose This Template
-                  </button>
-                  <button
+                  </button> */}
+                  {/* <button
                     onClick={() => setSelectedTemplate(null)}
                     className="btn btn-light fw-semibold"
                   >
                     Continue Browsing
-                  </button>
+                  </button> */}
                 </div>
               </div>
             </div>
@@ -315,7 +357,7 @@ const TemplateCard = ({ template, disablePreviewModal, onTemplateClick }) => {
         <div className="card-body">
           <h5 className="fw-bold text-dark">{template.name}</h5>
           {template?.subtitle && (
-            <p className="text-bolt-primary fw-semibold small mb-2">
+            <p className="text-bolt-primary small mb-2">
               {template?.subtitle}
             </p>
           )}
@@ -338,15 +380,22 @@ const TemplateCard = ({ template, disablePreviewModal, onTemplateClick }) => {
             </div>
           ) : (
             <>
-              <p className="text-muted small mb-3">{template.description}</p>
-              <ul className="list-unstyled mb-0">
+              {/* <p className="text-muted small mb-3">{template.description}</p> */}
+              {/* <ul className="list-unstyled mb-0">
                 {template.features.slice(0, 3).map((feature, idx) => (
                   <li key={idx} className="d-flex align-items-center mb-1">
                     <div className="bg-success rounded-circle me-2" style={{ width: '8px', height: '8px' }}></div>
                     <span className="text-muted small">{feature}</span>
                   </li>
                 ))}
-              </ul>
+              </ul> */}
+              <div className="text-center py-3">
+              <div className="mt-2">
+                    <span className="badge text-white fw-bold animate__pulse" style={{ backgroundColor: '#050a1e' }}>
+                      LIVE DEMO WEBSITE
+                    </span>
+                  </div>
+                  </div>
             </>
           )}
         </div>
@@ -368,7 +417,7 @@ const TemplateCard = ({ template, disablePreviewModal, onTemplateClick }) => {
               : `top-0 z-1050
              ${modalPosition === 'right' ? 'start-100 ms-3' : 'end-100 me-3'}`
           }`}
-          style={{ width: '320px' , zIndex: 9999}}
+          style={{ width: '320px' }}
         >
           {isMobile && (
                 <button

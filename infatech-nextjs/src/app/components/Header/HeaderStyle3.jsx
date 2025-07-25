@@ -109,9 +109,31 @@ export default function HeaderStyle3({ variant }) {
                 </div>
               </div>
               <div className="cs_main_header_right">
-                <div className="solutek-btn2">
+                {/* <div className="solutek-btn2">
                   <Link href="/contact">Get A Quote Now</Link>
-                </div>
+                  <a
+                href={`https://wa.me/${('7021710954' || '').replace(/\D/g, '')}`}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="btn btn-success px-4 py-3"
+              >
+               Get A Quote Now
+              </a>
+                </div> */}
+ <div className="solutek-btn2">
+  <a
+    href={`https://wa.me/7021710954?text=${encodeURIComponent("Hi, I’m interested in getting a quote for a website/app development project. Please guide me through the next steps.")}`}
+    target="_blank"
+    rel="noopener noreferrer"
+    className="btn btn-success px-4 py-3"
+  >
+    Get A Quote Now
+  </a>
+</div>
+
+
+                
+                
               </div>
             </div>
           </div>

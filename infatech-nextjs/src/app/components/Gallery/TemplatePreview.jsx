@@ -176,7 +176,7 @@ import Chatbot from "../industries/financial-advisors/Chatbot";
 
 const TemplatePreview = ({ templateId, templateName }) => {  const renderTemplate = () => {
     switch (templateId) {
-      case 1: // Sugar & Script
+      case 2: // Sugar & Script
         return (
           <div style={{ 
             fontFamily: 'Georgia, serif', 
@@ -397,7 +397,7 @@ const TemplatePreview = ({ templateId, templateName }) => {  const renderTemplat
           </div>
         );
 
-      case 2: // HarvestCart
+      case 3: // HarvestCart
         return (
           <div style={{ 
             fontFamily: 'Arial, sans-serif', 
@@ -628,7 +628,7 @@ const TemplatePreview = ({ templateId, templateName }) => {  const renderTemplat
           </div>
         );
 
-      case 3: // Canvas Grid
+      case 5: // Canvas Grid
         return (
           <div style={{ 
             fontFamily: 'Helvetica, Arial, sans-serif', 
@@ -801,7 +801,7 @@ const TemplatePreview = ({ templateId, templateName }) => {  const renderTemplat
           </div>
         );
 
-      case 4: // ShopStack
+      case 6: // ShopStack
         return (
           <div style={{ 
             fontFamily: 'Arial, sans-serif', 
@@ -1019,7 +1019,7 @@ const TemplatePreview = ({ templateId, templateName }) => {  const renderTemplat
           </div>
         );
 
-      case 5: // ZenSpace
+      case 4: // ZenSpace
         return (
           <div style={{ 
             fontFamily: 'Arial, sans-serif', 
@@ -1228,7 +1228,7 @@ const TemplatePreview = ({ templateId, templateName }) => {  const renderTemplat
             </footer>
           </div>
         );
-      case 6: // ifa website
+      case 1: // ifa website
         return (
         <div style={{ 
           fontFamily: 'Georgia, serif', 
