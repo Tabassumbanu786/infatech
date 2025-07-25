@@ -160,41 +160,40 @@ const homepageTemplates = [
 ];
 
 
-const page = () => {
-    const [selectedTemplate, setSelectedTemplate] = useState(null);
-    return (
-        <div className='home-page3'>
-            <Hero3></Hero3>
-
-            <Services3></Services3>
-            <About3
-                bgImg="/assets/images/home-3/about3-bg.png"
-                MainImg="/assets/images/home-3/about-thu3.png"
-                SubTitle="ABOUT INFATECH"
-                Title="Tech Solutions Tailored to Your Business <span>Goals</span>"          
-                Content="Infatech Software Technologies was founded with a simple mission: to help businesses build reliable, scalable, and user-friendly software that actually moves them forward. In an industry crowded with flashy promises and cookie-cutter solutions, we stand out for one reason — we build what works for you."
-                BoxTitle1="Cloud-Ready,Scalable Architecture"
-                BoxTitle2="Long-Term Tech Support & Upgrades"  
-                listTitle1="From internal operations to customer-facing platforms, we create tech that fits your business—not the other way around."
-                listTitle2="Whether you're starting fresh or modernizing legacy systems, we make it seamless."                         
-           ></About3>
-           <AboutUs></AboutUs>
-            {/* <TemplateGallery industry="All Industries" templates={homepageTemplates} /> */}
-            {/* <TemplateGallery industry="All Industries" templates={homepageTemplates} disablePreviewModal={false} /> */}
-            <TemplateGallery 
-          industry="All Industries"
-          templates={homepageTemplates} 
-          selectedTemplate={selectedTemplate}
-          setSelectedTemplate={setSelectedTemplate}
-        />
-           <Counter></Counter>
-           {/* <CaseStudy></CaseStudy> */}
-           <Testimonial3></Testimonial3>
-           <Process2></Process2>
-           <Faq2></Faq2>
-           <Blog2></Blog2>
-        </div>
-    );
+const Page = () => {
+  const [selectedTemplate, setSelectedTemplate] = useState(false);
+  return (
+      <div className='home-page3'>
+          <Hero3 />
+          <Services3 />
+          <About3
+              bgImg="/assets/images/home-3/about3-bg.png"
+              MainImg="/assets/images/home-3/about-thu3.png"
+              SubTitle="ABOUT INFATECH"
+              Title="Tech Solutions Tailored to Your Business <span>Goals</span>"          
+              Content="Infatech Software Technologies was founded with a simple mission: to help businesses build reliable, scalable, and user-friendly software that actually moves them forward. In an industry crowded with flashy promises and cookie-cutter solutions, we stand out for one reason — we build what works for you."
+              BoxTitle1="Cloud-Ready,Scalable Architecture"
+              BoxTitle2="Long-Term Tech Support & Upgrades"  
+              listTitle1="From internal operations to customer-facing platforms, we create tech that fits your business—not the other way around."
+              listTitle2="Whether you're starting fresh or modernizing legacy systems, we make it seamless."                         
+          />
+          <AboutUs />
+          <TemplateGallery 
+            industry="All Industries"
+            templates={homepageTemplates} 
+            selectedTemplate={selectedTemplate}
+            setSelectedTemplate={setSelectedTemplate}
+          />
+          <Counter />
+          <Testimonial3 />
+          <Process2 />
+          <Faq2 />
+          <Blog2 />
+      </div>
+  );
 };
 
-export default page;
+export default Page;
+
+
+// export default page;

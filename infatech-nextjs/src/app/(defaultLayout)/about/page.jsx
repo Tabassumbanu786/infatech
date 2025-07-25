@@ -1,4 +1,4 @@
-import About4 from '../components/About/About4';
+import About4 from '../../components/About/About4';
 // import About4 from '../../components/About/About4';
 import AboutUs from '../../components/About/AboutUs';
 import Blog2 from '../../components/Blog/Blog2';
