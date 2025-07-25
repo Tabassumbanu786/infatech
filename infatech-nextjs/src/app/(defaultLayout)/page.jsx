@@ -146,7 +146,7 @@ const homepageTemplates = [
 ];
 
 
-const page = () => {
+const Page = () => {
   const [selectedTemplate, setSelectedTemplate] = useState(false);
     return (
         <div className='home-page3'>
@@ -183,4 +183,4 @@ const page = () => {
     );
 };
 
-export default page;
+export default Page;
