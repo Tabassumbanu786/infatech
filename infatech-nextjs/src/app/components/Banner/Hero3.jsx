@@ -1,91 +1,89 @@
-"use client"
+"use client";
 import Slider from "react-slick";
-import data from '../../Data/hero.json';
-import parse from 'html-react-parser';
+import data from "../../Data/hero.json";
+import parse from "html-react-parser";
 import Link from "next/link";
 import Image from "next/image";
 
 const Hero3 = () => {
+  const settings = {
+    dots: false,
+    infinite: true,
+    speed: 900,
+    slidesToShow: 1,
+    slidesToScroll: 1,
+    arrows: false,
+    swipeToSlide: true,
+  };
 
-    const settings = {
-        dots: false,
-        infinite: true,
-        speed: 900,
-        slidesToShow: 1,
-        slidesToScroll: 1,
-        arrows: false,
-        swipeToSlide: true,
-      };
+  return (
+    <div className="hero-active owl-carousel">
+      <Slider {...settings}>
+        {data.map((item, i) => (
+          <div
+            key={i}
+            className="hero-area style-three d-flex align-items-center py-10 lg:py-20"
+          >
+            <div className="container">
+              <div className="row hero align-items-center">
+                {/* Text Column */}
+                <div className="col-lg-5 col-md-7">
+                  <div className="hero-contant space-y-6">
+                    <h6 className="text-sm font-semibold uppercase tracking-widest">
+                      {item.subTitle}
+                    </h6>
+                    <h1 className="text-4xl md:text-5xl font-bold leading-tight text-dark">
+                      {parse(item.title)}
+                    </h1>
+                    <p className="text-muted text-base leading-relaxed">
+                      {item.desc}
+                    </p>
 
-    return (
-        <div className="hero-active owl-carousel">
-            <Slider {...settings}>
-            {data.map((item, i) => (
-                <div key={i} className="hero-area style-three d-flex align-items-center">
-                    <div className="container">
-                        <div className="row hero align-items-center">
-                            <div className="col-lg-5 col-md-7">
-                                <div className="hero-contant">
-                                    <h6>{item.subTitle}</h6>
-                                    <h1>{parse(item.title)}</h1>
-                                    <p>{item.desc}</p>
-                                    {/* <div className="solutek-btn">
-                                        <Link href="/about" className="btn-2">Start Building with Infatech </Link>
-                                        
-                                    </div> */}
-                                      {/* WhatsApp Button */}
-            <div className="solutek-btn">
-              {/* <a
-                href={`https://wa.me/${('7021710954' || '').replace(/\D/g, '')}`}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="btn btn-success px-4 py-3"
-              >
-                Start Building with Infatech
-              </a> */}
-              <a
-    href={`https://wa.me/${('7021710954' || '').replace(/\D/g, '')}?text=${encodeURIComponent("Hi, I’m interested in getting a quote for a website/app development project. Please guide me through the next steps.")}`}
-    target="_blank"
-    rel="noopener noreferrer"
-    className="btn btn-success px-4 py-3"
-  >
-    Start Building with Infatech
-  </a>
-            </div>
-                                    {/* <div className="hero-btn-3">
-                                        <div className="hero-btn-profile">
-                                            <Image src="/assets/images/home-3/hero-pro.png" alt="img" width={56} height={56}   />
-                                            <Link href="/about"><span>MEET</span>Our Experts</Link>
-                                        </div>
-                                    </div> */}
-                                    <div className="hero-left-shape">
-                                        <Image src="/assets/images/home-3/hero-geo.png" alt="img" width={680} height={680}   />
-                                    </div>
-                                </div>
-                            </div>
-                            <div className="col-lg-7 col-md-5">
-                                <div className="hero-thumb-3">
-                                    <div className="hero-img hero_image_3">
-                                    <Image src={item.image} alt="img" width={1065} height={800}
-                                        style={{
-                                            width: '100%',
-                                            height: 'auto',
-                                            objectFit: 'contain'
-                                        }}/>
-                                    </div>
-                                    {/* <div className="hero-thumb-shape">
-                                        <Image src="/assets/images/home-3/hero-rs.png" alt="img" width={439} height={800}   />
-                                    </div> */}
-                                </div>
-                            </div>
-                        </div>
+                    <div className="solutek-btn">
+                      <a
+                        href={`https://wa.me/7021710954?text=${encodeURIComponent(
+                          "Hi, I’m interested in getting a quote for a website/app development project. Please guide me through the next steps."
+                        )}`}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="btn2"
+                      >
+                        Start Building with Infatech
+                      </a>
                     </div>
+
+                    {/* <div className="hero-left-shape absolute left-0 bottom-0 z-[-1] opacity-40">
+                      <Image
+                        src="/assets/images/home-3/hero-geo.png"
+                        alt="Decorative Shape"
+                        width={680}
+                        height={680}
+                      />
+                    </div> */}
+                  </div>
                 </div>
-                ))}
-            </Slider>
-            
-        </div>
-    );
+
+                {/* Image Column */}
+                <div className="col-lg-7 col-md-5">
+                  <div className="hero-thumb-3 flex justify-center items-center">
+                    <div className="hero-img hero_image_3">
+                      <Image
+                        src={item.image}
+                        alt="Hero Image"
+                        width={600}
+                        height={450}
+                        className="w-full max-w-[500px] h-auto object-contain mx-auto"
+                      />
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        ))}
+      </Slider>
+    </div>
+  );
 };
 
 export default Hero3;
