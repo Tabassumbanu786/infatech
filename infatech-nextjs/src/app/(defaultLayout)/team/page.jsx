@@ -1,4 +1,6 @@
-import AboutUs from '@/app/components/About/aboutus';
+// import AboutUs from '@/app/components/About/aboutus';
+import AboutUs from '../../../components/About/AboutUs'; // adjust relative path as needed
+
 import Blog1 from '../../components/Blog/Blog1';
 
 import Team2 from '../../components/Team/Team2';
