@@ -153,112 +153,111 @@ const TemplateGallery = ({
 
         {/* Modal */}
         {selectedTemplate && !disablePreviewModal && (
-          // <div 
-          //   className="position-fixed top-0 start-0 w-100 h-100 bg-dark bg-opacity-50 d-flex align-items-center justify-content-center p-3 z-index-1050"
-          //   onClick={() => setSelectedTemplate(null)}
-            
-          // >
-          //   <div 
-          //     className="bg-white rounded-lg w-100 h-100 overflow-hidden d-flex flex-column flex-lg-row max-w-100"
-          //     onClick={(e) => e.stopPropagation()}
-          //     style={{ maxHeight: '90vh', maxWidth: '1280px' }}
-          //   >
-          <div
-          onClick={() => setSelectedTemplate(null)}
-          style={{
-            position: 'fixed',
-            inset: 0,
-            backgroundColor: 'rgba(0, 0, 0, 0.5)',
-            zIndex: 1050,
-            display: 'flex',
-            alignItems: 'center',
-            justifyContent: 'center',
-            padding: '1rem'
-          }}
-        >
-          <div
-            onClick={(e) => e.stopPropagation()}
-            style={{
-              backgroundColor: '#ffffff',
-              borderRadius: '0.75rem',
-              display: 'flex',
-              width: '100%',
-              height: '100%',
-              maxWidth: '75rem',
-              maxHeight: '90vh',
-              overflow: 'hidden'
-            }}
-          >
-               <div
-              style={{
-                flex: 1,
-                borderRight: '1px solid #e5e7eb',
-                overflowY: 'auto',
-                backgroundColor: '#f3f4f6'
-              }}
-            >
-                <TemplatePreview 
-                  templateId={selectedTemplate.id} 
-                  templateName={selectedTemplate.name}
-                />
-              </div>
-              <div className="p-4 overflow-auto" style={{ width: '320px' }}>
-                <div className="d-flex justify-content-between align-items-center mb-3">
-                  <h4 className="h5 fw-bold text-dark">{selectedTemplate.name}</h4>
-                  <button
-                    onClick={() => setSelectedTemplate(null)}
-                    className="btn-close"
-                  />
-                </div>
-                {selectedTemplate?.subtitle && (
-                  <p className="fw-semibold mb-3">{selectedTemplate?.subtitle}</p>
-                )}
-                <p className="text-muted mb-4">{selectedTemplate.description}</p>
-                <div className="mb-4">
-                  <h6 className="fw-bold text-dark mb-2">Features Included:</h6>
-                  <ul className="list-unstyled">
-                    {selectedTemplate.features.map((feature, idx) => (
-                      <li key={idx} className="d-flex align-items-center mb-2">
-                        <div className="bg-success rounded-circle me-2" style={{width: '8px', height: '8px'}}></div>
-                        <span className="text-muted">{feature}</span>
-                      </li>
-                    ))}
-                  </ul>
-                </div>
-                <div className="mb-4">
-                  <h6 className="fw-bold text-dark mb-2">Style:</h6>
-                  <span className="inline-block bg-bolt-primary/10 text-bolt-primary px-3 py-1 rounded-full text-sm font-medium">
-                      {selectedTemplate.style}
-                    </span>
-
-
-                </div>
-                <div className="solutek-btn">
-  <a
-    href={`https://wa.me/7021710954?text=${encodeURIComponent("Hi, I’m interested in getting a quote for a website/app development project. Please guide me through the next steps.")}`}
-    target="_blank"
-    rel="noopener noreferrer"
-    className="btn px-4 py-3"
+  <div
+    onClick={() => setSelectedTemplate(null)}
+    style={{
+      position: 'fixed',
+      inset: 0,
+      backgroundColor: 'rgba(0, 0, 0, 0.5)',
+      zIndex: 1050,
+      display: 'flex',
+      alignItems: 'center',
+      justifyContent: 'center',
+      padding: '1rem',
+      overflowY: 'auto'
+    }}
   >
-    GET A QUOTE NOW
-  </a>
-                  {/* <button
-                    onClick={() => window.open('https://calendly.com/your-calendar', '_blank')}
-                    className="btn btn-primary fw-semibold"
-                  >
-                    Choose This Template
-                  </button> */}
-                  {/* <button
-                    onClick={() => setSelectedTemplate(null)}
-                    className="btn btn-light fw-semibold"
-                  >
-                    Continue Browsing
-                  </button> */}
-                </div>
-              </div>
-            </div>
-          </div>
+    <div
+      onClick={(e) => e.stopPropagation()}
+      className="d-flex flex-column flex-lg-row bg-white rounded-4 w-100 overflow-hidden position-relative"
+      style={{
+        maxWidth: '1200px',
+        maxHeight: '90vh',
+        height: 'auto'
+      }}
+    >
+      {/* Close Button */}
+      <div className="position-absolute top-0 end-0 m-3 z-3">
+        <button
+          onClick={() => setSelectedTemplate(null)}
+          className="btn-close"
+        />
+      </div>
+{/* Left Preview */}
+<div
+  className="flex-grow-1 overflow-auto border-end"
+  style={{
+    backgroundColor: '#f3f4f6',
+    height: window.innerWidth < 768 ? '50vh' : '100%',
+    maxHeight: '90vh',
+    borderRight: window.innerWidth >= 768 ? '1px solid #e5e7eb' : 'none',
+  }}
+>
+  <TemplatePreview
+    templateId={selectedTemplate.id}
+    templateName={selectedTemplate.name}
+  />
+</div>
+
+      {/* Right Details */}
+      <div
+  className="overflow-auto"
+  style={{
+    width: '100%',
+    // maxWidth: '320px',       
+    maxWidth: window.innerWidth >= 768 ? '320px' : '100%',
+    padding: window.innerWidth < 768 ? '1rem' : '1.5rem',  // p-4/md:p-6
+    height: window.innerWidth < 768 ? '50vh' : '100%',     // h-1/2/md:h-full
+    maxHeight: '90vh'
+  }}
+>
+        <h4 className="h5 fw-bold text-dark mb-4">{selectedTemplate.name}</h4>
+        {selectedTemplate?.subtitle && (
+          <p className="fw-semibold text-black mb-2">{selectedTemplate.subtitle}</p>
         )}
+        <p className="text-muted mb-0" >{selectedTemplate.description}</p>
+        <div className="mb-4">
+          <h6 className="fw-bold text-dark mb-0">Features Included:</h6>
+          {/* <div className="fw-bold text-dark mb-2">Features Included:</div> */}
+          <ul className="list-unstyled mb-0">
+            {selectedTemplate.features.map((feature, idx) => (
+              <li key={idx} className="d-flex align-items-center mb-1">
+                <div
+                  className="bg-success rounded-circle me-2"
+                  style={{ width: '8px', height: '8px' }}
+                ></div>
+                <span className="text-muted">{feature}</span>
+              </li>
+            ))}
+          </ul>
+        </div>
+
+        {/* <div className="mb-2"> */}
+        {/* <div className="fw-bold text-dark mb-2">Style:</div> */}
+        {/* <h6 className="fw-bold text-dark mb-0">Style:</h6>
+          <span className="badge bg-light text-primary">
+            {selectedTemplate.style}
+          </span>
+        </div> */}
+
+        <div className="text-center">
+          <a
+            href={`https://wa.me/7021710954?text=${encodeURIComponent(
+              "Hi, I’m interested in getting a quote for a website/app development project. Please guide me through the next steps."
+            )}`}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="btn text-white fw-semibold w-100"
+            style={{ backgroundColor: '#ff3b00'}}
+          >
+            GET A QUOTE NOW
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+)}
+
       </div>
     </section>
   );

@@ -15,10 +15,10 @@ const Blog3 = () => {
                             </div>
                             <div className="blog-box-content">
                             <div className="meta-blog">
-                                <Link href="/blog/blog-details"><span><i className="bi bi-person-plus"></i>By wotech</span></Link>
+                                <Link href="/blog/blog-details"><span><i className="bi bi-person-plus"></i>{item.author} </span></Link>
                                 <p><span>
                                     <Image src="/assets/images/inner/grid-calen.png" alt="img" width={14} height={14}   />
-                                    </span>January 5, 2024</p>
+                                    </span>{item.date}</p>
                                 </div>
                                 <h3><Link href={`/blog/${item.id}`}><h3>{item.title}</h3>
                                 </Link></h3>

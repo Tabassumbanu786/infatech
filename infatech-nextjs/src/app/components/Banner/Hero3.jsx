@@ -6,6 +6,7 @@ import Link from "next/link";
 import Image from "next/image";
 
 const Hero3 = () => {
+  
   const settings = {
     dots: false,
     infinite: true,
@@ -17,6 +18,7 @@ const Hero3 = () => {
   };
 
   return (
+    
     <div className="hero-active owl-carousel">
       <Slider {...settings}>
         {data.map((item, i) => (

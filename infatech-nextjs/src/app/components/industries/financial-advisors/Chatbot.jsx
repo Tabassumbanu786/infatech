@@ -3,8 +3,8 @@
 import React, { useState, useRef, useEffect } from 'react';
 import { MessageCircle, X, Send, Phone, MessageSquare, Bot, User } from 'lucide-react';
 
-const Chatbot = () => {
-  const [isOpen, setIsOpen] = useState(false);
+const Chatbot = ({ embedded = false, isOpen: externalIsOpen, onClose }) => {
+  const [internalIsOpen, setInternalIsOpen] = useState(false);
   const [messages, setMessages] = useState([
     {
       id: 1,
@@ -17,6 +17,22 @@ const Chatbot = () => {
   const [isLoading, setIsLoading] = useState(false);
   const messagesEndRef = useRef(null);
 
+  const actualIsOpen = embedded ? (externalIsOpen ?? false) : internalIsOpen;
+
+  const handleClose = () => {
+    if (embedded && onClose) {
+      onClose();
+    } else {
+      setInternalIsOpen(false);
+    }
+  };
+
+  const handleToggle = () => {
+    if (!embedded) {
+      setInternalIsOpen(!internalIsOpen);
+    }
+  };
+
   const quickQuestions = [
     "What is SIP?",
     "How much should I invest monthly?",
@@ -26,7 +42,8 @@ const Chatbot = () => {
   ];
 
   const scrollToBottom = () => {
-    messagesEndRef.current?.scrollIntoView({ behavior: 'smooth' });
+    messagesEndRef.current?.scrollIntoView({ behavior: 'smooth',block: 'nearest',
+      inline: 'nearest' });
   };
 
   useEffect(() => {
@@ -137,59 +154,57 @@ const Chatbot = () => {
 
   return (
     <>
-      {/* Chatbot Toggle Button */}
-      <div className="position-fixed bottom-0 end-0 m-4 z-3">
-        <button
-          onClick={() => setIsOpen(!isOpen)}
-          className="btn btn-warning rounded-circle shadow d-flex align-items-center justify-content-center"
-          style={{ width: '56px', height: '56px',backgroundColor:'#212529',color: '#ffc107'  }}
-        >
-          {isOpen ? <X size={24} /> : <MessageCircle size={24} />}
-        </button>
-      </div>
+      {/* Floating button */}
+      {!embedded && (
+        <div className="position-fixed bottom-0 end-0 m-4 z-50">
+          <button
+            onClick={handleToggle}
+            className="btn rounded-circle shadow-lg d-flex align-items-center justify-content-center position-relative"
+            style={{ backgroundColor: '#000000' }}
+          >
+            {actualIsOpen ? (
+              <X className="h-6 w-6 text-white" />
+            ) : (
+              <MessageCircle className="h-6 w-6 text-white" />
+            )}
+          </button>
+        </div>
+      )}
 
       {/* Chatbot Window */}
-      {isOpen && (
-        <div className="position-fixed bottom-0 end-0 mb-5 me-4 bg-white border rounded shadow-lg d-flex flex-column z-3"
-          style={{ width: '460px', height: '600px' }}>
-          
+      {actualIsOpen && (
+       
+        <div className={`${embedded ? 'w-100 h-100 border rounded bg-white shadow d-flex flex-column' : 'position-fixed bottom-0 end-0 mb-5 me-4 bg-white border rounded shadow-lg d-flex flex-column z-3'}`} style={{ maxWidth: '50rem', height: '24rem', zIndex: 1050 }}>
           {/* Header */}
-          <div className="bg-warning text-white p-3 d-flex justify-content-between align-items-center rounded-top">
+          <div className="p-3 text-white rounded-top d-flex justify-content-between align-items-center" style={{ background: 'linear-gradient(to right, #f97316, #ea580c)' }}>
             <div className="d-flex align-items-center gap-2">
-              <div className="bg-white bg-opacity-25 rounded-circle d-flex align-items-center justify-content-center" style={{ width: '42px', height: '42px' }}>
-                <Bot color='black' size={16} />
+              <div className="bg-white bg-opacity-25 rounded-circle d-flex align-items-center justify-content-center" style={{ width: '2rem', height: '2rem' }}>
+                <Bot className="h-4 w-4" />
               </div>
               <div>
-                <h6 className="mb-0">IFA Financial Assistant</h6>
-                <small className="opacity-75 text-black">Powered by OpenAI</small>
+                <h6 className="mb-0 fw-semibold">AI Financial Assistant</h6>
+                <small className="opacity-75">Powered by AI</small>
               </div>
             </div>
-            <button className="btn btn-sm text-black" onClick={() => setIsOpen(false)}>
-              <X size={20} />
+            <button onClick={handleClose} className="btn btn-sm btn-outline-light rounded-circle p-1">
+              <X className="h-4 w-4" />
             </button>
           </div>
 
           {/* Messages */}
-          <div className="flex-grow-1 overflow-auto p-3 d-flex flex-column gap-2">
+          <div className="flex-grow-1 overflow-auto p-3 d-flex flex-column gap-3">
             {messages.map((message) => (
-              <div
-                key={message.id}
-                className={`d-flex ${message.isBot ? 'justify-content-start' : 'justify-content-end'}`}
-              >
-                <div className="d-flex align-items-start gap-2" style={{ maxWidth: '75%' }}>
-                  <div className={`rounded-circle d-flex align-items-center justify-content-center flex-shrink-0 ${message.isBot ? 'bg-light' : 'bg-warning'}`} style={{ width: '24px', height: '24px' }}>
-                    {message.isBot ? (
-                      <Bot size={12} className="text-dark" />
-                    ) : (
-                      <User size={12} className="text-white" />
-                    )}
+              <div key={message.id} className={`d-flex ${message.isBot ? 'justify-content-start' : 'justify-content-end'}`}>
+                <div className={`d-flex ${message.isBot ? 'flex-row gap-2' : 'flex-row-reverse gap-2'}`}>
+                  <div className={`rounded-circle d-flex align-items-center justify-content-center flex-shrink-0 ${message.isBot ? 'bg-light' : 'bg-warning text-white'}`} style={{ width: '24px', height: '24px' }}>
+                    {message.isBot ? <Bot className="h-3 w-3 text-secondary" /> : <User className="h-3 w-3 text-white" />}
                   </div>
-                  <div className={`p-2 rounded small ${message.isBot ? 'bg-light text-dark' : 'bg-warning text-white'}`}>
+                  <div className={`p-2 rounded text-sm ${message.isBot ? 'bg-light text-dark' : 'bg-warning text-white'}`}>
                     {message.isLoading ? (
                       <div className="d-flex gap-1">
                         <div className="spinner-grow spinner-grow-sm text-secondary"></div>
-                        <div className="spinner-grow spinner-grow-sm text-secondary"></div>
-                        <div className="spinner-grow spinner-grow-sm text-secondary"></div>
+                        <div className="spinner-grow spinner-grow-sm text-secondary" style={{ animationDelay: '0.1s' }}></div>
+                        <div className="spinner-grow spinner-grow-sm text-secondary" style={{ animationDelay: '0.2s' }}></div>
                       </div>
                     ) : (
                       <div style={{ whiteSpace: 'pre-wrap' }}>{message.text}</div>
@@ -198,20 +213,20 @@ const Chatbot = () => {
                 </div>
               </div>
             ))}
-            <div ref={messagesEndRef}></div>
+            <div ref={messagesEndRef} />
           </div>
 
           {/* Quick Questions */}
           {messages.length <= 2 && (
             <div className="px-3 pb-2">
-              <p className="text-muted small mb-1">Quick questions:</p>
-              <div className="d-flex flex-wrap gap-1">
+              <small className="text-muted mb-2 d-block">Quick questions:</small>
+              <div className="d-flex flex-wrap gap-2">
                 {quickQuestions.slice(0, 3).map((question, index) => (
                   <button
                     key={index}
                     onClick={() => handleQuickQuestion(question)}
                     disabled={isLoading}
-                    className="btn btn-sm btn-outline-secondary"
+                    className="btn btn-sm btn-light text-dark"
                   >
                     {question}
                   </button>
@@ -221,25 +236,25 @@ const Chatbot = () => {
           )}
 
           {/* Action Buttons */}
-          <div className="px-3 pb-2">
+          {/* <div className="px-3 pb-2">
             <div className="d-flex gap-2">
               <button
                 onClick={handleCallbackRequest}
                 disabled={isLoading}
-                className="btn btn-sm btn-outline-primary w-100 d-flex align-items-center justify-content-center"
+                className="btn btn-sm btn-outline-primary w-100 d-flex align-items-center justify-content-center gap-1"
               >
-                <Phone size={14} className="me-1" />
+                <Phone className="h-3 w-3" />
                 Callback
               </button>
               <button
                 onClick={() => window.open('https://wa.me/1234567890', '_blank')}
-                className="btn btn-sm btn-outline-success w-100 d-flex align-items-center justify-content-center"
+                className="btn btn-sm btn-outline-success w-100 d-flex align-items-center justify-content-center gap-1"
               >
-                <MessageSquare size={14} className="me-1" />
+                <MessageSquare className="h-3 w-3" />
                 WhatsApp
               </button>
             </div>
-          </div>
+          </div> */}
 
           {/* Input */}
           <div className="p-3 border-top">
@@ -256,9 +271,9 @@ const Chatbot = () => {
               <button
                 onClick={handleSendMessage}
                 disabled={isLoading || !inputText.trim()}
-                className="btn btn-warning"
+                className="btn btn-warning d-flex align-items-center justify-content-center"
               >
-                <Send size={16} />
+                <Send className="h-4 w-4" />
               </button>
             </div>
           </div>

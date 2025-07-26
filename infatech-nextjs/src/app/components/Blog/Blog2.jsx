@@ -30,10 +30,10 @@ const Blog2 = () => {
                             </div>
                             <div className="blog-box-content">
                             <div className="meta-blog">
-                                <Link href="/blog/${item.id}"><span><i className="bi bi-person"></i>HOSSAIN </span></Link>
+                                <Link href="/blog/${item.id}"><span><i className="bi bi-person"></i>{item.author}</span></Link>
                                 <p><span>
-                                <Image src="/assets/images/home-two/mesage-icon.png" alt="img" width={17} height={15}   />
-                                    </span>COMMENTS</p>
+                               <Image src="/assets/images/inner/grid-calen.png" alt="img" width={14} height={14}   />
+                                                                   </span>{item.date}</p>
                                 </div>
                                 {/* <h3><Link href={`/blog/${item.id}`}>{item.title}</Link></h3> */}
                                 <h3><Link href={`/blog/${item.id}`}><h3>{item.title}</h3></Link></h3>

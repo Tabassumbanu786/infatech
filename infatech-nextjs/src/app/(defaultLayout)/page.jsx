@@ -99,7 +99,7 @@ const homepageTemplates = [
   {
     id: 6,
     name: "E-commerce – ShopLaunch",
-    subtitle: "Set up your online store, manage inventory, and accept secure payments with a ready-to-scale eCommerce platform.",
+    subtitle: "Set up your online store, manage inventory, and accept payments with a ready-to-scale eCommerce platform.",
     description: "A powerful, minimal e-commerce template that sells your products — fast.",
     image: "https://images.pexels.com/photos/7667442/pexels-photo-7667442.jpeg?auto=compress&cs=tinysrgb&w=800",
     features: ["Product Display + Cart", "Secure Payments", "Mobile Optimized"],

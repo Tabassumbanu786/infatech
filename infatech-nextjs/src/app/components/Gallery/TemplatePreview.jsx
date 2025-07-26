@@ -1338,7 +1338,7 @@ const TemplatePreview = ({ templateId, templateName }) => {  const renderTemplat
       backgroundColor: '#f8f9fa'
     }}>
       {/* Header */}
-      <div style={{ 
+      {/* <div style={{ 
         position: 'sticky', 
         top: 0, 
         backgroundColor: 'white', 
@@ -1354,7 +1354,7 @@ const TemplatePreview = ({ templateId, templateName }) => {  const renderTemplat
         <p style={{ margin: '0.25rem 0 0 0', color: '#6b7280', fontSize: '0.9rem' }}>
           Scroll to explore the full website design
         </p>
-      </div>
+      </div> */}
       
       {/* Template Content */}
       <div style={{ 
