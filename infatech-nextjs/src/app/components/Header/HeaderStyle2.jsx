@@ -64,7 +64,7 @@ export default function HeaderStyle2({ variant }) {
             </div>
             <div className="cs_main_header_right">
               <div className="header-btn">
-              <Link href="/contact">Get A Quote NOW hfhfh<i className="bi bi-arrow-right"></i></Link>
+              <Link href="/contact">Get A Quote NOW<i className="bi bi-arrow-right"></i></Link>
               </div>
             </div>
           </div>

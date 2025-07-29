@@ -1292,7 +1292,7 @@ const TemplatePreview = ({ templateId, templateName }) => {  const renderTemplat
           location: "Mumbai",
         }}
       />
-        <Chatbot /> 
+       <Chatbot industry="financial" /> 
       </Layout>
       
         

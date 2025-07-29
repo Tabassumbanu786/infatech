@@ -6,7 +6,7 @@ import { Clock, ShoppingCart, Store, Eye, Calendar } from 'lucide-react';
 import CTASection from '../../Gallery/CTASection';
 import TemplateGallery from '../../Gallery/TemplateGallery';
 
-const KiranaPage = () => {
+const EcommercePage = () => {
   const [selectedTemplate, setSelectedTemplate] = useState(null);
 
   const templates = [
@@ -166,131 +166,6 @@ return (
           </div>
         </div>
       </section>
-
-      {/* Coming Soon Section */}
-      <section style={{ padding: '4rem 0', backgroundColor: '#ffffff' }}>
-        <div className="container text-center">
-          <h2 style={{ fontSize: '2rem', fontWeight: 'bold', color: '#111827', marginBottom: '3rem' }}>
-            What We&apos;re Preparing for Kirana Stores
-          </h2>
-          <div className="row">
-            {[
-              {
-                title: "Online Ordering System",
-                desc: "Complete e-commerce solution for grocery orders, daily essentials, and home delivery with integrated payment processing and inventory tracking."
-              },
-              {
-                title: "Inventory Management",
-                desc: "Smart inventory tracking for all products, automated reorder alerts, and real-time stock updates for customers."
-              },
-              {
-                title: "Local Delivery Network",
-                desc: "Integrated delivery management system with route optimization, delivery tracking, and customer notifications."
-              },
-              {
-                title: "Customer Loyalty Program",
-                desc: "Digital loyalty cards, reward points system, and personalized offers to keep customers coming back to your store."
-              }
-            ].map((item, index) => (
-              <div className="col-md-6 mb-4" key={index}>
-                <div
-                  style={{
-                    backgroundColor: '#ecfdf5',
-                    borderRadius: '0.75rem',
-                    padding: '1.5rem',
-                    textAlign: 'left',
-                    height: '100%'
-                  }}
-                >
-                  <h5 style={{ color: '#065f46', fontWeight: 600, marginBottom: '1rem' }}>{item.title}</h5>
-                  <p style={{ color: '#4b5563' }}>{item.desc}</p>
-                </div>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Interest Form */}
-      {/* <section style={{ padding: '4rem 0', backgroundColor: '#f9fafb' }}>
-        <div className="container text-center">
-          <h2 style={{ fontSize: '2rem', fontWeight: 'bold', color: '#111827', marginBottom: '1rem' }}>
-            Be the First to Know
-          </h2>
-          <p style={{ color: '#6b7280', marginBottom: '2rem' }}>
-            Join our waitlist to get early access to our kirana store solutions and receive exclusive pre-launch pricing.
-          </p>
-          <div
-            style={{
-              backgroundColor: '#ffffff',
-              borderRadius: '0.75rem',
-              boxShadow: '0 1px 3px rgba(0,0,0,0.1)',
-              padding: '2rem',
-              maxWidth: '500px',
-              margin: '0 auto'
-            }}
-          >
-            <form style={{ display: 'grid', gap: '1rem' }}>
-              <input
-                type="text"
-                placeholder="Your Store Name"
-                style={{
-                  width: '100%',
-                  padding: '0.75rem 1rem',
-                  border: '1px solid #d1d5db',
-                  borderRadius: '0.5rem',
-                  outline: 'none'
-                }}
-              />
-              <input
-                type="email"
-                placeholder="Your Email Address"
-                style={{
-                  width: '100%',
-                  padding: '0.75rem 1rem',
-                  border: '1px solid #d1d5db',
-                  borderRadius: '0.5rem',
-                  outline: 'none'
-                }}
-              />
-              <input
-                type="text"
-                placeholder="Your Location/Area"
-                style={{
-                  width: '100%',
-                  padding: '0.75rem 1rem',
-                  border: '1px solid #d1d5db',
-                  borderRadius: '0.5rem',
-                  outline: 'none'
-                }}
-              />
-              <button
-                type="submit"
-                style={{
-                  backgroundColor: '#059669',
-                  color: '#ffffff',
-                  fontWeight: 600,
-                  padding: '0.75rem 1rem',
-                  borderRadius: '0.5rem',
-                  border: 'none'
-                }}
-              >
-                Join the Waitlist
-              </button>
-            </form>
-          </div>
-        </div>
-      </section> */}
-
-      {/* Hidden Template Gallery for Modal Control */}
-      <div >
-        {/* <TemplateGallery  
-          industry="Kirana Stores" 
-          templates={templates} 
-          selectedTemplate={selectedTemplate}
-          setSelectedTemplate={setSelectedTemplate}
-        /> */}
-      </div>
       {/* Modal for Template Preview */}
       {selectedTemplate && (
         <div
@@ -659,5 +534,5 @@ return (
   );
 };
 
-export default KiranaPage;
+export default EcommercePage;
 

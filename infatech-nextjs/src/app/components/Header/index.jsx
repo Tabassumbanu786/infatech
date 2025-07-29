@@ -63,7 +63,7 @@ export default function Header({ variant }) {
             </div>
             <div className="cs_main_header_right">
             <div className="solutek-btn2">
-						<Link href="/contact">Get A Quote Now</Link>
+						<Link href="/contact">GET A QUOTE NOW</Link>
 					  </div>
             </div>
           </div>

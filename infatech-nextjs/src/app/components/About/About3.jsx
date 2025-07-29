@@ -59,14 +59,14 @@ const About3 = ({bgImg,MainImg,SubTitle,Title,Content,listTitle1,listTitle2,BoxT
                                         <div className="solutek-hover-btn hover-bx3"></div>
                                         <div className="solutek-hover-btn hover-bx4"></div>
                                     </Link> */}
-                                    <div className="solutek-btn">
+                                    <div className="solutek-btn2">
   <a
     href={`https://wa.me/7021710954?text=${encodeURIComponent("Hi, I’m interested in getting a quote for a website/app development project. Please guide me through the next steps.")}`}
     target="_blank"
     rel="noopener noreferrer"
-    className="btn btn-success px-4 py-3"
+    className="px-4 py-3"
   >
-    Get A Quote Now
+    GET A QUOTE NOW
   </a>
 </div>
                                 </div>

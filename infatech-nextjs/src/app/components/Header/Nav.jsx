@@ -44,6 +44,9 @@ export default function Nav({ setMobileToggle }) {
             <Link href="/industries/bakers">For Bakers</Link>
           </li>
           <li>
+            <Link href="/industries/ecommerce">For E-commerce</Link>
+          </li>
+          <li>
           <Link href="/industries/kirana">For Kirana Stores</Link>
           </li>
           <li>

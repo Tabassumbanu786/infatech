@@ -69,7 +69,7 @@ const TemplateGallery = ({
 
         {/* Template Grid */}
 
-        <div className="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4 mb-5">
+        <div className="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4 mb-5 ">
         {/* <div className="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4 mb-5 position-relative" style={{ overflow: 'visible' }}> */}
 
           {displayTemplates.map((template, index) => (

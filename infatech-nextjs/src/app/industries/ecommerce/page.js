@@ -1,27 +1,34 @@
+// src/app/industries/bakers/page.js
 
 'use client';
-
 import React, { useEffect, useRef, useState } from 'react';
 
+import Chatbot from '../../components/industries/financial-advisors/Chatbot'
+import TemplateGallery from '../../components/Gallery/TemplateGallery';
+import TemplatePreview from '../../components/Gallery/TemplatePreview';
 
-// import CoachesPage from "../../components/industries/coaches/CoachesPage";
-import Layout from "../kirana/layout";
+
+import BakersPageContent from "../../components/industries/bakers/BakersPage";
+import Layout from "../bakers/layout";
 import WhyItMatters from '../../ifa-website/WhyItMatters';
 import FeatureGrid from '../../ifa-website/FeatureGrid';
 import whyItMattersConfig from '../../Data/industries/whyItMattersConfig'
 import EverythingYouNeed from '../../ifa-website/EverythingYouNeed';
 import everythingYouNeedConfig from '../../Data/industries/everythingYouNeedConfig'
 import packageFeaturesConfig from '../../Data/industries/packageFeaturesConfig'
+import heroSectionConfig from '../../Data/industries/heroSectionConfig'
+
 import PricingTimeline from '../../ifa-website/PricingTimeline';
 import GoLiveTimeline from '../../ifa-website/GoLiveTimeline';
 import CtaSection from '../../ifa-website/CtaSection';
-import TemplatePreview from '../../components/Gallery/TemplatePreview';
 
 
-export default function CoachesPage() {
+
+export default function EcommercePage() {
   const industry = 'ecommerce';
   const ctaRef = useRef(null);
   const [selectedTemplate, setSelectedTemplate] = useState(null);
+
   const templates = [
     {
       id: 1,
@@ -92,10 +99,32 @@ export default function CoachesPage() {
       path: "/industries/custom-solution",
       innerimage: "canvas.png"
     }
+    //   ,
+    //   {
+    //     id: 6,
+    //     name: "IFA Website",
+    //     subtitle: "Showcase your credentials, share market insights, and offer tools like SIP calculators to engage clients.",
+    //     description: "Modern design for local Kirana stores with online ordering, digital payments, and delivery tracking.",
+    //     image: "https://images.pexels.com/photos/1132047/pexels-photo-1132047.jpeg",
+    //     features: [
+    //         "Personalized planning for every life stage",
+    //         "Goal-based investment strategies",
+    //         "Regular portfolio reviews",
+    //         "Transparent, jargon-free advice",
+    //         "Hassle-free online service & updates"
+    //     ],
+    //     style: "Modern",
+    //     path: "/industries/custom-solution",
+    //     innerimage:"canvas.png"
+    // }
   ];
   return (
+
+
     <Layout>
-      {/* <CoachesPage/>      */}
+
+      {/* Hero Slider Section */}
+      {/* <section className="py-5 text-center bg-light bg-gradient" style={{ background: 'linear-gradient(to bottom right, #fff7ed, #fee2e2)' }}> */}
       <section className="position-relative overflow-hidden text-center pt-3 pb-5 mt-0" style={{ background: 'linear-gradient(to bottom right, #fff7ed, #fee2e2)' }}>
 
         <div className="container">
@@ -103,8 +132,8 @@ export default function CoachesPage() {
             <div className="rounded-circle d-flex align-items-center justify-content-center mx-auto mb-3" style={{ backgroundColor: '#ff3b00', width: '64px', height: '64px' }}>
               <i className="bi bi-egg-fill fs-4 text-white"></i>
             </div>
-            <h1 className="display-4 fw-bold text-dark">Your Own Website<span style={{ color: '#ff3b00' }}> as a Coach</span></h1>
-            <p className="lead text-muted">Whether you’re a fitness, life, career, or business coach — your website should reflect your authority and personality.</p>
+            <h1 className="display-4 fw-bold text-dark">Your Own E-Commerce<span style={{ color: '#ff3b00' }}> Product Website</span></h1>
+            <p className="lead text-muted">Sell your products online — without learning code or managing tech.</p>
             <div className="rounded p-3 d-inline-flex align-items-center gap-2" >
               <button
                 className="btn btn-lg px-4 py-3 text-white fw-semibold shadow-lg"
@@ -112,7 +141,7 @@ export default function CoachesPage() {
                   background: 'linear-gradient(to right, #ea580c, #dc2626)',
                   transition: 'all 0.2s ease-in-out'
                 }}
-                onClick={() => setSelectedTemplate(templates[4])}
+                onClick={() => setSelectedTemplate(templates[2])}
               >
                 GET A FIRST HAND FEEL
               </button>
@@ -226,8 +255,8 @@ export default function CoachesPage() {
         )}
 
       </div>
-    </Layout>
 
+    </Layout>
 
 
   );

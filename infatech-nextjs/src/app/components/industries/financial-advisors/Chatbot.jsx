@@ -3,12 +3,55 @@
 import React, { useState, useRef, useEffect } from 'react';
 import { MessageCircle, X, Send, Phone, MessageSquare, Bot, User } from 'lucide-react';
 
-const Chatbot = ({ embedded = false, isOpen: externalIsOpen, onClose }) => {
+const Chatbot = ({ industry = 'financial', embedded = false, isOpen: externalIsOpen, onClose }) => {
   const [internalIsOpen, setInternalIsOpen] = useState(false);
+
+  const industryConfig = {
+    financial: {
+      initialMessage: "Hi! I'm your AI financial assistant. Ask me anything about SIPs, mutual funds, or how to start investing!",
+      quickQuestions: [
+        "What is SIP?",
+        "How much should I invest monthly?",
+        "Best mutual funds for beginners?",
+        "Tax saving investment options?",
+        "How to start investing?"
+      ],
+      placeholder: "Ask about investments, SIPs, mutual funds..."
+    },
+    bakers: {
+      initialMessage: "Hi! I'm your AI assistant for bakeries. Ask me about online orders, menu ideas, or packaging tips.",
+      quickQuestions: [
+        "How to sell cakes online?",
+        "Ideas for festive packaging?",
+        "What licenses do I need for a bakery?"
+      ],
+      placeholder: "Ask about selling cakes, packaging, delivery..."
+    },
+    ecommerce: {
+      initialMessage: "Hi! I can help you with eCommerce setup, product listings, and marketing tips.",
+      quickQuestions: [
+        "How to set up an online store?",
+        "How to get more orders?",
+        "Which platform is best?"
+      ],
+      placeholder: "Ask about eCommerce, orders, delivery..."
+    },
+    kirana: {
+      initialMessage: "Hi! I’m here to help your Kirana store go digital. Ask me about inventory, delivery, or digital payments.",
+      quickQuestions: [
+        "How to digitize my Kirana store?",
+        "How to manage stock?",
+        "How to accept online payments?"
+      ],
+      placeholder: "Ask about delivery, payments, inventory..."
+    }
+  };
+  const { initialMessage, quickQuestions, placeholder } = industryConfig[industry] || industryConfig.financial;
+
   const [messages, setMessages] = useState([
     {
       id: 1,
-      text: "Hi! I'm your AI financial assistant. Ask me anything about SIPs, mutual funds, or how to start investing!",
+      text: initialMessage,
       isBot: true,
       timestamp: new Date()
     }
@@ -33,13 +76,17 @@ const Chatbot = ({ embedded = false, isOpen: externalIsOpen, onClose }) => {
     }
   };
 
-  const quickQuestions = [
-    "What is SIP?",
-    "How much should I invest monthly?",
-    "Best mutual funds for beginners?",
-    "Tax saving investment options?",
-    "How to start investing?"
-  ];
+  // const quickQuestions = [
+  //   "What is SIP?",
+  //   "How much should I invest monthly?",
+  //   "Best mutual funds for beginners?",
+  //   "Tax saving investment options?",
+  //   "How to start investing?"
+  // ];
+
+  
+  // const { initialMessage, quickQuestions, placeholder } = industryConfig[industry] || industryConfig.financial;
+  
 
   const scrollToBottom = () => {
     messagesEndRef.current?.scrollIntoView({ behavior: 'smooth',block: 'nearest',
@@ -89,7 +136,7 @@ const Chatbot = ({ embedded = false, isOpen: externalIsOpen, onClose }) => {
       const response = await fetch('/api/chat', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ messages: chatHistory }),
+        body: JSON.stringify({ messages: chatHistory, industry: industry}),
       });
 
       const data = await response.json();
@@ -265,7 +312,7 @@ const Chatbot = ({ embedded = false, isOpen: externalIsOpen, onClose }) => {
                 onChange={(e) => setInputText(e.target.value)}
                 onKeyPress={handleKeyPress}
                 disabled={isLoading}
-                placeholder="Ask about investments, SIPs, mutual funds..."
+                placeholder={placeholder}
                 className="form-control form-control-sm"
               />
               <button
