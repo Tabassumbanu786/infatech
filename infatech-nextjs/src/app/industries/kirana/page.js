@@ -5,7 +5,6 @@
 import React, { useEffect, useRef, useState } from 'react';
 import TemplatePreview from '../../components/Gallery/TemplatePreview';
 
-import KiranaPage from "../../components/industries/kirana/KiranaPage";
 import Layout from "../kirana/layout";
 import WhyItMatters from '../../ifa-website/WhyItMatters';
 import FeatureGrid from '../../ifa-website/FeatureGrid';
@@ -17,7 +16,7 @@ import PricingTimeline from '../../ifa-website/PricingTimeline';
 import GoLiveTimeline from '../../ifa-website/GoLiveTimeline';
 import CtaSection from '../../ifa-website/CtaSection';
 
-export default function kiranaPage() {
+export default function KiranaPage() {
   const industry = 'kirana';
   const ctaRef = useRef(null);
   const templates = [
