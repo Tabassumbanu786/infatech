@@ -273,6 +273,7 @@ const TemplatePreview = ({ templateId, templateName }) => {  const renderTemplat
             
 
             {/* Featured Products */}
+            
             <section style={{ padding: '4rem 2rem', width: '100%', boxSizing: 'border-box' }}>
               <h2 style={{ textAlign: 'center', fontSize: '2.5rem', marginBottom: '3rem', color: '#7c2d12' }}>Today&apos;s Fresh Selections</h2>
               <div style={{ 
@@ -338,6 +339,8 @@ const TemplatePreview = ({ templateId, templateName }) => {  const renderTemplat
 
             {/* Testimonials */}
             <section style={{ padding: '4rem 2rem', width: '100%', boxSizing: 'border-box' }}>
+            {/* <Chatbot/> */}
+                  <Chatbot industry="bakers" />
               <h2 style={{ textAlign: 'center', fontSize: '2.5rem', marginBottom: '3rem', color: '#7c2d12' }}>What Our Customers Say</h2>
               <div style={{ 
                 display: 'grid', 

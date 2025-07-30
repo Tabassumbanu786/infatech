@@ -25,7 +25,7 @@ const PricingTimeline = () => {
                   </div>
                   <h3 className="fw-bold mb-2">One-Time Setup</h3>
                   {/* <div className="fs-2 fw-bold text-warning mb-2">₹7,000</div> */}
-                  <div className="h2 fw-bold mb-1" style={{ color: '#f97316' }}>₹7,000</div>
+                  <div className="h2 fw-bold mb-1" style={{ color: '#f97316' }}>₹10,000</div>
 
                   <p className="text-muted">Complete website setup</p>
                 </div>
@@ -70,7 +70,7 @@ const PricingTimeline = () => {
 </div>
 
                   <h3 className="fw-bold mb-2">Annual Renewal</h3>
-                  <div className="fs-2 fw-bold mb-2" style={{ color: '#050a1e' }}>₹1,500</div>
+                  <div className="fs-2 fw-bold mb-2" style={{ color: '#050a1e' }}>₹2,500</div>
                   <p className="text-muted">Per year</p>
                 </div>
                 <ul className="list-unstyled mb-4">

@@ -119,7 +119,7 @@ const templates = [
   return (
     
     <div className="container-fluid px-0">
-      <Chatbot industry="bakers" />
+      {/* <Chatbot industry="bakers" /> */}
 
 {/* Hero Slider Section */}
 {/* <section className="py-5 text-center bg-light bg-gradient" style={{ background: 'linear-gradient(to bottom right, #fff7ed, #fee2e2)' }}> */}
