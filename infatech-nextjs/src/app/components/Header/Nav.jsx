@@ -38,7 +38,8 @@ export default function Nav({ setMobileToggle }) {
         <DropDown>
         <ul>
           <li>
-            <Link href="/ifa-website" target="_blank" rel="noopener noreferrer">For Financial Advisors</Link>
+            {/* //target="_blank" rel="noopener noreferrer */}
+            <Link href="/ifa-website">For Financial Advisors</Link>
           </li>
           <li>
             <Link href="/industries/bakers">For Bakers</Link>

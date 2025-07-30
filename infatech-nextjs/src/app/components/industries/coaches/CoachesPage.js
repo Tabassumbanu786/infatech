@@ -4,143 +4,227 @@ import Head from 'next/head';
 import { Clock, PeopleFill, Bullseye } from 'react-bootstrap-icons';
 // import CTASection from '../components/CTASection';
 // import TemplateGallery from '../components/TemplateGallery';
+import React, { useEffect, useRef, useState } from 'react';
+import WhyItMatters from '../../../ifa-website/WhyItMatters';
+import FeatureGrid from '../../../ifa-website/FeatureGrid';
+import whyItMattersConfig from '../../../Data/industries/whyItMattersConfig'
+import EverythingYouNeed from '../../../ifa-website/EverythingYouNeed';
+import everythingYouNeedConfig from '../../../Data/industries/everythingYouNeedConfig'
+import packageFeaturesConfig from '../../../Data/industries/packageFeaturesConfig'
+import PricingTimeline from '../../../ifa-website/PricingTimeline';
+import GoLiveTimeline from '../../../ifa-website/GoLiveTimeline';
+import CtaSection from '../../../ifa-website/CtaSection';
+import TemplatePreview from '../../../components/Gallery/TemplatePreview';
+
 
 const CoachesPage = () => {
-  const templates = [
-    {
-      id: 1,
-      name: "Executive Excellence",
-      description: "Professional, corporate-focused design for executive and business coaches with client portal integration.",
-      image: "https://images.pexels.com/photos/3184291/pexels-photo-3184291.jpeg?auto=compress&cs=tinysrgb&w=800",
-      features: ["Client Portal", "Progress Tracking", "Assessment Tools", "Resource Library", "Scheduling System", "Performance Analytics"],
-      style: "Professional"
-    },
-    {
-      id: 2,
-      name: "Life Transformation",
-      description: "Inspiring, motivational design for life coaches focusing on personal growth and transformation.",
-      image: "https://images.pexels.com/photos/1181533/pexels-photo-1181533.jpeg?auto=compress&cs=tinysrgb&w=800",
-      features: ["Success Stories", "Goal Setting Tools", "Meditation Resources", "Community Forum", "Progress Journal", "Motivational Content"],
-      style: "Inspirational"
-    },
-    {
-      id: 3,
-      name: "Wellness Journey",
-      description: "Calming, health-focused design for wellness and health coaches with holistic approach.",
-      image: "https://images.pexels.com/photos/3822621/pexels-photo-3822621.jpeg?auto=compress&cs=tinysrgb&w=800",
-      features: ["Wellness Plans", "Nutrition Tracking", "Mindfulness Resources", "Habit Tracker", "Health Assessments", "Recipe Database"],
-      style: "Wellness"
-    },
-    {
-      id: 4,
-      name: "Career Catalyst",
-      description: "Dynamic, growth-oriented design for career coaches helping professionals advance their careers.",
-      image: "https://images.pexels.com/photos/3184465/pexels-photo-3184465.jpeg?auto=compress&cs=tinysrgb&w=800",
-      features: ["Resume Builder", "Interview Prep", "Skill Assessments", "Industry Insights", "Networking Tools", "Job Market Analysis"],
-      style: "Dynamic"
-    },
-    {
-      id: 5,
-      name: "Mindful Mentor",
-      description: "Zen-inspired, minimalist design for mindfulness and spiritual coaches emphasizing inner peace.",
-      image: "https://images.pexels.com/photos/3822622/pexels-photo-3822622.jpeg?auto=compress&cs=tinysrgb&w=800",
-      features: ["Meditation Library", "Mindfulness Exercises", "Spiritual Resources", "Reflection Tools", "Community Support", "Daily Practices"],
-      style: "Minimalist"
-    }
-  ];
+  const industry = 'coaches';
+    const ctaRef = useRef(null);
+    const [selectedTemplate, setSelectedTemplate] = useState(null);
+    const templates = [
+      {
+        id: 1,
+        name: "Financial Advisors – AdvisorConnect",
+        subtitle: "Showcase your credentials, share market insights, and offer tools like SIP calculators to engage clients.",
+        description: "Tailored online presence for modern-day financial advisors and wealth planners.",
+        image: "https://images.pexels.com/photos/4386375/pexels-photo-4386375.jpeg?auto=compress&cs=tinysrgb&w=800",
+        features: ["Client Dashboard", "Service Pages", "Regulatory Disclaimers"],
+        style: "Professional",
+        path: "/ifa-website",
+        innerimage: "ifa.png"
+      },
+      {
+        id: 2,
+        name: "Bakers – BakeSmart",
+        subtitle: "Display your menu, take custom cake orders, and share daily specials with an easy-to-manage platform.",
+        description: "Warm, elegant designs for bakeries that want to look as good as they taste.",
+        image: "https://images.pexels.com/photos/1721932/pexels-photo-1721932.jpeg?auto=compress&cs=tinysrgb&w=800",
+        features: ["Custom Cake Forms", "Seasonal Specials", "Recipe Journal"],
+        style: "Elegant",
+        path: "/industries/bakers",
+        innerimage: "bakers1.png"
+      },
+      {
+        id: 6,
+        name: "E-commerce – ShopLaunch",
+        subtitle: "Set up your online store, manage inventory, and accept payments with a ready-to-scale eCommerce platform.",
+        description: "A powerful, minimal e-commerce template that sells your products — fast.",
+        image: "https://images.pexels.com/photos/7667442/pexels-photo-7667442.jpeg?auto=compress&cs=tinysrgb&w=800",
+        features: ["Product Display + Cart", "Secure Payments", "Mobile Optimized"],
+        style: "E-commerce",
+        path: "/custom-solutions",
+        innerimage: "bakers1.png"
+      },
+      {
+        id: 3,
+        name: "Grocery Stores – GroceryHub",
+        subtitle: "Enable local customers to browse stock, place online orders, and track deliveries effortlessly.",
+        description: "Clean, local, and built for modern kirana stores and grocery businesses.",
+        image: "https://images.pexels.com/photos/264537/pexels-photo-264537.jpeg?auto=compress&cs=tinysrgb&w=800",
+        features: ["Inventory Dashboard", "Daily Stock Updates", "Local Delivery Tracker"],
+        style: "Modern",
+        path: "/industries/kirana",
+        innerimage: "kiranashop.png"
+      },
+  
+      {
+        id: 4,
+        name: "Coaches – CoachPro",
+        subtitle: "Highlight your programs, manage bookings, and build authority with testimonials and resources.",
+        description: "Peaceful, polished design for coaches, clinics, and fitness professionals.",
+        image: "https://images.pexels.com/photos/3822621/pexels-photo-3822621.jpeg?auto=compress&cs=tinysrgb&w=800",
+        features: ["Service Blocks", "Calendar Integration", "Team Profiles"],
+        style: "Wellness",
+        path: "/industries/coaches",
+        innerimage: "coaches.png"
+  
+      },
+  
+      {
+        id: 5,
+        name: "Custom Solutions – CustomEdge",
+        subtitle: "From booking systems to niche marketplaces, we build platforms tailored to unique business models.",
+        description: "Bold, modern layouts for unique businesses and special requirements.",
+        image: "https://images.pexels.com/photos/16129724/pexels-photo-16129724.jpeg?auto=compress&cs=tinysrgb&w=800",
+        features: ["Custom Layouts", "E-commerce Support", "Flexible Blocks"],
+        style: "Creative",
+        path: "/industries/custom-solution",
+        innerimage: "canvas.png"
+      }
+    ];
 
   return (
     <div className="container-fluid px-0">
-      <Head>
-        <title>Digital Solutions for Coaches</title>
-        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" />
-        <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet" />
-      </Head>
+      <section className="position-relative overflow-hidden text-center pt-3 pb-5 mt-0" style={{ background: 'linear-gradient(to bottom right, #fff7ed, #fee2e2)' }}>
 
-      {/* Hero Section */}
-      <section className="py-5 text-center bg-light bg-gradient" style={{ background: 'linear-gradient(to bottom right, #f3e8ff, #e0e7ff)' }}>
         <div className="container">
           <div className="mb-4">
             <div className="rounded-circle d-flex align-items-center justify-content-center mx-auto mb-3" style={{ backgroundColor: '#ff3b00', width: '64px', height: '64px' }}>
-              <i className="bi bi-bullseye fs-4 text-white"></i>
+              <i className="bi bi-egg-fill fs-4 text-white"></i>
             </div>
-            <h1 className="display-4 fw-bold text-dark">Digital Solutions <span style={{ color: '#ff3b00' }}>for Coaches</span></h1>
-            <p className="lead text-muted">Comprehensive technology solutions designed specifically for life coaches, business coaches, and professional mentors.</p>
-            <div className="rounded p-3 d-inline-flex align-items-center gap-2" style={{ backgroundColor: 'rgba(255, 59, 0, 0.25)' }}>
-              <i className="bi bi-clock-history" style={{ color: '#ff3b00' }}></i>
-              <span className="fw-semibold" style={{ color: '#ff3b00' }}>Future-Ready Placeholder - Excellence in Development!</span>
+            <h1 className="display-4 fw-bold text-dark">Your Own Website<span style={{ color: '#ff3b00' }}> as a Coach</span></h1>
+            <p className="lead text-muted">Whether you’re a fitness, life, career, or business coach — your website should reflect your authority and personality.</p>
+            <div className="rounded p-3 d-inline-flex align-items-center gap-2" >
+              <button
+                className="btn btn-lg px-4 py-3 text-white fw-semibold shadow-lg"
+                style={{
+                  background: 'linear-gradient(to right, #ea580c, #dc2626)',
+                  transition: 'all 0.2s ease-in-out'
+                }}
+                onClick={() => setSelectedTemplate(templates[4])}
+              >
+                GET A FIRST HAND FEEL
+              </button>
             </div>
           </div>
         </div>
       </section>
+      <WhyItMatters data={whyItMattersConfig[industry]} />
+      <EverythingYouNeed features={everythingYouNeedConfig[industry]} />
+      <FeatureGrid features={packageFeaturesConfig[industry]} />
+      <PricingTimeline />
+      <GoLiveTimeline />
+      <CtaSection ref={ctaRef}  />
+      <div >
+        {/* Modal Preview when selectedTemplate is set */}
+        {selectedTemplate && (
+          <div
+            onClick={() => setSelectedTemplate(null)}
+            style={{
+              position: 'fixed',
+              inset: 0,
+              backgroundColor: 'rgba(0, 0, 0, 0.5)',
+              zIndex: 1050,
+              display: 'flex',
+              alignItems: 'center',
+              justifyContent: 'center',
+              padding: '1rem',
+              overflowY: 'auto'
+            }}
+          >
+            <div
+              onClick={(e) => e.stopPropagation()}
+              className="d-flex flex-column flex-lg-row bg-white rounded-4 w-100 overflow-hidden position-relative"
+              style={{
+                maxWidth: '1200px',
+                maxHeight: '90vh',
+                height: 'auto'
+              }}
+            >
+              {/* Close Button */}
+              <div className="position-absolute top-0 end-0 m-3 z-3">
+                <button
+                  onClick={() => setSelectedTemplate(null)}
+                  className="btn-close"
+                />
+              </div>
+              {/* Left Preview */}
+              <div
+                className="flex-grow-1 overflow-auto border-end"
+                style={{
+                  backgroundColor: '#f3f4f6',
+                  height: window.innerWidth < 768 ? '50vh' : '100%',
+                  maxHeight: '90vh',
+                  borderRight: window.innerWidth >= 768 ? '1px solid #e5e7eb' : 'none',
+                }}
+              >
+                <TemplatePreview
+                  templateId={selectedTemplate.id}
+                  templateName={selectedTemplate.name}
+                />
+              </div>
+              {/* Right Details */}
+              <div
+                className="overflow-auto"
+                style={{
+                  width: '100%',
+                  // maxWidth: '320px',       
+                  maxWidth: window.innerWidth >= 768 ? '320px' : '100%',
+                  padding: window.innerWidth < 768 ? '1rem' : '1.5rem',  // p-4/md:p-6
+                  height: window.innerWidth < 768 ? '50vh' : '100%',     // h-1/2/md:h-full
+                  maxHeight: '90vh'
+                }}
+              >
+                <h4 className="h5 fw-bold text-dark mb-4">{selectedTemplate.name}</h4>
+                {selectedTemplate?.subtitle && (
+                  <p className="fw-semibold text-black mb-2">{selectedTemplate.subtitle}</p>
+                )}
+                <p className="text-muted mb-0" >{selectedTemplate.description}</p>
+                <div className="mb-4">
+                  <h6 className="fw-bold text-dark mb-0">Features Included:</h6>
+                  {/* <div className="fw-bold text-dark mb-2">Features Included:</div> */}
+                  <ul className="list-unstyled mb-0">
+                    {selectedTemplate.features.map((feature, idx) => (
+                      <li key={idx} className="d-flex align-items-center mb-1">
+                        <div
+                          className="bg-success rounded-circle me-2"
+                          style={{ width: '8px', height: '8px' }}
+                        ></div>
+                        <span className="text-muted">{feature}</span>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
 
-      {/* Features Section */}
-      <section className="py-5 bg-white">
-        <div className="container">
-          <h2 className="text-center fw-bold mb-5">What We&apos;re Planning for Coaches</h2>
-          <div className="row g-4">
-            {[
-              'Client Management Portal',
-              'Online Booking System',
-              'Course & Resource Library',
-              'Performance Analytics'
-            ].map((title, idx) => (
-              <div className="col-md-6" key={idx}>
-                <div className="p-4 rounded" style={{ backgroundColor: 'rgba(255, 59, 0, 0.1)' }}>
-                  <h5 style={{ color: '#ff3b00' }}>{title}</h5>
-                  <p className="text-muted">
-                    {title === 'Client Management Portal' && 'Comprehensive client tracking system with progress monitoring, session notes, and goal-setting capabilities.'}
-                    {title === 'Online Booking System' && 'Advanced scheduling system with automated reminders, payment processing, and calendar integration.'}
-                    {title === 'Course & Resource Library' && 'Digital library for sharing resources, worksheets, and creating structured coaching programs.'}
-                    {title === 'Performance Analytics' && 'Detailed analytics on client progress, session effectiveness, and business growth metrics.'}
-                  </p>
+                <div className="text-center">
+                  <a
+                    href={`https://wa.me/7021710954?text=${encodeURIComponent(
+                      "Hi, I’m interested in getting a quote for a website/app development project. Please guide me through the next steps."
+                    )}`}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="btn text-white fw-semibold w-100"
+                    style={{ backgroundColor: '#ff3b00' }}
+                  >
+                    GET A QUOTE NOW
+                  </a>
                 </div>
               </div>
-            ))}
+            </div>
           </div>
-        </div>
-      </section>
+        )}
 
-      {/* <TemplateGallery industry="Coaches" templates={templates} /> */}
-
-      {/* Coaching Focus Form */}
-      {/* <section className="py-5 bg-light">
-        <div className="container text-center">
-          <div className="rounded-circle d-flex align-items-center justify-content-center mx-auto mb-3" style={{ backgroundColor: '#ff3b00', width: '64px', height: '64px' }}>
-            <i className="bi bi-people-fill fs-4 text-white"></i>
-          </div>
-          <h2 className="fw-bold mb-3">Empowering Coaches to Empower Others</h2>
-          <p className="text-muted mb-4">We're developing a comprehensive platform that understands the unique needs of coaches and helps you scale your practice while maintaining the personal connection that makes you effective.</p>
-          <div className="bg-white p-4 rounded shadow mx-auto" style={{ maxWidth: '500px' }}>
-            <form className="text-start">
-              <div className="mb-3">
-                <input type="text" placeholder="Your Coaching Business Name" className="form-control" />
-              </div>
-              <div className="mb-3">
-                <input type="email" placeholder="Your Email Address" className="form-control" />
-              </div>
-              <div className="mb-3">
-                <select className="form-select">
-                  <option>Select Your Coaching Type</option>
-                  <option>Life Coach</option>
-                  <option>Business Coach</option>
-                  <option>Career Coach</option>
-                  <option>Health & Wellness Coach</option>
-                  <option>Executive Coach</option>
-                  <option>Other</option>
-                </select>
-              </div>
-              <button type="submit" className="btn w-100 text-white fw-semibold" style={{ backgroundColor: '#ff3b00' }}>Join the Waitlist</button>
-            </form>
-          </div>
-        </div>
-      </section> */}
-
-      {/* <CTASection 
-        title="Need a Custom Solution Now?"
-        subtitle="Can't wait for our coach-specific package? We can create a custom solution tailored to your coaching practice."
-        buttonText="Schedule Custom Consultation"
-      /> */}
+      </div>
     </div>
   );
 };

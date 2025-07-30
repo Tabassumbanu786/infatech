@@ -19,19 +19,18 @@ const CtaSection = ({ ctaRef }) => {
         </div>
 
         <div className="d-flex flex-column flex-sm-row text-black justify-content-center gap-3 mb-4">
-          <CalendlyPopupButton
-            url="https://calendly.com/tabassumbanumusa/website-strategy-call"
-            buttonText="Click here to get started"
-            style={{
-              backgroundColor: '#059669',
-              color: '#ffffff',
-              fontWeight: 600,
-              padding: '0.75rem 1.5rem',
-              borderRadius: '0.5rem',
-              fontSize: '1rem',
-              border: 'none'
-            }}
-          />
+
+           <a
+            href={`https://wa.me/7021710954?text=${encodeURIComponent(
+              "Hi, I’m interested in getting a quote for a website/app development project. Please guide me through the next steps."
+            )}`}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="btn text-white fw-semibold"
+            style={{ backgroundColor: '#ff3b00'}}
+          >
+            GET A QUOTE NOW
+          </a>
         </div>
 
         <div className="d-flex justify-content-center gap-4 text-black small mt-4 flex-wrap">

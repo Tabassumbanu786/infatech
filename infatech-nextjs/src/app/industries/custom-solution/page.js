@@ -5,13 +5,13 @@
 import React from "react";
 
 import CustomSolutionsPage from "../../components/industries/custom-solution/CustomSolutionsPage";
-import Layout from "../bakers/layout";
+import Layout from "../custom-solution/layout";
 
-export default function BakersPage() {
+export default function CustomSolution() {
   return (
-    <Layout>
+    // <Layout>
        <CustomSolutionsPage/>     
-     </Layout>
+    //  </Layout>
       
       
   );

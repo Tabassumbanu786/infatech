@@ -1,175 +1,259 @@
 // Bootstrap version of BakersPage (converted from Tailwind)
 
 import Head from 'next/head';
-import React, { useState } from 'react';
+import React, { useState ,useRef} from 'react';
 import { Clock, EggFill } from 'react-bootstrap-icons';
-import TemplateGallery from '../../Gallery/TemplateGallery';
 import CTASection from '../../Gallery/CTASection';
+import Chatbot from '../../../components/industries/financial-advisors/Chatbot'
+import TemplatePreview from '../../../components/Gallery/TemplatePreview';
+
+
+import BakersPageContent from "../../../components/industries/bakers/BakersPage";
+import WhyItMatters from '../../../ifa-website/WhyItMatters';
+import FeatureGrid from '../../../ifa-website/FeatureGrid';
+import whyItMattersConfig from '../../../Data/industries/whyItMattersConfig'
+import EverythingYouNeed from '../../../ifa-website/EverythingYouNeed';
+import everythingYouNeedConfig from '../../../Data/industries/everythingYouNeedConfig'
+import packageFeaturesConfig from '../../../Data/industries/packageFeaturesConfig'
+
+import PricingTimeline from '../../../ifa-website/PricingTimeline';
+import GoLiveTimeline from '../../../ifa-website/GoLiveTimeline';
+import CtaSection from '../../../ifa-website/CtaSection';
 
 
 const BakersPage = () => {
-  const [selectedTemplate, setSelectedTemplate] = useState(null);
-  const templates = [
-    {
-        id: 1,
-        name: "Kirana SmartKart",
-        description: "Modern design for local Kirana stores with online ordering, digital payments, and delivery tracking.",
-        image: "https://images.pexels.com/photos/1132047/pexels-photo-1132047.jpeg",
-        features: [
-            "Online Ordering",
-            "UPI/Wallet Payments",
-            "Live Delivery Tracking",
-            "Daily Essentials Listing",
-            "Mobile-Optimized Layout",
-            "Multi-language Support"
-        ],
-        style: "Modern"
-    },
-    {
-        id: 2,
-        name: "Ghar Ki Dukaan",
-        description: "Friendly, local-first design that builds trust and emphasizes personal customer service.",
-        image: "https://images.pexels.com/photos/7363163/pexels-photo-7363163.jpeg",
-        features: [
-            "Neighborhood Delivery Info",
-            "Personal Message from Store Owner",
-            "Cash on Delivery Option",
-            "Popular Products Section",
-            "Festive Offers Banner",
-            "WhatsApp Ordering"
-        ],
-        style: "Community"
-    },
-    {
-        id: 3,
-        name: "QuickPick Kirana",
-        description: "Fast and lightweight template ideal for stores with high daily turnover and express checkout needs.",
-        image: "https://images.pexels.com/photos/9218663/pexels-photo-9218663.jpeg",
-        features: [
-            "Fast Checkout",
-            "Low Data Usage",
-            "Pincode-based Availability",
-            "Favorites & Reorder Option",
-            "Clean UI for Essentials",
-            "Cart Reminder"
-        ],
-        style: "Minimal"
-    },
-    {
-        id: 4,
-        name: "Bazaar Classic",
-        description: "Colorful, culturally-rooted design that blends traditional shopping vibes with digital convenience.",
-        image: "https://images.pexels.com/photos/6397651/pexels-photo-6397651.jpeg",
-        features: [
-            "Regional Language Toggle",
-            "Traditional Patterns & Fonts",
-            "Support for Phone Orders",
-            "Category-wise Listing",
-            "Seasonal Discounts Section",
-            "Family-run Story Page"
-        ],
-        style: "Traditional"
-    },
-    {
-        id: 5,
-        name: "NextGen Kirana",
-        description: "Advanced, tech-enabled store layout for modern Kirana stores that want full automation.",
-        image: "https://images.pexels.com/photos/12935094/pexels-photo-12935094.jpeg",
-        features: [
-            "AI Product Suggestions",
-            "Inventory Auto-Sync",
-            "Customer Dashboard",
-            "Subscription for Milk/Groceries",
-            "Sales Analytics",
-            "POS Integration"
-        ],
-        style: "Tech-Forward"
-    }
+const industry = 'bakery';
+const ctaRef = useRef(null);
+const [selectedTemplate, setSelectedTemplate] = useState(null);
+
+const templates = [
+  {
+    id: 1,
+    name: "Financial Advisors – AdvisorConnect",
+    subtitle: "Showcase your credentials, share market insights, and offer tools like SIP calculators to engage clients.",
+    description: "Tailored online presence for modern-day financial advisors and wealth planners.",
+    image: "https://images.pexels.com/photos/4386375/pexels-photo-4386375.jpeg?auto=compress&cs=tinysrgb&w=800",
+    features: ["Client Dashboard", "Service Pages", "Regulatory Disclaimers"],
+    style: "Professional",
+    path: "/ifa-website",
+    innerimage: "ifa.png"
+  },
+  {
+    id: 2,
+    name: "Bakers – BakeSmart",
+    subtitle: "Display your menu, take custom cake orders, and share daily specials with an easy-to-manage platform.",
+    description: "Warm, elegant designs for bakeries that want to look as good as they taste.",
+    image: "https://images.pexels.com/photos/1721932/pexels-photo-1721932.jpeg?auto=compress&cs=tinysrgb&w=800",
+    features: ["Custom Cake Forms", "Seasonal Specials", "Recipe Journal"],
+    style: "Elegant",
+    path: "/industries/bakers",
+    innerimage: "bakers1.png"
+  },
+  {
+    id: 6,
+    name: "E-commerce – ShopLaunch",
+    subtitle: "Set up your online store, manage inventory, and accept payments with a ready-to-scale eCommerce platform.",
+    description: "A powerful, minimal e-commerce template that sells your products — fast.",
+    image: "https://images.pexels.com/photos/7667442/pexels-photo-7667442.jpeg?auto=compress&cs=tinysrgb&w=800",
+    features: ["Product Display + Cart", "Secure Payments", "Mobile Optimized"],
+    style: "E-commerce",
+    path: "/custom-solutions",
+    innerimage: "bakers1.png"
+  },
+  {
+    id: 3,
+    name: "Grocery Stores – GroceryHub",
+    subtitle: "Enable local customers to browse stock, place online orders, and track deliveries effortlessly.",
+    description: "Clean, local, and built for modern kirana stores and grocery businesses.",
+    image: "https://images.pexels.com/photos/264537/pexels-photo-264537.jpeg?auto=compress&cs=tinysrgb&w=800",
+    features: ["Inventory Dashboard", "Daily Stock Updates", "Local Delivery Tracker"],
+    style: "Modern",
+    path: "/industries/kirana",
+    innerimage: "kiranashop.png"
+  },
+
+  {
+    id: 4,
+    name: "Coaches – CoachPro",
+    subtitle: "Highlight your programs, manage bookings, and build authority with testimonials and resources.",
+    description: "Peaceful, polished design for coaches, clinics, and fitness professionals.",
+    image: "https://images.pexels.com/photos/3822621/pexels-photo-3822621.jpeg?auto=compress&cs=tinysrgb&w=800",
+    features: ["Service Blocks", "Calendar Integration", "Team Profiles"],
+    style: "Wellness",
+    path: "/industries/coaches",
+    innerimage: "coaches.png"
+
+  },
+
+  {
+    id: 5,
+    name: "Custom Solutions – CustomEdge",
+    subtitle: "From booking systems to niche marketplaces, we build platforms tailored to unique business models.",
+    description: "Bold, modern layouts for unique businesses and special requirements.",
+    image: "https://images.pexels.com/photos/16129724/pexels-photo-16129724.jpeg?auto=compress&cs=tinysrgb&w=800",
+    features: ["Custom Layouts", "E-commerce Support", "Flexible Blocks"],
+    style: "Creative",
+    path: "/industries/custom-solution",
+    innerimage: "canvas.png"
+  }
+  //   ,
+  //   {
+  //     id: 6,
+  //     name: "IFA Website",
+  //     subtitle: "Showcase your credentials, share market insights, and offer tools like SIP calculators to engage clients.",
+  //     description: "Modern design for local Kirana stores with online ordering, digital payments, and delivery tracking.",
+  //     image: "https://images.pexels.com/photos/1132047/pexels-photo-1132047.jpeg",
+  //     features: [
+  //         "Personalized planning for every life stage",
+  //         "Goal-based investment strategies",
+  //         "Regular portfolio reviews",
+  //         "Transparent, jargon-free advice",
+  //         "Hassle-free online service & updates"
+  //     ],
+  //     style: "Modern",
+  //     path: "/industries/custom-solution",
+  //     innerimage:"canvas.png"
+  // }
 ];
 
   return (
+    
     <div className="container-fluid px-0">
-      <Head>
-        <title>Digital Solutions for Bakers</title>
-        <link
-          href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
-          rel="stylesheet"
-        />
-        <link
-          href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css"
-          rel="stylesheet"
-        />
-      </Head>
+      <Chatbot industry="bakers" />
 
-      {/* Hero Section */}
-      <section className="py-5 text-center bg-light bg-gradient" style={{ background: 'linear-gradient(to bottom right, #fff7ed, #fee2e2)' }}>
-        <div className="container">
+{/* Hero Slider Section */}
+{/* <section className="py-5 text-center bg-light bg-gradient" style={{ background: 'linear-gradient(to bottom right, #fff7ed, #fee2e2)' }}> */}
+<section className="position-relative overflow-hidden text-center pt-3 pb-5 mt-0" style={{ background: 'linear-gradient(to bottom right, #fff7ed, #fee2e2)' }}>
+
+  <div className="container">
+    <div className="mb-4">
+      <div className="rounded-circle d-flex align-items-center justify-content-center mx-auto mb-3" style={{ backgroundColor: '#ff3b00', width: '64px', height: '64px' }}>
+        <i className="bi bi-egg-fill fs-4 text-white"></i>
+      </div>
+      <h1 className="display-4 fw-bold text-dark">Digital Solutions <span style={{ color: '#ff3b00' }}>for Bakers</span></h1>
+      <p className="lead text-muted">Specialized website and technology solutions designed specifically for bakeries, patisseries, and confectionery businesses.</p>
+      <div className="rounded p-3 d-inline-flex align-items-center gap-2" >
+        <button
+          className="btn btn-lg px-4 py-3 text-white fw-semibold shadow-lg"
+          style={{
+            background: 'linear-gradient(to right, #ea580c, #dc2626)',
+            transition: 'all 0.2s ease-in-out'
+          }}
+          onClick={() => setSelectedTemplate(templates[1])}
+        >
+          GET A FIRST HAND FEEL
+        </button>
+      </div>
+    </div>
+  </div>
+</section>
+<WhyItMatters data={whyItMattersConfig[industry]} />
+<EverythingYouNeed features={everythingYouNeedConfig[industry]} />
+<FeatureGrid features={packageFeaturesConfig[industry]} />
+<PricingTimeline />
+<GoLiveTimeline />
+<CtaSection ref={ctaRef} />
+<div >
+  {/* Modal Preview when selectedTemplate is set */}
+  {selectedTemplate && (
+    <div
+      onClick={() => setSelectedTemplate(null)}
+      style={{
+        position: 'fixed',
+        inset: 0,
+        backgroundColor: 'rgba(0, 0, 0, 0.5)',
+        zIndex: 1050,
+        display: 'flex',
+        alignItems: 'center',
+        justifyContent: 'center',
+        padding: '1rem',
+        overflowY: 'auto'
+      }}
+    >
+      <div
+        onClick={(e) => e.stopPropagation()}
+        className="d-flex flex-column flex-lg-row bg-white rounded-4 w-100 overflow-hidden position-relative"
+        style={{
+          maxWidth: '1200px',
+          maxHeight: '90vh',
+          height: 'auto'
+        }}
+      >
+        {/* Close Button */}
+        <div className="position-absolute top-0 end-0 m-3 z-3">
+          <button
+            onClick={() => setSelectedTemplate(null)}
+            className="btn-close"
+          />
+        </div>
+        {/* Left Preview */}
+        <div
+          className="flex-grow-1 overflow-auto border-end"
+          style={{
+            backgroundColor: '#f3f4f6',
+            height: window.innerWidth < 768 ? '50vh' : '100%',
+            maxHeight: '90vh',
+            borderRight: window.innerWidth >= 768 ? '1px solid #e5e7eb' : 'none',
+          }}
+        >
+          <TemplatePreview
+            templateId={selectedTemplate.id}
+            templateName={selectedTemplate.name}
+          />
+        </div>
+        {/* Right Details */}
+        <div
+          className="overflow-auto"
+          style={{
+            width: '100%',
+            // maxWidth: '320px',       
+            maxWidth: window.innerWidth >= 768 ? '320px' : '100%',
+            padding: window.innerWidth < 768 ? '1rem' : '1.5rem',  // p-4/md:p-6
+            height: window.innerWidth < 768 ? '50vh' : '100%',     // h-1/2/md:h-full
+            maxHeight: '90vh'
+          }}
+        >
+          <h4 className="h5 fw-bold text-dark mb-4">{selectedTemplate.name}</h4>
+          {selectedTemplate?.subtitle && (
+            <p className="fw-semibold text-black mb-2">{selectedTemplate.subtitle}</p>
+          )}
+          <p className="text-muted mb-0" >{selectedTemplate.description}</p>
           <div className="mb-4">
-            <div className="rounded-circle d-flex align-items-center justify-content-center mx-auto mb-3" style={{ backgroundColor: '#ff3b00', width: '64px', height: '64px' }}>
-              <i className="bi bi-egg-fill fs-4 text-white"></i>
-            </div>
-            <h1 className="display-4 fw-bold text-dark">Digital Solutions <span style={{ color: '#ff3b00' }}>for Bakers</span></h1>
-            <p className="lead text-muted">Specialized website and technology solutions designed specifically for bakeries, patisseries, and confectionery businesses.</p>
-            <div className="rounded p-3 d-inline-flex align-items-center gap-2" style={{ backgroundColor: 'rgba(255, 59, 0, 0.25)' }}>
-              <i className="bi bi-clock-history" style={{ color: '#ff3b00' }}></i>
-              <span className="fw-semibold" style={{ color: '#ff3b00' }}>Coming Soon - We&apos;re Baking Something Special!</span>
-            </div>
+            <h6 className="fw-bold text-dark mb-0">Features Included:</h6>
+            {/* <div className="fw-bold text-dark mb-2">Features Included:</div> */}
+            <ul className="list-unstyled mb-0">
+              {selectedTemplate.features.map((feature, idx) => (
+                <li key={idx} className="d-flex align-items-center mb-1">
+                  <div
+                    className="bg-success rounded-circle me-2"
+                    style={{ width: '8px', height: '8px' }}
+                  ></div>
+                  <span className="text-muted">{feature}</span>
+                </li>
+              ))}
+            </ul>
           </div>
-        </div>
-      </section>
 
-      {/* What We're Preparing */}
-      <section className="py-5 bg-white">
-        <div className="container">
-          <h2 className="text-center fw-bold mb-5">What We&apos;re Preparing for Bakers</h2>
-          <div className="row g-4">
-            {["Online Ordering System", "Inventory Management", "Social Media Integration", "Customer Loyalty Program"].map((title, idx) => (
-              <div className="col-md-6" key={idx}>
-                <div className="p-4 rounded" style={{ backgroundColor: 'rgba(255, 59, 0, 0.1)' }}>
-                  <h5 style={{ color: '#ff3b00' }}>{title}</h5>
-                  <p className="text-muted">
-                    {title === 'Online Ordering System' && 'Complete e-commerce solution for custom cake orders, daily specials, and advance bookings with integrated payment processing.'}
-                    {title === 'Inventory Management' && 'Smart inventory tracking for ingredients, automated reorder points, and integration with supplier systems.'}
-                    {title === 'Social Media Integration' && 'Automatic posting of daily specials, behind-the-scenes content, and customer testimonials across all platforms.'}
-                    {title === 'Customer Loyalty Program' && 'Digital punch cards, birthday specials, and reward systems to keep customers coming back for more.'}
-                  </p>
-                </div>
-              </div>
-            ))}
+          <div className="text-center">
+            <a
+              href={`https://wa.me/7021710954?text=${encodeURIComponent(
+                "Hi, I’m interested in getting a quote for a website/app development project. Please guide me through the next steps."
+              )}`}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="btn text-white fw-semibold w-100"
+              style={{ backgroundColor: '#ff3b00' }}
+            >
+              GET A QUOTE NOW
+            </a>
           </div>
         </div>
-      </section>
-      
-      <TemplateGallery 
-          industry="Fresh Market Pro" 
-          templates={templates} 
-          selectedTemplate={selectedTemplate}
-          setSelectedTemplate={setSelectedTemplate}
-        />
-      {/* Interest Form */}
-      {/* <section className="py-5 bg-light">
-        <div className="container text-center">
-          <h2 className="fw-bold mb-3">Be the First to Know</h2>
-          <p className="text-muted mb-4">Join our waitlist to get early access to our baker-specific solutions and receive exclusive pre-launch pricing.</p>
-          <div className="bg-white p-4 rounded shadow mx-auto" style={{ maxWidth: '500px' }}>
-            <form className="text-start">
-              <div className="mb-3">
-                <input type="text" placeholder="Your Bakery Name" className="form-control" />
-              </div>
-              <div className="mb-3">
-                <input type="email" placeholder="Your Email Address" className="form-control" />
-              </div>
-              <button type="submit" className="btn w-100 text-white fw-semibold" style={{ backgroundColor: '#ff3b00' }}>Join the Waitlist</button>
-            </form>
-          </div>
-        </div>
-      </section> */}
+      </div>
+    </div>
+  )}
 
-      <CTASection 
-        title="Need a Custom Solution Now?"
-        subtitle="Can't wait for our baker-specific package? We can create a custom solution tailored to your bakery's needs."
-        buttonText="Schedule Custom Consultation"
-      />
+</div>
+
     </div>
   );
 };
