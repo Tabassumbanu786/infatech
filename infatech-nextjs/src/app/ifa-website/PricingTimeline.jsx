@@ -10,7 +10,7 @@ const PricingTimeline = () => {
           <div className="text-center mb-5">
             <h2 className="fw-bold display-6 text-dark mb-3">Simple, Transparent Pricing</h2>
             <p className="lead text-muted mx-auto" style={{ maxWidth: '600px' }}>
-              Everything included, no hidden fees. Get your professional website in just 7 days.
+              Everything included, no hidden fees. Get your professional website in just 10 days.
             </p>
           </div>
 
