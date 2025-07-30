@@ -340,7 +340,7 @@ const LandingPage = () => {
 
         </div>
         <CtaSection ref={ctaRef} />
-        <FloatingCalendlyButton hide={ctaVisible} />
+        {/* <FloatingCalendlyButton hide={ctaVisible} /> */}
       </main>
     </>
   );
