@@ -165,9 +165,9 @@ const LandingPage = () => {
           }}></div>
 
           <div className="container position-relative">
-            <div className="d-flex justify-content-center mb-4">
+            {/* <div className="d-flex justify-content-center mb-4">
               <img src="/assets/images/logo_small_r.png" alt="Infatech Logo" style={{ height: '100px', objectFit: 'contain' }} />
-            </div>
+            </div> */}
 
 
 
