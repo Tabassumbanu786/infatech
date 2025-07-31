@@ -36,6 +36,7 @@ const TemplateGallery = ({
   const setSelectedTemplate = externalSetSelectedTemplate || setInternalSelectedTemplate;
 
   const displayTemplates = templates;
+  const [isMobile, setIsMobile] = useState(false);
 
   const nextTemplate = () => {
     setCurrentIndex((prev) => (prev + 1) % displayTemplates.length);
@@ -44,6 +45,12 @@ const TemplateGallery = ({
   const prevTemplate = () => {
     setCurrentIndex((prev) => (prev - 1 + displayTemplates.length) % displayTemplates.length);
   };
+  useEffect(() => {
+    const checkMobile = () => setIsMobile(window.innerWidth < 768);
+    checkMobile();
+    window.addEventListener('resize', checkMobile);
+    return () => window.removeEventListener('resize', checkMobile);
+  }, []);
 
   const handleTemplateClick = (template) => {
     // if (!disablePreviewModal) {
@@ -119,7 +126,7 @@ const TemplateGallery = ({
                 className="flex-grow-1 overflow-auto border-end"
                 style={{
                   backgroundColor: '#f3f4f6',
-                  height: window.innerWidth < 768 ? '50vh' : '100%',
+                  // height: window.innerWidth < 768 ? '50vh' : '100%',
                   maxHeight: '90vh',
                   borderRight: window.innerWidth >= 768 ? '1px solid #e5e7eb' : 'none',
                 }}
@@ -142,34 +149,42 @@ const TemplateGallery = ({
                   maxHeight: '90vh'
                 }}
               >
-                <h4 className="h5 fw-bold text-dark mb-4">{selectedTemplate.name}</h4>
-                {selectedTemplate?.subtitle && (
-                  <p className="fw-semibold text-black mb-2">{selectedTemplate.subtitle}</p>
-                )}
-                <p className="text-muted mb-0" >{selectedTemplate.description}</p>
-                <div className="mb-4">
-                  <h6 className="fw-bold text-dark mb-0">Features Included:</h6>
-                  {/* <div className="fw-bold text-dark mb-2">Features Included:</div> */}
-                  <ul className="list-unstyled mb-0">
-                    {selectedTemplate.features.map((feature, idx) => (
-                      <li key={idx} className="d-flex align-items-center mb-1">
-                        <div
-                          className="bg-success rounded-circle me-2"
-                          style={{ width: '8px', height: '8px' }}
-                        ></div>
-                        <span className="text-muted">{feature}</span>
-                      </li>
-                    ))}
-                  </ul>
-                </div>
+                 {/* <p className="text-muted small fw-medium">
+                {isMobile ? 'Tap to preview' : 'Click to preview full website'}
+              </p> */}
+           {!isMobile && (
+  <>
+    <h4 className="h5 fw-bold text-dark mb-4">{selectedTemplate.name}</h4>
 
-                {/* <div className="mb-2"> */}
-                {/* <div className="fw-bold text-dark mb-2">Style:</div> */}
-                {/* <h6 className="fw-bold text-dark mb-0">Style:</h6>
-          <span className="badge bg-light text-primary">
-            {selectedTemplate.style}
-          </span>
-        </div> */}
+    {selectedTemplate?.subtitle && (
+      <p className="fw-semibold text-black mb-2">{selectedTemplate.subtitle}</p>
+    )}
+
+    <p className="text-muted mb-0">{selectedTemplate.description}</p>
+
+    <div className="mb-4">
+      <h6 className="fw-bold text-dark mb-0">Features Included:</h6>
+      <ul className="list-unstyled mb-0">
+        {selectedTemplate.features.map((feature, idx) => (
+          <li key={idx} className="d-flex align-items-center mb-1">
+            <div
+              className="bg-success rounded-circle me-2"
+              style={{ width: '8px', height: '8px' }}
+            ></div>
+            <span className="text-muted">{feature}</span>
+          </li>
+        ))}
+      </ul>
+    </div>
+  </>
+)}
+
+
+                
+
+                
+               
+              
 
                 <div className="text-center">
                   <a
@@ -185,9 +200,15 @@ const TemplateGallery = ({
                   </a>
                 </div>
               </div>
+
+              
+
             </div>
           </div>
         )}
+
+
+
 
       </div>
     </section>
