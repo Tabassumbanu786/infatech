@@ -1,0 +1,9 @@
+# *
+User-agent: *
+Allow: /
+
+# Host
+Host: https://www.infatech.in
+
+# Sitemaps
+Sitemap: https://www.infatech.in/sitemap.xml
