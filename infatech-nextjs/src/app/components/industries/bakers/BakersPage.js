@@ -19,6 +19,8 @@ import packageFeaturesConfig from '../../../Data/industries/packageFeaturesConfi
 import PricingTimeline from '../../../ifa-website/PricingTimeline';
 import GoLiveTimeline from '../../../ifa-website/GoLiveTimeline';
 import CtaSection from '../../../ifa-website/CtaSection';
+import Head from 'next/head';
+
 
 
 const BakersPage = () => {
@@ -118,7 +120,20 @@ const templates = [
 
   return (
     
+    
     <div className="container-fluid px-0">
+      <Head>
+  <title>Bakery Website Design – Infatech</title>
+  <meta
+    name="description"
+    content="Get a modern, mobile-friendly website for your bakery. Accept WhatsApp orders, showcase your menu, and grow your business online."
+  />
+  <meta name="robots" content="index, follow" />
+  <meta property="og:title" content="Bakery Website Design – Infatech" />
+  <meta property="og:description" content="Modern bakery websites in 10 days – with WhatsApp orders, menu showcase, gallery and more. Starting at ₹10,000." />
+  <meta property="og:url" content="https://www.infatech.in/industries/bakers" />
+</Head>
+
       {/* <Chatbot industry="bakers" /> */}
 
 {/* Hero Slider Section */}
