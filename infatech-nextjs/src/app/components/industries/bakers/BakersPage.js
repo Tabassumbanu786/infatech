@@ -1,6 +1,6 @@
 // Bootstrap version of BakersPage (converted from Tailwind)
+'use client';
 
-import Head from 'next/head';
 import React, { useState ,useRef} from 'react';
 import { Clock, EggFill } from 'react-bootstrap-icons';
 import CTASection from '../../Gallery/CTASection';
@@ -26,6 +26,7 @@ const BakersPage = () => {
 const industry = 'bakery';
 const ctaRef = useRef(null);
 const [selectedTemplate, setSelectedTemplate] = useState(null);
+
 
 const templates = [
   {
@@ -121,17 +122,6 @@ const templates = [
     
     
     <div className="container-fluid px-0">
-      <Head>
-  <title>Bakery Website Design – Infatech</title>
-  <meta
-    name="description"
-    content="Get a modern, mobile-friendly website for your bakery. Accept WhatsApp orders, showcase your menu, and grow your business online."
-  />
-  <meta name="robots" content="index, follow" />
-  <meta property="og:title" content="Bakery Website Design – Infatech" />
-  <meta property="og:description" content="Modern bakery websites in 10 days – with WhatsApp orders, menu showcase, gallery and more. Starting at ₹10,000." />
-  <meta property="og:url" content="https://www.infatech.in/industries/bakers" />
-</Head>
 
       {/* <Chatbot industry="bakers" /> */}
 
