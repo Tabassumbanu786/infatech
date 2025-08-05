@@ -19,7 +19,6 @@ import packageFeaturesConfig from '../../../Data/industries/packageFeaturesConfi
 import PricingTimeline from '../../../ifa-website/PricingTimeline';
 import GoLiveTimeline from '../../../ifa-website/GoLiveTimeline';
 import CtaSection from '../../../ifa-website/CtaSection';
-import Head from 'next/head';
 
 
 
