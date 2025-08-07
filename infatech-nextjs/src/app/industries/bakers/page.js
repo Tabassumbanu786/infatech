@@ -1,6 +1,8 @@
 // src/app/industries/bakers/page.js
 
 import BakersPageContent from "../../components/industries/bakers/BakersPage";
+import Head from 'next/head';
+
 
 export const metadata = {
   title: 'Bakery Website Design',
