@@ -21,7 +21,7 @@ const GoLiveTimeline = () => {
       number: 3,
       title: 'Go Live',
       description:
-        'Your website goes live within 7 days. Start attracting clients and growing your business online.',
+        'Your website goes live within 10 days. Start attracting clients and growing your business online.',
       bg: 'bg-success',
     },
   ];

@@ -229,7 +229,7 @@ const Chatbot = ({ industry = 'financial', embedded = false, isOpen: externalIsO
                 <Bot className="h-4 w-4" />
               </div>
               <div>
-                <h6 className="mb-0 fw-semibold">AI Financial Assistant</h6>
+                <h6 className="mb-0 fw-semibold">AI Assistant</h6>
                 <small className="opacity-75">Powered by AI</small>
               </div>
             </div>

@@ -149,42 +149,42 @@ const TemplateGallery = ({
                   maxHeight: '90vh'
                 }}
               >
-                 {/* <p className="text-muted small fw-medium">
+                {/* <p className="text-muted small fw-medium">
                 {isMobile ? 'Tap to preview' : 'Click to preview full website'}
               </p> */}
-           {!isMobile && (
-  <>
-    <h4 className="h5 fw-bold text-dark mb-4">{selectedTemplate.name}</h4>
+                {!isMobile && (
+                  <>
+                    <h4 className="h5 fw-bold text-dark mb-4">{selectedTemplate.name}</h4>
 
-    {selectedTemplate?.subtitle && (
-      <p className="fw-semibold text-black mb-2">{selectedTemplate.subtitle}</p>
-    )}
+                    {selectedTemplate?.subtitle && (
+                      <p className="fw-semibold text-black mb-2">{selectedTemplate.subtitle}</p>
+                    )}
 
-    <p className="text-muted mb-0">{selectedTemplate.description}</p>
+                    <p className="text-muted mb-0">{selectedTemplate.description}</p>
 
-    <div className="mb-4">
-      <h6 className="fw-bold text-dark mb-0">Features Included:</h6>
-      <ul className="list-unstyled mb-0">
-        {selectedTemplate.features.map((feature, idx) => (
-          <li key={idx} className="d-flex align-items-center mb-1">
-            <div
-              className="bg-success rounded-circle me-2"
-              style={{ width: '8px', height: '8px' }}
-            ></div>
-            <span className="text-muted">{feature}</span>
-          </li>
-        ))}
-      </ul>
-    </div>
-  </>
-)}
+                    <div className="mb-4">
+                      <h6 className="fw-bold text-dark mb-0">Features Included:</h6>
+                      <ul className="list-unstyled mb-0">
+                        {selectedTemplate.features.map((feature, idx) => (
+                          <li key={idx} className="d-flex align-items-center mb-1">
+                            <div
+                              className="bg-success rounded-circle me-2"
+                              style={{ width: '8px', height: '8px' }}
+                            ></div>
+                            <span className="text-muted">{feature}</span>
+                          </li>
+                        ))}
+                      </ul>
+                    </div>
+                  </>
+                )}
 
 
-                
 
-                
-               
-              
+
+
+
+
 
                 <div className="text-center">
                   <a
@@ -201,7 +201,7 @@ const TemplateGallery = ({
                 </div>
               </div>
 
-              
+
 
             </div>
           </div>
