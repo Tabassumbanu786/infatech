@@ -24,9 +24,8 @@ const Faq = () => {
         setFirstItemOpen(false);
       }
     }, [firstItemOpen]);
-
     const FaqContent = {
-        img1:'/assets/images/faq1.png',
+        img1:"/assets/images/home-3/faq-thumb.png",
         Title:'A Comprehensive <span>Guide.</span>',
         Content:'Alternative innovation network environmental whiteboard pursue  for premier methods empowerment  go forward opportunities'
       }
@@ -38,7 +37,7 @@ const Faq = () => {
                         <div className="col-lg-6 col-md-12">
                             <div className="section-title text-left">
                                 <SectionTitle
-                                    SubTitle="SOLUTEK COMPANY"
+                                    SubTitle="INFATECH COMPANY"
                                     Title="Keeping Your Business<br> Safe and <span>Available.</span>"
                                 ></SectionTitle>
                             </div>

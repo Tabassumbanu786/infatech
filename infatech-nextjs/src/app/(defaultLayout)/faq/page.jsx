@@ -6,7 +6,7 @@ import React from 'react';
 const page = () => {
     return (
         <div className='faq-page'>
-            <BreadCumb Title="Faq"></BreadCumb>
+            {/* <BreadCumb Title="Faq"></BreadCumb> */}
             <Faq></Faq>
         </div>
     );
