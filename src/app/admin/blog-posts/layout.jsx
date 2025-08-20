@@ -1,6 +1,6 @@
 import React from 'react'
-import HeaderStyle3 from '@/app/components/Header/HeaderStyle3'
-import Footer from '@/app/components/Footer/Footer'
+import HeaderStyle3 from '../../components/Header/HeaderStyle3'
+import Footer from '../../components/Footer/Footer'
 
 export default function AdminLayout({ children }) {
   return (
