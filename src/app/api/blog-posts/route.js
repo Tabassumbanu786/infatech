@@ -1,5 +1,30 @@
 import { NextResponse } from 'next/server'
-import { supabase } from '../../../lib/supabase'
+import fs from 'fs'
+import path from 'path'
+
+const BLOG_FILE_PATH = path.join(process.cwd(), 'src/app/Data/blog.json')
+
+// Helper function to read blog data
+function readBlogData() {
+  try {
+    const fileContents = fs.readFileSync(BLOG_FILE_PATH, 'utf8')
+    return JSON.parse(fileContents)
+  } catch (error) {
+    console.error('Error reading blog data:', error)
+    return []
+  }
+}
+
+// Helper function to write blog data
+function writeBlogData(data) {
+  try {
+    fs.writeFileSync(BLOG_FILE_PATH, JSON.stringify(data, null, 2), 'utf8')
+    return true
+  } catch (error) {
+    console.error('Error writing blog data:', error)
+    return false
+  }
+}
 
 // GET - Fetch all blog posts
 export async function GET(request) {
@@ -7,22 +32,18 @@ export async function GET(request) {
     const { searchParams } = new URL(request.url)
     const published = searchParams.get('published')
     
-    let query = supabase
-      .from('blog_posts')
-      .select('*')
-      .order('created_at', { ascending: false })
+    let data = readBlogData()
 
     // Filter by published status if specified
     if (published !== null) {
-      query = query.eq('published', published === 'true')
+      data = data.filter(post => {
+        const isPublished = post.published !== false // Default to true if not specified
+        return published === 'true' ? isPublished : !isPublished
+      })
     }
 
-    const { data, error } = await query
-
-    if (error) {
-      console.error('Error fetching blog posts:', error)
-      return NextResponse.json({ error: 'Failed to fetch blog posts' }, { status: 500 })
-    }
+    // Sort by date (newest first)
+    data.sort((a, b) => new Date(b.date) - new Date(a.date))
 
     return NextResponse.json(data)
   } catch (error) {
@@ -35,18 +56,28 @@ export async function GET(request) {
 export async function POST(request) {
   try {
     const body = await request.json()
+    const data = readBlogData()
     
-    const { data, error } = await supabase
-      .from('blog_posts')
-      .insert([body])
-      .select()
-
-    if (error) {
-      console.error('Error creating blog post:', error)
-      return NextResponse.json({ error: 'Failed to create blog post' }, { status: 500 })
+    // Add default values
+    const newPost = {
+      ...body,
+      published: body.published !== false, // Default to true
+      category: Array.isArray(body.category) ? body.category : [],
+      tags: Array.isArray(body.tags) ? body.tags : []
     }
-
-    return NextResponse.json(data[0], { status: 201 })
+    
+    // Check if ID already exists
+    if (data.find(post => post.id === newPost.id)) {
+      return NextResponse.json({ error: 'Post with this ID already exists' }, { status: 400 })
+    }
+    
+    data.push(newPost)
+    
+    if (writeBlogData(data)) {
+      return NextResponse.json(newPost, { status: 201 })
+    } else {
+      return NextResponse.json({ error: 'Failed to save blog post' }, { status: 500 })
+    }
   } catch (error) {
     console.error('Error in POST /api/blog-posts:', error)
     return NextResponse.json({ error: 'Internal server error' }, { status: 500 })

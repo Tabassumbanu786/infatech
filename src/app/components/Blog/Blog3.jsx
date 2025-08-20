@@ -55,7 +55,7 @@ const Blog3 = () => {
                                         </span></p>
                                     </div>
                                     <h4><Link href={`/blog/${item.id}`}>{item.title}</Link></h4>
-                                    <p>{item.excerpt}</p>
+                                    <p>{item.summary}</p>
                                     <div className="blog-button">
                                         <Link href={`/blog/${item.id}`}>READ MORE<i className="bi bi-arrow-right"></i></Link>
                                     </div>
