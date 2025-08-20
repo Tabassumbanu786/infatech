@@ -1,6 +1,6 @@
 import React from 'react'
-import HeaderStyle3 from '../../../infatech-nextjs/src/app/components/Header/HeaderStyle3'
-import Footer from '../../../infatech-nextjs/src/app/components/Footer/Footer'
+import HeaderStyle3 from '../../components/Header/HeaderStyle3'
+import Footer from '../../components/Footer/Footer'
 
 export default function AdminLayout({ children }) {
   return (
