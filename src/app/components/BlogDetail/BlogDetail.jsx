@@ -12,6 +12,9 @@
              <div className="blog-details-category">
              <br></br>
 -              {blog.category.map((cat, i) => (
+)
+)
+}
 +              {(Array.isArray(blog.category) ? blog.category : []).map((cat, i) => (
                  <span key={i}>
 @@ .. @@
@@ -22,5 +25,14 @@
                                      </div>	
                                      <div className="widget-catefories-tags">
 -                                    {blog.category.map((cat, i) => (
+                 )
+                 )
+                 }
+)
+)
+}
 +                                    {(Array.isArray(blog.category) ? blog.category : []).map((cat, i) => (
                                      <span key={i}><Link href="#">{cat}</Link>
+)
+)
+}
