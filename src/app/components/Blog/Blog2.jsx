@@ -108,6 +108,9 @@ const Blog2 = () => {
                     </div>
                 ))}
                 </div>
+                )
+                )
+                }
             </div>
         </div>
     );
