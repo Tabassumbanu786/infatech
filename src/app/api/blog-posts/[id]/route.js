@@ -2,7 +2,7 @@ import { NextResponse } from 'next/server'
 import fs from 'fs'
 import path from 'path'
 
-const BLOG_FILE_PATH = path.join(process.cwd(), 'src/app/Data/blog.json')
+const BLOG_FILE_PATH = path.join(process.cwd(), 'infatech-nextjs/src/app/Data/blog.json')
 
 // Helper function to read blog data
 function readBlogData() {
