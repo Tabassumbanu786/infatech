@@ -1,14 +1,12 @@
 "use client";
-
-import dynamic from "next/dynamic";
+import Slider from "react-slick";
 import data from "../../Data/hero.json";
+import parse from "html-react-parser";
 import Link from "next/link";
 import Image from "next/image";
 
-// Dynamically load react-slick (reduce bundle size)
-const Slider = dynamic(() => import("react-slick"), { ssr: false });
-
 const Hero3 = () => {
+  
   const settings = {
     dots: false,
     infinite: true,
@@ -20,7 +18,8 @@ const Hero3 = () => {
   };
 
   return (
-    <div className="hero-active">
+    
+    <div className="hero-active owl-carousel">
       <Slider {...settings}>
         {data.map((item, i) => (
           <div
@@ -32,21 +31,15 @@ const Hero3 = () => {
                 {/* Text Column */}
                 <div className="col-lg-5 col-md-7">
                   <div className="hero-contant space-y-6">
-                    {item.subTitle && (
-                      <h6 className="text-sm font-semibold uppercase tracking-widest">
-                        {item.subTitle}
-                      </h6>
-                    )}
-
-                    <h1 className="text-4xl md:text-5xl font-bold leading-tight text-dark">
-                      {item.title}
+                    <h6 className="text-sm font-semibold uppercase tracking-widest">
+                      {item.subTitle}
+                    </h6>
+                    <h1 className="text-4xl md:text-5xl font-bold leading-tight">
+                      {parse(item.title)}
                     </h1>
-
-                    {item.desc && (
-                      <p className="text-muted text-base leading-relaxed">
-                        {item.desc}
-                      </p>
-                    )}
+                    <p className="text-muted text-base leading-relaxed">
+                      {item.desc}
+                    </p>
 
                     <div className="solutek-btn">
                       <a
@@ -60,6 +53,15 @@ const Hero3 = () => {
                         Start Building with Infatech
                       </a>
                     </div>
+
+                    {/* <div className="hero-left-shape absolute left-0 bottom-0 z-[-1] opacity-40">
+                      <Image
+                        src="/assets/images/home-3/hero-geo.png"
+                        alt="Decorative Shape"
+                        width={680}
+                        height={680}
+                      />
+                    </div> */}
                   </div>
                 </div>
 
@@ -69,12 +71,10 @@ const Hero3 = () => {
                     <div className="hero-img hero_image_3">
                       <Image
                         src={item.image}
-                        alt={`Hero Image ${i + 1}`}
+                        alt="Hero Image"
                         width={600}
                         height={450}
                         className="w-full max-w-[500px] h-auto object-contain mx-auto"
-                        priority={i === 0} // First image loads eagerly
-                        loading={i === 0 ? "eager" : "lazy"} // Others lazy load
                       />
                     </div>
                   </div>
