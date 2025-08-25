@@ -23,7 +23,12 @@ const Blog3 = () => {
                                 <h3><Link href={`/blog/${item.id}`}><h3>{item.title}</h3>
                                 </Link></h3>
                                 <div className="blog-button">
-                                <Link href={`/blog/${item.id}`}>READ MORE<i className="bi bi-arrow-right"></i></Link>
+                                {/* <Link href={`/blog/${item.id}`}>READ MORE<i className="bi bi-arrow-right"></i></Link> */}
+                                <Link href={`/blog/${item.id}`}>
+  READ MORE <i className="bi bi-arrow-right"></i>
+  <span className="visually-hidden">about {item.title}</span>
+</Link>
+
                                 </div>
                             </div>
                         </div>

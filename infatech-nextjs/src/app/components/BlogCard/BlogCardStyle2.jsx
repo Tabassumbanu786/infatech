@@ -23,6 +23,7 @@ const BlogCardStyle2 = ({ BlogImg, Title, Content, id }) => {
         <div className="blog-btn-tow">
           <Link href={`/blog/${id}`}>
             READ MORE<i className="bi bi-arrow-right"></i>
+            <span className="visually-hidden">about {Title}</span>
           </Link>
         </div>
       </div>

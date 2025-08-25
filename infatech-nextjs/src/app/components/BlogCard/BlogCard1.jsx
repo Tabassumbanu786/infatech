@@ -23,7 +23,9 @@ const BlogCard1 = ({ BlogImg, Title, Content, id }) => {
         <div className="blog-btn">
           <Link href={`/blog/${id}`} className="btn-2">
             READ MORE
+            <span className="visually-hidden">about {Title}</span>
           </Link>
+          
         </div>
       </div>
     </div>
