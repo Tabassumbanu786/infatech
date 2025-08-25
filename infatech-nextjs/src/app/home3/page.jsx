@@ -15,58 +15,6 @@ import React, { useState } from 'react';
 
 
 
-// const homepageTemplates = [
-//   {
-//     id: 1,
-//     name: "Sugar & Script",
-//     subtitle: "Bakehouse Elegance",
-//     description: "Warm, elegant design for bakeries that want to look as good as they taste.",
-//     image: "https://images.pexels.com/photos/1721932/pexels-photo-1721932.jpeg?auto=compress&cs=tinysrgb&w=800",
-//     features: ["Custom Cake Forms", "Seasonal Specials", "Recipe Journal"],
-//     style: "Elegant",
-//     path: "/bakers"
-//   },
-//   {
-//     id: 2,
-//     name: "HarvestCart",
-//     subtitle: "Grocery Go Digital",
-//     description: "Clean, local, and built for modern kirana stores and grocery businesses.",
-//     image: "https://images.pexels.com/photos/264537/pexels-photo-264537.jpeg?auto=compress&cs=tinysrgb&w=800",
-//     features: ["Inventory Dashboard", "Daily Stock Updates", "Local Delivery Tracker"],
-//     style: "Modern",
-//     path: "/kirana-stores"
-//   },
-//   {
-//     id: 3,
-//     name: "Canvas Grid",
-//     subtitle: "Creative Portfolio",
-//     description: "Bold visuals. Smart structure. Perfect for designers, photographers & creators.",
-//     image: "https://images.pexels.com/photos/1779487/pexels-photo-1779487.jpeg?auto=compress&cs=tinysrgb&w=800",
-//     features: ["Interactive Galleries", "Video Reels", "Project Case Studies"],
-//     style: "Creative",
-//     path: "/custom-solutions"
-//   },
-//   {
-//     id: 4,
-//     name: "ShopStack",
-//     subtitle: "Ecom Ready",
-//     description: "A powerful, minimal e-commerce template that sells your products — fast.",
-//     image: "https://images.pexels.com/photos/3769747/pexels-photo-3769747.jpeg?auto=compress&cs=tinysrgb&w=800",
-//     features: ["Product Display + Cart", "Secure Payments", "Mobile Optimized"],
-//     style: "E-commerce",
-//     path: "/custom-solutions"
-//   },
-//   {
-//     id: 5,
-//     name: "ZenSpace",
-//     subtitle: "Wellness & More",
-//     description: "Peaceful, polished design for coaches, clinics, and fitness professionals.",
-//     image: "https://images.pexels.com/photos/3822621/pexels-photo-3822621.jpeg?auto=compress&cs=tinysrgb&w=800",
-//     features: ["Service Blocks", "Calendar Integration", "Team Profiles"],
-//     style: "Wellness",
-//     path: "/coaches"
-//   }
-// ];
 
 
 const homepageTemplates = [
