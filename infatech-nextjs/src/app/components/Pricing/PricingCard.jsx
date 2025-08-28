@@ -14,13 +14,28 @@ const PricingCard = ({Price,PricePlan,FeatureList,BtnUrl,BtnText}) => {
                 ))}
                 </ul>
                 <div className="solutek-btn">
-                    <Link href={BtnUrl}>
+                    
+                    {/* <Link href={BtnUrl}>
                         {BtnText}
                         <div className="solutek-hover-btn hover-bx"></div>
                         <div className="solutek-hover-btn hover-bx2"></div>
                         <div className="solutek-hover-btn hover-bx3"></div>
                         <div className="solutek-hover-btn hover-bx4"></div>
-                    </Link>
+                    </Link> */}
+                    <Link
+  href={`https://wa.me/7021710954?text=${encodeURIComponent(
+    "Hi, I’m interested in getting a quote for a website/app development project. Please guide me through the next steps."
+  )}`}
+  target="_blank"
+  rel="noopener noreferrer"
+>
+  {BtnText}
+  <div className="solutek-hover-btn hover-bx"></div>
+  <div className="solutek-hover-btn hover-bx2"></div>
+  <div className="solutek-hover-btn hover-bx3"></div>
+  <div className="solutek-hover-btn hover-bx4"></div>
+</Link>
+
                 </div>
             </div>
     </div>

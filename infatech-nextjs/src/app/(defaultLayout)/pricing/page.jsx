@@ -7,7 +7,7 @@ import React from 'react';
 const page = () => {
     return (
         <div className='pricing-page'>
-            <BreadCumb Title="Pricing"></BreadCumb>
+            {/* <BreadCumb Title="Pricing"></BreadCumb> */}
             <Pricing></Pricing>
             <Blog1></Blog1>
         </div>
