@@ -1,4 +1,4 @@
-'use client';
+// src/app/layout.js  (server component — NO 'use client' at top)
 import { Fira_Sans, Poppins } from "next/font/google";
 import 'bootstrap/dist/css/bootstrap.min.css';
 import 'bootstrap-icons/font/bootstrap-icons.css';
@@ -6,9 +6,8 @@ import "slick-carousel/slick/slick.css";
 import "./assets/main.css";
 import "./assets/responsive.css";
 import Script from "next/script";
-import { useEffect } from "react";
-import { usePathname } from "next/navigation";
-import * as gtag from "../lib/gtag"; // adjust path if needed
+
+import Analytics from "./components/Analytics"; // client component
 
 // Google Fonts
 const fira_sans = Fira_Sans({
@@ -65,15 +64,6 @@ export const metadata = {
 };
 
 export default function RootLayout({ children }) {
-  const pathname = usePathname();
-
-  useEffect(() => {
-    // track pageview on client-side navigation
-    // combine pathname + search if needed
-    const url = window.location.pathname + window.location.search;
-    gtag.pageview(url);
-  }, [pathname]);
-
   const GA_MEASUREMENT_ID = process.env.NEXT_PUBLIC_GA_MEASUREMENT_ID;
 
   return (
@@ -103,6 +93,9 @@ export default function RootLayout({ children }) {
 
       <body className={`${fira_sans.variable} ${poppins.variable}`}>
         {children}
+
+        {/* Client-only component for route tracking */}
+        <Analytics />
 
         {/* JSON-LD Structured Data */}
         <Script
