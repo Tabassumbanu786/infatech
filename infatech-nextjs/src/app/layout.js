@@ -5,6 +5,9 @@ import "slick-carousel/slick/slick.css";
 import "./assets/main.css";
 import "./assets/responsive.css";
 import Script from "next/script";
+import { useEffect } from "react";
+import { usePathname } from "next/navigation";
+import * as gtag from "../lib/gtag"; // adjust path if needed
 
 // Google Fonts
 const fira_sans = Fira_Sans({
@@ -18,7 +21,7 @@ const poppins = Poppins({
   variable: '--heading-font',
 });
 
-// ✅ Metadata API (auto injects into <head>)
+// ✅ Metadata API (keep your existing metadata)
 export const metadata = {
   title: {
     default: 'Infatech Innovations | Innovating the Future, Intelligently',
@@ -61,8 +64,42 @@ export const metadata = {
 };
 
 export default function RootLayout({ children }) {
+  const pathname = usePathname();
+
+  useEffect(() => {
+    // track pageview on client-side navigation
+    // combine pathname + search if needed
+    const url = window.location.pathname + window.location.search;
+    gtag.pageview(url);
+  }, [pathname]);
+
+  const GA_MEASUREMENT_ID = process.env.NEXT_PUBLIC_GA_MEASUREMENT_ID;
+
   return (
     <html lang="en">
+      <head>
+        {/* Load gtag only if measurement id is present */}
+        {GA_MEASUREMENT_ID && (
+          <>
+            {/* gtag library */}
+            <Script
+              src={`https://www.googletagmanager.com/gtag/js?id=${GA_MEASUREMENT_ID}`}
+              strategy="afterInteractive"
+            />
+
+            {/* gtag init */}
+            <Script id="gtag-init" strategy="afterInteractive">
+              {`
+                window.dataLayer = window.dataLayer || [];
+                function gtag(){dataLayer.push(arguments);}
+                gtag('js', new Date());
+                gtag('config', '${GA_MEASUREMENT_ID}', { page_path: window.location.pathname });
+              `}
+            </Script>
+          </>
+        )}
+      </head>
+
       <body className={`${fira_sans.variable} ${poppins.variable}`}>
         {children}
 
