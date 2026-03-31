@@ -2343,14 +2343,171 @@ p.service-text {
 /*=====================================
 <--  start solutek project Area Css -->
 =======================================*/
-
-.project-area {
-  padding: 120px 0 40px;
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-position: center;
+.custom-card {
+  background: #f5f5f5;
+  padding: 40px;
+  border-radius: 20px;
+  margin-bottom: 30px;
 }
 
+.title {
+  font-size: 36px;
+  font-weight: 700;
+}
+
+.category {
+  color: #ff3c00;
+  font-weight: 700;
+  letter-spacing: 2px;
+  margin-top: 10px;
+}
+
+.desc {
+  font-size: 18px;
+  color: #6b7280;
+  margin: 20px 0;
+}
+
+.tags span {
+  background: #e5e7eb;
+  padding: 8px 16px;
+  border-radius: 999px;
+  margin-right: 10px;
+}
+
+.actions {
+  margin-top: 20px;
+}
+
+.btn-primary {
+  background: #ff3c00;
+  color: #fff;
+  padding: 12px 25px;
+  border-radius: 999px;
+  margin-right: 10px;
+  text-decoration: none;
+}
+
+.btn-secondary {
+  border: 1px solid #ccc;
+  padding: 12px 25px;
+  border-radius: 999px;
+}
+
+/* EXPAND */
+.expand-section {
+  max-height: 0;
+  overflow: hidden;
+  transition: all 0.4s ease;
+  margin-top: 20px;
+}
+
+.expand-section.show {
+  max-height: 1000px;
+}
+
+.expand-title {
+  font-size: 24px;
+  font-weight: 700;
+  margin-bottom: 20px;
+}
+
+.expand-block {
+  margin-bottom: 20px;
+}
+
+.expand-block h4 {
+  font-weight: 700;
+  margin-bottom: 10px;
+  position: relative;
+}
+
+.expand-block h4::before {
+  content: "";
+  width: 20px;
+  height: 3px;
+  background: #ff3c00;
+  display: inline-block;
+  margin-right: 10px;
+}
+
+/* LIST */
+.expand-block ul {
+  padding-left: 20px;
+}
+
+.expand-block li {
+  margin-bottom: 8px;
+  list-style: disc;
+  color: #555;
+}
+
+/* TESTIMONIAL */
+.testimonial-box {
+  background: #fdf0ea;
+  padding: 20px;
+  border-radius: 12px;
+}
+
+.testimonial-text {
+  font-style: italic;
+}
+
+.testimonial-user {
+  display: flex;
+  align-items: center;
+  margin-top: 15px;
+}
+
+.avatar {
+  width: 40px;
+  height: 40px;
+  background: #ff3c00;
+  color: #fff;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-right: 10px;
+}
+.portfolio-hero {
+  padding: 10px 20px 20px;
+  background: #ffffff;
+}
+
+.hero-subtitle {
+  color: #ff3c00;
+  font-weight: 600;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  margin-bottom: 10px;
+}
+
+.hero-title {
+  font-size: 42px;
+  font-weight: 700;
+  color: #111827;
+  max-width: 700px;
+  margin: 0 auto;
+}
+
+.hero-desc {
+  font-size: 18px;
+  color: #6b7280;
+  margin: 20px auto;
+  max-width: 600px;
+}
+
+.hero-btn {
+  display: inline-block;
+  background: #ff3c00;
+  color: #fff;
+  padding: 14px 30px;
+  border-radius: 999px;
+  font-weight: 600;
+  text-decoration: none;
+  margin-top: 10px;
+}
 .row.project {
   padding: 0 297px 0;
 }

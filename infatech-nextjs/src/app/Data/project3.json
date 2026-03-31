@@ -1,20 +1,94 @@
 [
   {
-    "img": "/assets/images/testimonial/p1.png",
     "title": "Tawakkal Watches",
     "category": "E-commerce Platform",
-    "slug": "tawakkal-watches"
+    "description": "Complete online store with product catalog, checkout, and order management.",
+    "website": "https://tawakkalwatches.com",
+  
+    "features": [
+      "Product Listings",
+      "Cart & Checkout",
+      "Admin Dashboard"
+    ],
+  
+    "challenge": "The business needed a complete online selling system where products could be displayed properly, customers could place orders smoothly, and the backend could handle operations without confusion.",
+  
+    "built": [
+      "Full e-commerce website",
+      "Product listing and category structure",
+      "Cart and secure checkout",
+      "Order management system",
+      "Admin panel for products, users, and orders",
+      "Backend for full control of operations"
+    ],
+  
+    "result": "The business now has a structured online store with centralized product and order management, making daily operations smoother and more scalable.",
+  
+    "testimonial": {
+      "text": "Infatech helped us take our watch business online in a very structured way. The website is easy for customers to use, and the backend makes it simple for us to manage orders and products.",
+      "name": "Abdul Aziz Budhani",
+      "company": "Tawakkal Watches"
+    }
   },
   {
-    "img": "/assets/images/testimonial/p2.png",
     "title": "Jannatni Chavio",
-    "category": "Mobile App",
-     "slug": "jannatni-chavio"
+    "category": "Mobile App (Android & iOS)",
+    "description": "Islamic mobile application designed for daily usage, content access, and seamless user experience across Android and iOS.",
+  
+    "website": "#",
+  
+    "features": [
+      "Islamic Content Access",
+      "User-Friendly Navigation",
+      "Admin Panel Management"
+    ],
+  
+    "challenge": "The client wanted to build an Islamic mobile application that works smoothly on both Android and iOS, allowing users to access religious content easily while ensuring the system remains simple to manage from the backend.",
+  
+    "built": [
+      "Android and iOS mobile applications",
+      "Structured Islamic content browsing system",
+      "Clean and user-friendly interface for daily use",
+      "Admin panel to manage content and updates",
+      "Backend system to support app performance and data handling"
+    ],
+  
+    "result": "The app now serves as a reliable digital platform for users to access Islamic content easily. It also gives the client full control over managing and updating content through a structured admin panel.",
+  
+    "testimonial": {
+      "text": "Infatech helped us build a smooth and user-friendly Islamic app for both Android and iPhone. The backend system makes it very easy for us to manage and update our content.",
+      "name": "Rizwanali Palsaniya",
+      "company": "Jannatni Chavio"
+    }
   },
   {
-    "img": "/assets/images/testimonial/p3.png",
     "title": "Best Properties Mumbai",
     "category": "Real Estate Platform",
-     "slug": "best-properties-mumbai"
+    "description": "Property listing platform with filters and inquiry system.",
+    "website": "https://www.bestpropertiesmumbai.com",
+  
+    "features": [
+      "Property Listings",
+      "Filters",
+      "Inquiry System"
+    ],
+  
+    "challenge": "The client needed a platform where properties could be listed properly, users could filter their search, and inquiries could be captured efficiently.",
+  
+    "built": [
+      "Real estate listing platform",
+      "Property filters and detailed project pages",
+      "Inquiry system for lead generation",
+      "Admin panel to manage listings and leads",
+      "Backend system for smooth content and lead management"
+    ],
+  
+    "result": "The platform now makes it easier for users to discover properties and for the business to handle leads in a more structured way.",
+  
+    "testimonial": {
+      "text": "Infatech created a platform that made our listings much more organized and user-friendly. The backend also helps us manage leads and property updates with ease.",
+      "name": "Mukhtar Sheliya",
+      "company": "Best Properties Mumbai"
+    }
   }
 ]
