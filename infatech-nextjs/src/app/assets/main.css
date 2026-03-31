@@ -2445,12 +2445,17 @@ p.service-text {
 /* TESTIMONIAL */
 .testimonial-box {
   background: #fdf0ea;
-  padding: 20px;
-  border-radius: 12px;
+  padding: 25px;
+  border-radius: 16px;
+  margin: 25px 0;
+  border: 1px solid #f8cfc3;
+  position: relative;
 }
 
 .testimonial-text {
   font-style: italic;
+  font-size: 16px;
+  color: #333;
 }
 
 .testimonial-user {
@@ -2460,15 +2465,16 @@ p.service-text {
 }
 
 .avatar {
-  width: 40px;
-  height: 40px;
+  width: 45px;
+  height: 45px;
   background: #ff3c00;
   color: #fff;
   border-radius: 50%;
   display: flex;
   align-items: center;
   justify-content: center;
-  margin-right: 10px;
+  margin-right: 12px;
+  font-weight: 600;
 }
 .portfolio-hero {
   padding: 10px 20px 20px;

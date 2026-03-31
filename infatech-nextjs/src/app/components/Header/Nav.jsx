@@ -68,7 +68,7 @@ export default function Nav({ setMobileToggle }) {
         </Link>
       </li>
       <li>
-        <Link href="/project" onClick={() => setMobileToggle(false)}>
+        <Link href="/portfolio" onClick={() => setMobileToggle(false)}>
           Portfolio
         </Link>
       </li>

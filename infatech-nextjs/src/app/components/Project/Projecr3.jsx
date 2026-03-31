@@ -17,7 +17,6 @@ const Projecr3 = () => {
     <h1 className="hero-title">
       Platforms We’ve Built for Real Businesses
     </h1>
-
     <p className="hero-desc">
       From e-commerce to service platforms — designed to work, scale, and convert.
     </p>
@@ -47,7 +46,26 @@ const Projecr3 = () => {
               <span key={i}>{f}</span>
             ))}
           </div>
+          {/* TESTIMONIAL (MOVE HERE) */}
+<div className="testimonial-box">
+  <p className="testimonial-text">
+    “{item.testimonial?.text}”
+  </p>
 
+  <div className="testimonial-user">
+    <div className="avatar">
+      {item.testimonial?.name
+        ?.split(" ")
+        .map((n) => n[0])
+        .join("")}
+    </div>
+
+    <div>
+      <h5>{item.testimonial?.name}</h5>
+      <span>{item.testimonial?.company}</span>
+    </div>
+  </div>
+</div>
           <div className="actions">
             <a href={item.website || "#"} target="_blank" className="btn-primary">
               VIEW WEBSITE
@@ -86,7 +104,7 @@ const Projecr3 = () => {
             </div>
 
             {/* TESTIMONIAL */}
-            <div className="testimonial-box">
+            {/* <div className="testimonial-box">
               <p className="testimonial-text">
                 “{item.testimonial?.text}”
               </p>
@@ -103,7 +121,7 @@ const Projecr3 = () => {
                   <span>{item.testimonial?.company}</span>
                 </div>
               </div>
-            </div>
+            </div> */}
 
           </div>
 
