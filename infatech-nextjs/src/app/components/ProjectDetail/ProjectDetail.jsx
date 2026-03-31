@@ -100,7 +100,7 @@ const ProjectDetail = ({ slug }) => {
 <div className="project-testimonial">
   <div className="testimonial-box">
     <p className="testimonial-text">
-      "{project.testimonial?.text}"
+      {project.testimonial?.text}
     </p>
 
     <h5>{project.testimonial?.name}</h5>
