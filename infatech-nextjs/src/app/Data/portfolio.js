@@ -35,19 +35,38 @@ export const portfolioData = [
       
         services: ["E-commerce", "Admin Panel", "Backend System"]
       },
-  
-    {
-      slug: "jannatni-chavio",
-      title: "Jannatni Chavio",
-      category: "Mobile App",
-      img: "/assets/images/inner/case-thumb2.png",
-      client: "Rizwanali Palsaniya",
-      date: "2024",
-      website: "#",
-      location: "India",
-      description: "Bringing E-commerce to Mobile",
-      challenge: "Client wanted Android & iOS app...",
-      result: "Mobile-first sales channel created.",
-      services: ["Mobile App", "Backend", "Admin Panel"]
-    }
+      {
+        slug: "jannatni-chavio",
+        title: "Jannatni Chavio",
+        category: "Mobile App (Android & iOS)",
+        img: "/assets/images/testimonial/p2.png",
+        client: "Rizwanali Palsaniya",
+        date: "2024",
+        website: "#",
+        location: "India",
+      
+        description: "Building a Mobile Islamic Platform for Daily Use and Spiritual Engagement",
+      
+        challenge: "The client wanted to create a mobile application that provides Islamic content in an accessible and user-friendly way across both Android and iOS. The challenge was to design a clean interface where users could easily access religious content, features, and daily-use utilities without complexity.",
+      
+        built: [
+          "Android and iOS applications",
+          "Structured content browsing for Islamic resources",
+          "User-friendly navigation for daily usage",
+          "Feature-rich interface for multiple utilities",
+          "Admin panel to manage content and updates",
+          "Backend system to handle app data and performance"
+        ],
+      
+        result: "The app now serves as a reliable digital platform for users to access Islamic content conveniently. It enhances daily engagement while giving the client full control over content management and updates.",
+      
+        testimonial: {
+          text: "Infatech helped us build a smooth and user-friendly Islamic app for both Android and iOS. The experience is clean for users, and managing the content from the backend is very easy for our team.",
+          name: "Rizwanali Palsaniya",
+          company: "Jannatni Chavio",
+          image: "/assets/images/testimonial/p2.png"
+        },
+      
+        services: ["Mobile App Development", "Backend System", "Admin Panel"]
+      }
   ];
