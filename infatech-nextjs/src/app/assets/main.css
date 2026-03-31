@@ -7263,7 +7263,14 @@ li.current_menu_item {
   font-weight: 600;
   font-family: var(--body-color-font);
 }
-
+.project-details-box h6 a {
+  all: unset;        /* remove default link styles */
+  cursor: pointer;   /* clickable feel */
+  word-break: break-word;
+}
+.project-details-box h6 a:hover {
+  color: #ff3c00;
+}
 .project-details-box {
   padding-left: 96px;
   margin-bottom: 20px;

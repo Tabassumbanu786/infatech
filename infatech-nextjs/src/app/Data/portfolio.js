@@ -6,7 +6,7 @@ export const portfolioData = [
         img: "/assets/images/testimonial/p1.png",
         client: "Abdul Aziz Budhani",
         date: "2024",
-        website: "tawakkalwatches.com",
+        website: "https://tawakkalwatches.com",
         location: "India",
       
         description: "Turning a Traditional Watch Business into an Online Store",
@@ -75,7 +75,7 @@ export const portfolioData = [
         img: "/assets/images/testimonial/p3.png",
         client: "Mukhtar Sheliya",
         date: "2025",
-        website: "bestpropertiesmumbai.com",
+        website: "https://www.bestpropertiesmumbai.com/",
         location: "Mumbai, India",
       
         description: "Creating a Structured Real Estate Discovery Platform",

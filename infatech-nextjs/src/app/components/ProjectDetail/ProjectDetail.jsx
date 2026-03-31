@@ -41,7 +41,15 @@ const ProjectDetail = ({ slug }) => {
             <div key={i} className="col-lg-3 col-md-3">
               <div className="project-details-box">
                 <p>{item.title}</p>
-                <h6>{item.info}</h6>
+                <h6>
+  {item.title === "Website" ? (
+    <a href={item.info} target="_blank">
+      {item.info.replace("https://", "")}
+    </a>
+  ) : (
+    item.info
+  )}
+</h6>
               </div>
             </div>
           ))}
