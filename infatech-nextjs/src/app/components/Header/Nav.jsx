@@ -68,13 +68,10 @@ export default function Nav({ setMobileToggle }) {
         </Link>
       </li>
       <li>
-  <a 
-    href="https://academy.infatech.in/portfolio" 
-    onClick={() => setMobileToggle(false)}
-  >
-    Portfolio
-  </a>
-</li>
+        <Link href="/project" onClick={() => setMobileToggle(false)}>
+          Portfolio
+        </Link>
+      </li>
       <li>
         <Link href="/contact" onClick={() => setMobileToggle(false)}>
           Contact
