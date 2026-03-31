@@ -6,7 +6,7 @@ export const portfolioData = [
         img: "/assets/images/testimonial/p1.png",
         client: "Abdul Aziz Budhani",
         date: "2024",
-        website: "https://tawakkalwatches.com",
+        website: "tawakkalwatches.com",
         location: "India",
       
         description: "Turning a Traditional Watch Business into an Online Store",
@@ -68,5 +68,37 @@ export const portfolioData = [
         },
       
         services: ["Mobile App Development", "Backend System", "Admin Panel"]
+      },{
+        slug: "best-properties-mumbai",
+        title: "Best Properties Mumbai",
+        category: "Real Estate Platform",
+        img: "/assets/images/testimonial/p3.png",
+        client: "Mukhtar Sheliya",
+        date: "2025",
+        website: "bestpropertiesmumbai.com",
+        location: "Mumbai, India",
+      
+        description: "Creating a Structured Real Estate Discovery Platform",
+      
+        challenge: "The client needed a platform where properties could be listed properly, users could filter their search, and inquiries could be captured efficiently.",
+      
+        built: [
+          "Real estate listing platform",
+          "Property filters and detailed project pages",
+          "Inquiry system for lead generation",
+          "Admin panel to manage listings and leads",
+          "Backend system for smooth content and lead management"
+        ],
+      
+        result: "The platform now makes it easier for users to discover properties and for the business to handle leads in a more structured way.",
+      
+        testimonial: {
+          text: "Infatech created a platform that made our listings much more organized and user-friendly. The backend also helps us manage leads and property updates with ease.",
+          name: "Mukhtar Sheliya",
+          company: "Best Properties Mumbai",
+          image: "/assets/images/testimonial/p3.png"
+        },
+      
+        services: ["Property Listings", "Filters", "Inquiry System"]
       }
   ];
